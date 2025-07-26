@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel Interativo</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .pagina {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .linha-ativa {
+      background-color: #fff7aa !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="pagina">
+    <h2>Tabela Interativa</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Idade</th>
+          <th>Cidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>João</td><td>25</td><td>São Paulo</td></tr>
+        <tr><td>Maria</td><td>30</td><td>Curitiba</td></tr>
+        <tr><td>Carlos</td><td>28</td><td>Fortaleza</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    function alternar(linha) {
+      linha.classList.toggle("linha-ativa");
+    }
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("table tbody tr").forEach(linha => {
+        linha.addEventListener("click", () => alternar(linha));
+        linha.addEventListener("touchstart", () => alternar(linha), { passive: true });
+      });
+    });
+  </script>
+</body>
+</html>
