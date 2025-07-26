@@ -57,16 +57,16 @@
       </tbody>
     </table>
   </div>
-  <script>
-    function alternar(linha) {
-      linha.classList.toggle("linha-ativa");
-    }
-    window.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll("table tbody tr").forEach(linha => {
-        linha.addEventListener("click", () => alternar(linha));
-        linha.addEventListener("touchstart", () => alternar(linha), { passive: true });
-      });
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const linhas = document.querySelectorAll("table tbody tr");
+    linhas.forEach(linha => {
+      linha.addEventListener("click", function () {
+        linha.classList.toggle("linha-ativa");
+      }, { passive: false });
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
