@@ -1,15 +1,31 @@
 
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<title>Caderno Digital Interativo</title>
-<style>
+  <meta charset="UTF-8">
+  <title>Caderno Digital A4 Corrigido</title>
+  <style>
     body {
+      margin: 0;
+      padding: 0;
+      background: #ddd;
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      padding: 20px;
+    }
+    .pagina {
+      width: 794px;
+      height: 1123px;
+      background: #fff;
+      margin: 40px auto;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      position: relative;
+    }
+    .numero-pagina {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      font-size: 12px;
+      color: #666;
     }
     table {
       width: 100%;
@@ -18,26 +34,27 @@
     }
     th, td {
       border: 1px solid #ccc;
-      padding: 10px;
+      padding: 8px;
       text-align: left;
     }
     th {
-      background-color: #efefef;
+      background-color: #f0f0f0;
     }
     .linha-ativa {
-      background-color: #fffd9e !important;
+      background-color: #fff8a6 !important;
     }
   </style>
 </head>
-<body><div class="pagina">
+<body>
+<div class="pagina capa">
 <h1 style="text-align:center; font-size:26px;">CADERNO DE ENSAIOS E PARAMETRIZAÇÕES</h1>
 <p style="text-align:center; color:blue; font-size:16px; margin-bottom:30px;">Manter na sala da MEG1 – EL.139</p>
 <h3>Conteúdo:</h3>
 <ol style="line-height: 1.8;">
 <li>Lista de ensaios com ULP<br/>
 <button onclick="document.getElementById('pagina1').scrollIntoView({behavior: 'smooth'});">
-      1.1 – UMCC
-    </button>
+        1.1 – UMCC
+      </button>
 </li>
 <li>Lista de ensaios com SCADA</li>
 <li>Lista de ensaios dos anunciadores TGA</li>
@@ -67,7 +84,843 @@
 <li>Parametrização do Relé 39LW - LIP</li>
 <li>Lista telefônica</li>
 </ol>
-</div><div class="pagina" id="pagina1"><table cellpadding="0" cellspacing="0" width="640">
+</div>
+<div class="pagina" id="pagina1"><table cellpadding="7" cellspacing="0" width="640">
+<colgroup>
+<col width="139"/>
+<col width="51"/>
+<col width="46"/>
+<col width="51"/>
+<col width="56"/>
+</colgroup>
+<colgroup>
+<col width="47"/>
+</colgroup>
+<colgroup>
+<col width="44"/>
+</colgroup>
+<colgroup>
+<col width="43"/>
+</colgroup>
+<colgroup>
+<col width="38"/>
+</colgroup>
+<tbody>
+<tr>
+<td bgcolor="#ffff99" colspan="9" height="6" style="background: #ffff99; border-top: none; border-bottom: 1.00pt solid #000000; border-left: none; border-right: none; padding: 0cm" valign="top" width="626"><p align="center" style="orphans: 0; widows: 0; margin-right: 0.04cm; margin-top: 0.01cm"><a name="_bookmark17"></a>
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="3" style="font-size: 12pt"><span style="letter-spacing: -0.2pt"><i><b>UMCC</b></i></span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td style="border-top: 1.00pt solid #000000; border-bottom: none; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm 0.19cm" width="139"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.39cm; margin-right: 0.35cm; margin-top: 0.02cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.1pt"><b>EVENTO</b></span></font></font></font></p>
+</td>
+<td style="border-top: 1.00pt solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="51"><p align="left" style="orphans: 0; widows: 0; margin-left: 0.34cm; margin-top: 0.02cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.1pt"><b>D.PRIM.</b></span></font></font></font></p>
+</td>
+<td style="border-top: 1.00pt solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.02cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.1pt"><b>CONTATO</b></span></font></font></font></p>
+</td>
+<td style="border-top: 1.00pt solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.02cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.2pt"><b>RÉGUA</b></span></font></font></font></p>
+</td>
+<td style="border-top: 1.00pt solid #000000; border-bottom: none; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.02cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.1pt"><b>BORNE</b></span></font></font></font></p>
+</td>
+<td style="border-top: 1.00pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.11cm; margin-right: 0.06cm; margin-top: 0.02cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.3pt"><b>TGA</b></span></font></font></font></p>
+</td>
+<td style="border-top: 1.00pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="44"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-right: 0.01cm; margin-top: 0.02cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 8pt"><span style="letter-spacing: -0.3pt"><b>ULP</b></span></font></font></font></p>
+</td>
+<td style="border-top: 1.00pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="43"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.03cm; margin-top: 0.04cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt"><b>BLOQUEO</b></span></font></font></font></p>
+</td>
+<td style="border-top: 1.00pt solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1.00pt solid #000000; padding: 0cm" width="38"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-right: 0.01cm; margin-top: 0.04cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt"><b>TEMP.</b></span></font></font></font></p>
+</td>
+</tr>
+<tr valign="top">
+<td bgcolor="#ffd100" height="1" style="background: #ffd100; border-top: none; border-bottom: none; border-left: 1.00pt solid #000000; border-right: none; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td bgcolor="#ffd100" style="background: #ffd100; border: none; padding: 0cm" width="51"><p align="left" style="orphans: 0; widows: 0; margin-left: 0.26cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.1pt">Q1SRX</span></font></font></font></font></p>
+</td>
+<td bgcolor="#ffd100" style="background: #ffd100; border: none; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-right: 0.21cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">23-</font></font><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.3pt">24</span></font></font></font></font></p>
+</td>
+<td bgcolor="#ffd100" style="background: #ffd100; border: none; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.11cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.2pt">X1.3</span></font></font></font></font></p>
+</td>
+<td bgcolor="#ffd100" style="background: #ffd100; border-top: none; border-bottom: none; border-left: none; border-right: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.01cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">19-</font></font></font><font color="#0000ff"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.3pt">18</span></font></font></font></font></font></p>
+</td>
+<td rowspan="3" style="border: 1px solid #000000; padding: 0cm" width="47"><p align="left" style="orphans: 0; widows: 0; margin-top: 0.13cm; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-left: 0.56cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">52.2</span></font></font></font></p>
+</td>
+<td rowspan="17" style="border: 1px solid #000000; padding: 0cm" width="44"><p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-top: 0.17cm; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-right: 0.01cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">23</span></font></font></font></p>
+</td>
+<td rowspan="17" style="border: 1px solid #000000; padding: 0cm" width="43"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td rowspan="17" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1.00pt solid #000000; padding: 0cm" width="38"><p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-top: 0.17cm; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-left: 0.45cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">Inst.</span></font></font></font></p>
+</td>
+</tr>
+<tr valign="top">
+<td height="1" style="border-top: none; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.06cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">F1X</span></font></font></font></p>
+</td>
+<td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">44-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">43</span></font></font></font></p>
+</td>
+<td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X1.3</span></font></font></font></p>
+</td>
+<td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">19-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">16</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">F0</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">22-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">21</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X1.3</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">19-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">20</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">Q1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">44-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">43</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X1.6</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">23-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">22</span></font></font></font></font></p>
+</td>
+<td rowspan="3" style="border: 1px solid #000000; padding: 0cm" width="47"><p align="left" style="orphans: 0; widows: 0; margin-top: 0.13cm; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-left: 0.56cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">57.1</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.06cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">FO</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">22-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">21</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X1.6</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">23-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">21</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.06cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">F1X</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">44-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">43</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X1.6</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">23-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">20</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">Q1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">44-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">43</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X1.7</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">23-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">22</span></font></font></font></font></p>
+</td>
+<td rowspan="3" style="border: 1px solid #000000; padding: 0cm" width="47"><p align="left" style="orphans: 0; widows: 0; margin-top: 0.13cm; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-left: 0.56cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">58.1</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.06cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">FO</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">22-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">21</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X1.7</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">23-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">21</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.06cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">F1X</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">44-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">43</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X1.7</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">23-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">20</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">Q1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">24-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">23</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">X2.5.2</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">19-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">18</span></font></font></font></font></p>
+</td>
+<td rowspan="3" style="border: 1px solid #000000; padding: 0cm" width="47"><p align="left" style="orphans: 0; widows: 0; margin-top: 0.13cm; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-left: 0.56cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">59.1</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.06cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">FO</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">22-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">23</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">X2.5.2</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">19-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">20</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.06cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">F1X</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">44-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">43</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">X2.5.2</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">19-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">16</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">Q1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">24-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">23</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">X2.71</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">19-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">18</span></font></font></font></font></p>
+</td>
+<td rowspan="3" style="border: 1px solid #000000; padding: 0cm" width="47"><p align="left" style="orphans: 0; widows: 0; margin-top: 0.13cm; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-left: 0.56cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">60.1</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.06cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">FO</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">22-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">21</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">X2.71</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">19-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">20</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.06cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">F1X</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">44-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">43</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">X2.71</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">19-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">16</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="left" style="orphans: 0; widows: 0; margin-left: 0.39cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">27CATD</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">25-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">26</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X4.3</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">18-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">19</span></font></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.05cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">45.2</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">K1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">44-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">43</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X4.3</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">27-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">28</span></font></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.05cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">46.2</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="left" style="orphans: 0; widows: 0; margin-left: 0.48cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">27NSX</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">81-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">82</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X6.1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">131-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">127</span></font></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.05cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">42.2</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="44"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-right: 0.01cm; margin-top: 0.05cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">41</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="43"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1.00pt solid #000000; padding: 0cm" width="38"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-right: 0.01cm; margin-top: 0.05cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">Inst.</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="left" style="orphans: 0; widows: 0; margin-left: 0.49cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">27ASX</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">71-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">72</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X6.1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">132-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">128</span></font></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.05cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">43.2</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="44"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-right: 0.01cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">21</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="43"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1.00pt solid #000000; padding: 0cm" width="38"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-right: 0.01cm; margin-top: 0.05cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">Inst.</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td height="1" style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="left" style="orphans: 0; widows: 0; margin-left: 0.46cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">27MCX</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">71-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">72</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X6.1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">130-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">126</span></font></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.05cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">41.2</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="44"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-right: 0.01cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">22</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="43"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1.00pt solid #000000; padding: 0cm" width="38"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-right: 0.01cm; margin-top: 0.05cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">Inst.</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.06cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">81X</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">53-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">54</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X6.1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.07cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">133-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">129</span></font></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.05cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">49.2</span></font></font></font></p>
+</td>
+<td rowspan="8" style="border-top: 1px solid #000000; border-bottom: 1.00pt solid #000000; border-left: 1px solid #000000; border-right: 1.00pt solid #000000; padding: 0cm" width="44"><p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-top: 0.21cm; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">23</span></font></font></font></p>
+</td>
+<td rowspan="2" style="border-top: 1px solid #000000; border-bottom: 1.00pt solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="43"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td rowspan="8" style="border-top: 1px solid #000000; border-bottom: 1.00pt solid #000000; border-left: 1.00pt solid #000000; border-right: 1.00pt solid #000000; padding: 0cm" width="38"><p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-top: 0.21cm; margin-bottom: 0cm">
+<br/>
+</p>
+<p align="left" style="orphans: 0; widows: 0; margin-left: 0.44cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">Inst.</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">F2</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">95-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">96</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X6.1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">134-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">135</span></font></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.04cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">50.2</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">Atuação</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">
+</span></font><font size="1" style="font-size: 7pt">do</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">
+</span></font><font size="1" style="font-size: 7pt">bloqueio</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">
+</span></font><font size="1" style="font-size: 7pt">86N</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">
+</span></font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">(real)</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">86</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.09cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 6pt"><span style="letter-spacing: -0.1pt">C5/D5-C7/D7</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X6.1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">61-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">65</span></font></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.04cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">47.2</span></font></font></font></p>
+</td>
+<td style="border: 1.00pt solid #000000; padding: 0cm" width="43"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.03cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#ff0000"><font size="1" style="font-size: 7pt">86N</font></font><font color="#ff0000"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">
+</span></font></font><font color="#ff0000"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.6pt">*</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">F1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">95-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">96</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X6.1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">134-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">135</span></font></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.04cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">50.2</span></font></font></font></p>
+</td>
+<td rowspan="5" style="border-top: 1.00pt solid #000000; border-bottom: 1.00pt solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="43"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="left" style="orphans: 0; widows: 0; margin-left: 0.4cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">27CBTA</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">25-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">26</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X8.5</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">18-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">19</span></font></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.04cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">45.2</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0">
+<br/>
+</p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">K1</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">44-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">43</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">X8.5</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.05cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">27-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">28</span></font></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="47"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.04cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">46.2</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td rowspan="2" style="border-top: 1px solid #000000; border-bottom: 1.00pt solid #000000; border-left: 1.00pt solid #000000; border-right: 1px solid #000000; padding: 0cm" width="139"><p align="left" style="orphans: 0; widows: 0; text-indent: -0.08cm; margin-left: 0.26cm; margin-top: 0.08cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">Disj.</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.6pt">
+</span></font><font size="1" style="font-size: 7pt">Carga</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.5pt">
+</span></font><font size="1" style="font-size: 7pt">Disparado.</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.5pt">
+</span></font><font size="1" style="font-size: 7pt">Ver</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.5pt">
+</span></font><font size="1" style="font-size: 7pt">TGA FL. 4/8
+				pos.24 (fim da custura)</font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="left" style="orphans: 0; widows: 0; margin-left: 0.19cm; margin-top: 0.09cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 6pt">QISr</font><font size="1" style="font-size: 6pt"><span style="letter-spacing: -0.1pt">
+</span></font><font size="1" style="font-size: 6pt"><span style="letter-spacing: -0.1pt">gav.10.5</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">7</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">
+</span></font><font size="1" style="font-size: 7pt">-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">
+</span></font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.5pt">8</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">x10.5</span></font></font></font></p>
+</td>
+<td style="border: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">3</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">
+</span></font></font><font color="#0000ff"><font size="1" style="font-size: 7pt">-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">
+</span></font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">11</span></font></font></font></font></p>
+</td>
+<td rowspan="2" style="border-top: 1px solid #000000; border-bottom: 1.00pt solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="47"><p align="left" style="orphans: 0; widows: 0; margin-left: 0.56cm; margin-top: 0.22cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.2pt">48.2</span></font></font></font></p>
+</td>
+</tr>
+</tbody>
+<tbody>
+<tr valign="top">
+<td style="border-top: 1px solid #000000; border-bottom: 1.00pt solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="51"><p align="left" style="orphans: 0; widows: 0; margin-left: 0.19cm; margin-top: 0.09cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 6pt">QISr</font><font size="1" style="font-size: 6pt"><span style="letter-spacing: -0.1pt">
+</span></font><font size="1" style="font-size: 6pt"><span style="letter-spacing: -0.1pt">gav.10.6</span></font></font></font></p>
+</td>
+<td style="border-top: 1px solid #000000; border-bottom: 1.00pt solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="46"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt">7</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">
+</span></font><font size="1" style="font-size: 7pt">-</font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">
+</span></font><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.5pt">8</span></font></font></font></p>
+</td>
+<td style="border-top: 1px solid #000000; border-bottom: 1.00pt solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="51"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.07cm; margin-right: 0.02cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">x10.6</span></font></font></font></p>
+</td>
+<td style="border-top: 1px solid #000000; border-bottom: 1.00pt solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm" width="56"><p align="center" style="orphans: 0; widows: 0; margin-left: 0.04cm; margin-top: 0.06cm">
+<font face="Arial, serif"><font size="3" style="font-size: 12pt"><font color="#0000ff"><font size="1" style="font-size: 7pt">3</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">
+</span></font></font><font color="#0000ff"><font size="1" style="font-size: 7pt">-</font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">
+</span></font></font><font color="#0000ff"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.3pt">11</span></font></font></font></font></p>
+</td>
+</tr>
+</tbody>
+</table><div class="numero-pagina">1</div></div><div class="pagina" id="pagina2"><table cellpadding="0" cellspacing="0" width="640">
 <col width="153"/>
 <col width="65"/>
 <col width="60"/>
@@ -691,7 +1544,7 @@
 <font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="2" style="font-size: 9pt">A-B-</font><font size="2" style="font-size: 9pt"><span style="letter-spacing: -0.5pt">C</span></font></font></font></p>
 </td>
 </tr>
-</table><div style="position:absolute; bottom:20px; right:40px; font-size:12px; color:#999;">1</div></div><div class="pagina" id="pagina2"><table cellpadding="0" cellspacing="0" width="640">
+</table><div class="numero-pagina">2</div></div><div class="pagina" id="pagina3"><table cellpadding="0" cellspacing="0" width="640">
 <col width="153"/>
 <col width="65"/>
 <col width="60"/>
@@ -821,7 +1674,7 @@
 <font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">Inst.</span></font></font></font></p>
 </td>
 </tr>
-</table><div style="position:absolute; bottom:20px; right:40px; font-size:12px; color:#999;">2</div></div><div class="pagina" id="pagina3"><table cellpadding="0" cellspacing="0" width="640">
+</table><div class="numero-pagina">3</div></div><div class="pagina" id="pagina4"><table cellpadding="0" cellspacing="0" width="640">
 <col width="153"/>
 <col width="65"/>
 <col width="60"/>
@@ -939,5 +1792,15 @@
 <font face="Arial, serif"><font size="3" style="font-size: 12pt"><font size="1" style="font-size: 7pt"><span style="letter-spacing: -0.1pt">Inst.</span></font></font></font></p>
 </td>
 </tr>
-</table><div style="position:absolute; bottom:20px; right:40px; font-size:12px; color:#999;">3</div></div></body>
+</table><div class="numero-pagina">4</div></div></body>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const linhas = document.querySelectorAll("table tbody tr");
+    linhas.forEach(linha => {
+      linha.addEventListener("click", function () {
+        linha.classList.toggle("linha-ativa");
+      }, { passive: false });
+    });
+  });
+</script>
 </html>
