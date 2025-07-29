@@ -47,46 +47,131 @@
             margin-left: 20px;
         }
     </style>
-<script>
-        function toggleSubitem() {
-            const subitem = document.getElementById('subitem-1-1');
-            subitem.style.display = subitem.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
-
 
 <script>
+function isHighlighted(id) {
+    return window.getComputedStyle(document.getElementById(id)).backgroundColor === "rgb(255, 235, 59)";
+}
+
 function toggleHighlightLinha2() {
     const ids = ["r2c1", "r2c2", "r2c3", "r2c4", "r2c5"];
-    const firstCell = document.getElementById("r2c1");
-    const currentColor = window.getComputedStyle(firstCell).backgroundColor;
-    const isHighlighted = currentColor === "rgb(255, 235, 59)";
+    const isHighlightedNow = isHighlighted("r2c1");
     for (let id of ids) {
-        document.getElementById(id).style.backgroundColor = isHighlighted ? "" : "#ffeb3b";
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
     }
+    updateCol6Highlight();
+}
+
+function toggleHighlightLinha3() {
+    const ids = ["r3c1", "r3c2", "r3c3", "r3c4", "r3c5"];
+    const isHighlightedNow = isHighlighted("r3c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+
+function toggleHighlightLinha4() {
+    const ids = ["r4c1", "r4c2", "r4c3", "r4c4", "r4c5"];
+    const isHighlightedNow = isHighlighted("r4c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+
+function updateCol6Highlight() {
+    const allHighlighted = isHighlighted("r2c1") && isHighlighted("r3c1") && isHighlighted("r4c1");
+    const color = allHighlighted ? "#ffeb3b" : "";
+    document.getElementById("col6merged").style.backgroundColor = color;
 }
 </script>
+
 
 
 
 <script>
+function isHighlighted(id) {
+    return window.getComputedStyle(document.getElementById(id)).backgroundColor === "rgb(255, 235, 59)";
+}
+
+function toggleHighlightLinha2() {
+    const ids = ["r2c1", "r2c2", "r2c3", "r2c4", "r2c5"];
+    const isHighlightedNow = isHighlighted("r2c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+
 function toggleHighlightLinha3() {
     const ids = ["r3c1", "r3c2", "r3c3", "r3c4", "r3c5"];
-    const currentColor = window.getComputedStyle(document.getElementById("r3c1")).backgroundColor;
-    const isHighlighted = currentColor === "rgb(255, 235, 59)";
+    const isHighlightedNow = isHighlighted("r3c1");
     for (let id of ids) {
-        document.getElementById(id).style.backgroundColor = isHighlighted ? "" : "#ffeb3b";
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
     }
+    updateCol6Highlight();
 }
+
 function toggleHighlightLinha4() {
     const ids = ["r4c1", "r4c2", "r4c3", "r4c4", "r4c5"];
-    const currentColor = window.getComputedStyle(document.getElementById("r4c1")).backgroundColor;
-    const isHighlighted = currentColor === "rgb(255, 235, 59)";
+    const isHighlightedNow = isHighlighted("r4c1");
     for (let id of ids) {
-        document.getElementById(id).style.backgroundColor = isHighlighted ? "" : "#ffeb3b";
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
     }
+    updateCol6Highlight();
+}
+
+function updateCol6Highlight() {
+    const allHighlighted = isHighlighted("r2c1") && isHighlighted("r3c1") && isHighlighted("r4c1");
+    const color = allHighlighted ? "#ffeb3b" : "";
+    document.getElementById("col6merged").style.backgroundColor = color;
 }
 </script>
+
+
+
+
+
+<script>
+function isHighlighted(id) {
+    return window.getComputedStyle(document.getElementById(id)).backgroundColor === "rgb(255, 235, 59)";
+}
+
+function toggleHighlightLinha2() {
+    const ids = ["r2c1", "r2c2", "r2c3", "r2c4", "r2c5"];
+    const isHighlightedNow = isHighlighted("r2c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+
+function toggleHighlightLinha3() {
+    const ids = ["r3c1", "r3c2", "r3c3", "r3c4", "r3c5"];
+    const isHighlightedNow = isHighlighted("r3c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+
+function toggleHighlightLinha4() {
+    const ids = ["r4c1", "r4c2", "r4c3", "r4c4", "r4c5"];
+    const isHighlightedNow = isHighlighted("r4c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+
+function updateCol6Highlight() {
+    const allHighlighted = isHighlighted("r2c1") && isHighlighted("r3c1") && isHighlighted("r4c1");
+    const color = allHighlighted ? "#ffeb3b" : "";
+    document.getElementById("col6merged").style.backgroundColor = color;
+}
+</script>
+
 
 </head>
 <body>
@@ -152,7 +237,7 @@ function toggleHighlightLinha4() {
   <td id="r2c3" onclick="toggleHighlightLinha2()" style="border: 1px solid black;; text-align: center;">23-24</td>
   <td id="r2c4" onclick="toggleHighlightLinha2()" style="border: 1px solid black;; text-align: center;">X1.3</td>
   <td id="r2c5" onclick="toggleHighlightLinha2()" style="border: 1px solid black; color: blue;; text-align: center;">19-18</td>
-  <td style="border: 1px solid black; text-align: center;" rowspan="3">52.2</td>
+  <td id="col6merged" style="border: 1px solid black; text-align: center;" rowspan="3">52.2</td>
   <td style="border: 1px solid black;; text-align: center;"></td>
   <td style="border: 1px solid black;; text-align: center;"></td>
   <td style="border: 1px solid black;; text-align: center;"></td>
