@@ -53,41 +53,6 @@
             subitem.style.display = subitem.style.display === 'none' ? 'block' : 'none';
         }
     </script>
-
-<script>
-function toggleHighlight() {
-    const ids = ["r2c1", "r2c2", "r2c3", "r2c4", "r2c5"];
-    const firstCell = document.getElementById("r2c1");
-    const isHighlighted = firstCell.style.backgroundColor === "#ffeb3b";
-
-    for (let id of ids) {
-        document.getElementById(id).style.backgroundColor = isHighlighted ? "" : "#ffeb3b";
-    }
-}
-</script>
-
-
-<script>
-function toggleHighlight2() {
-    const ids = ["r3c1", "r3c2", "r3c3", "r3c4", "r3c5"];
-    const firstCell = document.getElementById("r3c1");
-    const isHighlighted = firstCell.style.backgroundColor === "#ffeb3b";
-
-    for (let id of ids) {
-        document.getElementById(id).style.backgroundColor = isHighlighted ? "" : "#ffeb3b";
-    }
-}
-function toggleHighlight3() {
-    const ids = ["r4c1", "r4c2", "r4c3", "r4c4", "r4c5"];
-    const firstCell = document.getElementById("r4c1");
-    const isHighlighted = firstCell.style.backgroundColor === "#ffeb3b";
-
-    for (let id of ids) {
-        document.getElementById(id).style.backgroundColor = isHighlighted ? "" : "#ffeb3b";
-    }
-}
-</script>
-
 </head>
 <body>
 <div class="pagina" id="capa">
@@ -147,33 +112,11 @@ function toggleHighlight3() {
 </thead>
 <tbody>
 <tr>
-<th style="border: 2px solid black;">EVENTO</th>
-<th style="border: 2px solid black;">D.PRIM.</th>
-<th style="border: 2px solid black;">CONTATO</th>
-<th style="border: 2px solid black;">RÉGUA</th>
-<th style="border: 2px solid black;">BORNE</th>
-<th style="border: 2px solid black;">TGA</th>
-<th style="border: 2px solid black;">ULP</th>
-<th style="border: 2px solid black;">BLOQUEIO</th>
-<th style="border: 2px solid black;">TEMP.</th>
-</tr>
-<tr>
-  <td id="r3c1" onclick="toggleHighlight2()" id="r2c1" onclick="toggleHighlight()" style="border: 1px solid black; text-align: center;"></td>
-  <td id="r3c2" onclick="toggleHighlight2()" id="r2c2" onclick="toggleHighlight()" style="border: 1px solid black; text-align: center;">Q1SRX</td>
-  <td id="r3c3" onclick="toggleHighlight2()" id="r2c3" onclick="toggleHighlight()" style="border: 1px solid black; text-align: center;">23-24</td>
-  <td id="r3c4" onclick="toggleHighlight2()" id="r2c4" onclick="toggleHighlight()" style="border: 1px solid black; text-align: center;">X1.3</td>
-  <td id="r3c5" onclick="toggleHighlight2()" id="r2c5" onclick="toggleHighlight()" style="border: 1px solid black; text-align: center; color: blue;">19-18</td>
-  <td style="border: 1px solid black; text-align: center;" rowspan="3">52.2</td>
-  <td style="border: 1px solid black; text-align: center;"></td>
-  <td style="border: 1px solid black; text-align: center;"></td>
-  <td style="border: 1px solid black; text-align: center;"></td>
-</tr>
-<tr>
-  <td id="r4c1" onclick="toggleHighlight3()" style="border: 1px solid black;; text-align: center;"></td>
-  <td id="r4c2" onclick="toggleHighlight3()" style="border: 1px solid black;; text-align: center;">Q1SRX</td>
-  <td id="r4c3" onclick="toggleHighlight3()" style="border: 1px solid black;; text-align: center;">23-24</td>
-  <td id="r4c4" onclick="toggleHighlight3()" style="border: 1px solid black;; text-align: center;">X1.3</td>
-  <td id="r4c5" onclick="toggleHighlight3()" style="border: 1px solid black; color: blue;; text-align: center;">19-18</td>
+  <td style="border: 1px solid black;; text-align: center;"></td>
+  <td style="border: 1px solid black;; text-align: center;">Q1SRX</td>
+  <td style="border: 1px solid black;; text-align: center;">23-24</td>
+  <td style="border: 1px solid black;; text-align: center;">X1.3</td>
+  <td style="border: 1px solid black; color: blue;; text-align: center;">19-18</td>
   <td style="border: 1px solid black; text-align: center;" rowspan="3">52.2</td>
   <td style="border: 1px solid black;; text-align: center;"></td>
   <td style="border: 1px solid black;; text-align: center;"></td>
