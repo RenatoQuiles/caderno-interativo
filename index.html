@@ -54,15 +54,19 @@
         }
     </script>
 
+
 <script>
 function toggleHighlightLinha2() {
     const ids = ["r2c1", "r2c2", "r2c3", "r2c4", "r2c5"];
-    const isHighlighted = document.getElementById("r2c1").style.backgroundColor === "#ffeb3b";
+    const firstCell = document.getElementById("r2c1");
+    const currentColor = window.getComputedStyle(firstCell).backgroundColor;
+    const isHighlighted = currentColor === "rgb(255, 235, 59)";
     for (let id of ids) {
         document.getElementById(id).style.backgroundColor = isHighlighted ? "" : "#ffeb3b";
     }
 }
 </script>
+
 
 </head>
 <body>
