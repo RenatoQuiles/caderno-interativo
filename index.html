@@ -58,10 +58,10 @@
 function toggleHighlight() {
     const ids = ["r2c1", "r2c2", "r2c3", "r2c4", "r2c5"];
     const firstCell = document.getElementById("r2c1");
-    const isHighlighted = firstCell.style.backgroundColor === "lightyellow";
+    const isHighlighted = firstCell.style.backgroundColor === "#ffeb3b";
 
     for (let id of ids) {
-        document.getElementById(id).style.backgroundColor = isHighlighted ? "" : "lightyellow";
+        document.getElementById(id).style.backgroundColor = isHighlighted ? "" : "#ffeb3b";
     }
 }
 </script>
