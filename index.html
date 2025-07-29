@@ -53,6 +53,19 @@
             subitem.style.display = subitem.style.display === 'none' ? 'block' : 'none';
         }
     </script>
+
+<script>
+function toggleHighlight() {
+    const ids = ["r2c1", "r2c2", "r2c3", "r2c4", "r2c5"];
+    const firstCell = document.getElementById("r2c1");
+    const isHighlighted = firstCell.style.backgroundColor === "lightyellow";
+
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlighted ? "" : "lightyellow";
+    }
+}
+</script>
+
 </head>
 <body>
 <div class="pagina" id="capa">
@@ -111,6 +124,17 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+  <td id="r2c1" onclick="toggleHighlight()" style="border: 1px solid black; text-align: center;"></td>
+  <td id="r2c2" onclick="toggleHighlight()" style="border: 1px solid black; text-align: center;">Q1SRX</td>
+  <td id="r2c3" onclick="toggleHighlight()" style="border: 1px solid black; text-align: center;">23-24</td>
+  <td id="r2c4" onclick="toggleHighlight()" style="border: 1px solid black; text-align: center;">X1.3</td>
+  <td id="r2c5" onclick="toggleHighlight()" style="border: 1px solid black; text-align: center; color: blue;">19-18</td>
+  <td style="border: 1px solid black; text-align: center;" rowspan="3">52.2</td>
+  <td style="border: 1px solid black; text-align: center;"></td>
+  <td style="border: 1px solid black; text-align: center;"></td>
+  <td style="border: 1px solid black; text-align: center;"></td>
+</tr>
 <tr>
   <td style="border: 1px solid black;; text-align: center;"></td>
   <td style="border: 1px solid black;; text-align: center;">Q1SRX</td>
