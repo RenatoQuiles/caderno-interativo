@@ -41,15 +41,27 @@
             font-size: 14px;
             margin-left: 15px;
         }
+        .subitem {
+            display: none;
+            margin-left: 20px;
+        }
     </style>
+    <script>
+        function toggleSubitem() {
+            const subitem = document.getElementById('subitem-1-1');
+            subitem.style.display = subitem.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 </head>
 <body>
     <div class="pagina" id="capa">
         <h1>CADERNO DE ENSAIOS E PARAMETRIZAÇÕES</h1>
         <h2>Manter na sala da MEG1 – EL.139</h2>
         <div class="indice">
-            1 – Lista de ensaios com ULP<br>
-            <button class="botao-indice" onclick="document.getElementById('pagina1').scrollIntoView({behavior: 'smooth'});">1.1 – UMCC</button><br>
+            <span onclick="toggleSubitem()" style="cursor:pointer;">1 – Lista de ensaios com ULP</span><br>
+            <div id="subitem-1-1" class="subitem">
+                <button class="botao-indice" onclick="document.getElementById('pagina1').scrollIntoView({behavior: 'smooth'});">1.1 – UMCC</button>
+            </div>
             2 – Lista de ensaios com SCADA<br>
             3 – Lista de ensaios dos anunciadores TGA<br>
             4 – Lista de ensaios contatores CCAR<br>
