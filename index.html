@@ -49,9 +49,40 @@
     </style>
 
 
+
 <script>
 function isHighlighted(id) {
     return window.getComputedStyle(document.getElementById(id)).backgroundColor === "rgb(255, 235, 59)";
+}
+
+function toggleHighlightLinha2() {
+    const ids = ["r2c1", "r2c2", "r2c3", "r2c4", "r2c5"];
+    const isHighlightedNow = isHighlighted("r2c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function toggleHighlightLinha3() {
+    const ids = ["r3c1", "r3c2", "r3c3", "r3c4", "r3c5"];
+    const isHighlightedNow = isHighlighted("r3c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function toggleHighlightLinha4() {
+    const ids = ["r4c1", "r4c2", "r4c3", "r4c4", "r4c5"];
+    const isHighlightedNow = isHighlighted("r4c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function updateCol6Highlight() {
+    const allHighlighted = isHighlighted("r2c1") && isHighlighted("r3c1") && isHighlighted("r4c1");
+    const color = allHighlighted ? "#ffeb3b" : "";
+    document.getElementById("col6merged").style.backgroundColor = color;
 }
 
 function toggleHighlightLinha5() {
@@ -93,9 +124,118 @@ function updateCol6Grupo2() {
 
 
 
+
+
 <script>
 function isHighlighted(id) {
     return window.getComputedStyle(document.getElementById(id)).backgroundColor === "rgb(255, 235, 59)";
+}
+
+function toggleHighlightLinha2() {
+    const ids = ["r2c1", "r2c2", "r2c3", "r2c4", "r2c5"];
+    const isHighlightedNow = isHighlighted("r2c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function toggleHighlightLinha3() {
+    const ids = ["r3c1", "r3c2", "r3c3", "r3c4", "r3c5"];
+    const isHighlightedNow = isHighlighted("r3c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function toggleHighlightLinha4() {
+    const ids = ["r4c1", "r4c2", "r4c3", "r4c4", "r4c5"];
+    const isHighlightedNow = isHighlighted("r4c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function updateCol6Highlight() {
+    const allHighlighted = isHighlighted("r2c1") && isHighlighted("r3c1") && isHighlighted("r4c1");
+    const color = allHighlighted ? "#ffeb3b" : "";
+    document.getElementById("col6merged").style.backgroundColor = color;
+}
+
+function toggleHighlightLinha5() {
+    const ids = ["r5c1", "r5c2", "r5c3", "r5c4", "r5c5"];
+    const isHighlightedNow = isHighlighted("r5c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Grupo2();
+}
+
+function toggleHighlightLinha6() {
+    const ids = ["r6c1", "r6c2", "r6c3", "r6c4", "r6c5"];
+    const isHighlightedNow = isHighlighted("r6c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Grupo2();
+}
+
+function toggleHighlightLinha7() {
+    const ids = ["r7c1", "r7c2", "r7c3", "r7c4", "r7c5"];
+    const isHighlightedNow = isHighlighted("r7c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Grupo2();
+}
+
+function updateCol6Grupo2() {
+    const allHighlighted = isHighlighted("r5c1") && isHighlighted("r6c1") && isHighlighted("r7c1");
+    const color = allHighlighted ? "#ffeb3b" : "";
+    document.getElementById("col6grupo2").style.backgroundColor = color;
+}
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+function isHighlighted(id) {
+    return window.getComputedStyle(document.getElementById(id)).backgroundColor === "rgb(255, 235, 59)";
+}
+
+function toggleHighlightLinha2() {
+    const ids = ["r2c1", "r2c2", "r2c3", "r2c4", "r2c5"];
+    const isHighlightedNow = isHighlighted("r2c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function toggleHighlightLinha3() {
+    const ids = ["r3c1", "r3c2", "r3c3", "r3c4", "r3c5"];
+    const isHighlightedNow = isHighlighted("r3c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function toggleHighlightLinha4() {
+    const ids = ["r4c1", "r4c2", "r4c3", "r4c4", "r4c5"];
+    const isHighlightedNow = isHighlighted("r4c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function updateCol6Highlight() {
+    const allHighlighted = isHighlighted("r2c1") && isHighlighted("r3c1") && isHighlighted("r4c1");
+    const color = allHighlighted ? "#ffeb3b" : "";
+    document.getElementById("col6merged").style.backgroundColor = color;
 }
 
 function toggleHighlightLinha5() {
@@ -143,6 +283,36 @@ function isHighlighted(id) {
     return window.getComputedStyle(document.getElementById(id)).backgroundColor === "rgb(255, 235, 59)";
 }
 
+function toggleHighlightLinha2() {
+    const ids = ["r2c1", "r2c2", "r2c3", "r2c4", "r2c5"];
+    const isHighlightedNow = isHighlighted("r2c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function toggleHighlightLinha3() {
+    const ids = ["r3c1", "r3c2", "r3c3", "r3c4", "r3c5"];
+    const isHighlightedNow = isHighlighted("r3c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function toggleHighlightLinha4() {
+    const ids = ["r4c1", "r4c2", "r4c3", "r4c4", "r4c5"];
+    const isHighlightedNow = isHighlighted("r4c1");
+    for (let id of ids) {
+        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
+    }
+    updateCol6Highlight();
+}
+function updateCol6Highlight() {
+    const allHighlighted = isHighlighted("r2c1") && isHighlighted("r3c1") && isHighlighted("r4c1");
+    const color = allHighlighted ? "#ffeb3b" : "";
+    document.getElementById("col6merged").style.backgroundColor = color;
+}
+
 function toggleHighlightLinha5() {
     const ids = ["r5c1", "r5c2", "r5c3", "r5c4", "r5c5"];
     const isHighlightedNow = isHighlighted("r5c1");
@@ -177,48 +347,6 @@ function updateCol6Grupo2() {
 }
 </script>
 
-
-
-
-
-<script>
-function isHighlighted(id) {
-    return window.getComputedStyle(document.getElementById(id)).backgroundColor === "rgb(255, 235, 59)";
-}
-
-function toggleHighlightLinha5() {
-    const ids = ["r5c1", "r5c2", "r5c3", "r5c4", "r5c5"];
-    const isHighlightedNow = isHighlighted("r5c1");
-    for (let id of ids) {
-        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
-    }
-    updateCol6Grupo2();
-}
-
-function toggleHighlightLinha6() {
-    const ids = ["r6c1", "r6c2", "r6c3", "r6c4", "r6c5"];
-    const isHighlightedNow = isHighlighted("r6c1");
-    for (let id of ids) {
-        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
-    }
-    updateCol6Grupo2();
-}
-
-function toggleHighlightLinha7() {
-    const ids = ["r7c1", "r7c2", "r7c3", "r7c4", "r7c5"];
-    const isHighlightedNow = isHighlighted("r7c1");
-    for (let id of ids) {
-        document.getElementById(id).style.backgroundColor = isHighlightedNow ? "" : "#ffeb3b";
-    }
-    updateCol6Grupo2();
-}
-
-function updateCol6Grupo2() {
-    const allHighlighted = isHighlighted("r5c1") && isHighlighted("r6c1") && isHighlighted("r7c1");
-    const color = allHighlighted ? "#ffeb3b" : "";
-    document.getElementById("col6grupo2").style.backgroundColor = color;
-}
-</script>
 
 
 </head>
