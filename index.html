@@ -48,15 +48,21 @@
         }
     </style>
 <script>
-        function toggleSubitem() {
-            const subitem = document.getElementById('subitem-1-1');
-            subitem.style.display = subitem.style.display === 'none' ? 'block' : 'none';
-        }
-    </script>
+function alternarLinha(celula) {
+    var linha = celula.parentNode;
+    var corAtual = linha.style.backgroundColor;
+    var novaCor = (corAtual === "yellow") ? "white" : "yellow";
+    linha.style.backgroundColor = novaCor;
+    var colunas = linha.getElementsByTagName("td");
+    for (var i = 0; i < colunas.length; i++) {
+        colunas[i].style.backgroundColor = novaCor;
+    }
+}
+</script>
 </head>
 <body>
 <div class="pagina" id="capa">
-<h1>CADERNO DE ENSAIOS E PARAMETRIZAÇÕES</h1><p>Versão 40</p>
+<h1>CADERNO DE ENSAIOS E PARAMETRIZAÇÕES</h1><p>Versão 41</p>
 <h2>Manter na sala da MEG1 – EL.139</h2>
 <div class="indice">
 <span onclick="toggleSubitem()" style="cursor:pointer;">1 – Lista de ensaios com ULP</span><br/>
@@ -110,14 +116,14 @@
 </thead>
 <tbody>
 <tr>
-<td style="border: 1px solid black; text-align: center;"></td>
-<td onclick="alternarCor(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">Q1SRX</td>
-<td style="border: 1px solid black; text-align: center;">23-24</td><td style="border: 1px solid black; text-align: center;">X1.3</td>
-<td style="color: blue; border: 1px solid black; text-align: center;">19-18</td>
-<td style="border: 1px solid black; text-align: center;">52.2</td>
-<td style="border: 1px solid black; text-align: center;">23</td>
-<td style="border: 1px solid black; text-align: center;"></td>
-<td style="border: 1px solid black; text-align: center;">Inst</td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;"></td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;; cursor: pointer;">Q1SRX</td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">23-24</td><td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">X1.3</td>
+<td onclick="alternarLinha(this)" style="color: blue; border: 1px solid black; text-align: center;; cursor: pointer;">19-18</td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">52.2</td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">23</td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;"></td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">Inst</td>
 </tr>
 <tr>
 <td style="border: 1px solid black; text-align: center;"></td>
