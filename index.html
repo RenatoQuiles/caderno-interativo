@@ -48,18 +48,7 @@
             margin-left: 20px;
         }
   </style>
-<script>
-   function alternarLinha(celula) {
-    var linha = celula.parentNode;
-    var corAtual = linha.style.backgroundColor;
-    var novaCor = (corAtual === "yellow") ? "white" : "yellow";
-    linha.style.backgroundColor = novaCor;
-    var colunas = linha.getElementsByTagName("td");
-    for (var i = 0; i < colunas.length; i++) {
-        colunas[i].style.backgroundColor = novaCor;
-    }
-}
-  </script>
+
 <style>
    .linha-interativa {
     transition: background-color 0.2s ease;
@@ -75,7 +64,7 @@
 <h1>
     CADERNO DE ENSAIOS E PARAMETRIZAÇÕES
    </h1>
-<p>Versão 14</p>
+<p>Versão 15</p>
 <h2>
     Manter na sala da MEG1 – EL.139
    </h2>
@@ -1103,6 +1092,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
 });
 </script><script>
 document.addEventListener('DOMContentLoaded', function () {
