@@ -75,7 +75,7 @@
 <h1>
     CADERNO DE ENSAIOS E PARAMETRIZAÇÕES
    </h1>
-<p>Versão 11</p>
+<p>Versão 12</p>
 <h2>
     Manter na sala da MEG1 – EL.139
    </h2>
@@ -1092,5 +1092,17 @@
     }
 }
   </script>
-</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+});
+</script></body>
 </html>
