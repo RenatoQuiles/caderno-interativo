@@ -59,6 +59,15 @@
     }
 }
   </script>
+  <style>
+   .linha-interativa {
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+.linha-interativa.selecionada {
+    background-color: yellow;
+}
+  </style>
  </head>
  <body>
   <div class="pagina" id="capa">
@@ -179,7 +188,7 @@
      </tr>
     </thead>
     <tbody>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">
        c
       </td>
@@ -210,7 +219,7 @@
        Inst
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black; text-align: center;">
        c
       </td>
@@ -241,7 +250,7 @@
        Inst
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black; text-align: center;">
        c
       </td>
@@ -272,7 +281,7 @@
        Inst
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black; text-align: center;">
        c
       </td>
@@ -303,7 +312,7 @@
        Inst
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        FO
       </td>
@@ -334,7 +343,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        F1X
       </td>
@@ -365,7 +374,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        Q1
       </td>
@@ -396,7 +405,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        FO
       </td>
@@ -427,7 +436,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        F1X
       </td>
@@ -458,7 +467,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        Q1
       </td>
@@ -489,7 +498,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        FO
       </td>
@@ -520,7 +529,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        F1X
       </td>
@@ -551,7 +560,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -582,7 +591,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -613,7 +622,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -644,7 +653,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -675,7 +684,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -706,7 +715,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -737,7 +746,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -768,7 +777,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -799,7 +808,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -830,7 +839,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -861,7 +870,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -892,7 +901,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -923,7 +932,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
@@ -954,7 +963,7 @@
        c
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        Disj. Carga Disparado. Ver TGA
        <br/>
@@ -987,7 +996,7 @@
        Inst
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        Disj. Carga Disparado. Ver TGA
        <br/>
@@ -1020,7 +1029,7 @@
        Inst
       </td>
      </tr>
-     <tr>
+     <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
       <td style="border: 1px solid black;; text-align: center;">
        c
       </td>
