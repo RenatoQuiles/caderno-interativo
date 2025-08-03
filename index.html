@@ -32,25 +32,33 @@
 
 <div class="pagina">
 <div style="background-color: yellow; padding: 10px; text-align: center; font-weight: bold; font-size: 16px; margin-bottom: 20px;">
-    UMCC
+    CTAU (TAU)
    </div>
     
     <table style="width:100%; border-collapse: collapse; font-size: 12px; border: 2px solid black;">
         <thead>
-            <tr>
-                <th style="border: 1px solid black; text-align: center; font-weight: bold;">Coluna 1</th>
-                <th style="border: 1px solid black; text-align: center; font-weight: bold;">Coluna 2</th>
-                <th style="border: 1px solid black; text-align: center; font-weight: bold;">Coluna 3</th>
-                <th style="border: 1px solid black; text-align: center; font-weight: bold;">Coluna 4</th>
-                <th style="border: 1px solid black; text-align: center; font-weight: bold;">Coluna 5</th>
-                <th style="border: 1px solid black; text-align: center; font-weight: bold;">Coluna 6</th>
-                <th style="border: 1px solid black; text-align: center; font-weight: bold;">Coluna 7</th>
-                <th style="border: 1px solid black; text-align: center; font-weight: bold;">Coluna 8</th>
-                <th style="border: 1px solid black; text-align: center; font-weight: bold;">Coluna 9</th>
+            <tr onclick="alternarLinhaInterativa(this)">
+                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 1</th>
+                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 2</th>
+                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 3</th>
+                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 4</th>
+                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 5</th>
+                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 6</th>
+                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 7</th>
+                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 8</th>
+                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 9</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
+<script>
+function alternarLinhaInterativa(linha) {
+  linha.classList.toggle("linha-selecionada");
+}
+</script>
+<style>
+.linha-selecionada { background-color: yellow !important; }
+</style>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -61,7 +69,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -72,7 +80,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -83,7 +91,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -94,7 +102,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -105,7 +113,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -116,7 +124,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -127,7 +135,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -138,7 +146,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -149,7 +157,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -160,7 +168,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -171,7 +179,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -182,7 +190,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -193,7 +201,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -204,7 +212,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -215,7 +223,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -226,7 +234,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -237,7 +245,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -248,7 +256,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -259,7 +267,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
@@ -270,7 +278,7 @@
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
             </tr>
-            <tr>
+            <tr onclick="alternarLinhaInterativa(this)">
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
                 <td style="border: 1px solid black; text-align: center;">c</td>
