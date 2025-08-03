@@ -1,11 +1,13 @@
-
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <meta charset="utf-8"/>
-    <title>Página com Tabela Preenchida</title>
-    <style>
-        body {
+<meta charset="utf-8"/>
+<title>
+   Caderno de Ensaios
+  </title>
+<style>
+   body {
             margin: 0;
             padding: 0;
             background: #ddd;
@@ -20,296 +22,1022 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
             position: relative;
         }
-        table, th, td {
-            border: 1px solid black;
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
-        th, td {
-            padding: 4px;
+        h2 {
+            text-align: center;
+            color: blue;
+            font-size: 16px;
+            margin-top: 0;
         }
-    
-.linha-cabecalho td {
-    background-color: white !important;
-    cursor: default;
+        .indice {
+            margin-top: 30px;
+            line-height: 2.2;
+            font-size: 14px;
+        }
+        .botao-indice {
+            padding: 2px 8px;
+            font-size: 14px;
+            margin-left: 15px;
+        }
+        .subitem {
+            display: none;
+            margin-left: 20px;
+        }
+  </style>
+<script>
+   function alternarLinha(celula) {
+    var linha = celula.parentNode;
+    var corAtual = linha.style.backgroundColor;
+    var novaCor = (corAtual === "yellow") ? "white" : "yellow";
+    linha.style.backgroundColor = novaCor;
+    var colunas = linha.getElementsByTagName("td");
+    for (var i = 0; i < colunas.length; i++) {
+        colunas[i].style.backgroundColor = novaCor;
+    }
 }
-.linha-cabecalho:hover td {
-    background-color: white !important;
+  </script>
+<style>
+   .linha-interativa {
+    transition: background-color 0.2s ease;
+    cursor: pointer;
 }
-</style>
+.linha-interativa.selecionada {
+    background-color: yellow;
+}
+  </style>
 </head>
 <body>
 
-<div class="pagina">
-<div style="background-color: yellow; padding: 10px; text-align: center; font-weight: bold; font-size: 16px; margin-bottom: 20px;">
-    CTAU (TAU)
-   </div>
-    
-    <table style="width:100%; border-collapse: collapse; font-size: 12px; border: 2px solid black;">
-        <thead>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 1</th>
-                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 2</th>
-                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 3</th>
-                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 4</th>
-                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 5</th>
-                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 6</th>
-                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 7</th>
-                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 8</th>
-                <th style="border: 2px solid black; text-align: center; font-weight: bold;">Coluna 9</th>
-            </tr>
-        </thead>
-        <tbody>
-<script>
-function alternarLinhaInterativa(linha) {
-  linha.classList.toggle("linha-selecionada");
-}
-</script>
-<style>
-.linha-selecionada { background-color: yellow !important; }
 
-.linha-cabecalho td {
-    background-color: white !important;
-    cursor: default;
-}
-.linha-cabecalho:hover td {
-    background-color: white !important;
-}
-</style>
-            <tr class="linha-cabecalho">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-            <tr onclick="alternarLinhaInterativa(this)">
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;"><span style="color: blue;">c</span></td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-                <td style="border: 1px solid black; text-align: center;">c</td>
-            </tr>
-
-        </tbody>
-    </table>
+<div class="pagina" id="capa">
+    <h1 style="text-align: center; font-size: 24px; margin-top: 200px;">CADERNO DE ENSAIOS E PARAMETRIZAÇÕES<br>Versão 6.1</h1>
+    <h2 style="text-align: center; font-size: 18px; margin-top: 40px; color: black;">Manter na sala da MEG1 – EL.139</h2>
+    <div style="text-align: left; margin-top: 60px; font-size: 14px; line-height: 1.8;">
+        1 – Lista de ensaios com ULP<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<a href="#umcc" style="color:blue; text-decoration:underline; cursor:pointer;">1.1 - UMCC</a><br>
+        2 – Lista de ensaios com SCADA<br>
+        3 – Lista de ensaios dos anunciadores TGA<br>
+        4 – Lista de ensaios contatores CCAR<br>
+        5 – Tabela de conversão de RTD<br>
+        6 – Tabela de parametrização Yokogawas UM331<br>
+        7 – Tabela de parametrização Yokogawas UM33A<br>
+        8 – Tabela de parametrização PRESSYS 2030 LIGHT 1520-01<br>
+        9 – Tabela de parametrização PRESSYS 2036 LIGHT 1620-01<br>
+        10 – Configuração Sonda Endress+Hauser Multicap T PWB e GGB 9A/18A<br>
+        11 – Configuração sonda Sytrans LC 500 - PWB e GGB<br>
+        12 – Verificação Sonda Minisonic 600<br>
+        13 – Procedimento sonda Liquicap FEI50H (LIP)<br>
+        14 – Parametrização Magnetrol M300 – LIP<br>
+        15 – Parametrização Condutivímetros PWB 9A – 18A<br>
+        16 – Tabela de parametrização PRESSYS 2012 Energy – GTB3<br>
+        17 - Tabela de parametrização PRESSYS 2030 LIGHT EE-0457 16 - PCR 12/34<br>
+        18 – Localizacion RTD’s<br>
+        19 – Creep Detector<br>
+        20 – Localizações dos RTD’s Gerador<br>
+        21 – Dispositivos Primários SCADA/SDSC U9A-U18A<br>
+        22 – Procedimento para manutenção e ensaio QCI<br>
+        23 – Parametrização Sentron 4200 (multimedidor)<br>
+        24 – Configuração Relé T119din (TAU 18A)<br>
+        25 – Procedimento Sonda Nivel Agua Pura 09A/18A<br>
+        26 – Relé de frequência URPF4000<br>
+        27 – Parametrização do Relé 39LW - LIP<br>
+        28 – Lista telefônica
+    </div>
     <div style="position: absolute; bottom: 20px; right: 30px; font-size: 12px; color: gray;">Página 1</div>
 </div>
+<div class="pagina" id="pagina1">
+<a name="umcc"></a>
+<div style="text-align:right; margin-bottom: 10px;"><a href="#capa" style="color:blue; text-decoration:underline; font-size:14px;">⬅ Voltar ao índice (1.1 - UMCC)</a></div>
+<div class="pagina" id="pagina1">
+<a name="umcc"></a>
+<div style="text-align:right; margin-bottom: 10px;"><a href="#capa" style="color:blue; text-decoration:underline; font-size:14px;">⬅ Voltar ao índice (1.1 - UMCC)</a></div>
+<h2 style="color: black; text-align: center; font-size: 16px;">
+    Dispositivos Primarios - SMMG.DT - MEG-1 <span style="color:blue;">(AS AÇÕES A SEREM REALIZADAS ESTÃO EM AZUL)</span>
+   </h2>
+<div style="background-color: yellow; padding: 10px; text-align: center; font-weight: bold; font-size: 16px; margin-bottom: 20px;">
+    UMCC
+   </div>
+<table style="width:100%; border-collapse: collapse; font-size: 12px; margin-top: 20px; border: 2px solid black;">
+<thead>
+<tr>
+<th style="border: 2px solid black;">
+       EVENTO
+      </th>
+<th style="border: 2px solid black;">
+       D.PRIM.
+      </th>
+<th style="border: 2px solid black;">
+       CONTATO
+      </th>
+<th style="border: 2px solid black;">
+       RÉGUA
+      </th>
+<th style="border: 2px solid black;">
+       BORNE
+      </th>
+<th style="border: 2px solid black;">
+       TGA
+      </th>
+<th style="border: 2px solid black;">
+       ULP
+      </th>
+<th style="border: 2px solid black;">
+       BLOQUEIO
+      </th>
+<th style="border: 2px solid black;">
+       TEMP.
+      </th>
+</tr>
+</thead>
+<tbody>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">
+       
+      </td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;; cursor: pointer;">
+       Q1SRX
+      </td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">
+       23-24
+      </td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">
+       X1.3
+      </td>
+<td onclick="alternarLinha(this)" style="color: blue; border: 1px solid black; text-align: center;; cursor: pointer;">
+<span style="color: blue;">
+        19-18
+       </span>
+</td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">
+       52.2
+      </td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">
+       23
+      </td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">
+       
+      </td>
+<td onclick="alternarLinha(this)" style="border: 1px solid black; text-align: center;; cursor: pointer;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       F1X
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       44-43
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       X1.3
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        19-16
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+       52.2
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       FO
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       22-21
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       X1.3
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        19-20
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+       52.2
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       Q1
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       44-43
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       X1.6
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        23-22
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+       57.1
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       FO
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       22-21
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X1.6
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        23-21
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       57.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       F1X
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       44-43 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X1.6 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        23-20
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       57.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Q1 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+      44-43 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+      X1.7 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        23-22 
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       58.1 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+      23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       FO 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       22-21 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X1.7 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        23-21
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       58.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+      F1X 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       44-43 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+      X1.7 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        23-20
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       58.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Q1 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       24-23 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X2.5.2 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        19-18
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       59.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       FO 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       22-23 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+      X2.5.2 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        19-20
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       59.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       F1X 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+      44-43 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+      X2.5.2 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        19-16
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       59.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Q1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       24-23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X2.71
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        19-18
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       60.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       FO 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+      22-21 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X2.71 
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        19-20
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       60.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       F1X
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       44-43
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X2.71
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        19-16
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       60.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       27CATD
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       25-26
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X4.3
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        18-19
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       45.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       K1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       44-43
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X4.3
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        27-28
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       46.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       27NSX
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       81-82
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X6.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        131.127
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       42.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       41
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       27ASX
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       71-72
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X6.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        132-128
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       43.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       21
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       27MCX
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       71-72
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X6.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        130-126
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       41.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       22
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       81X
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       53-54
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X6.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        133-129
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       49.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       F2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       95-96
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X6.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        134-135
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       50.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+        Atuação de bloqueio 86N(real)
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       86
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       C5/D5-C7/D7
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X6.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        61-65
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       47.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       86N
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       F1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       95-96
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X6.1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        134-135
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       50.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       27CBTA
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       25-26
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X8.5
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        18-19
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       45.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       K1
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       44-43
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X8.5
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        27-28
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       46.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       Disj. Carga Disparado. Ver TGA
+       <br/>
+       FL. 4/8 pos.24 (fim da custura)
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       QISr gav. 10.5
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       7-8
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X10.5
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        3-11
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       48.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black;; text-align: center;">
+       Disj. Carga Disparado. Ver TGA
+       <br/>
+       FL. 4/8 pos.24 (fim da custura)
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       QISr gav. 10.6
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       7-8
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       X10.6
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+<span style="color: blue;">
+        3-11
+       </span>
+</td>
+<td style="border: 1px solid black;; text-align: center;">
+       48.2
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       23
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black;; text-align: center;">
+       Inst
+      </td>
+</tr>
 
+</tbody>
+</table>
+<div style="position: absolute; bottom: 20px; right: 30px; font-size: 12px; color: gray;">Página 1</div></div>
+<script>
+   function alternarCor(elemento) {
+    if (elemento.style.backgroundColor === "yellow") {
+        elemento.style.backgroundColor = "white";
+    } else {
+        elemento.style.backgroundColor = "yellow";
+    }
+}
+  </script>
 </body>
 </html>
