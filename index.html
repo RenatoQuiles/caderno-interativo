@@ -76,14 +76,14 @@
 
   <!-- ===== [NOVO] Botão de e-mail alinhado à direita ===== -->
   <div style="text-align:right; margin-top: 10px;">
-    <button type="button" class="btn-email" onclick="openEmail()">Enviar e-mail</button>
+    <button type="button" class="btn-email" onclick="openEmail()">Clique Aqui para reportar erro/atualização deste caderno</button>
   </div>
 
   <div class="indice">
     <!-- Botão que mostra/oculta os subitens (azul e sublinhado) -->
     <div onclick="toggleSubitensULP()" 
          style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
-      1 – Lista de ensaios com ULP++
+      1 – Lista de ensaios com ULP
     </div>
 
     <!-- Subíndices inicialmente ocultos -->
@@ -196,9 +196,9 @@ function toggleSubitensULP() {
    - bodyText: corpo do e-mail
 */
 function openEmail() {
-  const toEmail = "destinatario@exemplo.com";   // TODO: troque aqui
+  const toEmail = "renatoq@itaipu.gov.br";   // TODO: troque aqui
   const ccEmail = "copia@exemplo.com";          // TODO: troque aqui
-  const subjectText = "Assunto do e-mail";      // TODO: troque aqui
+  const subjectText = "Alteração caderno de parametrizações";      // TODO: troque aqui
   const bodyText = "Mensagem inicial...";       // TODO: troque aqui
 
   const to = encodeURIComponent(toEmail);
