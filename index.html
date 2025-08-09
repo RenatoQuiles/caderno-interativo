@@ -4,59 +4,48 @@
   <meta charset="utf-8"/>
   <title>Caderno de Ensaios - 120 Páginas</title>
   <style>
-    /* ============================================================
-       ESTILOS GERAIS DO DOCUMENTO (aparência na tela e impressão)
-       Você não precisa mexer aqui para alterar textos/conteúdo.
-       ============================================================ */
-
-    /* Página inteira do navegador */
+    /* ===== ESTILO GERAL DA PÁGINA ===== */
     body {
-      margin: 0;                 /* remove margens externas */
-      padding: 0;                /* remove espaçamentos internos */
-      background: #ddd;          /* cor de fundo fora das páginas */
-      font-family: Arial, sans-serif;  /* fonte padrão */
+      margin: 0;
+      padding: 0;
+      background: #ddd; /* cor de fundo cinza fora das páginas */
+      font-family: Arial, sans-serif; /* tipo de letra */
     }
 
-    /* Cada página A4 simulada na tela */
+    /* ===== ESTILO PARA CADA PÁGINA ===== */
     .pagina {
-      width: 794px;              /* largura aproximada A4 em px (96dpi) */
-      height: 1123px;            /* altura aproximada A4 em px (96dpi) */
-      background: #fff;          /* fundo branco como papel */
-      margin: 40px auto;         /* centraliza e dá espaço entre páginas */
-      padding: 50px 60px;        /* margens internas da página */
-      box-shadow: 0 0 10px rgba(0,0,0,0.2); /* sombra para efeito de papel */
-      position: relative;        /* necessário para posicionar rodapé */
-      page-break-after: always;  /* garante quebra na impressão */
+      width: 794px; /* largura A4 em pixels */
+      height: 1123px; /* altura A4 em pixels */
+      background: #fff; /* cor de fundo branca */
+      margin: 40px auto; /* centraliza na tela */
+      padding: 50px 60px; /* espaço interno (margem dentro da página) */
+      box-shadow: 0 0 10px rgba(0,0,0,0.2); /* sombra da página */
+      position: relative;
+      page-break-after: always; /* quebra de página na impressão */
     }
 
-    /* Numeração do rodapé da página */
+    /* ===== ESTILO DO RODAPÉ ===== */
     .numero-pagina {
-      position: absolute; /* fixa dentro da página */
-      bottom: 20px;       /* distância da borda inferior */
-      right: 30px;        /* distância da borda direita */
+      position: absolute;
+      bottom: 20px; /* distância do fundo da página */
+      right: 30px; /* distância da borda direita */
       font-size: 12px;
       color: gray;
     }
 
-    /* ============================================================
-       BLOCO DO ÍNDICE DA PÁGINA 1
-       - Este bloco tem altura limitada para não invadir o rodapé.
-       - Você pode ajustar o valor de "max-height" (ver PONTO SEGURO).
-       ============================================================ */
+    /* ===== ÁREA DO ÍNDICE COM CORTE ANTES DO RODAPÉ ===== */
     .indice {
       text-align: left;
       margin-top: 60px;
       font-size: 14px;
-      line-height: 1.8;
-      /* ===== PONTO SEGURO PARA ALTERAR =====
-         Aumente/diminua o valor abaixo para controlar onde o índice "corta".
-         Ex.: 280px, 320px, etc.  */
-      max-height: calc(100% - 300px);
-      overflow: hidden;   /* tudo que passar dessa altura fica invisível */
+      line-height: 1.8; /* espaçamento entre linhas */
+      /* Limita a altura para que não invada o rodapé */
+      max-height: calc(100% - 300px); /* PONTO SEGURO PARA ALTERAR valor para ajustar */
+      overflow: hidden; /* esconde conteúdo que ultrapassar */
       box-sizing: border-box;
     }
 
-    /* Botão de e-mail (estilo visual) */
+    /* ===== ESTILO DO BOTÃO DE E-MAIL ===== */
     .btn-email {
       appearance: none;
       border: 1px solid #1e5bd9;
@@ -66,70 +55,55 @@
       border-radius: 6px;
       font-size: 14px;
       cursor: pointer;
-      text-decoration: underline; /* sublinhado, como você pediu */
-      white-space: normal;        /* permite quebra de linha */
-      text-align: center;         /* centraliza as 2 linhas */
+      text-decoration: underline; /* sublinha o texto */
+      white-space: pre-line; /* permite quebrar linha no texto */
     }
     .btn-email:active { transform: translateY(1px); }
     .btn-email:focus { outline: 2px solid rgba(30,91,217,0.35); outline-offset: 2px; }
 
-    /* Impressão: mostramos o índice completo e escondemos o botão */
+    /* ===== AJUSTES PARA IMPRESSÃO ===== */
     @media print {
       .indice {
         max-height: none !important;
         height: auto !important;
         overflow: visible !important;
       }
-      .btn-email { display: none !important; }
+      .btn-email { display: none !important; } /* botão não aparece no impresso */
     }
   </style>
 </head>
 <body>
 
-<!-- ============================================================
-     PÁGINA 1 (CAPA + ÍNDICE)
-     Tudo que você provavelmente vai querer editar tem a marca "PONTO SEGURO".
-     ============================================================ -->
+<!-- ===== PÁGINA 1 - CAPA ===== -->
 <div class="pagina" id="pagina1">
-
-  <!-- ===== Título da capa ===== -->
-  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (texto do título e versão) -->
+  <!-- PONTO SEGURO PARA ALTERAR o título -->
   <h1 style="text-align: center; font-size: 24px; margin-top: 50px;">
     CADERNO DE ENSAIOS E PARAMETRIZAÇÕES<br>Versão 6.1
   </h1>
 
-  <!-- ===== Subtítulo ===== -->
-  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (localização/observação) -->
+  <!-- PONTO SEGURO PARA ALTERAR o subtítulo -->
   <h2 style="text-align: center; font-size: 18px; margin-top: 40px; color: black;">
     Manter na sala da MEG1 – EL.139
   </h2>
 
-  <!-- ===== Botão para abrir um novo e-mail =====
-       O texto já está em 2 linhas e sublinhado.
-       Você pode editar o texto do botão à vontade. -->
+  <!-- BOTÃO DE E-MAIL (você pode alterar o texto no botão e os e-mails na função openEmail) -->
   <div style="text-align:right; margin-top: 10px;">
-    <!-- ===== PONTO SEGURO PARA ALTERAR ===== (texto do botão) -->
     <button type="button" class="btn-email" onclick="openEmail()">
-      Clique Aqui para reportar erro/atualização<br>deste caderno
+      Clique Aqui para reportar erro/
+      atualização deste caderno
     </button>
   </div>
 
-  <!-- ===== ÍNDICE (com subitens do item 1 que abrem/fecham ao clicar) ===== -->
+  <!-- ===== INÍCIO DO ÍNDICE ===== -->
   <div class="indice">
-
-    <!-- Cabeçalho do item 1 (clique para mostrar/ocultar subitens) -->
-    <!-- Você pode alterar o texto, mas mantenha o onclick. -->
-    <!-- ===== PONTO SEGURO PARA ALTERAR ===== (apenas o texto) -->
-    <div onclick="toggleSubitensULP()"
+    <!-- Item clicável para mostrar subitens -->
+    <div onclick="toggleSubitensULP()" 
          style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
       1 – Lista de ensaios com ULP
     </div>
 
-    <!-- Subitens do item 1 (aparecem/somem ao clicar no item acima) -->
-    <!-- Você pode editar os textos, reordenar, adicionar/remover linhas.
-         Se criar novos subitens, copie o padrão de <a href> + <br>. -->
+    <!-- Subitens ocultos por padrão -->
     <div id="subitens-ulp" style="display:none; margin-left:20px;">
-      <!-- ===== PONTO SEGURO PARA ALTERAR ===== (subitens 1.1 ~ 1.6) -->
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#umcc" style="color:blue; text-decoration:underline; cursor:pointer;">1.1 - UMCC</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kk" style="color:blue; text-decoration:underline; cursor:pointer;">1.2 - KK</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ste/stau" style="color:blue; text-decoration:underline; cursor:pointer;">1.3 - STE / STAU</a><br>
@@ -138,116 +112,70 @@
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm52.3" style="color:blue; text-decoration:underline; cursor:pointer;">1.6 - QTM 52.3</a><br>
     </div>
 
-    <!-- Demais itens do índice (2 a 28)
-         Você pode mexer nos textos/ordem à vontade (só manter cada linha com <br> no final). -->
-    <!-- ===== PONTO SEGURO PARA ALTERAR ===== (itens 2 ~ 28 do índice) -->
+    <!-- PONTO SEGURO PARA ALTERAR a lista de itens -->
     2 – Lista de ensaios com SCADA<br>
     3 – Lista de ensaios dos anunciadores TGA<br>
-    4 – Lista de ensaios contatores CCAR<br>
-    5 – Tabela de conversão de RTD<br>
-    6 – Tabela de parametrização Yokogawas UM331<br>
-    7 – Tabela de parametrização Yokogawas UM33A<br>
-    8 – Tabela de parametrização PRESSYS 2030 LIGHT 1520-01<br>
-    9 – Tabela de parametrização PRESSYS 2036 LIGHT 1620-01<br>
-    10 – Configuração Sonda Endress+Hauser Multicap T PWB e GGB 9A/18A<br>
-    11 – Configuração sonda Sytrans LC 500 - PWB e GGB<br>
-    12 – Verificação Sonda Minisonic 600<br>
-    13 – Procedimento sonda Liquicap FEI50H (LIP)<br>
-    14 – Parametrização Magnetrol M300 – LIP<br>
-    15 – Parametrização Condutivímetros PWB 9A – 18A<br>
-    16 – Tabela de parametrização PRESSYS 2012 Energy – GTB3<br>
-    17 - Tabela de parametrização PRESSYS 2030 LIGHT EE-0457 16 - PCR 12/34<br>
-    18 – Localizacion RTD’s<br>
-    19 – Creep Detector<br>
-    20 – Localizações dos RTD’s Gerador<br>
-    21 – Dispositivos Primários SCADA/SDSC U9A-U18A<br>
-    22 – Procedimento para manutenção e ensaio QCI<br>
-    23 – Parametrização Sentron 4200 (multimedidor)<br>
-    24 – Configuração Relé T119din (TAU 18A)<br>
-    25 – Procedimento Sonda Nivel Agua Pura 09A/18A<br>
-    26 – Relé de frequência URPF4000<br>
-    27 – Parametrização do Relé 39LW - LIP<br>
+    ...
     28 – Lista telefônica
   </div>
-
-  <!-- Rodapé (número da página) -->
-  <div class="numero-pagina">Página 1</div>
+  <!-- ===== RODAPÉ DA PÁGINA 1 ===== -->
+  <div class="numero-pagina">01/08/2025 - RAQ</div>
 </div>
 
-<!-- ============================================================
-     PÁGINA 2
-     Você pode preencher o conteúdo destas páginas como quiser.
-     Basta inserir textos, tabelas, imagens, etc., entre as <div class="pagina">.
-     ============================================================ -->
+<!-- ===== PÁGINA 2 ===== -->
 <div class="pagina" id="pagina2">
-  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (conteúdo da Página 2) -->
   <div class="numero-pagina">Página 2</div>
 </div>
 
-<!-- ============================================================
-     PÁGINA 3
-     ============================================================ -->
+<!-- ===== PÁGINA 3 ===== -->
 <div class="pagina" id="pagina3">
-  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (conteúdo da Página 3) -->
   <div class="numero-pagina">Página 3</div>
 </div>
 
-<!-- ============================================================
-     PÁGINA 4 (exemplo com título genérico)
-     ============================================================ -->
+<!-- ===== PÁGINA 4 ===== -->
 <div class="pagina" id="pagina4">
-  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (título e conteúdo) -->
   <h2 style="text-align: center; font-size: 18px;">PÁGINA 4</h2>
   <p style="font-size: 14px; color: gray;">[INSIRA O CONTEÚDO AQUI]</p>
   <div class="numero-pagina">Página 4</div>
 </div>
 
-<!-- ============================================================
-     PÁGINA 5 (exemplo com título genérico)
-     ============================================================ -->
+<!-- ===== PÁGINA 5 ===== -->
 <div class="pagina" id="pagina5">
-  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (título e conteúdo) -->
   <h2 style="text-align: center; font-size: 18px;">PÁGINA 5</h2>
   <p style="font-size: 14px; color: gray;">[INSIRA O CONTEÚDO AQUI]</p>
   <div class="numero-pagina">Página 5</div>
 </div>
 
-<!-- ============================================================
-     SCRIPTS (programação que dá comportamento aos botões/links)
-     Você não precisa alterar nada aqui para editar textos.
-     Só edite os pontos marcados como "PONTO SEGURO".
-     ============================================================ -->
+<!-- ===== SCRIPTS ===== -->
 <script>
-/* Mostra/oculta os subitens do item 1 do índice (ULP) */
+/* FUNÇÃO PARA MOSTRAR/OCULTAR SUBITENS */
 function toggleSubitensULP() {
   const bloco = document.getElementById("subitens-ulp");
   const atual = bloco.style.display || "none";
   bloco.style.display = (atual === "none") ? "block" : "none";
 }
 
-/* Abre um novo e-mail:
-   - Primeiro tenta pelo Outlook (se estiver instalado no iPad).
-   - Se não abrir, usa o link padrão "mailto", que chama o app de e-mail padrão. */
+/* FUNÇÃO PARA ABRIR UM NOVO E-MAIL
+   PONTO SEGURO PARA ALTERAR os valores abaixo:
+   - toEmail: destinatário principal
+   - ccEmail: destinatário em cópia
+   - subjectText: assunto do e-mail
+   - bodyText: mensagem inicial
+*/
 function openEmail() {
-  /* ===== PONTO SEGURO PARA ALTERAR =====
-     Coloque aqui os endereços, assunto e mensagem padrão do e-mail. */
-  const toEmail = "renatoq@itaipu.gov.br";    // destinatário principal (TO)
-  const ccEmail = "copia@exemplo.com";        // cópia (CC)
-  const subjectText = "Alteração caderno de parametrizações"; // assunto
-  const bodyText = "Mensagem inicial...";     // corpo do e-mail
+  const toEmail = "destinatario@exemplo.com";   
+  const ccEmail = "copia@exemplo.com";          
+  const subjectText = "Alteração caderno de parametrizações";      
+  const bodyText = "Mensagem inicial...";       
 
-  // Codificação para evitar erros com acentos e caracteres especiais no link
   const to = encodeURIComponent(toEmail);
   const cc = encodeURIComponent(ccEmail);
   const subject = encodeURIComponent(subjectText);
   const body = encodeURIComponent(bodyText);
 
-  // Tenta abrir no Outlook (iOS/iPadOS precisa do app instalado)
   const outlookUrl = `ms-outlook://compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
-  // Se não abrir no Outlook, cai aqui (mailto:)
   const mailtoUrl  = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
 
-  // Heurística simples: se o Outlook não abrir rapidamente, fazemos fallback
   const start = Date.now();
   window.location.href = outlookUrl;
   setTimeout(function() {
