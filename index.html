@@ -19,19 +19,20 @@
       font-family: system-ui, sans-serif;
       background: #f0f2f5;
       color: #111;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .page {
       width: var(--a4-width);
       min-height: var(--a4-height);
-      margin: 12px auto; /* centraliza e empilha as páginas */
+      margin: 12px 0; /* espaço vertical entre páginas */
       background: #fff;
       box-shadow: 0 1.5mm 6mm rgba(0,0,0,.15);
       position: relative;
       padding: calc(var(--page-padding) + var(--header-height)) var(--page-padding) var(--page-padding) var(--page-padding);
-      border-left: 1px solid #ccc;
-      border-right: 1px solid #ccc;
+      border: 1px solid #ccc; /* borda em todos os lados */
     }
 
     .content {
@@ -57,10 +58,13 @@
     .footer .extra { margin-right: auto; color: #555; font-size: 10pt; }
 
     @media (max-width: 768px) {
+      body {
+        padding: 0 10px; /* mantém margem lateral no celular */
+      }
       .page {
         width: 100%;
+        max-width: var(--a4-width);
         min-height: auto;
-        margin: 0 auto 12px auto;
       }
     }
 
@@ -104,10 +108,7 @@
       <h1>CADERNO DE ENSAIOS E PARAMETRIZAÇÕES</h1>
       <p>Manter na sala da MEG1 – EL.139</p>
       <h2>Conteúdo:</h2>
-  <a href="https://outlook.live.com/mail/0/deeplink/compose?to=destinatario1@exemplo.com;destinatario2@exemplo.com&cc=copia1@exemplo.com;copia2@exemplo.com&subject=Assunto%20opcional&body=Texto%20do%20corpo%20(opcional)" target="_blank" class="email-button">Enviar Email (Hotmail/Outlook)</a>
-    </div>    
-
-  <ol>
+      <ol>
         <li>Lista de ensaios com ULP</li>
         <li>Lista de ensaios com SCADA</li>
         <li>Lista de ensaios dos anunciadores TGA</li>
@@ -138,13 +139,13 @@
         <li>Lista telefônica</li>
       </ol>
       <p><strong>Índice</strong></p>
-    
+      <a href="https://outlook.live.com/mail/0/deeplink/compose?to=destinatario1@exemplo.com;destinatario2@exemplo.com&cc=copia1@exemplo.com;copia2@exemplo.com&subject=Assunto%20opcional&body=Texto%20do%20corpo%20(opcional)" target="_blank" class="email-button">Enviar Email (Hotmail/Outlook)</a>
+    </div>
     <footer class="footer"><span class="extra">01/08/2025 - RAQ</span><span>Página 1 de 5</span></footer>
   </section>
   <section class="page"><div class="content"><h2>Página 2</h2></div><footer class="footer"><span>Página 2 de 5</span></footer></section>
   <section class="page"><div class="content"><h2>Página 3</h2></div><footer class="footer"><span>Página 3 de 5</span></footer></section>
   <section class="page"><div class="content"><h2>Página 4</h2></div><footer class="footer"><span>Página 4 de 5</span></footer></section>
   <section class="page"><div class="content"><h2>Página 5</h2></div><footer class="footer"><span>Página 5 de 5</span></footer></section>
-<section class="page"><div class="content"><h2>Página 5</h2></div><footer class="footer"><span>Página 6 de 6</span></footer></section>
 </body>
 </html>
