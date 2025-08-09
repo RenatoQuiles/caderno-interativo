@@ -28,19 +28,23 @@
       color: gray;
     }
 
-    /* Área do índice com altura fixa e corte de conteúdo */
+    /* Área do índice com corte antes do rodapé */
     .indice {
       text-align: left;
       margin-top: 60px;
       font-size: 14px;
       line-height: 1.8;
-      height: 800px; /* Ajuste conforme necessário */
+      /* não deixa passar da área útil da página;
+         ajuste 180px conforme necessário para parar um pouco antes do rodapé */
+      max-height: calc(100% - 180px);
       overflow: hidden;
+      box-sizing: border-box;
     }
 
     /* No modo de impressão, mostrar tudo */
     @media print {
       .indice {
+        max-height: none !important;
         height: auto !important;
         overflow: visible !important;
       }
