@@ -5,58 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projeto A4 – 5 páginas</title>
   <style>
-    /* ==========================================================
-       CONFIGURAÇÃO GERAL
-       - Define o tamanho da página para A4 ao imprimir
-       - Define tipografia e resets básicos
-       ========================================================== */
-
     :root {
       --a4-width: 210mm;
       --a4-height: 297mm;
-      --page-padding: 15mm;  /* espaço de conteúdo dentro da página */
-      --footer-height: 14mm; /* altura reservada para o rodapé */
-      --header-height: 0mm;  /* ajuste se quiser cabeçalho fixo */
+      --page-padding: 15mm;
+      --footer-height: 14mm;
+      --header-height: 0mm;
     }
 
     * { box-sizing: border-box; }
-    html, body { height: 100%; }
+    html, body { height: 100%; margin: 0; }
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
-      background: #f0f2f5; /* apenas para visualização na tela */
+      font-family: system-ui, sans-serif;
+      background: #f0f2f5;
       color: #111;
     }
 
-    /* ==========================================================
-       ESTILO DE CADA PÁGINA (simulação de página A4 na tela)
-       ========================================================== */
     .page {
       width: var(--a4-width);
       min-height: var(--a4-height);
-      margin: 12px auto;                 /* espaço entre páginas na tela */
+      margin: 12px auto;
       background: #fff;
       box-shadow: 0 1.5mm 6mm rgba(0,0,0,.15);
       position: relative;
-      padding: calc(var(--page-padding) + var(--header-height)) var(--page-padding) calc(var(--page-padding) + var(--footer-height)) var(--page-padding);
+      padding: calc(var(--page-padding) + var(--header-height)) var(--page-padding) var(--page-padding) var(--page-padding);
     }
 
-    /* Conteúdo principal dentro da página */
     .content {
-      /* use min-height para empurrar o rodapé para o fim visual */
-      min-height: calc(var(--a4-height) - var(--page-padding)*2 - var(--footer-height) - var(--header-height));
+      min-height: calc(var(--a4-height) - var(--page-padding)*2 - var(--header-height) - var(--footer-height));
     }
 
-    /* Rodapé fixo no final da página */
     .footer {
       position: absolute;
       left: var(--page-padding);
       right: var(--page-padding);
-      bottom: var(--page-padding);
+      bottom: 5mm; /* mais embaixo */
       height: var(--footer-height);
       display: flex;
       align-items: center;
-      justify-content: flex-end; /* número no canto inferior direito */
+      justify-content: flex-end;
       font-size: 11pt;
       color: #333;
       border-top: 0.2mm solid #ddd;
@@ -66,22 +53,15 @@
 
     .footer .extra { margin-right: auto; color: #555; font-size: 10pt; }
 
-    h1, h2, h3 { margin: 0 0 8px 0; }
-    p { line-height: 1.35; margin: 0 0 10px 0; }
-
-    /* ==========================================================
-       MODO DE IMPRESSÃO (remove sombras, faz page-breaks)
-       ========================================================== */
     @media print {
       @page {
         size: A4;
-        margin: 0; /* como criamos margens internas, deixamos 0 aqui */
+        margin: 0;
       }
       html, body { background: #fff; }
       .page {
         margin: 0;
         box-shadow: none;
-        /* força quebra de página após cada .page (menos na última) */
         page-break-after: always;
         break-after: page;
       }
@@ -90,88 +70,19 @@
         break-after: auto;
       }
     }
-
-    /* Pequenos estilos utilitários para exemplos */
-    .placeholder {
-      padding: 8px 10px;
-      border-radius: 6px;
-      background: #f7f9fc;
-      border: 1px dashed #cfd7e3;
-      margin: 8px 0;
-    }
   </style>
 </head>
 <body>
-
-  <!-- ========================================================
-       INÍCIO DA PÁGINA 1
-       Descrição: Página de capa / introdução
-       ======================================================== -->
-  <section class="page" aria-label="Página 1">
+  <section class="page">
     <div class="content">
       <h1>Projeto HTML – A4 (Página 1)</h1>
-      <p>Subtítulo da sua capa ou introdução. Substitua este texto pelo conteúdo real do seu projeto.</p>
-      <div class="placeholder">Coloque aqui logotipo, título do trabalho, autor, etc.</div>
+      <p>Substitua este texto pelo conteúdo real.</p>
     </div>
-    <footer class="footer">
-      <!-- Texto extra EXCLUSIVO da primeira página -->
-      <span class="extra">01/08/2025 - RAQ</span>
-      <span>Página 1 de 5</span>
-    </footer>
+    <footer class="footer"><span class="extra">01/08/2025 - RAQ</span><span>Página 1 de 5</span></footer>
   </section>
-  <!-- ============================ FIM DA PÁGINA 1 ============================ -->
-
-  <!-- ========================================================
-       INÍCIO DA PÁGINA 2
-       ======================================================== -->
-  <section class="page" aria-label="Página 2">
-    <div class="content">
-      <h2>Seção 1 (Página 2)</h2>
-      <p>Conteúdo da página 2. Você pode inserir tabelas, textos, imagens (que se ajustem ao espaço da página) e listas.</p>
-      <div class="placeholder">Exemplo de bloco de conteúdo</div>
-    </div>
-    <footer class="footer"><span>Página 2 de 5</span></footer>
-  </section>
-  <!-- ============================ FIM DA PÁGINA 2 ============================ -->
-
-  <!-- ========================================================
-       INÍCIO DA PÁGINA 3
-       ======================================================== -->
-  <section class="page" aria-label="Página 3">
-    <div class="content">
-      <h2>Seção 2 (Página 3)</h2>
-      <p>Conteúdo da página 3. Para garantir boa impressão, mantenha imagens com largura máxima de 100% do conteúdo.</p>
-      <div class="placeholder">Mais conteúdo de exemplo...</div>
-    </div>
-    <footer class="footer"><span>Página 3 de 5</span></footer>
-  </section>
-  <!-- ============================ FIM DA PÁGINA 3 ============================ -->
-
-  <!-- ========================================================
-       INÍCIO DA PÁGINA 4
-       ======================================================== -->
-  <section class="page" aria-label="Página 4">
-    <div class="content">
-      <h2>Seção 3 (Página 4)</h2>
-      <p>Conteúdo da página 4. Ajuste o texto conforme necessário. Se o conteúdo ultrapassar o espaço, mova para a próxima página.</p>
-      <div class="placeholder">Dica: evite elementos com altura fixa muito grande.</div>
-    </div>
-    <footer class="footer"><span>Página 4 de 5</span></footer>
-  </section>
-  <!-- ============================ FIM DA PÁGINA 4 ============================ -->
-
-  <!-- ========================================================
-       INÍCIO DA PÁGINA 5
-       ======================================================== -->
-  <section class="page" aria-label="Página 5">
-    <div class="content">
-      <h2>Conclusão (Página 5)</h2>
-      <p>Resumo final, referências ou anexos. Pronto para imprimir.</p>
-      <div class="placeholder">Espaço para observações finais.</div>
-    </div>
-    <footer class="footer"><span>Página 5 de 5</span></footer>
-  </section>
-  <!-- ============================ FIM DA PÁGINA 5 ============================ -->
-
+  <section class="page"><div class="content"><h2>Página 2</h2></div><footer class="footer"><span>Página 2 de 5</span></footer></section>
+  <section class="page"><div class="content"><h2>Página 3</h2></div><footer class="footer"><span>Página 3 de 5</span></footer></section>
+  <section class="page"><div class="content"><h2>Página 4</h2></div><footer class="footer"><span>Página 4 de 5</span></footer></section>
+  <section class="page"><div class="content"><h2>Página 5</h2></div><footer class="footer"><span>Página 5 de 5</span></footer></section>
 </body>
 </html>
