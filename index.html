@@ -19,16 +19,20 @@
       font-family: system-ui, sans-serif;
       background: #f0f2f5;
       color: #111;
+      display: flex;
+      justify-content: center;
     }
 
     .page {
       width: var(--a4-width);
       min-height: var(--a4-height);
-      margin: 12px auto;
+      margin: 12px;
       background: #fff;
       box-shadow: 0 1.5mm 6mm rgba(0,0,0,.15);
       position: relative;
       padding: calc(var(--page-padding) + var(--header-height)) var(--page-padding) var(--page-padding) var(--page-padding);
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
     }
 
     .content {
@@ -53,6 +57,18 @@
 
     .footer .extra { margin-right: auto; color: #555; font-size: 10pt; }
 
+    @media (max-width: 768px) {
+      body {
+        padding: 0;
+      }
+      .page {
+        width: 100%;
+        min-height: auto;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+      }
+    }
+
     @media print {
       @page {
         size: A4;
@@ -64,6 +80,7 @@
         box-shadow: none;
         page-break-after: always;
         break-after: page;
+        border: none;
       }
       .page:last-child {
         page-break-after: auto;
@@ -123,9 +140,7 @@
         <li>Lista telefônica</li>
       </ol>
       <p><strong>Índice</strong></p>
-      <!-- Substitua os e-mails abaixo. Separe múltiplos e-mails com ponto e vírgula ';'.
-     Você também pode adicionar &bcc= para cópia oculta, &subject= e &body=. -->
-<a href="https://outlook.live.com/mail/0/deeplink/compose?to=destinatario1@exemplo.com;destinatario2@exemplo.com&cc=copia1@exemplo.com;copia2@exemplo.com&subject=Assunto%20opcional&body=Texto%20do%20corpo%20(opcional)" target="_blank" class="email-button">Enviar Email (Hotmail/Outlook)</a>
+      <a href="https://outlook.live.com/mail/0/deeplink/compose?to=destinatario1@exemplo.com;destinatario2@exemplo.com&cc=copia1@exemplo.com;copia2@exemplo.com&subject=Assunto%20opcional&body=Texto%20do%20corpo%20(opcional)" target="_blank" class="email-button">Enviar Email (Hotmail/Outlook)</a>
     </div>
     <footer class="footer"><span class="extra">01/08/2025 - RAQ</span><span>Página 1 de 5</span></footer>
   </section>
