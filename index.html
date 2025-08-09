@@ -35,11 +35,25 @@
       font-size: 14px;
       line-height: 1.8;
       /* não deixa passar da área útil da página;
-         ajuste 1000px conforme necessário para parar um pouco antes do rodapé */
+         ajuste 300px conforme necessário para parar um pouco antes do rodapé */
       max-height: calc(100% - 300px);
       overflow: hidden;
       box-sizing: border-box;
     }
+
+    /* ===== [NOVO] Estilo simples do botão de e-mail ===== */
+    .btn-email {
+      appearance: none;
+      border: 1px solid #1e5bd9;
+      background: #2b6fff;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .btn-email:active { transform: translateY(1px); }
+    .btn-email:focus { outline: 2px solid rgba(30,91,217,0.35); outline-offset: 2px; }
 
     /* No modo de impressão, mostrar tudo */
     @media print {
@@ -48,6 +62,8 @@
         height: auto !important;
         overflow: visible !important;
       }
+      /* Botão não precisa aparecer no impresso */
+      .btn-email { display: none !important; }
     }
   </style>
 </head>
@@ -58,11 +74,16 @@
   <h1 style="text-align: center; font-size: 24px; margin-top: 50px;">CADERNO DE ENSAIOS E PARAMETRIZAÇÕES<br>Versão 6.1</h1>
   <h2 style="text-align: center; font-size: 18px; margin-top: 40px; color: black;">Manter na sala da MEG1 – EL.139</h2>
 
+  <!-- ===== [NOVO] Botão de e-mail alinhado à direita ===== -->
+  <div style="text-align:right; margin-top: 10px;">
+    <button type="button" class="btn-email" onclick="openEmail()">Enviar e-mail</button>
+  </div>
+
   <div class="indice">
     <!-- Botão que mostra/oculta os subitens (azul e sublinhado) -->
     <div onclick="toggleSubitensULP()" 
          style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
-      1 – Lista de ensaios com ULP--
+      1 – Lista de ensaios com ULP
     </div>
 
     <!-- Subíndices inicialmente ocultos -->
@@ -165,6 +186,39 @@ function toggleSubitensULP() {
   const bloco = document.getElementById("subitens-ulp");
   const atual = bloco.style.display || "none";
   bloco.style.display = (atual === "none") ? "block" : "none";
+}
+
+/* ===== [NOVO] Função para abrir novo e-mail (Outlook -> fallback mailto) =====
+   Substitua os valores abaixo quando quiser:
+   - toEmail: destinatário principal
+   - ccEmail: e-mail em cópia
+   - subjectText: assunto do e-mail
+   - bodyText: corpo do e-mail
+*/
+function openEmail() {
+  const toEmail = "destinatario@exemplo.com";   // TODO: troque aqui
+  const ccEmail = "copia@exemplo.com";          // TODO: troque aqui
+  const subjectText = "Assunto do e-mail";      // TODO: troque aqui
+  const bodyText = "Mensagem inicial...";       // TODO: troque aqui
+
+  const to = encodeURIComponent(toEmail);
+  const cc = encodeURIComponent(ccEmail);
+  const subject = encodeURIComponent(subjectText);
+  const body = encodeURIComponent(bodyText);
+
+  // Tenta o Outlook (iOS/iPadOS: requer app instalado)
+  const outlookUrl = `ms-outlook://compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
+  // Fallback padrão
+  const mailtoUrl  = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
+
+  // Heurística simples: tenta Outlook, se não abrir, cai pro mailto
+  const start = Date.now();
+  window.location.href = outlookUrl;
+  setTimeout(function() {
+    if (Date.now() - start < 1500) {
+      window.location.href = mailtoUrl;
+    }
+  }, 800);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
