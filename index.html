@@ -163,7 +163,7 @@
 
     <!-- Subitens do item 1 (inicialmente escondidos).
          PONTO SEGURO PARA ALTERAR (pode editar textos, ordem, links) -->
-    <div id="subitens-ulp" style="display:none; margin-left:20px;">
+    <div id="subitens-ulp2" style="display:none; margin-left:20px;">
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#umcc" style="color:blue; text-decoration:underline; cursor:pointer;">1.10 - UMCC</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kk" style="color:blue; text-decoration:underline; cursor:pointer;">1.11 - KK</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ste/stau" style="color:blue; text-decoration:underline; cursor:pointer;">1.12 - STE / STAU</a><br>
@@ -12039,8 +12039,7 @@ F11 e F13 recebem alimentação do TP51 (c/ fusível) F12, F14 e F15 recebem ali
 
 
   <!-- PONTO SEGURO PARA ALTERAR (título/conteúdo da Página 5) -->
-  <h2 style="text-align: center; font-size: 18px;">PÁGINA 5</h2>
-  <p style="font-size: 14px; color: gray;">[INSIRA O CONTEÚDO AQUI]</p>
+ 
   <div class="numero-pagina">Página 22</div>
 </div>
 
@@ -12055,6 +12054,16 @@ function toggleSubitensULP() {
   const atual = bloco.style.display || "none";
   bloco.style.display = (atual === "none") ? "block" : "none";
 }
+
+<script>
+/* ===== Mostra/oculta os subitens do item 2 no índice ===== */
+function toggleSubitensULP() {
+  const bloco = document.getElementById("subitens-ulp2");
+  const atual = bloco.style.display || "none";
+  bloco.style.display = (atual === "none") ? "block" : "none";
+}
+
+
 
 /* ===== Abre um novo e-mail no Outlook (se instalado) ou cai no mailto =====
    PONTO SEGURO PARA ALTERAR: e-mails, assunto e corpo abaixo */
