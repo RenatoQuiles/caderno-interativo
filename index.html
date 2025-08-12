@@ -141,7 +141,18 @@
     <!-- Demais itens do índice (2 a 28)
          Você pode mexer nos textos/ordem à vontade (só manter cada linha com <br> no final). -->
     <!-- ===== PONTO SEGURO PARA ALTERAR ===== (itens 2 ~ 28 do índice) -->
-    2 – Lista de ensaios com SCADA<br>
+   <div onclick="toggleSubitensSCADA()"
+     style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
+  2 – Lista de ensaios com SCADA
+</div>
+
+<div id="subitens-scada" style="display:none; margin-left:20px;">
+  <!-- coloque seus subitens aqui, exemplo: -->
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scada-220" style="color:blue; text-decoration:underline; cursor:pointer;">2.20 - Algum ensaio</a><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scada-221" style="color:blue; text-decoration:underline; cursor:pointer;">2.21 - Outro ensaio</a><br>
+  <!-- continue com 2.22, 2.23, etc. -->
+</div>
+
     3 – Lista de ensaios dos anunciadores TGA<br>
     4 – Lista de ensaios contatores CCAR<br>
     5 – Tabela de conversão de RTD<br>
@@ -224,6 +235,21 @@ function toggleSubitensULP() {
   const atual = bloco.style.display || "none";
   bloco.style.display = (atual === "none") ? "block" : "none";
 }
+
+
+
+<script>
+function toggleSubitensSCADA() {
+  const bloco = document.getElementById("subitens-scada");
+  const atual = bloco.style.display || "none";
+  bloco.style.display = (atual === "none") ? "block" : "none";
+}
+</script>
+
+
+
+
+
 
 /* Abre um novo e-mail:
    - Primeiro tenta pelo Outlook (se estiver instalado no iPad).
