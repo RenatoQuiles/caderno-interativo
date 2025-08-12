@@ -2,95 +2,145 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8"/>
-  <title>Caderno de Ensaios - 120 Páginas (Versão 6.1)</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caderno de Ensaios - 120 Páginas</title>
   <style>
-    /* =============================================================
-       ESTILOS GERAIS / LAYOUT A4 NA TELA E PARA IMPRESSÃO
-       ============================================================= */
-    :root {
-      /* Medidas aproximadas em px para 96dpi: A4 = 794 x 1123 */
-      --a4-w: 794px;
-      --a4-h: 1123px;
-      --margem-lateral: 60px;
-      --margem-superior: 50px;
-      --sombra: 0 0 10px rgba(0,0,0,.2);
+    /* ============================================================
+       ESTILOS GERAIS DO DOCUMENTO (aparência na tela e impressão)
+       Você não precisa mexer aqui para alterar textos/conteúdo.
+       ============================================================ */
+
+    /* Página inteira do navegador */
+    body {
+      margin: 0;                 /* remove margens externas */
+      padding: 0;                /* remove espaçamentos internos */
+      background: #ddd;          /* cor de fundo fora das páginas */
+      font-family: Arial, sans-serif;  /* fonte padrão */
     }
 
-    html, body { margin: 0; padding: 0; background: #ddd; font-family: Arial, Helvetica, sans-serif; }
-
+    /* Cada página A4 simulada na tela */
     .pagina {
-      width: var(--a4-w);
-      min-height: var(--a4-h);
-      margin: 40px auto;              /* separação entre páginas na visualização */
-      background: #fff;
-      box-shadow: var(--sombra);
-      position: relative;
-      page-break-after: always;       /* quebra ao imprimir */
-      padding: var(--margem-superior) var(--margem-lateral);
+      width: 794px;              /* largura aproximada A4 em px (96dpi) */
+      height: 1123px;            /* altura aproximada A4 em px (96dpi) */
+      background: #fff;          /* fundo branco como papel */
+      margin: 40px auto;         /* centraliza e dá espaço entre páginas */
+      padding: 50px 60px;        /* margens internas da página */
+      box-shadow: 0 0 10px rgba(0,0,0,0.2); /* sombra para efeito de papel */
+      position: relative;        /* necessário para posicionar rodapé */
+      page-break-after: always;  /* garante quebra na impressão */
+    }
+
+    /* Numeração do rodapé da página */
+    .numero-pagina {
+      position: absolute; /* fixa dentro da página */
+      bottom: 20px;       /* distância da borda inferior */
+      right: 30px;        /* distância da borda direita */
+      font-size: 12px;
+      color: gray;
+    }
+
+    /* ============================================================
+       BLOCO DO ÍNDICE DA PÁGINA 1
+       - Este bloco tem altura limitada para não invadir o rodapé.
+       - Você pode ajustar o valor de "max-height" (ver PONTO SEGURO).
+       ============================================================ */
+    .indice {
+      text-align: left;
+      margin-top: 60px;
+      font-size: 14px;
+      line-height: 1.8;
+      /* ===== PONTO SEGURO PARA ALTERAR =====
+         Aumente/diminua o valor abaixo para controlar onde o índice "corta".
+         Ex.: 280px, 320px, etc.  */
+      max-height: calc(100% - 300px);
+      overflow: hidden;   /* tudo que passar dessa altura fica invisível */
       box-sizing: border-box;
     }
 
-    .numero-pagina {
-      position: absolute; bottom: 20px; right: 30px; color: #808080; font-size: 12px;
+    /* Botão de e-mail (estilo visual) */
+    .btn-email {
+      appearance: none;
+      border: 1px solid #1e5bd9;
+      background: #2b6fff;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: underline; /* sublinhado, como você pediu */
+      white-space: normal;        /* permite quebra de linha */
+      text-align: center;         /* centraliza as 2 linhas */
     }
+    .btn-email:active { transform: translateY(1px); }
+    .btn-email:focus { outline: 2px solid rgba(30,91,217,0.35); outline-offset: 2px; }
 
-    /* Links do índice sempre visíveis como links */
-    a.link-indice { color: #06c; text-decoration: underline; cursor: pointer; }
-
-    /* Caixa utilitária "Voltar ao índice" dentro das páginas de conteúdo */
-    .voltar-indice { position: absolute; top: 16px; right: 20px; font-size: 12px; }
-    .voltar-indice a { color: #06c; text-decoration: underline; }
-
-    /* Tabelas interativas (clique para amarelar a linha) */
-    table.tabela-interativa { width: 100%; border-collapse: collapse; }
-    table.tabela-interativa th, table.tabela-interativa td { border: 1px solid #ccc; padding: 6px 8px; }
-    table.tabela-interativa thead th { background: #f5f5f5; }
-
-    /* Impressão: remove sombra e fundo cinza */
+    /* Impressão: mostramos o índice completo e escondemos o botão */
     @media print {
-      @page { size: A4; margin: 0; }
-      html, body { background: #fff; }
-      .pagina { margin: 0 auto; box-shadow: none; page-break-after: always; }
-      .voltar-indice { display: none; } /* não precisa no impresso */
+      .indice {
+        max-height: none !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+      .btn-email { display: none !important; }
     }
   </style>
 </head>
 <body>
 
-<!-- =============================================================
-     PÁGINA 1 — CAPA (INÍCIO)
-     ============================================================= -->
+<!-- ============================================================
+     PÁGINA 1 (CAPA + ÍNDICE)
+     Tudo que você provavelmente vai querer editar tem a marca "PONTO SEGURO".
+     ============================================================ -->
 <div class="pagina" id="pagina1">
-  <!-- Âncora para o topo/índice -->
-  <a id="topo"></a>
 
-  <h1 style="text-align:center; font-size:24px; margin-top:200px;">CADERNO DE ENSAIOS E PARAMETRIZAÇÕES<br>Versão 6.1</h1>
-  <h2 style="text-align:center; font-size:18px; margin-top:40px; color:#000;">Manter na sala da MEG1 – EL.139</h2>
+  <!-- ===== Título da capa ===== -->
+  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (texto do título e versão) -->
+  <h1 style="text-align: center; font-size: 24px; margin-top: 50px;">
+    CADERNO DE ENSAIOS E PARAMETRIZAÇÕES<br>Versão 6.1
+  </h1>
 
-  <!-- ÍNDICE (você pode expandir livremente) -->
+  <!-- ===== Subtítulo ===== -->
+  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (localização/observação) -->
+  <h2 style="text-align: center; font-size: 18px; margin-top: 40px; color: black;">
+    Manter na sala da MEG1 – EL.139
+  </h2>
 
-<!-- ===== ALTERAÇÃO SOLICITADA: botão que mostra/oculta os subitens ===== -->
-<div onclick="toggleSubitensULP()" 
-     style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
-  1 – Lista de ensaios com ULP--
-</div>
+  <!-- ===== Botão para abrir um novo e-mail =====
+       O texto já está em 2 linhas e sublinhado.
+       Você pode editar o texto do botão à vontade. -->
+  <div style="text-align:right; margin-top: 10px;">
+    <!-- ===== PONTO SEGURO PARA ALTERAR ===== (texto do botão) -->
+    <button type="button" class="btn-email" onclick="openEmail()">
+      Clique Aqui para reportar erro/atualização<br>deste caderno
+    </button>
+  </div>
 
+  <!-- ===== ÍNDICE (com subitens do item 1 que abrem/fecham ao clicar) ===== -->
+  <div class="indice">
 
+    <!-- Cabeçalho do item 1 (clique para mostrar/ocultar subitens) -->
+    <!-- Você pode alterar o texto, mas mantenha o onclick. -->
+    <!-- ===== PONTO SEGURO PARA ALTERAR ===== (apenas o texto) -->
+    <div onclick="toggleSubitensULP()"
+         style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
+      1 – Lista de ensaios com ULP
+    </div>
 
+    <!-- Subitens do item 1 (aparecem/somem ao clicar no item acima) -->
+    <!-- Você pode editar os textos, reordenar, adicionar/remover linhas.
+         Se criar novos subitens, copie o padrão de <a href> + <br>. -->
+    <div id="subitens-ulp" style="display:none; margin-left:20px;">
+      <!-- ===== PONTO SEGURO PARA ALTERAR ===== (subitens 1.1 ~ 1.6) -->
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#umcc" style="color:blue; text-decoration:underline; cursor:pointer;">1.1 - UMCC</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kk" style="color:blue; text-decoration:underline; cursor:pointer;">1.2 - KK</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ste/stau" style="color:blue; text-decoration:underline; cursor:pointer;">1.3 - STE / STAU</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctau(tau)" style="color:blue; text-decoration:underline; cursor:pointer;">1.5 - CTAU (TAU)</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm" style="color:blue; text-decoration:underline; cursor:pointer;">1.4 - QTM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm52.3" style="color:blue; text-decoration:underline; cursor:pointer;">1.6 - QTM 52.3</a><br>
+    </div>
 
-  <div style="margin-top:60px; font-size:14px; line-height:1.8;">
-    1 – Lista de ensaios com ULP<br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a class="link-indice" href="#umcc">1.1 - UMCC</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a class="link-indice" href="#kk">1.2 - KK</a><br>
-    <!-- Substituí caracteres especiais por IDs seguros: "ste-stau" em vez de "ste/stau" -->
-    &nbsp;&nbsp;&nbsp;&nbsp;<a class="link-indice" href="#ste-stau">1.3 - STE / STAU</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a class="link-indice" href="#qtm">1.4 - QTM</a><br>
-    <!-- Mesmo ajuste aqui: "ctau-tau" em vez de "ctau(tau)" -->
-    &nbsp;&nbsp;&nbsp;&nbsp;<a class="link-indice" href="#ctau-tau">1.5 - CTAU (TAU)</a><br>
-    <!-- E aqui: ponto vira hífen no ID "qtm52-3" -->
-    &nbsp;&nbsp;&nbsp;&nbsp;<a class="link-indice" href="#qtm52-3">1.6 - QTM 52.3</a><br>
-
+    <!-- Demais itens do índice (2 a 28)
+         Você pode mexer nos textos/ordem à vontade (só manter cada linha com <br> no final). -->
+    <!-- ===== PONTO SEGURO PARA ALTERAR ===== (itens 2 ~ 28 do índice) -->
     2 – Lista de ensaios com SCADA<br>
     3 – Lista de ensaios dos anunciadores TGA<br>
     4 – Lista de ensaios contatores CCAR<br>
@@ -118,133 +168,94 @@
     26 – Relé de frequência URPF4000<br>
     27 – Parametrização do Relé 39LW - LIP<br>
     28 – Lista telefônica
-    <br>[... índice completo ...]
   </div>
+
+  <!-- Rodapé (número da página) -->
   <div class="numero-pagina">Página 1</div>
 </div>
-<!-- =============================================================
-     PÁGINA 1 — CAPA (FIM)
-     ============================================================= -->
 
-
-<!-- =============================================================
-     PÁGINA 2 — CONTEÚDO (INÍCIO)
-     Observação: As âncoras/IDs abaixo são os destinos do índice.
-     ============================================================= -->
+<!-- ============================================================
+     PÁGINA 2
+     Você pode preencher o conteúdo destas páginas como quiser.
+     Basta inserir textos, tabelas, imagens, etc., entre as <div class="pagina">.
+     ============================================================ -->
 <div class="pagina" id="pagina2">
-  <div class="voltar-indice">↩️ <a href="#topo">Voltar ao índice</a></div>
-
-  <h2 id="umcc">1.1 – UMCC</h2>
-  <p style="color:#666;">[Insira aqui o conteúdo referente a UMCC.]</p>
-
-  <h2 id="kk" style="margin-top:36px;">1.2 – KK</h2>
-  <p style="color:#666;">[Insira aqui o conteúdo referente a KK.]</p>
-
-  <h2 id="ste-stau" style="margin-top:36px;">1.3 – STE / STAU</h2>
-  <p style="color:#666;">[Insira aqui o conteúdo referente a STE / STAU.]</p>
-
-  <h2 id="qtm" style="margin-top:36px;">1.4 – QTM</h2>
-  <p style="color:#666;">[Insira aqui o conteúdo referente a QTM.]</p>
-
-  <h2 id="ctau-tau" style="margin-top:36px;">1.5 – CTAU (TAU)</h2>
-  <p style="color:#666;">[Insira aqui o conteúdo referente a CTAU (TAU).]</p>
-
-  <h2 id="qtm52-3" style="margin-top:36px;">1.6 – QTM 52.3</h2>
-  <p style="color:#666;">[Insira aqui o conteúdo referente a QTM 52.3.]</p>
-
-  <!-- EXEMPLO DE TABELA INTERATIVA NESTA PÁGINA -->
-  <h3 style="margin-top:40px;">Exemplo de Tabela Interativa</h3>
-  <p style="font-size:13px;color:#555;">Clique em qualquer linha (exceto o cabeçalho) para destacar em amarelo. Clique novamente para remover.</p>
-  <table class="tabela-interativa" id="tabela-exemplo">
-    <thead>
-      <tr>
-        <th>#</th><th>Item</th><th>Descrição</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>1</td><td>Teste A</td><td>Descrição A</td></tr>
-      <tr><td>2</td><td>Teste B</td><td>Descrição B</td></tr>
-      <tr><td>3</td><td>Teste C</td><td>Descrição C</td></tr>
-    </tbody>
-  </table>
-
+  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (conteúdo da Página 2) -->
   <div class="numero-pagina">Página 2</div>
 </div>
-<!-- =============================================================
-     PÁGINA 2 — CONTEÚDO (FIM)
-     ============================================================= -->
 
+<!-- ============================================================
+     PÁGINA 3
+     ============================================================ -->
+<div class="pagina" id="pagina3">
+  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (conteúdo da Página 3) -->
+  <div class="numero-pagina">Página 3</div>
+</div>
 
-<!-- =============================================================
-     PÁGINAS 3 A 120 — GERADAS AUTOMATICAMENTE PELO SCRIPT
-     Você pode editar o conteúdo depois que as páginas são criadas.
-     ============================================================= -->
-<div id="container-paginas-dinamicas"></div>
+<!-- ============================================================
+     PÁGINA 4 (exemplo com título genérico)
+     ============================================================ -->
+<div class="pagina" id="pagina4">
+  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (título e conteúdo) -->
+  <h2 style="text-align: center; font-size: 18px;">PÁGINA 4</h2>
+  <p style="font-size: 14px; color: gray;">[INSIRA O CONTEÚDO AQUI]</p>
+  <div class="numero-pagina">Página 4</div>
+</div>
 
+<!-- ============================================================
+     PÁGINA 5 (exemplo com título genérico)
+     ============================================================ -->
+<div class="pagina" id="pagina5">
+  <!-- ===== PONTO SEGURO PARA ALTERAR ===== (título e conteúdo) -->
+  <h2 style="text-align: center; font-size: 18px;">PÁGINA 5</h2>
+  <p style="font-size: 14px; color: gray;">[INSIRA O CONTEÚDO AQUI]</p>
+  <div class="numero-pagina">Página 5</div>
+</div>
 
-<!-- =============================================================
-     SCRIPTS
-     ============================================================= -->
+<!-- ============================================================
+     SCRIPTS (programação que dá comportamento aos botões/links)
+     Você não precisa alterar nada aqui para editar textos.
+     Só edite os pontos marcados como "PONTO SEGURO".
+     ============================================================ -->
 <script>
-  // Rolagem suave entre âncoras
-  document.documentElement.style.scrollBehavior = 'smooth';
+/* Mostra/oculta os subitens do item 1 do índice (ULP) */
+function toggleSubitensULP() {
+  const bloco = document.getElementById("subitens-ulp");
+  const atual = bloco.style.display || "none";
+  bloco.style.display = (atual === "none") ? "block" : "none";
+}
 
-  // ======= 1) TABELAS INTERATIVAS (clica e alterna amarelo) =======
-  function prepararTabelasInterativas() {
-    // Apenas em tabelas com a classe .tabela-interativa
-    document.querySelectorAll('table.tabela-interativa tbody').forEach(function(tbody) {
-      tbody.addEventListener('click', function(e) {
-        const linha = e.target.closest('tr');
-        if (!linha) return;
-        // Alterna cor (amarelo ↔ padrão)
-        const atual = getComputedStyle(linha).backgroundColor;
-        linha.style.backgroundColor = (atual === 'rgb(255, 255, 0)') ? 'white' : 'yellow';
-      });
-    });
-  }
+/* Abre um novo e-mail:
+   - Primeiro tenta pelo Outlook (se estiver instalado no iPad).
+   - Se não abrir, usa o link padrão "mailto", que chama o app de e-mail padrão. */
+function openEmail() {
+  /* ===== PONTO SEGURO PARA ALTERAR =====
+     Coloque aqui os endereços, assunto e mensagem padrão do e-mail. */
+  const toEmail = "renatoq@itaipu.gov.br";    // destinatário principal (TO)
+  const ccEmail = "copia@exemplo.com";        // cópia (CC)
+  const subjectText = "Alteração caderno de parametrizações"; // assunto
+  const bodyText = "Mensagem inicial...";     // corpo do e-mail
 
-  // ======= 2) GERAÇÃO DAS PÁGINAS 3..120 =======
-  (function gerarPaginas() {
-    const destino = document.getElementById('container-paginas-dinamicas');
-    const total = 120; // total de páginas desejado
-    const primeiraGerada = 3; // começamos a partir da página 3 (1 e 2 já estão prontas)
+  // Codificação para evitar erros com acentos e caracteres especiais no link
+  const to = encodeURIComponent(toEmail);
+  const cc = encodeURIComponent(ccEmail);
+  const subject = encodeURIComponent(subjectText);
+  const body = encodeURIComponent(bodyText);
 
-    for (let n = primeiraGerada; n <= total; n++) {
-      const pagina = document.createElement('div');
-      pagina.className = 'pagina';
-      pagina.id = 'pagina' + n;
+  // Tenta abrir no Outlook (iOS/iPadOS precisa do app instalado)
+  const outlookUrl = `ms-outlook://compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
+  // Se não abrir no Outlook, cai aqui (mailto:)
+  const mailtoUrl  = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
 
-      // Botão de voltar ao índice
-      const voltar = document.createElement('div');
-      voltar.className = 'voltar-indice';
-      voltar.innerHTML = '↩️ <a href="#topo">Voltar ao índice</a>';
-      pagina.appendChild(voltar);
-
-      // Conteúdo inicial padrão (você pode substituir livremente depois)
-      const h2 = document.createElement('h2');
-      h2.style.textAlign = 'center';
-      h2.style.fontSize = '18px';
-      h2.textContent = 'PÁGINA ' + n;
-      pagina.appendChild(h2);
-
-      const p = document.createElement('p');
-      p.style.fontSize = '14px';
-      p.style.color = 'gray';
-      p.textContent = '[INSIRA O CONTEÚDO AQUI]';
-      pagina.appendChild(p);
-
-      // Número de página (rodapé)
-      const rodape = document.createElement('div');
-      rodape.className = 'numero-pagina';
-      rodape.textContent = 'Página ' + n;
-      pagina.appendChild(rodape);
-
-      destino.appendChild(pagina);
+  // Heurística simples: se o Outlook não abrir rapidamente, fazemos fallback
+  const start = Date.now();
+  window.location.href = outlookUrl;
+  setTimeout(function() {
+    if (Date.now() - start < 1500) {
+      window.location.href = mailtoUrl;
     }
-  })();
-
-  // Inicializa comportamentos após construir o DOM (inclusive páginas dinâmicas)
-  window.addEventListener('load', prepararTabelasInterativas);
+  }, 800);
+}
 </script>
 
 </body>
