@@ -170,7 +170,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaumcc" style="color:blue; text-decoration:underline; cursor:pointer;">2.11 - UCC</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadatau" style="color:blue; text-decoration:underline; cursor:pointer;">2.12 - TAU</a><br>
     &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqv" style="color:blue; text-decoration:underline; cursor:pointer;">2.13 - QV</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm" style="color:blue; text-decoration:underline; cursor:pointer;">1.14 - QTM (Alimentação UMCC:52-2)</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadalip" style="color:blue; text-decoration:underline; cursor:pointer;">2.14 - LIP </a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm52.3" style="color:blue; text-decoration:underline; cursor:pointer;">1.15 - QTM (Alimentação UMCC:52-3)</a><br>
 
 
@@ -14837,6 +14837,1222 @@ KT(51-52); Q1(23-24) OU, F0(21-22) OU, F1X(43-44); X02(1-5-6); X1.2: 15 - 20; TG
 
 
  
+
+<h2 style="color: black; text-align: center; font-size: 16px;">
+    Dispositivos Primários - SMMG.DT - MEG-1 <span style="color:blue;">(AS AÇÕES A SEREM REALIZADAS ESTÃO EM AZUL)</span>
+  </h2>
+
+<a name="scadalip"></a>
+  <div style="text-align:right; margin-bottom: 10px;"><a href="#pagina1" style="color:blue; text-decoration:underline; font-size:14px;">⬅ Voltar ao índice (2.14 - LIP  )</a></div>
+  
+  <div style="background-color: yellow; padding: 10px; text-align: center; font-weight: bold; font-size: 16px;">
+    LIP
+  </div>
+  <table style="width:100%; border-collapse: collapse; font-size: 12px; margin-top: 2px; border: 1px solid black;">
+<thead>
+<tr>
+<th style="border: 2px solid black;">
+       Descritivo do sist. escada
+      </th>
+<th style="border: 2px solid black;">
+       AÇÃO
+      </th>
+<th style="border: 2px solid black;">
+       Origem
+      </th>
+<th style="border: 2px solid black;">
+       Painel de saída 
+      </th>
+<th style="border: 2px solid black;">
+       Disp de saída
+      </th>
+<th style="border: 2px solid black;">
+       Destino... ponto de saída
+      </th>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina anillo ved agua flujo bajo  
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper LIP: 94 - 95
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      Aciona instantãneo via ULP
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      ULP
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      30I59K4
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Turbina anillo ved agua flujo muy bajo  
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Jumper LIP: 94 - 95 (3min)
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      80PW(7-8); LIP(94-95); ULP17(1325-1356); 80PWX(16-17);<br>
+ULP18(1218-1268); TGA,C11TY(17-27)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       80PWX1
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       80PWX1(M4-T4); C23T(27-37)
+      </td>
+</tr>
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina aux turbina condiction 
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Jumper LIP: 278 - 279 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      Vai para TGA band.63 reportando p/ ULP na band.72
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      ULP30I73K4 Falha dos indicadores tbm neste pto.
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       30I73K4 
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      Falha dos indicadores tbm neste pto.
+ 
+      </td>
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina cajá esp tapa insp abierta  
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Acionar micro FC1 (escotilha caixa espiral)  
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      33SC1,FC1(3-4);TFC(1-2);TGA,C12T(8-18);33SCX(M3-T3) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     ULP
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       30I59K3
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina CGI aceite nível alto   
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+          Jumper LIP: 38 - 39 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      71L1(6-7/5-7/4-7);LIP(38-39);TGA,C12T(1-14) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      39LWX 
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       39LWX(M4-T4);C23T(4-14)
+      </td>
+</tr>
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Turbina CGI aceite nível bajo  
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Jumper LIP: 40 - 41 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      71L2(6-7/5-7/4-7);LIP(40-41);TGA,C12T(1-13) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       71LBX  
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       71LBX(M4-T4);C23T(3-13)
+      </td>
+</tr>
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina CGI aceite nível muy alto  
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Jumper LIP: 26 - 27 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     71L1(2-3);LIP(26-27)
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       ULP
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       30C051K1
+ 
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      
+ 
+      </td>
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Turbina CGI aceite nível muy bajo   
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper LIP: 28 - 29  
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      71L2(2-3);LIP(28-29) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+    ULP 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      30C051K2
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina CGI aceite temperatura alta   
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+           Jumper LIP: 42 - 43 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     38LQ(4-7);LIP(42-43);TGA,C12T((1-11); 38LQ1X(M3-T3);C22T(1-11)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      ULP
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      30I87K1
+
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Turbina CGI aceite temperatura mut alta    
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Jumper LIP: 44 - 45  
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     38LQ(2-3);LIP(44-45) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      ULP
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       30I87K2  
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina CGI agua em el aceite  
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper LIP: 32 - 33 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+    39LW(22-24); LIP(32-33); TGA.C12T(1-38); 
+
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       TGA
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       39LWX 
+
+ 
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      
+ 39LWX(M4-T4);C23T(28-38)
+      </td>
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Turbina CGI agua enfri flujo muy bajo  
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+          Jumper LIP: 88 - 89 (10 min)   
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      80LW(3-4);LIP(88-89)  
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+    ULP 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      80LWX
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina CGI agua enfriamiento flujo bajo  
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+           Jumper LIP: 88 - 89 Aciona instantãneo via ULP ULP30I3K3 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     Aciona instantãneo via ULP  
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      ULP
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      30I3K3 
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      
+      </td>
+</tr>
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Turbina CGI metal temperatura alta   
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper LIP: 75 - 76 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      38L1(4-7);LIP(71-72);OU 38L2(4-7);LIP(75-76);TGA,C12T(1-<br>
+12);38L1X(M3-T3);C22T
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      ULP
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       30I87K3 
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina CGI metal temperatura muy alta  
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Jumper LIP: 77 - 78   
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     38L1(2-3);LIP(73-74);OU 38L2(2-3);LIP(77-78) 
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       ULP
+
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       30I87K4
+ 
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      
+ 
+      </td>
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Turbina fluxom agua de enfriamento LIP     
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Abrir LIP: 90 - 97   
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      80LW/PW(9-10);LIP(90-97) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+    UTR
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina LIP Tension CC     
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+           Jumper LIP: 102 - 103  
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     27LIP(65-66);LIP(102-103);TGA,C12T(1-75) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      TGA
+
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      27LIPX 
+
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       27LIPX(M4-T-4);C23T(65-75)
+      </td>
+</tr>
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Turbina paletas desconjugadas   
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper LIP: 149 - 150  
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     33SP,FC5(3-4);LIP(149-150) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      ULP
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       30I45K4   
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina pino cisalhamento presion baja  
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+          Jumper LIP: 225 - 226 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+    63SPL(1-2);LIP(225-226);TGA,C12T(1-16)  
+
+
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       TGA
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       63SPLX 
+
+ 
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      
+ 63SPLX(M3-T3);C22T(6-16)
+
+      </td>
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Turbina pino cisallamiento quebrado   
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+          Jumper LIP: 151 - 152 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      63SP(1-2);LIP(151-152)    
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+    ULP 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     30I45K3 
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Turbina pino cisallamiento resion baja 
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+           Jumper LIP: 225 - 226  
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     63SPL(1-2);LIP(225-226);TGA,C12T(1-16)  
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      TGA
+
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     63SPLX 
+
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       63SPLX(M3-T3);C22T(6-16)
+
+      </td>
+</tr>
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Turbina pino cisalhamento quebrado    
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper LIP: 151 - 152  
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     63SP(1-2);LIP(151-152) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      ULP
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       30I45K3  
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Turbina tapa agua nível alto    
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+          Jumper LIP: 122 - 123
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+   71HCH2X(9-11); LIP(122-123); TGA,C12T(1-15); 71HCH2Y(M3-T3);<br> C22T(5-15)  
+
+
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       ULP
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       30I59K1
+
+
+ 
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      
+ 
+
+      </td>
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Turbina tapa agua nível muy alto     
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+          Jumper LIP: 8 - 104 ( 5seg. ) 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+    LIP
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     71WPX 
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       71WPX(6-7);LIP(107-108)
+      </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Turbina valv vedacion auxiliar 
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+            Abrir LIP: 98 - 99 
+ 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     33AS(1-2);LIP(98-99) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       ULP
+
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     33ASX 
+
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      
+
+      </td>
+</tr>
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Reg velc distribuidor cerrado LIP     
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper / Soltar: 167 - 168  
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     33WG9(11-14);LIP(167-168) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      ULP 
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       33WG9X  
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Reg velc distribuidor pos com carga LIP    
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+           Jumper / Soltar: 171 - 172 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+   33WG7(31-34);LIP(171-172)   
+
+
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       ULP1
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       33WGNX
+
+
+ 
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      
+ 
+
+      </td>
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Reg veloc sobrevelocidad mecânica LIP      
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+          Jumper: 210 - 211   
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+       LA(5-6);LIP(210-211) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+   ULP
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     12X1
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Reg veloc tq aceite infiltracion nível alto LIP   
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+            Jumper: 131 - 132  
+ 
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+    
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       LIP
+
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     71QATHX  
+
+
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      71QATHX(6-8);LIP(131-132)
+
+      </td>
+</tr>
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+   Reg de veloc traba hidráulica distribuidor (A/D) LIP    
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+          Abrir link 161 e Jumpear: 155 - 157  
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+     33WGL9/33WGL2(12-13/12-13);LIP(161-163/155-157) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      ULP 
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      33WGLX 
+ 
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+</tr>
+
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    Veloc traba manual servomotor LIP     
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+          Jumper / Soltar: 231 - 232
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+    33WGML(13-14);LIP(231-232)  
+   
+
+
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       LIP
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       33WGML
+
+
+ 
+      </td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      
+ 
+
+      </td>
+</tr>
+
+
+
+
+
+
+
+
+</tbody>
+</table>
 
 
 
