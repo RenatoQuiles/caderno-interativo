@@ -167,7 +167,7 @@
 
 <div id="subitens-scada" style="display:none; margin-left:20px;">
     &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapwbepwx" style="color:blue; text-decoration:underline; cursor:pointer;">2.10 - PWB e PWX</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kk" style="color:blue; text-decoration:underline; cursor:pointer;">1.11 - KK</a><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaumcc" style="color:blue; text-decoration:underline; cursor:pointer;">2.11 - UCC</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ste/stau" style="color:blue; text-decoration:underline; cursor:pointer;">1.12 - STE / STAU</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctau(tau)" style="color:blue; text-decoration:underline; cursor:pointer;">1.13 - CTAU (TAU)</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm" style="color:blue; text-decoration:underline; cursor:pointer;">1.14 - QTM (Alimentação UMCC:52-2)</a><br>
@@ -13521,6 +13521,965 @@ F11 e F13 recebem alimentação do TP51 (c/ fusível) F12, F14 e F15 recebem ali
 </tbody>
 </table>
  
+
+
+
+<a name="scadaumcc"></a>
+  <div style="text-align:right; margin-bottom: 10px;"><a href="#pagina1" style="color:blue; text-decoration:underline; font-size:14px;">⬅ Voltar ao índice (2.11 - UMCC)</a></div>
+  
+  <div style="background-color: yellow; padding: 10px; text-align: center; font-weight: bold; font-size: 16px;">
+    UMCC
+  </div>
+  <table style="width:100%; border-collapse: collapse; font-size: 11px; margin-top: 1px; border: 1px solid black;">
+<thead>
+<tr>
+<th style="border: 1px solid black;">
+       Descritivo  sistema scada
+      </th>
+<th style="border: 1px solid black;">
+       Ação
+      </th>
+<th style="border: 1px solid black;">
+       Origem
+      </th>
+<th style="border: 1px solid black;">
+       Painel de saída
+      </th>
+<th style="border: 1px solid black;">
+       Dispositivo de saída
+      </th>
+<th style="border: 1px solid black;">
+       Destino...ponto de saída
+      </th>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Bara UCC-01 sobrefrequecia
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Acionar rele 81x
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     81X (23-24)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       81X
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X6.1 (168-169)
+      </td>
+
+</tr>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Barra UMCC-01 tension
+   </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Desligar 27MCX
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     27MCX (23-24)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       27MCX
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+      X6.1 (154-155)
+      </td>
+
+</tr>
+
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Int 125VCC UMCC
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         disparar F1 ou F2 (95 - 96)
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+    F1 (95-96) OU F2 (95-96) = X6.1 (134-135)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      52CCX
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       C23G (47-57)
+      </td>
+
+</tr>
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Int 52-1 inserido UMCC-01  
+ </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Acionar K1 do disjuntor 52.1
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+   S2 (0-2) = K1 (23-24) = X5.1 (37-39)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      K1 (52-1)
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X5.1 (88-89
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Int 52-1 tension entrada UMCC-01
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Acionar rele 27NSX
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     27NSX (43-44)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       27NSX
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X6.1 (158-159)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Int 52-1 UMCC-01 disp 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Acionar rele 52-1 Sr
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+   52-1 SR (1-2) = X5.1 (2-25) = K1-SR (33-34)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      K1-SR
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X6.1 (144-145)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Int 52-2 inserido UMCC-01
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Acionar K1 do disjuntor 52.2
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     S2 (0-2) = K1 (23-24) = X7.1 (34-36)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     K1 (52-2)
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X7.1 (75-76)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Int 52-2 tension entrada2 UMCC-01
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Acionar rele 27ASX
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     27ASX (33-34)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      27ASX
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+      X6.1 (166-167)
+      </td>
+
+</tr>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Int 52-2 UMCC-01 disp
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Acionar rele 52-2 Sr
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     52-2 SR (1-2) = X7.1 (2-26) = K2-SR (33-34)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       K2-SR
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X6.1 (148-149)
+      </td>
+
+</tr>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Int 52-3 UMCC-01 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Manual-local 3 disj. Inserido manobrar 52-3
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     
+<span style="color: red; font-weight: bold;">(UMCC em manual / Local)</span>  k1 (53-54) = X 4.5 (30-31)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       52-3
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X6.1 (150-151)
+      </td>
+
+</tr>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Int 52-3 UMCC-01 disp
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Acionar rele 52-3 Sr
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     52-3 SR (1-2) = X4.5 (2-25) = K3-SR (33-34)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     K3-SR
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X6.1 (152-153)
+      </td>
+
+</tr>
+
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Int control 120 VCA UMCC
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Fechar 4.4 e acionar K1 ou 8.4 e acionar K1
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+    K1 (43-44) = X4.3 (27-28) OU K1 (43-44) = X8.5 (27-28)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       52AMX
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       C23G (50-60)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Int F1 125 VCC UMCC-01 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Manobrar disj. F1
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+    F1 (21-22)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       F1
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X6.1 (20-21)
+      </td>
+
+</tr>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Int F2 125 VCC UMCC-01 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Manobrar disj. F2
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+    F2 (21-22)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       F2
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X6.1 ( 22-23)
+      </td>
+
+</tr>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Int salida UMCC
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper X1.2: 16 - 18
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     X1.2 (16-18) obs. comum disj forca 6212DF91774P FL4/8 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       52MCX
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       C23G (61-71)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Rele 86 UMCC 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper / Soltar X6.1: 136 - 137
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     13 (D5) E 14 (C5) = X6.1 (136-137)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       86MCX
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+      C23G (48-58)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      UMCC 120 VCA tension
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Fechar Disj.Q1 gaveta 4.4 e 8.4
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     Os dois disjuntores devem estar fechados para reamar o alarme
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       27CAX
+
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       C23G (49-59)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       UMCC-01 llave SS1 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Manobrar chave SS1 
+
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+    AT 86/2 (33-34) 
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC 
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      AT-86/2 
+
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X6.1 (170-171)
+      </td>
+
+</tr>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+        Ventilador 1 anillo coletor 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper X1.2: 7 - 8 
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     K01(43-44) = X02 (6-7) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       K01 
+
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X1.2 (7-8)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Ventilador 2 anillo colector 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Jumper X1.2: 9 - 10 
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     K02 (43-44) = X02 (8-9) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC 
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       K02 
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       X1.2 (9-10)
+
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Seleccion fuente UMCC-01 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Comando testado com ULP e CCR 
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     Comando do Scada via ULP
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Reg velc bomba 1 infiltracion  
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+          Jumper X2.5/2: 17 - 21 
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       KT-K1X 
+
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+      KT(71-72); K1X(43-44); X02(7-8); X2.5-2(17-21)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Reg velc bomba 1 infiltracion int 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper X2.5/2: 19 - 20 ou abrir F0 gav. 1.2
+
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     
+KT(51-52); Q1(23-24) OU, F0(21-22) OU, F1X(43-44); X02(1-5-6); X1.2: 15 - 20; TGA,C12T(63-73)
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      74QS1X
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+      74QS1X(M4-T4);C23T(63-73)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Turbina bomba 1 drenaje 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper X2.7/1: 17 - 21 
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     KT-K1X 
+
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       2.7/1(17-21)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Turbina bomba 1 drenaje térmico  
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper X2.7/1: 19 - 20 ou abrir F0 gav. 2.7/2 
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     Q1 ou FO ou F1X (UMCC) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       74HC1X 
+
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       74HC1X(M4-T4) = C23T(64-74)
+      </td>
+
+</tr>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Turbina valv aireac 1 int  
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper X1.6: 22 - 23
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     UMCC,KT(61-62);Q1(43-44);OU F0(21-22);OU F1X(43-44);X2(3-5-7-
+9);X1.6(20-21-22-23);TGA,C12T(61-71)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      74VA1X 
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       74VA1X(M4-T4);C23T(61-71)
+      </td>
+
+</tr>
+
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+     Turbina valv aireac 2 int  
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper X1.7: 22 - 23
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+    UMCC,KT(61-62);Q1(43-44);OU F0(21-22);OU F1X(43-44);X2(3-5-7-
+9);X1.7(20-21-22-23);TGA,C12T(62-72)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       TGA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       74VA2X 
+
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       74VA2X(M4-T4);C23T(62-72)
+
+      </td>
+
+</tr>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Generador bomba 1 mancal PAP ligado 
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper: X1.3: 17 - 21 
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     UMCC,K1X(43-44)E KT(71-72);X02/2(7-8);X1,3(17-21) 
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       K1X E KT
+
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+
+</tr>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Agua pura bomba 1  
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Jumper: X3.4: 13 - 14 
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+     UMCC 3.4 (13-14) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC 
+
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       KTXK1X
+
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+
+</tr>
+
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Generador bomba 1 coj emp int  
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+         Jumper: X1.3: 19 - 20  
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+   UMCC,F0(21-22) E KT(53-54);X02/1(3-5);X1,3(19-20) 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       UMCC
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       F0 E KT
+      </td>
+
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+
+</tr>
+
+
+
+
+
+
+
+</tbody>
+</table>
+
+
+
 
 
 
