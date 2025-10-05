@@ -21114,7 +21114,7 @@ C2(83-84);CLD(63-64)
 
 <table style="width:100%; border-collapse: collapse; font-size: 12px; margin-top: 2px; border: 1px solid black;">
   <thead>
-    <!-- NOVA PRIMEIRA LINHA COLORIDA -->
+    <!-- PRIMEIRA LINHA COLORIDA -->
     <tr>
       <th colspan="4" style="border: 2px solid black; background-color: #cfe8ff; text-align:center; font-weight:bold; font-size:14px; height:32px;">
         GGB
@@ -21127,7 +21127,7 @@ C2(83-84);CLD(63-64)
       </th>
     </tr>
 
-    <!-- LINHA ORIGINAL DE CABEÇALHO -->
+    <!-- CABEÇALHO FIXO (SEM INTERAÇÃO) -->
     <tr>
       <th style="border: 2px solid black;">EVENTO</th>
       <th style="border: 2px solid black;">D.PRIM.</th>
@@ -21142,56 +21142,49 @@ C2(83-84);CLD(63-64)
   </thead>
 
   <tbody>
-    <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+    <!-- SOMENTE AS LINHAS ABAIXO PODEM SER CLICADAS -->
+    <tr class="linha-interativa">
       <td style="border: 1px solid black; text-align: center;">Nível baixo de óleo</td>
       <td style="border: 1px solid black; text-align: center;">FN</td>
       <td style="border: 1px solid black; text-align: center;">3-208</td>
       <td style="border: 1px solid black; text-align: center;">LX</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">7-13</span>
-      </td>
+      <td style="border: 1px solid black; text-align: center; color: blue;"><span style="color: blue;">7-13</span></td>
       <td style="border: 1px solid black; text-align: center;">KFN</td>
       <td style="border: 1px solid black; text-align: center;">52</td>
       <td style="border: 1px solid black; text-align: center;"></td>
       <td style="border: 1px solid black; text-align: center;">Inst.</td>
     </tr>
 
-    <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+    <tr class="linha-interativa">
       <td style="border: 1px solid black; text-align: center;">Pressão alta do óleo</td>
       <td style="border: 1px solid black; text-align: center;">PS</td>
       <td style="border: 1px solid black; text-align: center;">3-206</td>
       <td style="border: 1px solid black; text-align: center;">LX1</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">7-12</span>
-      </td>
+      <td style="border: 1px solid black; text-align: center; color: blue;"><span style="color: blue;">7-12</span></td>
       <td style="border: 1px solid black; text-align: center;">KPS</td>
       <td style="border: 1px solid black; text-align: center;">52</td>
       <td style="border: 1px solid black; text-align: center;"></td>
       <td style="border: 1px solid black; text-align: center;">Inst.</td>
     </tr>
 
-    <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+    <tr class="linha-interativa">
       <td style="border: 1px solid black; text-align: center;">Pressão baixa bomba 1</td>
       <td style="border: 1px solid black; text-align: center;">PL1 *</td>
       <td style="border: 1px solid black; text-align: center;">79-79A</td>
       <td style="border: 1px solid black; text-align: center;">LX1</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">1-2</span>
-      </td>
+      <td style="border: 1px solid black; text-align: center; color: blue;"><span style="color: blue;">1-2</span></td>
       <td style="border: 1px solid black; text-align: center;">KPL1 + KPL2</td>
       <td style="border: 1px solid black; text-align: center;">52</td>
       <td style="border: 1px solid black; text-align: center;"></td>
       <td style="border: 1px solid black; text-align: center;">Inst.</td>
     </tr>
 
-    <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+    <tr class="linha-interativa">
       <td style="border: 1px solid black; text-align: center;">Pressão baixa bomba 2</td>
       <td style="border: 1px solid black; text-align: center;">PL2 *</td>
       <td style="border: 1px solid black; text-align: center;">82-82A</td>
       <td style="border: 1px solid black; text-align: center;">LX1</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">3-4</span>
-      </td>
+      <td style="border: 1px solid black; text-align: center; color: blue;"><span style="color: blue;">3-4</span></td>
       <td style="border: 1px solid black; text-align: center;">KPL1 + KPL2</td>
       <td style="border: 1px solid black; text-align: center;">52</td>
       <td style="border: 1px solid black; text-align: center;"></td>
@@ -21199,6 +21192,15 @@ C2(83-84);CLD(63-64)
     </tr>
   </tbody>
 </table>
+
+<!-- SCRIPT QUE APLICA O CLIQUE SOMENTE NO TBODY -->
+<script>
+  document.querySelectorAll("tbody .linha-interativa").forEach(function(linha) {
+    linha.addEventListener("click", function() {
+      this.classList.toggle("selecionada");
+    });
+  });
+</script>
 
 <style>
   .linha-interativa {
@@ -21209,6 +21211,7 @@ C2(83-84);CLD(63-64)
     background-color: yellow !important;
   }
 </style>
+
 
 
 
