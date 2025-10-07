@@ -21097,121 +21097,21 @@ C2(83-84);CLD(63-64)
      ============================== -->
 <div class="pagina" id="pagina5">
 
-<table style="width:100%; border-collapse: collapse; font-size: 12px; margin-top: 2px; border: 1px solid black;">
-  <thead>
-    <!-- PRIMEIRA LINHA COLORIDA -->
-    <tr>
-      <th colspan="4" style="border: 2px solid black; background-color: #cfe8ff; text-align:center; font-weight:bold; font-size:14px; height:32px;">
-        GGB
-      </th>
-      <th colspan="3" style="border: 2px solid black; background-color: #7f3fbf; color:white; text-align:center; font-weight:bold; font-size:14px; height:32px;">
-        ULP
-      </th>
-      <th colspan="2" style="border: 2px solid black; background-color: yellow; text-align:center; font-weight:bold; font-size:14px; height:32px;">
-        ACAO
-      </th>
-    </tr>
 
-    <!-- LINHA DE CABEÇALHO (não clicável) -->
-    <tr class="no-click">
-      <th style="border: 2px solid black;">EVENTO</th>
-      <th style="border: 2px solid black;">D.PRIM.</th>
-      <th style="border: 2px solid black;">CONTATO</th>
-      <th style="border: 2px solid black;">RÉGUA</th>
-      <th style="border: 2px solid black;">BORNE</th>
-      <th style="border: 2px solid black;">Contator</th>
-      <th style="border: 2px solid black;">ASLP</th>
-      <th style="border: 2px solid black;">BLOQUEIO</th>
-      <th style="border: 2px solid black;">TEMP</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <tr class="linha-interativa">
-      <td style="border: 1px solid black; text-align: center;">Nível baixo de óleo</td>
-      <td style="border: 1px solid black; text-align: center;">FN</td>
-      <td style="border: 1px solid black; text-align: center;">3-208</td>
-      <td style="border: 1px solid black; text-align: center;">LX</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">7-13</span>
-      </td>
-      <td style="border: 1px solid black; text-align: center;">KFN</td>
-      <td style="border: 1px solid black; text-align: center;">52</td>
-      <td style="border: 1px solid black; text-align: center;"></td>
-      <td style="border: 1px solid black; text-align: center;">Inst.</td>
-    </tr>
 
-    <tr class="linha-interativa">
-      <td style="border: 1px solid black; text-align: center;">Pressão alta do óleo</td>
-      <td style="border: 1px solid black; text-align: center;">PS</td>
-      <td style="border: 1px solid black; text-align: center;">3-206</td>
-      <td style="border: 1px solid black; text-align: center;">LX1</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">7-12</span>
-      </td>
-      <td style="border: 1px solid black; text-align: center;">KPS</td>
-      <td style="border: 1px solid black; text-align: center;">52</td>
-      <td style="border: 1px solid black; text-align: center;"></td>
-      <td style="border: 1px solid black; text-align: center;">Inst.</td>
-    </tr>
 
-    <tr class="linha-interativa">
-      <td style="border: 1px solid black; text-align: center;">Pressão baixa bomba 1</td>
-      <td style="border: 1px solid black; text-align: center;">PL1 *</td>
-      <td style="border: 1px solid black; text-align: center;">79-79A</td>
-      <td style="border: 1px solid black; text-align: center;">LX1</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">1-2</span>
-      </td>
-      <td style="border: 1px solid black; text-align: center;">KPL1 + KPL2</td>
-      <td style="border: 1px solid black; text-align: center;">52</td>
-      <td style="border: 1px solid black; text-align: center;"></td>
-      <td style="border: 1px solid black; text-align: center;">Inst.</td>
-    </tr>
+  <!-- PONTO SEGURO PARA ALTERAR (título/conteúdo da Página 5) -->
+  
 
-    <tr class="linha-interativa">
-      <td style="border: 1px solid black; text-align: center;">Pressão baixa bomba 2</td>
-      <td style="border: 1px solid black; text-align: center;">PL2 *</td>
-      <td style="border: 1px solid black; text-align: center;">82-82A</td>
-      <td style="border: 1px solid black; text-align: center;">LX1</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">3-4</span>
-      </td>
-      <td style="border: 1px solid black; text-align: center;">KPL1 + KPL2</td>
-      <td style="border: 1px solid black; text-align: center;">52</td>
-      <td style="border: 1px solid black; text-align: center;"></td>
-      <td style="border: 1px solid black; text-align: center;">Inst.</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="numero-pagina">Página 32</div>
+</div>
+<!-- ==============================
+     PÁGINA 21
+     ============================== -->
+<div class="pagina" id="pagina5">
 
-<script>
-  // Adiciona o clique apenas nas linhas do TBODY
-  document.querySelectorAll("tbody .linha-interativa").forEach(function(linha) {
-    linha.addEventListener("click", function() {
-      this.classList.toggle("selecionada");
-    });
-  });
-</script>
 
-<style>
-  /* Linha de dados interativa */
-  .linha-interativa {
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-
-  /* Só as linhas de dados podem ficar amarelas */
-  table tbody .linha-interativa.selecionada {
-    background-color: yellow !important;
-  }
-
-  /* Linha de cabeçalho (EVENTO, D.PRIM...) não muda cor */
-  table thead .no-click {
-    pointer-events: none;
-    background-color: #fff !important;
-  }
-</style>
 
 
 
@@ -21225,80 +21125,66 @@ C2(83-84);CLD(63-64)
       <th colspan="3" style="border: 2px solid black; background-color: #7f3fbf; color:white; text-align:center; font-weight:bold; font-size:14px; height:32px;">
         ULP
       </th>
-      <th colspan="2" style="border: 2px solid black; background-color: yellow; text-align:center; font-weight:bold; font-size:14px; height:32px;">
+      <th colspan="1" style="border: 2px solid black; background-color: yellow; text-align:center; font-weight:bold; font-size:14px; height:32px;">
         ACAO
       </th>
     </tr>
 
     <!-- LINHA DE CABEÇALHO (agora NÃO muda de cor nem reage ao clique) -->
     <tr class="no-click">
-      <th style="border: 2px solid black;">EVENTO</th>
-      <th style="border: 2px solid black;">D.PRIM.</th>
-      <th style="border: 2px solid black;">CONTATO</th>
-      <th style="border: 2px solid black;">RÉGUA</th>
-      <th style="border: 2px solid black;">BORNE</th>
-      <th style="border: 2px solid black;">Contator</th>
-      <th style="border: 2px solid black;">ASLP</th>
-      <th style="border: 2px solid black;">BLOQUEIO</th>
-      <th style="border: 2px solid black;">TEMP</th>
+      <th style="border: 2px solid black;">Descrição</th>
+      <th style="border: 2px solid black;">Dispositivo</th>
+      <th style="border: 2px solid black;">Contato</th>
+      <th style="border: 2px solid black;">Borne</th>
+      <th style="border: 2px solid black;">Relé (Band)</th>
+      <th style="border: 2px solid black;">Borne</th>
+      <th style="border: 2px solid black;">Folha</th>
+      <th style="border: 2px solid black;"></th>
     </tr>
   </thead>
 
   <tbody>
     <tr class="linha-interativa">
-      <td style="border: 1px solid black; text-align: center;">Nível baixo de óleo</td>
-      <td style="border: 1px solid black; text-align: center;">FN</td>
-      <td style="border: 1px solid black; text-align: center;">3-208</td>
-      <td style="border: 1px solid black; text-align: center;">LX</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">7-13</span>
-      </td>
-      <td style="border: 1px solid black; text-align: center;">KFN</td>
-      <td style="border: 1px solid black; text-align: center;">52</td>
+      <td style="border: 1px solid black; text-align: center;">Temp. Metal Segmento 7 Mancal Escora</td>
+      <td style="border: 1px solid black; text-align: center;">16 - 17</td>
+      <td style="border: 1px solid black; text-align: center;">1589/1591</td>
+      <td style="border: 1px solid black; text-align: center;">DIRETO</td>
       <td style="border: 1px solid black; text-align: center;"></td>
-      <td style="border: 1px solid black; text-align: center;">Inst.</td>
+      <td style="border: 1px solid black; text-align: center;"></td>
+      <td style="border: 1px solid black; text-align: center;"></td>
+          </tr>
+
+    <tr class="linha-interativa">
+      <td style="border: 1px solid black; text-align: center;">Temp. Metal Segmento 1 Mancal Escora</td>
+      <td style="border: 1px solid black; text-align: center;">38T3</td>
+      <td style="border: 1px solid black; text-align: center;">16 - 17</td>
+      <td style="border: 1px solid black; text-align: center;">1598/1600</td>
+      <td style="border: 1px solid black; text-align: center;">DIRETO</td>
+      <td style="border: 1px solid black; text-align: center;"></td>
+      <td style="border: 1px solid black; text-align: center;"></td>
+      <td style="border: 1px solid black; text-align: center;"></td>
     </tr>
 
     <tr class="linha-interativa">
-      <td style="border: 1px solid black; text-align: center;">Pressão alta do óleo</td>
-      <td style="border: 1px solid black; text-align: center;">PS</td>
-      <td style="border: 1px solid black; text-align: center;">3-206</td>
-      <td style="border: 1px solid black; text-align: center;">LX1</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">7-12</span>
-      </td>
-      <td style="border: 1px solid black; text-align: center;">KPS</td>
-      <td style="border: 1px solid black; text-align: center;">52</td>
+      <td style="border: 1px solid black; text-align: center;">Temp. Metal Segmento 2 MGS</td>
+      <td style="border: 1px solid black; text-align: center;">38U1</td>
+      <td style="border: 1px solid black; text-align: center;">16 - 17</td>
+      <td style="border: 1px solid black; text-align: center;">1592/1594</td>
+      <td style="border: 1px solid black; text-align: center;">DIRETO</td>
       <td style="border: 1px solid black; text-align: center;"></td>
-      <td style="border: 1px solid black; text-align: center;">Inst.</td>
+      <td style="border: 1px solid black; text-align: center;"></td>
+      <td style="border: 1px solid black; text-align: center;"></td>
     </tr>
 
     <tr class="linha-interativa">
-      <td style="border: 1px solid black; text-align: center;">Pressão baixa bomba 1</td>
-      <td style="border: 1px solid black; text-align: center;">PL1 *</td>
-      <td style="border: 1px solid black; text-align: center;">79-79A</td>
-      <td style="border: 1px solid black; text-align: center;">LX1</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">1-2</span>
-      </td>
-      <td style="border: 1px solid black; text-align: center;">KPL1 + KPL2</td>
-      <td style="border: 1px solid black; text-align: center;">52</td>
+      <td style="border: 1px solid black; text-align: center;">Temp. Metal Segmento 9 Mancal Guia Médio</td>
+      <td style="border: 1px solid black; text-align: center;">38M1</td>
+      <td style="border: 1px solid black; text-align: center;">16 - 17</td>
+      <td style="border: 1px solid black; text-align: center;">1595/1597</td>
+      <td style="border: 1px solid black; text-align: center;">DIRETO</td>
       <td style="border: 1px solid black; text-align: center;"></td>
-      <td style="border: 1px solid black; text-align: center;">Inst.</td>
-    </tr>
-
-    <tr class="linha-interativa">
-      <td style="border: 1px solid black; text-align: center;">Pressão baixa bomba 2</td>
-      <td style="border: 1px solid black; text-align: center;">PL2 *</td>
-      <td style="border: 1px solid black; text-align: center;">82-82A</td>
-      <td style="border: 1px solid black; text-align: center;">LX1</td>
-      <td style="border: 1px solid black; text-align: center; color: blue;">
-        <span style="color: blue;">3-4</span>
-      </td>
-      <td style="border: 1px solid black; text-align: center;">KPL1 + KPL2</td>
-      <td style="border: 1px solid black; text-align: center;">52</td>
       <td style="border: 1px solid black; text-align: center;"></td>
-      <td style="border: 1px solid black; text-align: center;">Inst.</td>
+      <td style="border: 1px solid black; text-align: center;"></td>
     </tr>
   </tbody>
 </table>
@@ -21332,22 +21218,6 @@ C2(83-84);CLD(63-64)
     pointer-events: none;
   }
 </style>
-
-
-
-  <!-- PONTO SEGURO PARA ALTERAR (título/conteúdo da Página 5) -->
-  
-
-  <div class="numero-pagina">Página 32</div>
-</div>
-<!-- ==============================
-     PÁGINA 21
-     ============================== -->
-<div class="pagina" id="pagina5">
-
-
-
-
 
 
 
