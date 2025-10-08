@@ -21189,14 +21189,22 @@ C2(83-84);CLD(63-64)
       <td style="border: 1px solid black; text-align: center;">DIRETO</td>
       <td style="border: 1px solid black; text-align: center;"></td>
       <td style="border: 1px solid black; text-align: center;"></td>
-      <td style="border: 1px solid black; text-align: center;">teste</td>
+      <td style="border: 1px solid black; text-align: center;">teste2</td>
     </tr>
   </tbody>
 </table>
 
+<style>
 
 
-
+/* Linha de cabeçalho (EVENTO, D.PRIM...) não muda cor e não reage ao clique */
+  table thead .no-click th {
+    background-color: #fff !important;
+    cursor: default !important;
+    user-select: none;
+    pointer-events: none;
+  }
+</style>
 
 
 
