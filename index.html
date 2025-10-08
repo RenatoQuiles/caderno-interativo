@@ -936,17 +936,17 @@ function openEmail() {
 
 
 /* ===== Exemplo: se existirem tabelas, clique na linha alterna amarelo =====
-   (Agora as linhas interativas funcionam corretamente) */
+   (Não precisa mexer aqui. Use apenas se for usar tabelas interativas.) */
 document.addEventListener("DOMContentLoaded", function() {
-  // Só as linhas com a classe .linha-interativa podem ser clicadas
-  document.querySelectorAll("tbody .linha-interativa").forEach(function(linha) {
+  const linhas = document.querySelectorAll("table tr:not(:first-child)");
+  linhas.forEach(function(linha) {
     linha.addEventListener("click", function() {
-      this.classList.toggle("selecionada");
+      const corAtual = getComputedStyle(this).backgroundColor;
+      this.style.backgroundColor = (corAtual === "rgb(255, 255, 0)") ? "white" : "yellow";
     });
   });
 });
 </script>
-
 
 </body>
 </html>
