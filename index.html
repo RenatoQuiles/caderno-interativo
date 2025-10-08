@@ -387,31 +387,56 @@ function toggleSubitensSCADA() {
 /* ===== Abre um novo e-mail no Outlook (se instalado) ou cai no mailto =====
    PONTO SEGURO PARA ALTERAR: e-mails, assunto e corpo abaixo */
 function openEmail() {
-  const toEmail = "renatoq@itaipu.gov.br";   // Destinatário principal (TO)
+  // ==== CONFIGURAÇÕES DO E-MAIL ====
+  const toEmail = "renatoq@itaipu.gov.br";   // Destinatário principal
   const ccEmail = "copia@exemplo.com";       // Cópia (CC)
   const subjectText = "Alteração caderno de parametrizações"; // Assunto
   const bodyText = "Mensagem inicial...";    // Corpo do e-mail
 
-  // Codifica para evitar problemas com acentos e espaços
+  // ==== CODIFICAÇÃO DE CAMPOS ====
   const to = encodeURIComponent(toEmail);
   const cc = encodeURIComponent(ccEmail);
   const subject = encodeURIComponent(subjectText);
   const body = encodeURIComponent(bodyText);
 
-  // Tenta abrir no Outlook (iPad/iPhone/desktop com app instalado)
+  // ==== LINKS ====
   const outlookUrl = `ms-outlook://compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
-  // Fallback padrão caso Outlook não esteja disponível
   const mailtoUrl  = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
 
-  // Heurística simples de fallback
-  const start = Date.now();
-  window.location.href = outlookUrl;
-  setTimeout(function() {
-    if (Date.now() - start < 1500) {
+  // ==== DETECÇÃO DO SISTEMA OPERACIONAL ====
+  const userAgent = navigator.userAgent.toLowerCase();
+  const isWindows = userAgent.indexOf("win") > -1;
+  const isMac = userAgent.indexOf("mac") > -1;
+  const isIOS = /iphone|ipad|ipod/.test(userAgent);
+  const isAndroid = userAgent.indexOf("android") > -1;
+
+  // ==== COMPORTAMENTO POR SISTEMA ====
+  if (isIOS || isMac) {
+    // 🍎 iPhone / iPad / macOS → abre Outlook nativo (funciona bem nesses)
+    window.location.href = outlookUrl;
+    setTimeout(() => window.location.href = mailtoUrl, 1200);
+  } 
+  else if (isWindows) {
+    // 💻 Windows → tenta Outlook Desktop; se falhar, usa mailto padrão
+    try {
+      window.location.href = outlookUrl;
+      setTimeout(() => window.location.href = mailtoUrl, 1800);
+    } catch (e) {
       window.location.href = mailtoUrl;
     }
-  }, 800);
+  } 
+  else if (isAndroid) {
+    // 🤖 Android → usa mailto (abre Gmail ou app padrão)
+    window.location.href = mailtoUrl;
+  } 
+  else {
+    // 🌐 Qualquer outro sistema (Linux, ChromeOS, etc.)
+    window.location.href = mailtoUrl;
+  }
 }
+
+
+
 
 /* ===== Exemplo: se existirem tabelas, clique na linha alterna amarelo =====
    (Não precisa mexer aqui. Use apenas se for usar tabelas interativas.) */
