@@ -21146,10 +21146,6 @@ C2(83-84);CLD(63-64)
 
 
 <tbody>
-
-
-
-
 <tr class="linha-interativa">
       <td style="border: 1px solid black; text-align: center;">Temp. Metal Segmento 7 Mancal Escora</td>
       <td style="border: 1px solid black; text-align: center;">38T1</td>
@@ -21193,15 +21189,33 @@ C2(83-84);CLD(63-64)
       <td style="border: 1px solid black; text-align: center;">DIRETO</td>
       <td style="border: 1px solid black; text-align: center;"></td>
       <td style="border: 1px solid black; text-align: center;"></td>
-      <td style="border: 1px solid black; text-align: center;">teste3</td>
+      <td style="border: 1px solid black; text-align: center;"></td>
     </tr>
   </tbody>
 </table>
 
+<script>
+  // Adiciona o clique apenas nas linhas do TBODY
+  document.querySelectorAll("tbody .linha-interativa").forEach(function(linha) {
+    linha.addEventListener("click", function() {
+      this.classList.toggle("selecionada");
+    });
+  });
+</script>
+
 <style>
+  /* Linha de dados interativa */
+  .linha-interativa {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
 
+  /* Só as linhas de dados podem ficar amarelas */
+  table tbody .linha-interativa.selecionada {
+    background-color: yellow !important;
+  }
 
-/* Linha de cabeçalho (EVENTO, D.PRIM...) não muda cor e não reage ao clique */
+  /* Linha de cabeçalho (EVENTO, D.PRIM...) não muda cor e não reage ao clique */
   table thead .no-click th {
     background-color: #fff !important;
     cursor: default !important;
@@ -21209,6 +21223,7 @@ C2(83-84);CLD(63-64)
     pointer-events: none;
   }
 </style>
+
 
 
 
