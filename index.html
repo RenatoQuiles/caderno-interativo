@@ -406,6 +406,12 @@ function toggleSubitensSCADA() {
 
 /* ===== Abre um novo e-mail no Outlook (se instalado) ou cai no mailto =====
    PONTO SEGURO PARA ALTERAR: e-mails, assunto e corpo abaixo */
+
+
+
+
+
+
 function openEmail() {
   // ===== CONFIGURAÇÕES DO E-MAIL =====
   const toEmail = "renatoq@itaipu.gov.br";
@@ -455,6 +461,18 @@ function openEmail() {
   // Outros (Linux, ChromeOS etc.)
   window.location.href = mailtoUrl;
 }
+
+/* ===== Exemplo: se existirem tabelas, clique na linha alterna amarelo =====
+   (Não precisa mexer aqui. Use apenas se for usar tabelas interativas.) */
+document.addEventListener("DOMContentLoaded", function() {
+  const linhas = document.querySelectorAll("table tr:not(:first-child)");
+  linhas.forEach(function(linha) {
+    linha.addEventListener("click", function() {
+      const corAtual = getComputedStyle(this).backgroundColor;
+      this.style.backgroundColor = (corAtual === "rgb(255, 255, 0)") ? "white" : "yellow";
+    });
+  });
+});
 
 
 </script>
