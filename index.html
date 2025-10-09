@@ -1168,16 +1168,14 @@ function openEmail() {
 
 /* ===== Exemplo: se existirem tabelas, clique na linha alterna amarelo =====
    (Não precisa mexer aqui. Use apenas se for usar tabelas interativas.) */
+/* ===== Clique nas linhas de dados para amarelar ===== */
 document.addEventListener("DOMContentLoaded", function() {
-  const linhas = document.querySelectorAll("table tr:not(:first-child)");
-  linhas.forEach(function(linha) {
+  // Só linhas do TBODY com a classe .linha-interativa
+  document.querySelectorAll("tbody .linha-interativa").forEach(function(linha) {
     linha.addEventListener("click", function() {
-      const corAtual = getComputedStyle(this).backgroundColor;
-      this.style.backgroundColor = (corAtual === "rgb(255, 255, 0)") ? "white" : "yellow";
+      this.classList.toggle("selecionada");
     });
   });
 });
-</script>
-
 </body>
 </html>
