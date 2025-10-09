@@ -2546,6 +2546,20 @@ de variação de temperatura <br>
 </table>
 
 
+
+<style>
+  .linha-interativa { cursor: pointer; transition: background-color 0.2s ease; }
+  table tbody .linha-interativa.selecionada { background-color: yellow !important; }
+  table thead .no-click th {
+    background-color: #fff !important;
+    cursor: default !important;
+    user-select: none;
+    pointer-events: none;
+  }
+</style>
+
+
+
 <p style="font-size: 14px;">
  <span style="color: red; font-weight: bold;">* Necessita 39W9X (Vál PVR água princ) ou 81-0x1 (indic máq parada) atuados no ULP Pag 56 Band 88 e TGA após 10 min (80WO: 15min)</span>
 </p>
