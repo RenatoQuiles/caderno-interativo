@@ -8,23 +8,23 @@
     body {
       margin: 0;
       padding: 0;
-      background: #ddd; /* Cor de fundo da tela */
+      background: #ddd;
       font-family: Arial, sans-serif;
     }
 
     /* ===== CADA PÁGINA A4 NA TELA ===== */
     .pagina {
-      width: 794px;   /* Largura aproximada A4 em 96dpi */
-      height: 1123px; /* Altura aproximada A4 em 96dpi */
+      width: 794px;   /* A4 ~96dpi */
+      height: 1123px;
       background: #fff;
-      margin: 40px auto;        /* Centraliza e separa as páginas */
-      padding: 50px 60px;       /* Margem interna (conteúdo) */
+      margin: 40px auto;
+      padding: 50px 60px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
       position: relative;
-      page-break-after: always; /* Quebra de página na impressão */
+      page-break-after: always;
     }
 
-    /* ===== RODAPÉ (número/identificação) ===== */
+    /* ===== RODAPÉ ===== */
     .numero-pagina {
       position: absolute;
       bottom: 20px;
@@ -33,16 +33,14 @@
       color: gray;
     }
 
-    /* ===== ÁREA DO ÍNDICE (com corte antes do rodapé) ===== */
+    /* ===== ÁREA DO ÍNDICE ===== */
     .indice {
       text-align: left;
       margin-top: 60px;
       font-size: 14px;
       line-height: 1.8;
-      /* Mantém distância do rodapé. 
-         PONTO SEGURO PARA ALTERAR: ajuste o 300px para subir/descer o corte */
       max-height: calc(100% - 300px);
-      overflow: hidden;   /* O que passar do limite fica invisível */
+      overflow: hidden;
       box-sizing: border-box;
     }
 
@@ -56,14 +54,26 @@
       border-radius: 6px;
       font-size: 14px;
       cursor: pointer;
-      text-decoration: underline; /* Sublinhado como solicitado */
+      text-decoration: underline;
       line-height: 1.2;
-      white-space: normal;  /* Permite quebra de linha */
-      max-width: 280px;     /* Largura para facilitar a quebra em 2 linhas */
+      white-space: normal;
+      max-width: 280px;
       text-align: center;
     }
     .btn-email:active { transform: translateY(1px); }
     .btn-email:focus { outline: 2px solid rgba(30,91,217,0.35); outline-offset: 2px; }
+
+    /* ===== CLIQUE-TO-AMARELO (todas as tabelas) ===== */
+    table tbody tr {               /* só linhas de dados */
+      cursor: pointer;
+      transition: background-color .2s ease;
+    }
+    table tbody tr.no-click {      /* use .no-click p/ desativar em alguma linha */
+      cursor: default;
+    }
+    table tbody tr.selecionada {
+      background-color: yellow !important;
+    }
 
     /* ===== MODO IMPRESSÃO ===== */
     @media print {
@@ -72,7 +82,7 @@
         height: auto !important;
         overflow: visible !important;
       }
-      .btn-email { display: none !important; } /* Botão não precisa no papel */
+      .btn-email { display: none !important; }
     }
   </style>
 </head>
@@ -83,37 +93,26 @@
      ============================== -->
 <div class="pagina" id="pagina1">
 
-  <!-- ===== TÍTULO ===== -->
-  <!-- PONTO SEGURO PARA ALTERAR (texto do título/versão) -->
   <h1 style="text-align: center; font-size: 24px; margin-top: 50px;">
     CADERNO DE ENSAIOS E PARAMETRIZAÇÕES<br>Versão 6.1
   </h1>
 
-  <!-- ===== SUBTÍTULO ===== -->
-  <!-- PONTO SEGURO PARA ALTERAR (texto do subtítulo/local) -->
   <h2 style="text-align: center; font-size: 18px; margin-top: 40px; color: black;">
     Manter na sala da MEG1 – EL.139
   </h2>
 
-  <!-- ===== BOTÃO DE E-MAIL (Outlook -> fallback mailto) ===== -->
-  <!-- PONTO SEGURO PARA ALTERAR (texto do botão; e-mails na função openEmail) -->
   <div style="text-align:right; margin-top: 10px;">
     <button type="button" class="btn-email" onclick="openEmail()">
       Clique Aqui para reportar<br>erro/atualização deste caderno
     </button>
   </div>
 
-  <!-- ===== ÍNDICE COMPLETO (28 ITENS) ===== -->
   <div class="indice">
-    <!-- Item 1 abre/fecha subitens ao clicar. 
-         PONTO SEGURO PARA ALTERAR (o texto, mantendo o onclick) -->
     <div onclick="toggleSubitensULP()" 
          style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
       1 – Lista de ensaios com ULP
     </div>
 
-    <!-- Subitens do item 1 (inicialmente escondidos).
-         PONTO SEGURO PARA ALTERAR (pode editar textos, ordem, links) -->
     <div id="subitens-ulp" style="display:none; margin-left:20px;">
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#umcc" style="color:blue; text-decoration:underline; cursor:pointer;">1.10 - UMCC</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kk" style="color:blue; text-decoration:underline; cursor:pointer;">1.11 - KK</a><br>
@@ -121,9 +120,6 @@
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctau(tau)" style="color:blue; text-decoration:underline; cursor:pointer;">1.13 - CTAU (TAU)</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm" style="color:blue; text-decoration:underline; cursor:pointer;">1.14 - QTM (Alimentação UMCC:52-2)</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm52.3" style="color:blue; text-decoration:underline; cursor:pointer;">1.15 - QTM (Alimentação UMCC:52-3)</a><br>
-
-
-
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tga" style="color:blue; text-decoration:underline; cursor:pointer;">1.16 - TGA</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pwb" style="color:blue; text-decoration:underline; cursor:pointer;">1.17 - PWB</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qcp" style="color:blue; text-decoration:underline; cursor:pointer;">1.18 - QCP</a><br>
@@ -132,71 +128,52 @@
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cld" style="color:blue; text-decoration:underline; cursor:pointer;">1.21 - CLD</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#caixaespiral" style="color:blue; text-decoration:underline; cursor:pointer;">1.22 - Caixa espiral</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ccar" style="color:blue; text-decoration:underline; cursor:pointer;">1.23 - CCAR</a><br>
-
-     
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#pa" style="color:blue; text-decoration:underline; cursor:pointer;">1.24 - PA</a><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#pva" style="color:blue; text-decoration:underline; cursor:pointer;">1.25 - PVA</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb1" style="color:blue; text-decoration:underline; cursor:pointer;">1.26 - GTB-1</a><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb3" style="color:blue; text-decoration:underline; cursor:pointer;">1.27 - GTB-3</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#cte-tep" style="color:blue; text-decoration:underline; cursor:pointer;">1.28 - CTE - TEP</a><br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#cte-tendesativado" style="color:blue; text-decoration:underline; cursor:pointer;">1.29 - CTE - TEN - DESATIVADO</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctm" style="color:blue; text-decoration:underline; cursor:pointer;">1.30 - CTM</a><br>
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#kvb" style="color:blue; text-decoration:underline; cursor:pointer;">1.31 - KVB</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#pap" style="color:blue; text-decoration:underline; cursor:pointer;">1.32 - PAP</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm" style="color:blue; text-decoration:underline; cursor:pointer;">1.33 - CFM</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp" style="color:blue; text-decoration:underline; cursor:pointer;">1.34 - PP</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctg" style="color:blue; text-decoration:underline; cursor:pointer;">1.35 - CTG</a><br>
-
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pa" style="color:blue; text-decoration:underline; cursor:pointer;">1.24 - PA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pva" style="color:blue; text-decoration:underline; cursor:pointer;">1.25 - PVA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb1" style="color:blue; text-decoration:underline; cursor:pointer;">1.26 - GTB-1</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb3" style="color:blue; text-decoration:underline; cursor:pointer;">1.27 - GTB-3</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cte-tep" style="color:blue; text-decoration:underline; cursor:pointer;">1.28 - CTE - TEP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cte-tendesativado" style="color:blue; text-decoration:underline; cursor:pointer;">1.29 - CTE - TEN - DESATIVADO</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctm" style="color:blue; text-decoration:underline; cursor:pointer;">1.30 - CTM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kvb" style="color:blue; text-decoration:underline; cursor:pointer;">1.31 - KVB</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pap" style="color:blue; text-decoration:underline; cursor:pointer;">1.32 - PAP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm" style="color:blue; text-decoration:underline; cursor:pointer;">1.33 - CFM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp" style="color:blue; text-decoration:underline; cursor:pointer;">1.34 - PP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctg" style="color:blue; text-decoration:underline; cursor:pointer;">1.35 - CTG</a><br>
     </div>
 
-
-
-
-
-    <!-- ===== ITENS 2 A 28 (texto plano com <br> no final) ===== -->
-    <!-- PONTO SEGURO PARA ALTERAR (você pode editar os textos à vontade) -->
     <div onclick="toggleSubitensSCADA()"
-     style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
-  2 – Lista de ensaios com SCADA
-</div>
+         style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
+      2 – Lista de ensaios com SCADA
+    </div>
 
-<div id="subitens-scada" style="display:none; margin-left:20px;">
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapwbepwx" style="color:blue; text-decoration:underline; cursor:pointer;">2.10 - PWB e PWX</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaumcc" style="color:blue; text-decoration:underline; cursor:pointer;">2.11 - UMCC</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadatau" style="color:blue; text-decoration:underline; cursor:pointer;">2.12 - TAU</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqv" style="color:blue; text-decoration:underline; cursor:pointer;">2.13 - QV</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadalip" style="color:blue; text-decoration:underline; cursor:pointer;">2.14 - LIP </a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadactm" style="color:blue; text-decoration:underline; cursor:pointer;">2.15 - CTM </a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqcp" style="color:blue; text-decoration:underline; cursor:pointer;">2.16 - QCP</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapa" style="color:blue; text-decoration:underline; cursor:pointer;">2.17 - PA</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqci" style="color:blue; text-decoration:underline; cursor:pointer;">2.18 - QCI</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb1" style="color:blue; text-decoration:underline; cursor:pointer;">2.19 - GTB1</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb2" style="color:blue; text-decoration:underline; cursor:pointer;">2.20 - GTB2</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb3" style="color:blue; text-decoration:underline; cursor:pointer;">2.21 - GTB3</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaccar" style="color:blue; text-decoration:underline; cursor:pointer;">2.22 - CCAR</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqtmtm" style="color:blue; text-decoration:underline; cursor:pointer;">2.23 - QTM - TM</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadakkpvrtga" style="color:blue; text-decoration:underline; cursor:pointer;">2.24 - KK - PVR - TGA</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadastau" style="color:blue; text-decoration:underline; cursor:pointer;">2.25 - STAU</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaste" style="color:blue; text-decoration:underline; cursor:pointer;">2.26 - STE</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadacld" style="color:blue; text-decoration:underline; cursor:pointer;">2.27 - CLD</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadatep" style="color:blue; text-decoration:underline; cursor:pointer;">2.28 - TEP</a><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapva" style="color:blue; text-decoration:underline; cursor:pointer;">2.29 - PVA</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctm" style="color:blue; text-decoration:underline; cursor:pointer;">1.30 - CTM</a><br>
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#kvb" style="color:blue; text-decoration:underline; cursor:pointer;">1.31 - KVB</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#pap" style="color:blue; text-decoration:underline; cursor:pointer;">1.32 - PAP</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm" style="color:blue; text-decoration:underline; cursor:pointer;">1.33 - CFM</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp" style="color:blue; text-decoration:underline; cursor:pointer;">1.34 - PP</a><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctg" style="color:blue; text-decoration:underline; cursor:pointer;">1.35 - CTG</a><br>
-
-
-</div>
+    <div id="subitens-scada" style="display:none; margin-left:20px;">
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapwbepwx" style="color:blue; text-decoration:underline; cursor:pointer;">2.10 - PWB e PWX</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaumcc" style="color:blue; text-decoration:underline; cursor:pointer;">2.11 - UMCC</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadatau" style="color:blue; text-decoration:underline; cursor:pointer;">2.12 - TAU</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqv" style="color:blue; text-decoration:underline; cursor:pointer;">2.13 - QV</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadalip" style="color:blue; text-decoration:underline; cursor:pointer;">2.14 - LIP </a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadactm" style="color:blue; text-decoration:underline; cursor:pointer;">2.15 - CTM </a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqcp" style="color:blue; text-decoration:underline; cursor:pointer;">2.16 - QCP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapa" style="color:blue; text-decoration:underline; cursor:pointer;">2.17 - PA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqci" style="color:blue; text-decoration:underline; cursor:pointer;">2.18 - QCI</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb1" style="color:blue; text-decoration:underline; cursor:pointer;">2.19 - GTB1</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb2" style="color:blue; text-decoration:underline; cursor:pointer;">2.20 - GTB2</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb3" style="color:blue; text-decoration:underline; cursor:pointer;">2.21 - GTB3</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaccar" style="color:blue; text-decoration:underline; cursor:pointer;">2.22 - CCAR</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqtmtm" style="color:blue; text-decoration:underline; cursor:pointer;">2.23 - QTM - TM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadakkpvrtga" style="color:blue; text-decoration:underline; cursor:pointer;">2.24 - KK - PVR - TGA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadastau" style="color:blue; text-decoration:underline; cursor:pointer;">2.25 - STAU</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaste" style="color:blue; text-decoration:underline; cursor:pointer;">2.26 - STE</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadacld" style="color:blue; text-decoration:underline; cursor:pointer;">2.27 - CLD</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadatep" style="color:blue; text-decoration:underline; cursor:pointer;">2.28 - TEP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctm" style="color:blue; text-decoration:underline; cursor:pointer;">1.30 - CTM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kvb" style="color:blue; text-decoration:underline; cursor:pointer;">1.31 - KVB</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pap" style="color:blue; text-decoration:underline; cursor:pointer;">1.32 - PAP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm" style="color:blue; text-decoration:underline; cursor:pointer;">1.33 - CFM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp" style="color:blue; text-decoration:underline; cursor:pointer;">1.34 - PP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctg" style="color:blue; text-decoration:underline; cursor:pointer;">1.35 - CTG</a><br>
+    </div>
 
     3 – Lista de ensaios dos anunciadores TGA<br>
     4 – Lista de ensaios contatores CCAR<br>
@@ -226,272 +203,182 @@
     28 – Lista telefônica
   </div>
 
-  <!-- ===== RODAPÉ DA PÁGINA 1 ===== -->
-  <!-- PONTO SEGURO PARA ALTERAR (texto do rodapé da capa) -->
   <div class="numero-pagina">01/08/2025 - RAQ</div>
 </div>
 
 
 <!-- ==============================
-     PÁGINA 22
+     PÁGINA 22 (ULP - GGB)
      ============================== -->
 <div class="pagina" id="pagina5">
 
-
-<h2 style="color: black; text-align: center; font-size: 14px;">
+  <h2 style="color: black; text-align: center; font-size: 14px;">
     Dispositivos Primários - ULP - SMMG.DT - MEG-1 <span style="color:blue;">(AS AÇÕES A SEREM REALIZADAS ESTÃO EM AZUL)</span>
   </h2>
 
-<a name="ggb"></a>
+  <a name="ggb"></a>
   <div style="text-align:right; margin-bottom: 10px;"><a href="#pagina1" style="color:blue; text-decoration:underline; font-size:14px;">⬅ Voltar ao índice (1.19 - GGB)</a></div>
  
   <div style="background-color: yellow; padding: 10px; text-align: center; font-weight: bold; font-size: 16px;">
     6210-DF-74159 6210-DF-74160 GGB
   </div>
+
   <table style="width:100%; border-collapse: collapse; font-size: 12px; margin-top: 2px; border: 1px solid black;">
-<thead>
+    <thead>
+      <tr>
+        <th colspan="4" style="border: 2px solid black; background-color: #cfe8ff; text-align:center; font-weight:bold; font-size:14px; height:32px;">
+          GGB
+        </th>
+        <th colspan="3" style="border: 2px solid black; background-color: #7f3fbf; color:white; text-align:center; font-weight:bold; font-size:14px; height:32px;">
+          ULP
+        </th>
+        <th colspan="1" style="border: 2px solid black; background-color: yellow; text-align:center; font-weight:bold; font-size:14px; height:32px;">
+          ACAO
+        </th>
+      </tr>
 
-<tr>
-      <th colspan="4" style="border: 2px solid black; background-color: #cfe8ff; text-align:center; font-weight:bold; font-size:14px; height:32px;">
-        GGB
-      </th>
-      <th colspan="3" style="border: 2px solid black; background-color: #7f3fbf; color:white; text-align:center; font-weight:bold; font-size:14px; height:32px;">
-        ULP
-      </th>
-      <th colspan="1" style="border: 2px solid black; background-color: yellow; text-align:center; font-weight:bold; font-size:14px; height:32px;">
-        ACAO
-      </th>
-    </tr>
+      <tr>
+        <th style="border: 2px solid black;">EVENTO</th>
+        <th style="border: 2px solid black;">D.PRIM.</th>
+        <th style="border: 2px solid black;">FOLHA</th>
+        <th style="border: 2px solid black;">CONTATO</th>
+        <th style="border: 2px solid black;">AÇÃO</th>
+        <th style="border: 2px solid black;">BORNE</th>
+        <th style="border: 2px solid black;">TGA</th>
+        <th style="border: 2px solid black;">ULP</th>
+        <th style="border: 2px solid black;">BLOQ</th>
+      </tr>
+    </thead>
 
-<tr>
-<th style="border: 2px solid black;">
-       EVENTO
-      </th>
-<th style="border: 2px solid black;">
-       D.PRIM.
-      </th>
-<th style="border: 2px solid black;">
-       FOLHA
-      </th>
-<th style="border: 2px solid black;">
-       CONTATO
-      </th>
-<th style="border: 2px solid black;">
-       AÇÃO
-      </th>
-<th style="border: 2px solid black;">
-       BORNE
-      </th>
-<th style="border: 2px solid black;">
-       TGA
-      </th>
-<th style="border: 2px solid black;">
-       ULP
-      </th>
-<th style="border: 2px solid black;">
-       BLOQ
-      </th>
+    <tbody>
+      <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+        <td style="border: 1px solid black; text-align: center;">Baixo Fluxo Radiadores</td>
+        <td style="border: 1px solid black; text-align: center;">80WO</td>
+        <td style="border: 1px solid black; text-align: center;"></td>
+        <td style="border: 1px solid black; text-align: center;">7-8</td>
+        <td style="border: 1px solid black; text-align: center; color: blue;"><span style="color: blue;">jumper</span></td>
+        <td style="border: 1px solid black; text-align: center;">1652-1651</td>
+        <td style="border: 1px solid black; text-align: center;">28.2<span style="color: red; font-weight: bold;">*</span></td>
+        <td style="border: 1px solid black; text-align: center;">100<span style="color: red; font-weight: bold;">*</span></td>
+        <td style="border: 1px solid black; text-align: center;">86N+88</td>
+      </tr>
 
+      <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+        <td style="border: 1px solid black; text-align: center;">Baixo Fluxo M Comb</td>
+        <td style="border: 1px solid black; text-align: center;">80TW</td>
+        <td style="border: 1px solid black; text-align: center;"></td>
+        <td style="border: 1px solid black; text-align: center;">7-8</td>
+        <td style="border: 1px solid black; text-align: center; color: blue;"><span style="color: blue;">jumper</span></td>
+        <td style="border: 1px solid black; text-align: center;">1653-1654</td>
+        <td style="border: 1px solid black; text-align: center;">14.2<span style="color: red; font-weight: bold;">*</span></td>
+        <td style="border: 1px solid black; text-align: center;">96<span style="color: red; font-weight: bold;">*</span></td>
+        <td style="border: 1px solid black; text-align: center;">86N + 88</td>
+      </tr>
+    </tbody>
+  </table>
 
+  <p style="font-size: 14px;">
+    <span style="color: red; font-weight: bold;">* Necessita 39W9X (Vál PVR água princ) ou 81-0x1 (indic máq parada) atuados no ULP Pag 56 Band 88 e TGA após 10 min (80WO: 15min)</span>
+  </p>
 
-</tr>
-
-
-</tr>
-
-<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
-<td style="border: 1px solid black; text-align: center;">
-       Baixo Fluxo Radiadores
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-      80WO
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       7-8
-      </td>
-<td style="border: 1px solid black; text-align: center; color: blue;">
-<span style="color: blue;">
-        jumper
-       </span>
-</td>
-<td style="border: 1px solid black; text-align: center;">
-       1652-1651
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-      28.2<span style="color: red; font-weight: bold;">*</span>
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       100<span style="color: red; font-weight: bold;">*</span>
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-      86N+88
-      </td>
-</tr>
-
-</tr>
-<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
-<td style="border: 1px solid black; text-align: center;">
-       Baixo Fluxo M Comb
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       80TW
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-     7-8  
-      </td>
-<td style="border: 1px solid black; text-align: center; color: blue;">
-<span style="color: blue;">
-        jumper
-       </span>
-</td>
-<td style="border: 1px solid black; text-align: center;">
-       1653-1654
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       14.2<span style="color: red; font-weight: bold;">*</span>
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       96<span style="color: red; font-weight: bold;">*</span>
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       86N + 88
-      </td>
-</tr>
-</tbody>
-</table>
-
-
-<p style="font-size: 14px;">
- <span style="color: red; font-weight: bold;">* Necessita 39W9X (Vál PVR água princ) ou 81-0x1 (indic máq parada) atuados no ULP Pag 56 Band 88 e TGA após 10 min (80WO: 15min)</span>
-</p>
-
-  <!-- PONTO SEGURO PARA ALTERAR (título/conteúdo da Página 5) -->
- 
   <div class="numero-pagina">Página 22</div>
 </div>
 
 
-
 <!-- ==============================
-     PÁGINA 22
+     PÁGINA 22 (IMAGEM)
      ============================== -->
 <div class="pagina" id="pagina5">
-
-
-<!-- ==============================
-     INSERINDO IMAGENS
-     ============================== -->
-<div style="text-align: center; margin-top: 20px;">
-    <img src="https://i.ibb.co/8g7wth9y/imagem-sonda.png"          
-         alt="Descrição da imagem"
-         style="max-width: 90%; height: auto;">
-  </div> 
-
-
-
-  <!-- PONTO SEGURO PARA ALTERAR (título/conteúdo da Página 5) -->
- 
+  <div style="text-align: center; margin-top: 20px;">
+    <img src="https://i.ibb.co/8g7wth9y/imagem-sonda.png" alt="Descrição da imagem" style="max-width: 90%; height: auto;">
+  </div>
   <div class="numero-pagina">Página 22</div>
 </div>
 
 
 <!-- ==============================
-     SCRIPTS (comportamentos)
+     SCRIPTS
      ============================== -->
 <script>
-/* ===== Mostra/oculta os subitens do item 1 no índice ===== */
+/* ===== Mostra/oculta subitens no índice ===== */
 function toggleSubitensULP() {
   const bloco = document.getElementById("subitens-ulp");
   const atual = bloco.style.display || "none";
   bloco.style.display = (atual === "none") ? "block" : "none";
 }
-
 function toggleSubitensSCADA() {
   const bloco = document.getElementById("subitens-scada");
   const atual = bloco.style.display || "none";
   bloco.style.display = (atual === "none") ? "block" : "none";
 }
 
-
-
-
-/* ===== Abre um novo e-mail no Outlook (se instalado) ou cai no mailto =====
-   PONTO SEGURO PARA ALTERAR: e-mails, assunto e corpo abaixo */
-
-
-
-
-
-
+/* ===== Botão de e-mail =====
+   Windows: usa mailto (Novo Outlook não suporta ms-outlook:// compose).
+   Apple: tenta Outlook app e cai para mailto.
+   Fallback final: Outlook Web no navegador. */
 function openEmail() {
-  // ===== CONFIGURAÇÕES DO E-MAIL =====
   const toEmail = "renatoq@itaipu.gov.br";
   const ccEmail = "copia@exemplo.com";
   const subjectText = "Alteração caderno de parametrizações";
   const bodyText = "Mensagem inicial...";
 
-  // Quebras de linha no corpo (se quiser): use \r\n
-  const bodyFormatted = bodyText.replace(/\n/g, "\r\n");
-
-  // ===== CODIFICAÇÃO =====
   const to = encodeURIComponent(toEmail);
   const cc = encodeURIComponent(ccEmail);
   const subject = encodeURIComponent(subjectText);
-  const body = encodeURIComponent(bodyFormatted);
+  const body = encodeURIComponent(bodyText.replace(/\n/g, "\r\n"));
 
-  // ===== LINKS =====
-  const mailtoUrl = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
+  const mailtoUrl  = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
   const outlookUrl = `ms-outlook://compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
+  const owaUrl     = `https://outlook.office.com/mail/deeplink/compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
 
-  // ===== DETECÇÃO DE PLATAFORMA =====
   const ua = navigator.userAgent.toLowerCase();
   const isWindows = ua.includes("win");
   const isIOS = /iphone|ipad|ipod/.test(ua);
   const isMac = ua.includes("mac");
   const isAndroid = ua.includes("android");
 
-  // ===== REGRAS =====
   if (isWindows) {
-    // Novo Outlook para Windows não suporta ms-outlook: compose
+    // No Windows, vá direto de mailto e, se nada acontecer, abre Outlook Web.
     window.location.href = mailtoUrl;
+    setTimeout(() => {
+      // Se o handler de mailto não abriu nada, oferece o web compose.
+      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
+    }, 1200);
     return;
   }
 
   if (isIOS || isMac) {
-    // No ecossistema Apple o ms-outlook costuma funcionar; se não, cai para mailto
+    // Tenta Outlook app; cai para mailto; por fim, Outlook Web.
     window.location.href = outlookUrl;
-    setTimeout(() => { window.location.href = mailtoUrl; }, 1200);
+    setTimeout(() => { window.location.href = mailtoUrl; }, 900);
+    setTimeout(() => {
+      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
+    }, 2000);
     return;
   }
 
   if (isAndroid) {
     window.location.href = mailtoUrl;
+    setTimeout(() => {
+      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
+    }, 1200);
     return;
   }
 
-  // Outros (Linux, ChromeOS etc.)
   window.location.href = mailtoUrl;
 }
 
-/* ===== Exemplo: se existirem tabelas, clique na linha alterna amarelo =====
-   (Não precisa mexer aqui. Use apenas se for usar tabelas interativas.) */
-document.addEventListener("DOMContentLoaded", function() {
-  const linhas = document.querySelectorAll("table tr:not(:first-child)");
-  linhas.forEach(function(linha) {
-    linha.addEventListener("click", function() {
-      const corAtual = getComputedStyle(this).backgroundColor;
-      this.style.backgroundColor = (corAtual === "rgb(255, 255, 0)") ? "white" : "yellow";
-    });
-  });
+/* ===== Clique-para-amarelar (global, todas as tabelas) =====
+   Usa delegação de evento só nas linhas de <tbody>.
+   IMPORTANTE: se uma <tr> já tiver um onclick inline (como algumas suas),
+   este handler ignora para não dar duplo toggle. */
+document.addEventListener("click", function(e) {
+  const tr = e.target.closest("tbody tr");
+  if (!tr) return;
+  if (tr.classList.contains("no-click")) return;    // opcional: desativar linha
+  if (tr.hasAttribute("onclick")) return;           // evita duplo toggle
+  tr.classList.toggle("selecionada");
 });
-
-
 </script>
 
 </body>
