@@ -553,95 +553,47 @@ function openEmail() {
   const subjectText = "Alteração caderno de parametrizações";
   const bodyText = "Mensagem inicial...";
 
+  // Quebras de linha no corpo (se quiser): use \r\n
+  const bodyFormatted = bodyText.replace(/\n/g, "\r\n");
+
   // ===== CODIFICAÇÃO =====
   const to = encodeURIComponent(toEmail);
   const cc = encodeURIComponent(ccEmail);
   const subject = encodeURIComponent(subjectText);
-  const body = encodeURIComponent(bodyText);
+  const body = encodeURIComponent(bodyFormatted);
 
-  // ===== URLs =====
-  const mailtoUrl   = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
-  // Variações do Outlook (algumas instalações no Windows só aceitam um dos dois formatos)
-  const outlookUrl1 = `ms-outlook:compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
-  const outlookUrl2 = `ms-outlook://compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
-  const outlookUrl3 = `outlook://compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
+  // ===== LINKS =====
+  const mailtoUrl = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
+  const outlookUrl = `ms-outlook://compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
 
-  // ===== DETECÇÃO DE PLATAFORMA (heurística leve) =====
+  // ===== DETECÇÃO DE PLATAFORMA =====
   const ua = navigator.userAgent.toLowerCase();
+  const isWindows = ua.includes("win");
   const isIOS = /iphone|ipad|ipod/.test(ua);
   const isMac = ua.includes("mac");
-  const isWindows = ua.includes("win");
   const isAndroid = ua.includes("android");
 
-  // Tenta abrir um "custom protocol" e retorna true/false
-  function tryCustomProtocol(url, timeout = 900) {
-    return new Promise((resolve) => {
-      let finished = false;
-
-      // Se o navegador perder o foco, é sinal de que um app abriu
-      const onBlur = () => {
-        if (!finished) {
-          finished = true;
-          cleanup();
-          resolve(true);
-        }
-      };
-
-      // Iframe oculto é a técnica mais compatível para testar protocolos
-      const iframe = document.createElement("iframe");
-      iframe.style.display = "none";
-      document.body.appendChild(iframe);
-
-      const timer = setTimeout(() => {
-        if (!finished) {
-          finished = true;
-          cleanup();
-          resolve(false);
-        }
-      }, timeout);
-
-      function cleanup() {
-        clearTimeout(timer);
-        window.removeEventListener("blur", onBlur, { once: true });
-        if (iframe && iframe.parentNode) iframe.parentNode.removeChild(iframe);
-      }
-
-      window.addEventListener("blur", onBlur, { once: true });
-      // Dispara o protocolo
-      iframe.src = url;
-    });
+  // ===== REGRAS =====
+  if (isWindows) {
+    // Novo Outlook para Windows não suporta ms-outlook: compose
+    window.location.href = mailtoUrl;
+    return;
   }
 
-  (async () => {
-    // iOS/macOS: costuma funcionar muito bem com ms-outlook; senão cai para mailto
-    if (isIOS || isMac) {
-      window.location.href = outlookUrl2; // tenta ms-outlook://compose
-      setTimeout(() => (window.location.href = mailtoUrl), 1200);
-      return;
-    }
+  if (isIOS || isMac) {
+    // No ecossistema Apple o ms-outlook costuma funcionar; se não, cai para mailto
+    window.location.href = outlookUrl;
+    setTimeout(() => { window.location.href = mailtoUrl; }, 1200);
+    return;
+  }
 
-    // ANDROID: melhor abrir direto o mailto (Gmail/app padrão)
-    if (isAndroid) {
-      window.location.href = mailtoUrl;
-      return;
-    }
-
-    // WINDOWS: tenta várias URIs do Outlook; se nenhuma abrir, usa mailto
-    if (isWindows) {
-      const ok1 = await tryCustomProtocol(outlookUrl1, 800);
-      if (ok1) return;
-      const ok2 = await tryCustomProtocol(outlookUrl2, 800);
-      if (ok2) return;
-      const ok3 = await tryCustomProtocol(outlookUrl3, 800);
-      if (ok3) return;
-      // Fallback universal
-      window.location.href = mailtoUrl;
-      return;
-    }
-
-    // OUTROS (Linux, ChromeOS, etc.): usa mailto
+  if (isAndroid) {
     window.location.href = mailtoUrl;
-  })();
+    return;
+  }
+
+  // Outros (Linux, ChromeOS etc.)
+  window.location.href = mailtoUrl;
 }
 </script>
 </body>
