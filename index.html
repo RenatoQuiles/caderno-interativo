@@ -197,7 +197,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ste/stau9a18" style="color:blue; text-decoration:underline; cursor:pointer;">3.12 - STE / STAU</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.13 - PP</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctau(tau)9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.14 - CTAU (TAU) </a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.15 - QTM </a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.15 - QTM (P/ UMCC:52-2) </a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm52.39a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.16 - QTM (Alimentação UMCC:52-3)</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pwb9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.17 - PWB</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tga9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.18 - TGA</a><br>
@@ -403,7 +403,6 @@
 
   <div class="numero-pagina">01/08/2025 - RAQ</div>
 </div>
-
 
 
 
@@ -2326,10 +2325,10 @@
 
 
 <a name="qtm9a18a"></a>
-  <div style="text-align:right; margin-bottom: 10px;"><a href="#pagina1" style="color:blue; text-decoration:underline; font-size:14px;">⬅ Voltar ao índice (3.15 - QTM)</a></div>
+  <div style="text-align:right; margin-bottom: 10px;"><a href="#pagina1" style="color:blue; text-decoration:underline; font-size:14px;">⬅ Voltar ao índice (3.15 - QTM (P/ UMCC:52-2))</a></div>
   
   <div style="background-color: yellow; padding: 10px; text-align: center; font-weight: bold; font-size: 16px;">
-    *u05 e u12        QTM (Alimentação UMCC:52-2)
+    QTM (P/ UMCC:52-2))
   </div>
   <table style="width:100%; border-collapse: collapse; font-size: 12px; margin-top: 2px; border: 1px solid black;">
 <thead>
@@ -2350,16 +2349,13 @@
        BORNE
       </th>
 <th style="border: 2px solid black;">
-       TGA
+       SDSC
       </th>
 <th style="border: 2px solid black;">
-       ULP
+      BLOQ.
       </th>
 <th style="border: 2px solid black;">
-       BLOQUEIO
-      </th>
-<th style="border: 2px solid black;">
-       TEMP
+       SCADA
       </th>
 </thead>
 
@@ -2367,38 +2363,34 @@
 </tr>
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: center;">
-       Temp.do ar alta da cela
+       Temp. alta do enrolamento
       </td>
 <td style="border: 1px solid black; text-align: center;">
-       RA.1
+       26TE
       </td>
 <td style="border: 1px solid black; text-align: center;">
-       
+       15-17
       </td>
 <td style="border: 1px solid black; text-align: center;">
-       (Cx.TM)
+      X1
       </td>
 
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
-       33-34
+       82-83
        </span>
 </td>
 
 
 <td style="border: 1px solid black; text-align: center;">
-       33.2
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       17
+       XXA5EB001QTM15
       </td>
 <td style="border: 1px solid black; text-align: center;">
        
       </td>
 <td style="border: 1px solid black; text-align: center;">
-       Inst.
+       AUX_UNIDAD DEVANADO TEMPERATURA ALTA QTM15
       </td>
-</tr>
 
 </tr>
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
@@ -2406,43 +2398,41 @@
        Temp. do núcleo alta
       </td>
 <td style="border: 1px solid black; text-align: center;">
-       49
+      26TN
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       15-17
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      X1
       </td>
 
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
-       7-8**
+      84-85
        </span>
 </td>
 
 
-
-<td colspan="2" style="border: 1px solid black; text-align: center;">
-  <strong>* u05-u12: x1.2:</strong>-<span style="color: blue;"> 42-43</span>
-</td>
-
-
-
 <td style="border: 1px solid black; text-align: center;">
-       33.2
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       17
+       002
       </td>
 <td style="border: 1px solid black; text-align: center;">
        
       </td>
 <td style="border: 1px solid black; text-align: center;">
-      Inst
+       AUX_UNIDAD NUCLEO TEMPERATURA ALTA QTM15
       </td>
+
 </tr>
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: center;">
-      Falta tensão de controle
+       Falta tensão de controle 
       </td>
 <td style="border: 1px solid black; text-align: center;">
-      Disj. 72A
+       Disj. 72A
       </td>
+
 
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
@@ -2452,106 +2442,181 @@
 <td style="border: 1px solid black; text-align: center;">
        
       </td>
-
 <td style="border: 1px solid black; text-align: center;">
-       
+      
       </td>
 
 <td style="border: 1px solid black; text-align: center;">
-       35.2
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       17
+       08
       </td>
 <td style="border: 1px solid black; text-align: center;">
        
       </td>
 <td style="border: 1px solid black; text-align: center;">
-       Inst.
+       AUX_UNIDAD ALIMENTACION 125 VCC QTM15
       </td>
-</tr>
-
-
-
-
 
 </tr>
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: center;">
-       BLOQUEO - Com QTM Desenergizado
+       Sobrecorrente 51N
       </td>
 <td style="border: 1px solid black; text-align: center;">
        51N
       </td>
+<td style="border: 1px solid black; text-align: center;">
+       D2-E2
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+     X1
+      </td>
+
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
-        1-11
+       50-56
        </span>
 </td>
 
-<td style="border: 1px solid black; text-align: center;">
-       X1.3 (1-32)
-      </td>
 
+<td style="border: 1px solid black; text-align: center;">
+        04
+      </td>
 <td style="border: 1px solid black; text-align: center;">
        
       </td>
-
 <td style="border: 1px solid black; text-align: center;">
-       34.2
+      AUX_UNIDAD RELE 51N QTM15
       </td>
-<td style="border: 1px solid black; text-align: center;">
-       18
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       86 no QTM
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       Inst.
-      </td>
-</tr>
-
-
-
-
 
 </tr>
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: center;">
-       BLOQUEO - Com QTM Desenergizado
+       Auto check 51N
       </td>
 <td style="border: 1px solid black; text-align: center;">
-       49
+       51N
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       C7-D7
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      X1
       </td>
 
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
-       11-12**
+       33-35
        </span>
 </td>
 
 
-
-<td colspan="2" style="border: 1px solid black; text-align: center;">
-  <strong>* u05-u12: x1.2:</strong>-<span style="color: blue;"> 42-44</span>
-</td>
-
-
-
+<td style="border: 1px solid black; text-align: center;">
+      03
+      </td>
 <td style="border: 1px solid black; text-align: center;">
        
       </td>
 <td style="border: 1px solid black; text-align: center;">
-       18
+      AUX_UNIDAD RELE 51N AUTOCHECK QTM15
       </td>
-<td style="border: 1px solid black; text-align: center;">
-       86 no QTM
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-      Inst
-      </td>
-</tr>
 
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Relé de bloqueio 86 do QTM
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       51N
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       E1-D1
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      X1
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+       X1.9 - 51N.C1
+       </span>
+</td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       05
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      AUX_UNIDAD RELE DE BLOQUEO QTM15
+      </td>
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      Seccionadora aberta
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       S41
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       21-22(S41)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      X1
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+       50-55
+       </span>
+</td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+      06
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      AUX_UNIDAD SECCIONADORA 89-15 ABIERTA QTM15
+      </td>
+
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+       Seccionadora fechada
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       S41
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       13-14(S41)
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      X1
+      </td>
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+       50-54
+       </span>
+</td>
+
+
+<td style="border: 1px solid black; text-align: center;">
+       07
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       AUX_UNIDAD SECCIONADORA 89-15 CERRADA QTM15
+      </td>
+
+</tr>
 
 </tbody>
 </table>
@@ -3800,7 +3865,6 @@ Com unidade acima de 600MW é normal que o compressor fique pouco tempo em carga
   
   <div class="numero-pagina">Página 4</div>
 </div>
-
 
  
 
