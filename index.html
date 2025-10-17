@@ -1,3 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <title>Caderno de Ensaios - 120 Páginas</title>
+  <style>
+    /* ===== CONFIGURAÇÃO GERAL DA PÁGINA ===== */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ddd;
+      font-family: Arial, sans-serif;
+    }
+
+    /* ===== CADA PÁGINA A4 NA TELA ===== */
+    .pagina {
+      width: 794px;   /* A4 ~96dpi */
+      height: 1123px;
+      background: #fff;
+      margin: 40px auto;
+      padding: 50px 60px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      position: relative;
+      page-break-after: always;
+    }
+
+    /* ===== RODAPÉ ===== */
+    .numero-pagina {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      font-size: 12px;
+      color: gray;
+    }
+
+    /* ===== ÁREA DO ÍNDICE ===== */
+    .indice {
+      text-align: left;
+      margin-top: 60px;
+      font-size: 14px;
+      line-height: 1.8;
+      max-height: calc(100% - 300px);
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    /* ===== BOTÃO DE E-MAIL ===== */
+    .btn-email {
+      appearance: none;
+      border: 1px solid #1e5bd9;
+      background: #2b6fff;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: underline;
+      line-height: 1.2;
+      white-space: normal;
+      max-width: 280px;
+      text-align: center;
+    }
+    .btn-email:active { transform: translateY(1px); }
+    .btn-email:focus { outline: 2px solid rgba(30,91,217,0.35); outline-offset: 2px; }
+
+    /* ===== CLIQUE-TO-AMARELO (todas as tabelas) ===== */
+    table tbody tr {               /* só linhas de dados */
+      cursor: pointer;
+      transition: background-color .2s ease;
+    }
+    table tbody tr.no-click {      /* use .no-click p/ desativar em alguma linha */
+      cursor: default;
+    }
+    table tbody tr.selecionada {
+      background-color: yellow !important;
+    }
+
+    /* ===== LINKS UTILITÁRIOS ===== */
+    .hidden { display: none !important; }
+    .link-azul { color: blue; text-decoration: underline; cursor: pointer; }
+
+    /* ===== MODO IMPRESSÃO ===== */
+    @media print {
+      .indice {
+        max-height: none !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+      .btn-email { display: none !important; }
+    }
+/* Aumenta a altura das células de todas as tabelas */
+table td, table th {
+  padding: 3px 0px;      /* primeiro valor = cima/baixo; segundo = lados */
+  vertical-align: middle; /* centraliza o texto na vertical */
+}
+
+  </style>
+</head>
+<body>
+
+<!-- ==============================
+     PÁGINA 1 - CAPA + ÍNDICE
+     ============================== -->
+<div class="pagina" id="pagina1">
+
+  <h1 style="text-align: center; font-size: 24px; margin-top: 50px;">
+    CADERNO DE ENSAIOS E PARAMETRIZAÇÕES<br>Versão 6.1
+  </h1>
+
+  <h2 style="text-align: center; font-size: 18px; margin-top: 40px; color: black;">
+    Manter na sala da MEG1 – EL.139
+  </h2>
+
+  <div style="text-align:right; margin-top: 10px;">
+    <button type="button" class="btn-email" onclick="openEmail()">
+      Clique Aqui para reportar<br>erro/atualização deste caderno
+    </button>
+  </div>
+
+  <div class="indice">
+    <div onclick="toggleSubitensULP()" 
+         style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
+      1 – Lista de ensaios com ULP
+    </div>
+
+    <div id="subitens-ulp" style="display:none; margin-left:20px;">
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#umcc" style="color:blue; text-decoration:underline; cursor:pointer;">1.10 - UMCC</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kk" style="color:blue; text-decoration:underline; cursor:pointer;">1.11 - KK</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp" style="color:blue; text-decoration:underline; cursor:pointer;">1.12 - PP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctau(tau)" style="color:blue; text-decoration:underline; cursor:pointer;">1.13 - CTAU (TAU)</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm" style="color:blue; text-decoration:underline; cursor:pointer;">1.14 - QTM (Alimentação UMCC:52-2)</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm52.3" style="color:blue; text-decoration:underline; cursor:pointer;">1.15 - QTM (Alimentação UMCC:52-3)</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pwb" style="color:blue; text-decoration:underline; cursor:pointer;">1.16 - PWB</a><br>      
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tga" style="color:blue; text-decoration:underline; cursor:pointer;">1.17 - TGA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qcp" style="color:blue; text-decoration:underline; cursor:pointer;">1.18 - QCP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#lip" style="color:blue; text-decoration:underline; cursor:pointer;">1.19 - LIP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cld" style="color:blue; text-decoration:underline; cursor:pointer;">1.20 - CLD</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#caixaespiral" style="color:blue; text-decoration:underline; cursor:pointer;">1.21 - Caixa espiral</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ccar" style="color:blue; text-decoration:underline; cursor:pointer;">1.22 - CCAR</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pa" style="color:blue; text-decoration:underline; cursor:pointer;">1.23 - PA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb1" style="color:blue; text-decoration:underline; cursor:pointer;">1.24 - GTB-1</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb3" style="color:blue; text-decoration:underline; cursor:pointer;">1.25 - GTB-3</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ggb" style="color:blue; text-decoration:underline; cursor:pointer;">1.26 - GGB</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cte-tep" style="color:blue; text-decoration:underline; cursor:pointer;">1.27 - CTE - TEP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cte-tendesativado" style="color:blue; text-decoration:underline; cursor:pointer;">1.28 - CTE - TEN - DESATIVADO</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctm" style="color:blue; text-decoration:underline; cursor:pointer;">1.29 - CTM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pap" style="color:blue; text-decoration:underline; cursor:pointer;">1.30 - PAP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ste/stau" style="color:blue; text-decoration:underline; cursor:pointer;">1.31 - STE / STAU</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pva" style="color:blue; text-decoration:underline; cursor:pointer;">1.32 - PVA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kvb" style="color:blue; text-decoration:underline; cursor:pointer;">1.33 - KVB</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm" style="color:blue; text-decoration:underline; cursor:pointer;">1.34 - CFM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctg" style="color:blue; text-decoration:underline; cursor:pointer;">1.31 - CTG</a><br>
+
+      
+    </div>
+
+    <div onclick="toggleSubitensSCADA()"
+         style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
+      2 – Lista de ensaios com SCADA
+    </div>
+
+    <div id="subitens-scada" style="display:none; margin-left:20px;">
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapwbepwx" style="color:blue; text-decoration:underline; cursor:pointer;">2.10 - PWB e PWX</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaumcc" style="color:blue; text-decoration:underline; cursor:pointer;">2.11 - UMCC</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadalip" style="color:blue; text-decoration:underline; cursor:pointer;">2.12 - LIP </a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadactm" style="color:blue; text-decoration:underline; cursor:pointer;">2.13 - CTM </a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqcp" style="color:blue; text-decoration:underline; cursor:pointer;">2.14 - QCP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapa" style="color:blue; text-decoration:underline; cursor:pointer;">2.15 - PA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadatau" style="color:blue; text-decoration:underline; cursor:pointer;">2.16 - TAU</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb1" style="color:blue; text-decoration:underline; cursor:pointer;">2.17 - GTB1</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb2" style="color:blue; text-decoration:underline; cursor:pointer;">2.18 - GTB2</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb3" style="color:blue; text-decoration:underline; cursor:pointer;">2.19 - GTB3</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqv" style="color:blue; text-decoration:underline; cursor:pointer;">2.20 - QV</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqtmtm" style="color:blue; text-decoration:underline; cursor:pointer;">2.21 - QTM - TM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadakkpvrtga" style="color:blue; text-decoration:underline; cursor:pointer;">2.22 - KK - PVR - TGA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadacld" style="color:blue; text-decoration:underline; cursor:pointer;">2.23 - CLD</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadatep" style="color:blue; text-decoration:underline; cursor:pointer;">2.24 - TEP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapva" style="color:blue; text-decoration:underline; cursor:pointer;">2.25 - PVA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaccar" style="color:blue; text-decoration:underline; cursor:pointer;">2.26 - CCAR</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaggb" style="color:blue; text-decoration:underline; cursor:pointer;">2.27 - GGB</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadacfm" style="color:blue; text-decoration:underline; cursor:pointer;">2.28 - CFM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaga" style="color:blue; text-decoration:underline; cursor:pointer;">2.29 - GA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scapap" style="color:blue; text-decoration:underline; cursor:pointer;">2.30 - PAP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scapp" style="color:blue; text-decoration:underline; cursor:pointer;">2.31 - PP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scagg" style="color:blue; text-decoration:underline; cursor:pointer;">2.32 - GG</a><br>
+
+
+
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqci" style="color:blue; text-decoration:underline; cursor:pointer;">2.18 - QCI</a><br>
+      
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaccar" style="color:blue; text-decoration:underline; cursor:pointer;">2.22 - CCAR</a><br>
+      
+     
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadastau" style="color:blue; text-decoration:underline; cursor:pointer;">2.25 - STAU</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaste" style="color:blue; text-decoration:underline; cursor:pointer;">2.26 - STE</a><br>
+      
+    
+      
+      
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctg" style="color:blue; text-decoration:underline; cursor:pointer;">1.35 - CTG</a><br>
+    </div>
+
+
+
+
+<div onclick="toggleSubitensU9AU18A()"
+         style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
+     3 – Dispositivos Primários SCADA/SDSC U9A-U18A
+    </div>
+
+ <div id="subitens-u9au18a" style="display:none; margin-left:20px;">
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#9a18aumcc" style="color:blue; text-decoration:underline; cursor:pointer;">3.10 - UMCC</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kk9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.11 - KK - PVR</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ste/stau9a18" style="color:blue; text-decoration:underline; cursor:pointer;">3.12 - STE / STAU</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.13 - PP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tga9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.14 - CTG </a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctau(tau)9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.15 - CTAU (TAU) </a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.16 - QTM (P/ UMCC:52-2) </a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qcp9a8a" style="color:blue; text-decoration:underline; cursor:pointer;">3.17 - QV 05</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pwb9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.18 - PWB</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.19 - GTB-1</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb2e39a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.20 - GTB-2 e GTB-3</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#lip19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.21 - LIP </a><br>
+      
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="#qci9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.23 - QCI</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ccar19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.24 - CCAR</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pa19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.25 - PA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctetep9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.26 - CTE - TEP</a><br>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pva9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.27 - PVA</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cld19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.28 - CLD</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctm9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.30 - CTM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kvb19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.31 - KVB</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pap9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.32 - PAP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#nc9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.32 - NC</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.33 - CFM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ggb19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.34 - GGB</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scagg" style="color:blue; text-decoration:underline; cursor:pointer;">2.34 - GG</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm" style="color:blue; text-decoration:underline; cursor:pointer;">1.33 - CFM</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp" style="color:blue; text-decoration:underline; cursor:pointer;">1.34 - PP</a><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctg" style="color:blue; text-decoration:underline; cursor:pointer;">1.35 - CTG</a><br>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- *** Item 3 já era link no seu código — mantido igual *** -->
+    <a id="tga-index" href="#ensiotga" class="link-azul">
+      3 – Lista de ensaios dos anunciadores TGA
+    </a><br>
+
+    <!-- *** Itens 4 a 28 agora são links que apontam para âncoras #sec-XX *** -->
+    <a href="#sec-04" class="link-azul">4 – Lista de ensaios contatores CCAR</a><br>
+    <a href="#sec-05" class="link-azul">5 – Tabela de conversão de RTD</a><br>
+    <a href="#sec-06" class="link-azul">6 – Tabela de parametrização Yokogawas UM331</a><br>
+    <a href="#sec-07" class="link-azul">7 – Tabela de parametrização Yokogawas UM33A</a><br>
+    <a href="#sec-08" class="link-azul">8 – Tabela de parametrização PRESSYS 2030 LIGHT 1520-01</a><br>
+    <a href="#sec-09" class="link-azul">9 – Tabela de parametrização PRESSYS 2036 LIGHT 1620-01</a><br>
+    <a href="#sec-10" class="link-azul">10 – Configuração Sonda Endress+Hauser Multicap T PWB e GGB 9A/18A</a><br>
+    <a href="#sec-11" class="link-azul">11 – Configuração sonda Sytrans LC 500 - PWB e GGB</a><br>
+    <a href="#sec-12" class="link-azul">12 – Verificação Sonda Minisonic 600</a><br>
+    <a href="#sec-13" class="link-azul">13 – Procedimento sonda Liquicap FEI50H (LIP)</a><br>
+    <a href="#sec-14" class="link-azul">14 – Parametrização Magnetrol M300 – LIP</a><br>
+    <a href="#sec-15" class="link-azul">15 – Parametrização Condutivímetros PWB 9A – 18A</a><br>
+    <a href="#sec-16" class="link-azul">16 – Tabela de parametrização PRESSYS 2012 Energy – GTB3</a><br>
+    <a href="#sec-17" class="link-azul">17 - Tabela de parametrização PRESSYS 2030 LIGHT EE-0457 16 - PCR 12/34</a><br>
+    <a href="#sec-18" class="link-azul">18 – Localizacion RTD’s</a><br>
+    <a href="#sec-19" class="link-azul">19 – Creep Detector</a><br>
+    <a href="#sec-20" class="link-azul">20 – Localizações dos RTD’s Gerador</a><br>
+    
+    <a href="#sec-22" class="link-azul">22 – Procedimento para manutenção e ensaio QCI</a><br>
+    <a href="#sec-23" class="link-azul">23 – Parametrização Sentron 4200 (multimedidor)</a><br>
+    <a href="#sec-24" class="link-azul">24 – Configuração Relé T119din (TAU 18A)</a><br>
+    <a href="#sec-25" class="link-azul">25 – Procedimento Sonda Nivel Agua Pura 09A/18A</a><br>
+    <a href="#sec-26" class="link-azul">26 – Relé de frequência URPF4000</a><br>
+    <a href="#sec-27" class="link-azul">27 – Parametrização do Relé 39LW - LIP</a><br>
+    <a href="#sec-28" class="link-azul">28 – Lista telefônica</a><br>
+  </div>
+
+ <div class="numero-pagina">Página 1</div>
+</div>
+
+
+
 
 <!-- ==============================
      PÁGINA 3
@@ -2182,3 +2476,143 @@ Reg Vel sist hidr. Pressão baixa
 
 
 
+
+
+
+
+
+
+<!-- ==============================
+     PÁGINA 22 (IMAGEM)
+     ============================== -->
+<div class="pagina" id="pagina5">
+  <div style="text-align: center; margin-top: 20px;">
+    <img src="https://i.ibb.co/8g7wth9y/imagem-sonda.png" alt="Descrição da imagem" style="max-width: 90%; height: auto;">
+  </div>
+  <div class="numero-pagina">Página 22</div>
+</div>
+
+<!-- ==============================
+     SCRIPTS
+     ============================== -->
+<script>
+/* ===== Mostra/oculta subitens no índice ===== */
+function toggleSubitensULP() {
+  const bloco = document.getElementById("subitens-ulp");
+  const atual = bloco.style.display || "none";
+  bloco.style.display = (atual === "none") ? "block" : "none";
+}
+function toggleSubitensSCADA() {
+  const bloco = document.getElementById("subitens-scada");
+  const atual = bloco.style.display || "none";
+  bloco.style.display = (atual === "none") ? "block" : "none";
+}
+
+
+function toggleSubitensU9AU18A() {
+  const bloco = document.getElementById("subitens-u9au18a");
+  const atual = bloco.style.display || "none";
+  bloco.style.display = (atual === "none") ? "block" : "none";
+}
+
+
+
+
+
+
+/* ===== Botão de e-mail =====
+   Windows: usa mailto (Novo Outlook não suporta ms-outlook:// compose).
+   Apple: tenta Outlook app e cai para mailto. Se nada abrir, Outlook Web. */
+function openEmail() {
+  const toEmail = "renatoq@itaipu.gov.br";
+  const ccEmail = "copia@exemplo.com";
+  const subjectText = "Alteração caderno de parametrizações";
+  const bodyText = "Mensagem inicial...";
+
+  const to = encodeURIComponent(toEmail);
+  const cc = encodeURIComponent(ccEmail);
+  const subject = encodeURIComponent(subjectText);
+  const body = encodeURIComponent(bodyText.replace(/\n/g, "\r\n"));
+
+  const mailtoUrl  = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
+  const outlookUrl = `ms-outlook://compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
+  const owaUrl     = `https://outlook.office.com/mail/deeplink/compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
+
+  const ua = navigator.userAgent.toLowerCase();
+  const isWindows = ua.includes("win");
+  const isIOS = /iphone|ipad|ipod/.test(ua);
+  const isMac = ua.includes("mac");
+  const isAndroid = ua.includes("android");
+
+  if (isWindows) {
+    window.location.href = mailtoUrl;
+    setTimeout(() => {
+      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
+    }, 1200);
+    return;
+  }
+
+  if (isIOS || isMac) {
+    window.location.href = outlookUrl;
+    setTimeout(() => { window.location.href = mailtoUrl; }, 900);
+    setTimeout(() => {
+      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
+    }, 2000);
+    return;
+  }
+
+  if (isAndroid) {
+    window.location.href = mailtoUrl;
+    setTimeout(() => {
+      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
+    }, 1200);
+    return;
+  }
+
+  window.location.href = mailtoUrl;
+}
+
+/* ===== Clique-para-amarelar (global, todas as tabelas) =====
+   Usa delegação de evento só nas linhas de <tbody>.
+   IMPORTANTE: se uma <tr> já tiver onclick inline, este handler ignora. */
+document.addEventListener("click", function(e) {
+  const tr = e.target.closest("tbody tr");
+  if (!tr) return;
+  if (tr.classList.contains("no-click")) return;
+  if (tr.hasAttribute("onclick")) return;  // evita duplo toggle
+  tr.classList.toggle("selecionada");
+});
+
+/* ===== Alternância dos links do item 3 (índice ↔ voltar) — mantido igual ===== */
+(function () {
+  const linkIndice = document.getElementById('tga-index');
+  const linkVoltar = document.getElementById('tga-voltar');
+  const alvoTGA    = document.getElementById('ensiotga');
+  const pagina1    = document.getElementById('pagina1');
+
+  if (!linkIndice || !linkVoltar || !alvoTGA || !pagina1) return;
+
+  linkIndice.addEventListener('click', function (e) {
+    e.preventDefault();
+    linkVoltar.classList.remove('hidden');
+    alvoTGA.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', '#ensiotga');
+  });
+
+  linkVoltar.addEventListener('click', function (e) {
+    e.preventDefault();
+    linkVoltar.classList.add('hidden');
+    pagina1.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', '#pagina1');
+    linkIndice.style.outline = '2px solid rgba(30,91,217,.35)';
+    setTimeout(() => linkIndice.style.outline = '', 1200);
+  });
+
+  if (location.hash === '#ensiotga') {
+    linkVoltar.classList.remove('hidden');
+  }
+})();
+</script>
+
+</body>
+</html>
