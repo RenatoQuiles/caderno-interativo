@@ -64,16 +64,9 @@
     .btn-email:focus { outline: 2px solid rgba(30,91,217,0.35); outline-offset: 2px; }
 
     /* ===== CLIQUE-TO-AMARELO (todas as tabelas) ===== */
-    table tbody tr {               /* só linhas de dados */
-      cursor: pointer;
-      transition: background-color .2s ease;
-    }
-    table tbody tr.no-click {      /* use .no-click p/ desativar em alguma linha */
-      cursor: default;
-    }
-    table tbody tr.selecionada {
-      background-color: yellow !important;
-    }
+    table tbody tr { cursor: pointer; transition: background-color .2s ease; }
+    table tbody tr.no-click { cursor: default; }
+    table tbody tr.selecionada { background-color: yellow !important; }
 
     /* ===== LINKS UTILITÁRIOS ===== */
     .hidden { display: none !important; }
@@ -87,34 +80,31 @@
         overflow: visible !important;
       }
       .btn-email { display: none !important; }
-      .link-pagina { display: none !important; } /* link do topo não aparece na impressão (opcional) */
+      /* Se quiser ocultar o link do topo na impressão, descomente a linha abaixo */
+      /* .link-pagina-wrapper { display:none !important; } */
     }
 
     /* ===== Aumenta a altura das células de todas as tabelas ===== */
     table td, table th {
-      padding: 3px 0px;      /* primeiro valor = cima/baixo; segundo = lados */
-      vertical-align: middle; /* centraliza o texto na vertical */
+      padding: 3px 0px;      /* cima/baixo ; lados */
+      vertical-align: middle; /* centraliza verticalmente */
     }
 
-    /* ===== LINK NO TOPO DE CADA PÁGINA (personalizável por data-*) ===== */
-    .link-pagina {
+    /* ===== LINK NO TOPO DIREITO DE CADA PÁGINA (estilo igual ao exemplo) ===== */
+    .link-pagina-wrapper {
       position: absolute;
-      top: 14px;              /* distância do topo da página */
-      left: 20px;             /* mude para right: 20px se preferir no canto direito */
-      display: inline-block;
-      padding: 6px 10px;
-      border: 1px solid #1e5bd9;
-      border-radius: 6px;
-      background: #2b6fff;
-      color: #fff;
-      font-size: 13px;
-      text-decoration: none;
-      line-height: 1.2;
-      cursor: pointer;
+      top: 10px;
+      right: 20px;
       z-index: 10;
+      text-align: right;
     }
-    .link-pagina:focus { outline: 2px solid rgba(30,91,217,0.35); outline-offset: 2px; }
-    .link-pagina:active { transform: translateY(1px); }
+    .link-pagina {
+      color: blue;
+      text-decoration: underline;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .link-pagina:focus { outline: 2px solid rgba(30,91,217,.35); outline-offset: 2px; }
   </style>
 </head>
 <body>
@@ -123,8 +113,10 @@
      PÁGINA 1 - CAPA + ÍNDICE
      ============================== -->
 <div class="pagina" id="pagina1"
-     data-label="YouTube"
+     data-label="⬅ YouTube"
      data-url="https://www.youtube.com/">
+
+  <!-- Link topo-direito desta página (gerado via JS; mantemos aqui só a área) -->
 
   <h1 style="text-align: center; font-size: 24px; margin-top: 50px;">
     CADERNO DE ENSAIOS E PARAMETRIZAÇÕES<br>Versão 6.1
@@ -246,7 +238,7 @@
      PÁGINA 22 (IMAGEM)
      ============================== -->
 <div class="pagina" id="pagina5"
-     data-label="Itaipu Binacional"
+     data-label="⬅ Site Itaipu"
      data-url="https://www.itaipu.gov.br/">
   <div style="text-align: center; margin-top: 20px;">
     <img src="https://i.ibb.co/8g7wth9y/imagem-sonda.png" alt="Descrição da imagem" style="max-width: 90%; height: auto;">
@@ -275,9 +267,7 @@ function toggleSubitensU9AU18A() {
   bloco.style.display = (atual === "none") ? "block" : "none";
 }
 
-/* ===== Botão de e-mail =====
-   Windows: usa mailto (Novo Outlook não suporta ms-outlook:// compose).
-   Apple: tenta Outlook app e cai para mailto. Se nada abrir, Outlook Web. */
+/* ===== Botão de e-mail ===== */
 function openEmail() {
   const toEmail = "renatoq@itaipu.gov.br";
   const ccEmail = "copia@exemplo.com";
@@ -327,24 +317,21 @@ function openEmail() {
   window.location.href = mailtoUrl;
 }
 
-/* ===== Clique-para-amarelar (global, todas as tabelas) =====
-   Usa delegação de evento só nas linhas de <tbody>.
-   IMPORTANTE: se uma <tr> já tiver onclick inline, este handler ignora. */
+/* ===== Clique-para-amarelar (global, todas as tabelas) ===== */
 document.addEventListener("click", function(e) {
   const tr = e.target.closest("tbody tr");
   if (!tr) return;
   if (tr.classList.contains("no-click")) return;
-  if (tr.hasAttribute("onclick")) return;  // evita duplo toggle
+  if (tr.hasAttribute("onclick")) return;
   tr.classList.toggle("selecionada");
 });
 
-/* ===== Alternância dos links do item 3 (índice ↔ voltar) — mantido igual ===== */
+/* ===== Alternância dos links do item 3 (índice ↔ voltar) ===== */
 (function () {
   const linkIndice = document.getElementById('tga-index');
   const linkVoltar = document.getElementById('tga-voltar');
   const alvoTGA    = document.getElementById('ensiotga');
   const pagina1    = document.getElementById('pagina1');
-
   if (!linkIndice || !linkVoltar || !alvoTGA || !pagina1) return;
 
   linkIndice.addEventListener('click', function (e) {
@@ -368,26 +355,32 @@ document.addEventListener("click", function(e) {
   }
 })();
 
-/* ===== Link no topo de cada página (usa data-label e data-url) ===== */
+/* ===== Link topo-direito por página (⬅ texto sublinhado, azul) =====
+   Usa data-label (texto) e data-url (endereço) no <div class="pagina">.  */
 (function linksPorPagina() {
-  const FALLBACK_LABEL = "YouTube";
-  const FALLBACK_URL   = "https://www.youtube.com/";
+  const FALLBACK_LABEL = "⬅ Site Itaipu";
+  const FALLBACK_URL   = "https://www.itaipu.gov.br/";
 
-  document.querySelectorAll('.pagina').forEach((pagina, idx) => {
-    // evita duplicar se já existir
-    if (pagina.querySelector('.link-pagina')) return;
+  document.querySelectorAll('.pagina').forEach((pagina) => {
+    // Evita duplicar em caso de re-execução
+    if (pagina.querySelector('.link-pagina-wrapper')) return;
 
     const label = pagina.getAttribute('data-label') || FALLBACK_LABEL;
     const url   = pagina.getAttribute('data-url')   || FALLBACK_URL;
 
+    const wrap = document.createElement('div');
+    wrap.className = 'link-pagina-wrapper';
+
     const a = document.createElement('a');
     a.className = 'link-pagina';
-    a.textContent = label;   // texto exibido (ex.: "YouTube")
-    a.href = url;            // URL (ex.: https://www.youtube.com/)
+    a.textContent = label;   // ex.: "⬅ Site Itaipu" ou "⬅ YouTube"
+    a.href = url;            // ex.: https://www.itaipu.gov.br/
     a.target = '_blank';
     a.rel = 'noopener';
-    a.title = `Abrir: ${label}`;
-    pagina.appendChild(a);
+    a.title = `Abrir: ${label.replace(/^⬅\s*/, '')}`;
+
+    wrap.appendChild(a);
+    pagina.appendChild(wrap);
   });
 })();
 </script>
