@@ -80,8 +80,8 @@
         overflow: visible !important;
       }
       .btn-email { display: none !important; }
-      /* Se quiser ocultar o link do topo na impressão, descomente a linha abaixo */
-      /* .link-pagina-wrapper { display:none !important; } */
+      /* Se não quiser mostrar os links na impressão:
+         .link-pagina--inline { display: none !important; } */
     }
 
     /* ===== Aumenta a altura das células de todas as tabelas ===== */
@@ -90,7 +90,17 @@
       vertical-align: middle; /* centraliza verticalmente */
     }
 
-    /* ===== LINK NO TOPO DIREITO DE CADA PÁGINA (estilo igual ao exemplo) ===== */
+    /* ===== LINK "⬅ ..." NO FLUXO (INLINE) ===== */
+    .link-pagina--inline {
+      color: blue;
+      text-decoration: underline;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .link-pagina--inline:focus { outline: 2px solid rgba(30,91,217,.35); outline-offset: 2px; }
+
+    /* (Fallback opcional) Wrapper absoluto caso a página não tenha âncora.
+       Você não precisa usar — basta inserir .link-pagina-anchor nas páginas. */
     .link-pagina-wrapper {
       position: absolute;
       top: 10px;
@@ -98,7 +108,7 @@
       z-index: 10;
       text-align: right;
     }
-    .link-pagina {
+    .link-pagina { /* aparência do link no fallback */
       color: blue;
       text-decoration: underline;
       font-size: 14px;
@@ -116,7 +126,8 @@
      data-label="⬅ YouTube"
      data-url="https://www.youtube.com/">
 
-  <!-- Link topo-direito desta página (gerado via JS; mantemos aqui só a área) -->
+  <!-- ÂNCORA INLINE (topo-direita, sem coordenadas) -->
+  <div class="link-pagina-anchor" style="text-align:right; margin-bottom:10px;"></div>
 
   <h1 style="text-align: center; font-size: 24px; margin-top: 50px;">
     CADERNO DE ENSAIOS E PARAMETRIZAÇÕES<br>Versão 6.1
@@ -240,6 +251,10 @@
 <div class="pagina" id="pagina5"
      data-label="⬅ Site Itaipu"
      data-url="https://www.itaipu.gov.br/">
+
+  <!-- ÂNCORA INLINE NO "MEIO" (centralizada) -->
+  <div class="link-pagina-anchor" style="text-align:center; margin: 24px 0;"></div>
+
   <div style="text-align: center; margin-top: 20px;">
     <img src="https://i.ibb.co/8g7wth9y/imagem-sonda.png" alt="Descrição da imagem" style="max-width: 90%; height: auto;">
   </div>
@@ -355,30 +370,44 @@ document.addEventListener("click", function(e) {
   }
 })();
 
-/* ===== Link topo-direito por página (⬅ texto sublinhado, azul) =====
-   Usa data-label (texto) e data-url (endereço) no <div class="pagina">.  */
+/* ===== Link por página (INLINE primeiro; sem coordenadas)
+   - Se a página tiver .link-pagina-anchor, o link é inserido ali.
+   - Se não tiver, cai no fallback (topo-direita absoluto). */
 (function linksPorPagina() {
   const FALLBACK_LABEL = "⬅ Site Itaipu";
   const FALLBACK_URL   = "https://www.itaipu.gov.br/";
 
   document.querySelectorAll('.pagina').forEach((pagina) => {
-    // Evita duplicar em caso de re-execução
-    if (pagina.querySelector('.link-pagina-wrapper')) return;
+    if (pagina.getAttribute('data-link-initialized') === '1') return;
+    pagina.setAttribute('data-link-initialized', '1');
 
     const label = pagina.getAttribute('data-label') || FALLBACK_LABEL;
     const url   = pagina.getAttribute('data-url')   || FALLBACK_URL;
 
+    // 1) Preferência: inserir no fluxo (inline), se houver âncora
+    const inlineAnchor = pagina.querySelector('.link-pagina-anchor');
+    if (inlineAnchor) {
+      const a = document.createElement('a');
+      a.className = 'link-pagina--inline';
+      a.textContent = label;   // ex.: "⬅ YouTube"
+      a.href = url;            // ex.: https://www.youtube.com/
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.title = `Abrir: ${label.replace(/^⬅\s*/, '')}`;
+      inlineAnchor.appendChild(a);
+      return;
+    }
+
+    // 2) Fallback: topo-direita absoluto (caso não tenha âncora)
     const wrap = document.createElement('div');
     wrap.className = 'link-pagina-wrapper';
-
     const a = document.createElement('a');
     a.className = 'link-pagina';
-    a.textContent = label;   // ex.: "⬅ Site Itaipu" ou "⬅ YouTube"
-    a.href = url;            // ex.: https://www.itaipu.gov.br/
+    a.textContent = label;
+    a.href = url;
     a.target = '_blank';
     a.rel = 'noopener';
     a.title = `Abrir: ${label.replace(/^⬅\s*/, '')}`;
-
     wrap.appendChild(a);
     pagina.appendChild(wrap);
   });
