@@ -374,8 +374,8 @@ document.addEventListener("click", function(e) {
    - Se a página tiver .link-pagina-anchor, o link é inserido ali.
    - Se não tiver, cai no fallback (topo-direita absoluto). */
 (function linksPorPagina() {
-  const FALLBACK_LABEL = "⬅ Site Itaipu";
-  const FALLBACK_URL   = "https://www.itaipu.gov.br/";
+  const FALLBACK_LABEL = "⬅ PIC Agua pura";
+  const FALLBACK_URL   = "https://osprd.itaipu/SAMDocumentManagement/PICs.aspx";
 
   document.querySelectorAll('.pagina').forEach((pagina) => {
     if (pagina.getAttribute('data-link-initialized') === '1') return;
