@@ -88,14 +88,12 @@
       }
       .btn-email { display: none !important; }
     }
-/* Aumenta a altura das células de todas as tabelas */
-table td, table th {
-  padding: 3px 0px;      /* primeiro valor = cima/baixo; segundo = lados */
-  vertical-align: middle; /* centraliza o texto na vertical */
-}
 
-
-
+    /* Aumenta a altura das células de todas as tabelas */
+    table td, table th {
+      padding: 3px 0px;      /* primeiro valor = cima/baixo; segundo = lados */
+      vertical-align: middle; /* centraliza o texto na vertical */
+    }
   </style>
 </head>
 <body>
@@ -152,8 +150,6 @@ table td, table th {
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kvb" style="color:blue; text-decoration:underline; cursor:pointer;">1.33 - KVB</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm" style="color:blue; text-decoration:underline; cursor:pointer;">1.34 - CFM</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctg" style="color:blue; text-decoration:underline; cursor:pointer;">1.31 - CTG</a><br>
-
-      
     </div>
 
     <div onclick="toggleSubitensSCADA()"
@@ -188,19 +184,15 @@ table td, table th {
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scapap" style="color:blue; text-decoration:underline; cursor:pointer;">2.33 - PAP</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scapp" style="color:blue; text-decoration:underline; cursor:pointer;">2.34 - PP</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scagg" style="color:blue; text-decoration:underline; cursor:pointer;">2.35 - GG</a><br>
-
     </div>
 
-
-
-
-<div onclick="toggleSubitensU9AU18A()"
+    <div onclick="toggleSubitensU9AU18A()"
          style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
-     3 – Dispositivos Primários SCADA/SDSC U9A-U18A
+      3 – Dispositivos Primários SCADA/SDSC U9A-U18A
     </div>
 
- <div id="subitens-u9au18a" style="display:none; margin-left:20px;">
-     &nbsp;&nbsp;&nbsp;&nbsp;<a href="#9a18aumcc" style="color:blue; text-decoration:underline; cursor:pointer;">3.10 - UMCC</a><br>
+    <div id="subitens-u9au18a" style="display:none; margin-left:20px;">
+      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#9a18aumcc" style="color:blue; text-decoration:underline; cursor:pointer;">3.10 - UMCC</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kk9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.11 - KK - PVR</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ste/stau9a18" style="color:blue; text-decoration:underline; cursor:pointer;">3.12 - STE / STAU</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.13 - PP</a><br>
@@ -224,29 +216,22 @@ table td, table th {
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#nc9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.31 - NC</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.32 - CFM</a><br>
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pap9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.33 - PAP</a><br>
-
     </div>
 
-
-
-
-
-
-
-
-
-    <!-- *** Item 3 já era link no seu código — mantido igual *** -->
+    <!-- *** Item 4 – TGA (mantido) *** -->
     <a id="tga-index" href="#ensiotga" class="link-azul">
       4 – Lista de ensaios dos anunciadores TGA
     </a><br>
 
-
-
-
-    <!-- *** Itens 4 a 28 agora são links que apontam para âncoras #sec-XX *** -->
+    <!-- *** Itens 5 a 28 *** -->
     <a href="#sec-05" class="link-azul">5 – Lista de ensaios contatores CCAR</a><br>
     <a href="#sec-04" class="link-azul">6 – Tabela de conversão de RTD</a><br>
-    <a href="#sec-06" class="link-azul">7 – Tabela de parametrização Yokogawas UM331</a><br>
+
+    <!-- === MODIFICADO: abre o PDF (OneDrive via PDF.js) já na página 7 === -->
+    <a href="#paginaPdf" class="link-azul" onclick="irParaPaginaPdf(7); return false;">
+      7 – Tabela de parametrização Yokogawas UM331
+    </a><br>
+
     <a href="#sec-07" class="link-azul">8 – Tabela de parametrização Yokogawas UM33A</a><br>
     <a href="#sec-08" class="link-azul">9 – Tabela de parametrização PRESSYS 2030 LIGHT 1520-01</a><br>
     <a href="#sec-09" class="link-azul">10 – Tabela de parametrização PRESSYS 2036 LIGHT 1620-01</a><br>
@@ -261,7 +246,6 @@ table td, table th {
     <a href="#sec-18" class="link-azul">19 – Localizacion RTD’s</a><br>
     <a href="#sec-19" class="link-azul">20 – Creep Detector</a><br>
     <a href="#sec-20" class="link-azul">21 – Localizações dos RTD’s Gerador</a><br>
-   
     <a href="#sec-22" class="link-azul">22 – Procedimento para manutenção e ensaio QCI</a><br>
     <a href="#sec-23" class="link-azul">23 – Parametrização Sentron 4200 (multimedidor)</a><br>
     <a href="#sec-24" class="link-azul">24 – Configuração Relé T119din (TAU 18A)</a><br>
@@ -269,51 +253,39 @@ table td, table th {
     <a href="#sec-26" class="link-azul">26 – Relé de frequência URPF4000</a><br>
     <a href="#sec-27" class="link-azul">27 – Parametrização do Relé 39LW - LIP</a><br>
     <a href="#sec-28" class="link-azul">28 – Lista telefônica</a><br>
-<a href="#pagina4" class="link-azul">📄 Abrir PDF do OneDrive (Página 4)</a><br>
   </div>
 
- <div class="numero-pagina">Página 1</div>
+  <div class="numero-pagina">Página 1</div>
 </div>
-
-
-
-
-<!-- ==============================
-     PÁGINA 4 – PDF EMBUTIDO (OneDrive via Google Viewer)
-     ============================== -->
-<div class="pagina" id="pagina4">
-  <iframe
-    src="https://docs.google.com/gview?embedded=1&url=https%3A%2F%2F1drv.ms%2Fb%2Fc%2F7b3932fb4b5c6dc7%2FEYT6jY8599RHqak8k8QLn9oBPV8Vuw1kx2PakPyabeeCZA%3Fe%3DXjAg6H"
-    title="PDF do OneDrive – embutido"
-    style="width:100%; height:100%; border:none;">
-  </iframe>
-
-  <div class="numero-pagina">Página 4</div>
-</div>
-
-
-
 
 <!-- ==============================
      PÁGINA 22 (IMAGEM)
      ============================== -->
 <div class="pagina" id="pagina5">
+  <div class="numero-pagina">Página 2</div>
+</div>
 
-
-
-
-
-
-
-
+<!-- ==============================
+     PÁGINA 22 (IMAGEM)
+     ============================== -->
+<div class="pagina" id="pagina5">
   <div style="text-align: center; margin-top: 20px;">
     <img src="https://i.ibb.co/8g7wth9y/imagem-sonda.png" alt="Descrição da imagem" style="max-width: 90%; height: auto;">
   </div>
-
-
-
-
   <div class="numero-pagina">Página 3</div>
+</div>
+
+<!-- ==============================
+     PÁGINA PDF – VISUALIZADOR REUTILIZÁVEL
+     (abre o OneDrive via PDF.js já na página desejada)
+     ============================== -->
+<div class="pagina" id="paginaPdf">
+  <iframe id="pdfViewer"
+          src=""
+          title="PDF (OneDrive via PDF.js)"
+          style="width:100%; height:100%; border:none;">
+  </iframe>
+  <div class="numero-pagina">Página 4</div>
 </div>
 
 <!-- ==============================
@@ -331,18 +303,11 @@ function toggleSubitensSCADA() {
   const atual = bloco.style.display || "none";
   bloco.style.display = (atual === "none") ? "block" : "none";
 }
-
-
 function toggleSubitensU9AU18A() {
   const bloco = document.getElementById("subitens-u9au18a");
   const atual = bloco.style.display || "none";
   bloco.style.display = (atual === "none") ? "block" : "none";
 }
-
-
-
-
-
 
 /* ===== Botão de e-mail =====
    Windows: usa mailto (Novo Outlook não suporta ms-outlook:// compose).
@@ -407,7 +372,7 @@ document.addEventListener("click", function(e) {
   tr.classList.toggle("selecionada");
 });
 
-/* ===== Alternância dos links do item 3 (índice ↔ voltar) — mantido igual ===== */
+/* ===== Alternância dos links do item 4 (índice ↔ voltar) — mantido igual ===== */
 (function () {
   const linkIndice = document.getElementById('tga-index');
   const linkVoltar = document.getElementById('tga-voltar');
@@ -436,6 +401,26 @@ document.addEventListener("click", function(e) {
     linkVoltar.classList.remove('hidden');
   }
 })();
+</script>
+
+<!-- ===== NOVO SCRIPT: abrir OneDrive no PDF.js na página desejada ===== -->
+<script>
+  // Seu link público do OneDrive:
+  const PDF_ONEDRIVE_URL = "https://1drv.ms/b/c/7b3932fb4b5c6dc7/EYT6jY8599RHqak8k8QLn9oBPV8Vuw1kx2PakPyabeeCZA?e=XjAg6H";
+
+  // Viewer oficial do PDF.js hospedado pela Mozilla:
+  const PDFJS_VIEWER = "https://mozilla.github.io/pdf.js/web/viewer.html?file=";
+
+  // Carrega o PDF do OneDrive no viewer já na página desejada
+  function irParaPaginaPdf(pagina) {
+    const viewer = document.getElementById("pdfViewer");
+    const url = PDFJS_VIEWER + encodeURIComponent(PDF_ONEDRIVE_URL) + "#page=" + pagina;
+    viewer.src = url;
+
+    // rola até a página do caderno onde o PDF está embutido
+    const alvo = document.getElementById("paginaPdf");
+    if (alvo) alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
 </script>
 
 </body>
