@@ -1,418 +1,406 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8"/>
-  <title>Caderno de Ensaios - 120 Páginas</title>
-  <style>
-    /* ===== CONFIGURAÇÃO GERAL DA PÁGINA ===== */
-    body {
-      margin: 0;
-      padding: 0;
-      background: #ddd;
-      font-family: Arial, sans-serif;
-    }
-
-    /* ===== CADA PÁGINA A4 NA TELA ===== */
-    .pagina {
-      width: 794px;   /* A4 ~96dpi */
-      height: 1123px;
-      background: #fff;
-      margin: 40px auto;
-      padding: 50px 60px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      position: relative;
-      page-break-after: always;
-    }
-
-    /* ===== RODAPÉ ===== */
-    .numero-pagina {
-      position: absolute;
-      bottom: 20px;
-      right: 30px;
-      font-size: 12px;
-      color: gray;
-    }
-
-    /* ===== ÁREA DO ÍNDICE ===== */
-    .indice {
-      text-align: left;
-      margin-top: 60px;
-      font-size: 14px;
-      line-height: 1.8;
-      max-height: calc(100% - 300px);
-      overflow: hidden;
-      box-sizing: border-box;
-    }
-
-    /* ===== BOTÃO DE E-MAIL ===== */
-    .btn-email {
-      appearance: none;
-      border: 1px solid #1e5bd9;
-      background: #2b6fff;
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 14px;
-      cursor: pointer;
-      text-decoration: underline;
-      line-height: 1.2;
-      white-space: normal;
-      max-width: 280px;
-      text-align: center;
-    }
-    .btn-email:active { transform: translateY(1px); }
-    .btn-email:focus { outline: 2px solid rgba(30,91,217,0.35); outline-offset: 2px; }
-
-    /* ===== CLIQUE-TO-AMARELO (todas as tabelas) ===== */
-    table tbody tr { cursor: pointer; transition: background-color .2s ease; }
-    table tbody tr.no-click { cursor: default; }
-    table tbody tr.selecionada { background-color: yellow !important; }
-
-    /* ===== LINKS UTILITÁRIOS ===== */
-    .hidden { display: none !important; }
-    .link-azul { color: blue; text-decoration: underline; cursor: pointer; }
-
-    /* ===== MODO IMPRESSÃO ===== */
-    @media print {
-      .indice {
-        max-height: none !important;
-        height: auto !important;
-        overflow: visible !important;
-      }
-      .btn-email { display: none !important; }
-      /* Se não quiser mostrar os links na impressão:
-         .link-pagina--inline { display: none !important; } */
-    }
-
-    /* ===== Aumenta a altura das células de todas as tabelas ===== */
-    table td, table th {
-      padding: 3px 0px;      /* cima/baixo ; lados */
-      vertical-align: middle; /* centraliza verticalmente */
-    }
-
-    /* ===== LINK "⬅ ..." NO FLUXO (INLINE) ===== */
-    .link-pagina--inline {
-      color: blue;
-      text-decoration: underline;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    .link-pagina--inline:focus { outline: 2px solid rgba(30,91,217,.35); outline-offset: 2px; }
-
-    /* (Fallback opcional) Wrapper absoluto caso a página não tenha âncora.
-       Você não precisa usar — basta inserir .link-pagina-anchor nas páginas. */
-    .link-pagina-wrapper {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      z-index: 10;
-      text-align: right;
-    }
-    .link-pagina { /* aparência do link no fallback */
-      color: blue;
-      text-decoration: underline;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    .link-pagina:focus { outline: 2px solid rgba(30,91,217,.35); outline-offset: 2px; }
-  </style>
-</head>
-<body>
 
 <!-- ==============================
-     PÁGINA 1 - CAPA + ÍNDICE
+     PÁGINA 3
      ============================== -->
-<div class="pagina" id="pagina1"
-     data-label="⬅ YouTube"
-     data-url="https://www.youtube.com/">
+<div class="pagina" id="pagina3">
 
-  <!-- ÂNCORA INLINE (topo-direita, sem coordenadas) -->
-  <div class="link-pagina-anchor" style="text-align:right; margin-bottom:10px;"></div>
-
-  <h1 style="text-align: center; font-size: 24px; margin-top: 50px;">
-    CADERNO DE ENSAIOS E PARAMETRIZAÇÕES<br>Versão 6.1
-  </h1>
-
-  <h2 style="text-align: center; font-size: 18px; margin-top: 40px; color: black;">
-    Manter na sala da MEG1 – EL.139
+ <h2 style="color: black; text-align: center; font-size: 14px;">
+    Ensaios de contatores painel CCAR<span style="color:blue;"></span>
   </h2>
 
-  <div style="text-align:right; margin-top: 10px;">
-    <button type="button" class="btn-email" onclick="openEmail()">
-      Clique Aqui para reportar<br>erro/atualização deste caderno
-    </button>
+<a id="sec-05"></a>
+    <div style="text-align:right; margin-bottom:6px;">
+      <a href="#pagina1" class="link-azul">⬅ Voltar ao índice (5 – Lista de ensaios contatores CCAR)</a>
+    </div>
+
+  
+  <div style="background-color: yellow; padding: 10px; text-align: center; font-weight: bold; font-size: 16px;">
+    CCAR
   </div>
+  <table style="width:100%; border-collapse: collapse; font-size: 10px; margin-top: 2px; border: 1px solid black;">
+<thead>
 
-  <div class="indice">
-    <div onclick="toggleSubitensULP()" 
-         style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
-      1 – Lista de ensaios com ULP
-    </div>
+<tr>
+<th style="border: 2px solid black;">
+       RELÉ
+      </th>
+<th style="border: 2px solid black;">
+       AÇÃO
+      </th>
+<th style="border: 2px solid black;">
+       PONTOS
+      </th>
+<th style="border: 2px solid black;">
+       TENSÃO
+      </th>
 
-    <div id="subitens-ulp" style="display:none; margin-left:20px;">
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#umcc" style="color:blue; text-decoration:underline; cursor:pointer;">1.10 - UMCC</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kk" style="color:blue; text-decoration:underline; cursor:pointer;">1.11 - KK</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp" style="color:blue; text-decoration:underline; cursor:pointer;">1.12 - PP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctau(tau)" style="color:blue; text-decoration:underline; cursor:pointer;">1.13 - CTAU (TAU)</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm" style="color:blue; text-decoration:underline; cursor:pointer;">1.14 - QTM (Alimentação UMCC:52-2)</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm52.3" style="color:blue; text-decoration:underline; cursor:pointer;">1.15 - QTM (Alimentação UMCC:52-3)</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pwb" style="color:blue; text-decoration:underline; cursor:pointer;">1.16 - PWB</a><br>      
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tga" style="color:blue; text-decoration:underline; cursor:pointer;">1.17 - TGA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qcp" style="color:blue; text-decoration:underline; cursor:pointer;">1.18 - QCP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#lip" style="color:blue; text-decoration:underline; cursor:pointer;">1.19 - LIP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cld" style="color:blue; text-decoration:underline; cursor:pointer;">1.20 - CLD</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#caixaespiral" style="color:blue; text-decoration:underline; cursor:pointer;">1.21 - Caixa espiral</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ccar" style="color:blue; text-decoration:underline; cursor:pointer;">1.22 - CCAR</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pa" style="color:blue; text-decoration:underline; cursor:pointer;">1.23 - PA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb1" style="color:blue; text-decoration:underline; cursor:pointer;">1.24 - GTB-1</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb3" style="color:blue; text-decoration:underline; cursor:pointer;">1.25 - GTB-3</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ggb" style="color:blue; text-decoration:underline; cursor:pointer;">1.26 - GGB</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cte-tep" style="color:blue; text-decoration:underline; cursor:pointer;">1.27 - CTE - TEP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cte-tendesativado" style="color:blue; text-decoration:underline; cursor:pointer;">1.28 - CTE - TEN - DESATIVADO</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctm" style="color:blue; text-decoration:underline; cursor:pointer;">1.29 - CTM</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pap" style="color:blue; text-decoration:underline; cursor:pointer;">1.30 - PAP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ste/stau" style="color:blue; text-decoration:underline; cursor:pointer;">1.31 - STE / STAU</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pva" style="color:blue; text-decoration:underline; cursor:pointer;">1.32 - PVA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kvb" style="color:blue; text-decoration:underline; cursor:pointer;">1.33 - KVB</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm" style="color:blue; text-decoration:underline; cursor:pointer;">1.34 - CFM</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctg" style="color:blue; text-decoration:underline; cursor:pointer;">1.31 - CTG</a><br>
-    </div>
+</thead>
+<tbody>
 
-    <div onclick="toggleSubitensSCADA()"
-         style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
-      2 – Lista de ensaios com SCADA
-    </div>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA1.6
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        10-8
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KM1
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        10-8
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+     KA1.1
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        10-8
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA2.6
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        40-38
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KM2
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        40-38
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA2.1
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        40-38
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA1.2
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira + Manobrar Seccionadora Q1
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        10-11
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA2.2.
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira + Manobrar Seccionadora Q2
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        40-41
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA1.5
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper térmico F1
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        97-98
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA2.5
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper térmico F2
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+       97-98
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA1.8
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper entre borneira e ponto do relé
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        10-KA1.8:13
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+     KA2.8
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper entre borneira e ponto do relé
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        40-KA2.8:13
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      120 VCA
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA8.1
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        101-102
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      125 VCC
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+     KA8.2
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        101-104
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      125 VCC
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA8.3
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        101-107
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      125 VCC
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA8.4
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        101-109
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      125 VCC
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA8.5
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        101-112
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      125 VCC
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA8.6
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        101-115
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      125 VCC
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+    KA8.7
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper na borneira
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        101-118
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      125 VCC
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA9.1
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      Jumper entre borneira e ponto do relé 
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+       101-KA8.5:14
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      125 VCC
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA9.2 
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Jumper entre borneira e ponto do relé 
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        101-KA8.6:24
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      125 VCC
+      </td>
+</tr>
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+<td style="border: 1px solid black; text-align: center;">
+      KA9.3
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+        Manobrar Disjuntor
+      </td>
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Q4
+       </span>
+</td>
+<td style="border: 1px solid black; text-align: center;">
+      125 VCC
+      </td>
+</tr>
 
-    <div id="subitens-scada" style="display:none; margin-left:20px;">
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapwbepwx" style="color:blue; text-decoration:underline; cursor:pointer;">2.10 - PWB e PWX</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaumcc" style="color:blue; text-decoration:underline; cursor:pointer;">2.11 - UMCC</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadalip" style="color:blue; text-decoration:underline; cursor:pointer;">2.12 - LIP </a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadactm" style="color:blue; text-decoration:underline; cursor:pointer;">2.13 - CTM </a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqcp" style="color:blue; text-decoration:underline; cursor:pointer;">2.14 - QCP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapa" style="color:blue; text-decoration:underline; cursor:pointer;">2.15 - PA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadatau" style="color:blue; text-decoration:underline; cursor:pointer;">2.16 - TAU</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb1" style="color:blue; text-decoration:underline; cursor:pointer;">2.17 - GTB1</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb2" style="color:blue; text-decoration:underline; cursor:pointer;">2.18 - GTB2</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb3" style="color:blue; text-decoration:underline; cursor:pointer;">2.19 - GTB3</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqv" style="color:blue; text-decoration:underline; cursor:pointer;">2.20 - QV</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqtmtm" style="color:blue; text-decoration:underline; cursor:pointer;">2.21 - QTM - TM</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadakkpvrtga" style="color:blue; text-decoration:underline; cursor:pointer;">2.22 - KK - PVR - TGA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadacld" style="color:blue; text-decoration:underline; cursor:pointer;">2.23 - CLD</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqci" style="color:blue; text-decoration:underline; cursor:pointer;">2.24 - QCI</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadastau" style="color:blue; text-decoration:underline; cursor:pointer;">2.25 - STAU</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaste" style="color:blue; text-decoration:underline; cursor:pointer;">2.26 - STE</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadatep" style="color:blue; text-decoration:underline; cursor:pointer;">2.27 - TEP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapva" style="color:blue; text-decoration:underline; cursor:pointer;">2.28 - PVA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaccar" style="color:blue; text-decoration:underline; cursor:pointer;">2.29 - CCAR</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaggb" style="color:blue; text-decoration:underline; cursor:pointer;">2.30 - GGB</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadacfm" style="color:blue; text-decoration:underline; cursor:pointer;">2.31 - CFM</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaga" style="color:blue; text-decoration:underline; cursor:pointer;">2.32 - GA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scapap" style="color:blue; text-decoration:underline; cursor:pointer;">2.33 - PAP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scapp" style="color:blue; text-decoration:underline; cursor:pointer;">2.34 - PP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scagg" style="color:blue; text-decoration:underline; cursor:pointer;">2.35 - GG</a><br>
-    </div>
 
-    <a id="tga-index" href="#ensiotga" class="link-azul">
-      4 – Lista de ensaios dos anunciadores TGA
-    </a><br>
+</tbody>
+</table>
 
-    <a href="#sec-05" class="link-azul">5 – Lista de ensaios contatores CCAR</a><br>
-    <a href="#sec-04" class="link-azul">6 – Tabela de conversão de RTD</a><br>
-    <a href="#sec-06" class="link-azul">7 – Tabela de parametrização Yokogawas UM331</a><br>
-    <a href="#sec-07" class="link-azul">8 – Tabela de parametrização Yokogawas UM33A</a><br>
-    <a href="#sec-08" class="link-azul">9 – Tabela de parametrização PRESSYS 2030 LIGHT 1520-01</a><br>
-    <a href="#sec-09" class="link-azul">10 – Tabela de parametrização PRESSYS 2036 LIGHT 1620-01</a><br>
-    <a href="#sec-10" class="link-azul">11 – Configuração Sonda Endress+Hauser Multicap T PWB e GGB 9A/18A</a><br>
-    <a href="#sec-11" class="link-azul">12 – Configuração sonda Sytrans LC 500 - PWB e GGB</a><br>
-    <a href="#sec-12" class="link-azul">13 – Verificação Sonda Minisonic 600</a><br>
-    <a href="#sec-13" class="link-azul">14 – Procedimento sonda Liquicap FEI50H (LIP)</a><br>
-    <a href="#sec-14" class="link-azul">15 – Parametrização Magnetrol M300 – LIP</a><br>
-    <a href="#sec-15" class="link-azul">16 – Parametrização Condutivímetros PWB 9A – 18A</a><br>
-    <a href="#sec-16" class="link-azul">17 – Tabela de parametrização PRESSYS 2012 Energy – GTB3</a><br>
-    <a href="#sec-17" class="link-azul">18 - Tabela de parametrização PRESSYS 2030 LIGHT EE-0457 16 - PCR 12/34</a><br>
-    <a href="#sec-18" class="link-azul">19 – Localizacion RTD’s</a><br>
-    <a href="#sec-19" class="link-azul">20 – Creep Detector</a><br>
-    <a href="#sec-20" class="link-azul">21 – Localizações dos RTD’s Gerador</a><br>
-    <a href="#sec-22" class="link-azul">22 – Procedimento para manutenção e ensaio QCI</a><br>
-    <a href="#sec-23" class="link-azul">23 – Parametrização Sentron 4200 (multimedidor)</a><br>
-    <a href="#sec-24" class="link-azul">24 – Configuração Relé T119din (TAU 18A)</a><br>
-    <a href="#sec-25" class="link-azul">25 – Procedimento Sonda Nivel Agua Pura 09A/18A</a><br>
-    <a href="#sec-26" class="link-azul">26 – Relé de frequência URPF4000</a><br>
-    <a href="#sec-27" class="link-azul">27 – Parametrização do Relé 39LW - LIP</a><br>
-    <a href="#sec-28" class="link-azul">28 – Lista telefônica</a><br>
-  </div>
 
-  <div class="numero-pagina">Página 1</div>
+
+
+
+  <!-- PONTO SEGURO PARA ALTERAR (título/conteúdo da Página 4) -->
+ 
+  
+  <div class="numero-pagina">Página 43</div>
 </div>
-
-<!-- ==============================
-     PÁGINA 22 (IMAGEM)
-     ============================== -->
-<div class="pagina" id="pagina5"
-     data-label="⬅ PIC Agua pura"
-     data-url="https://osprd.itaipu/SAMDocumentManagement/PICs.aspx">
-
-  <!-- ÂNCORA INLINE NO "MEIO" (centralizada) -->
-  <div class="link-pagina-anchor" style="text-align:center; margin: 24px 0;"></div>
-
-  <div style="text-align: center; margin-top: 20px;">
-    <img src="https://i.ibb.co/8g7wth9y/imagem-sonda.png" alt="Descrição da imagem" style="max-width: 90%; height: auto;">
-  </div>
-  <div class="numero-pagina">Página 22</div>
-</div>
-
-<!-- ==============================
-     SCRIPTS
-     ============================== -->
-<script>
-/* ===== Mostra/oculta subitens no índice ===== */
-function toggleSubitensULP() {
-  const bloco = document.getElementById("subitens-ulp");
-  const atual = bloco.style.display || "none";
-  bloco.style.display = (atual === "none") ? "block" : "none";
-}
-function toggleSubitensSCADA() {
-  const bloco = document.getElementById("subitens-scada");
-  const atual = bloco.style.display || "none";
-  bloco.style.display = (atual === "none") ? "block" : "none";
-}
-function toggleSubitensU9AU18A() {
-  const bloco = document.getElementById("subitens-u9au18a");
-  const atual = bloco.style.display || "none";
-  bloco.style.display = (atual === "none") ? "block" : "none";
-}
-
-/* ===== Botão de e-mail ===== */
-function openEmail() {
-  const toEmail = "renatoq@itaipu.gov.br";
-  const ccEmail = "copia@exemplo.com";
-  const subjectText = "Alteração caderno de parametrizações";
-  const bodyText = "Mensagem inicial...";
-
-  const to = encodeURIComponent(toEmail);
-  const cc = encodeURIComponent(ccEmail);
-  const subject = encodeURIComponent(subjectText);
-  const body = encodeURIComponent(bodyText.replace(/\n/g, "\r\n"));
-
-  const mailtoUrl  = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
-  const outlookUrl = `ms-outlook://compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
-  const owaUrl     = `https://outlook.office.com/mail/deeplink/compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
-
-  const ua = navigator.userAgent.toLowerCase();
-  const isWindows = ua.includes("win");
-  const isIOS = /iphone|ipad|ipod/.test(ua);
-  const isMac = ua.includes("mac");
-  const isAndroid = ua.includes("android");
-
-  if (isWindows) {
-    window.location.href = mailtoUrl;
-    setTimeout(() => {
-      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
-    }, 1200);
-    return;
-  }
-
-  if (isIOS || isMac) {
-    window.location.href = outlookUrl;
-    setTimeout(() => { window.location.href = mailtoUrl; }, 900);
-    setTimeout(() => {
-      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
-    }, 2000);
-    return;
-  }
-
-  if (isAndroid) {
-    window.location.href = mailtoUrl;
-    setTimeout(() => {
-      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
-    }, 1200);
-    return;
-  }
-
-  window.location.href = mailtoUrl;
-}
-
-/* ===== Clique-para-amarelar (global, todas as tabelas) ===== */
-document.addEventListener("click", function(e) {
-  const tr = e.target.closest("tbody tr");
-  if (!tr) return;
-  if (tr.classList.contains("no-click")) return;
-  if (tr.hasAttribute("onclick")) return;
-  tr.classList.toggle("selecionada");
-});
-
-/* ===== Alternância dos links do item 3 (índice ↔ voltar) ===== */
-(function () {
-  const linkIndice = document.getElementById('tga-index');
-  const linkVoltar = document.getElementById('tga-voltar');
-  const alvoTGA    = document.getElementById('ensiotga');
-  const pagina1    = document.getElementById('pagina1');
-  if (!linkIndice || !linkVoltar || !alvoTGA || !pagina1) return;
-
-  linkIndice.addEventListener('click', function (e) {
-    e.preventDefault();
-    linkVoltar.classList.remove('hidden');
-    alvoTGA.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    history.replaceState(null, '', '#ensiotga');
-  });
-
-  linkVoltar.addEventListener('click', function (e) {
-    e.preventDefault();
-    linkVoltar.classList.add('hidden');
-    pagina1.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    history.replaceState(null, '', '#pagina1');
-    linkIndice.style.outline = '2px solid rgba(30,91,217,.35)';
-    setTimeout(() => linkIndice.style.outline = '', 1200);
-  });
-
-  if (location.hash === '#ensiotga') {
-    linkVoltar.classList.remove('hidden');
-  }
-})();
-
-/* ===== Link por página (INLINE primeiro; sem coordenadas)
-   - Se a página tiver .link-pagina-anchor, o link é inserido ali.
-   - Se não tiver, cai no fallback (topo-direita absoluto). */
-(function linksPorPagina() {
-  const FALLBACK_LABEL = "⬅ PIC Agua pura";
-  const FALLBACK_URL   = "https://osprd.itaipu/SAMDocumentManagement/PICs.aspx";
-
-  document.querySelectorAll('.pagina').forEach((pagina) => {
-    if (pagina.getAttribute('data-link-initialized') === '1') return;
-    pagina.setAttribute('data-link-initialized', '1');
-
-    const label = pagina.getAttribute('data-label') || FALLBACK_LABEL;
-    const url   = pagina.getAttribute('data-url')   || FALLBACK_URL;
-
-    // 1) Preferência: inserir no fluxo (inline), se houver âncora
-    const inlineAnchor = pagina.querySelector('.link-pagina-anchor');
-    if (inlineAnchor) {
-      const a = document.createElement('a');
-      a.className = 'link-pagina--inline';
-      a.textContent = label;   // ex.: "⬅ YouTube"
-      a.href = url;            // ex.: https://www.youtube.com/
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.title = `Abrir: ${label.replace(/^⬅\s*/, '')}`;
-      inlineAnchor.appendChild(a);
-      return;
-    }
-
-    // 2) Fallback: topo-direita absoluto (caso não tenha âncora)
-    const wrap = document.createElement('div');
-    wrap.className = 'link-pagina-wrapper';
-    const a = document.createElement('a');
-    a.className = 'link-pagina';
-    a.textContent = label;
-    a.href = url;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    a.title = `Abrir: ${label.replace(/^⬅\s*/, '')}`;
-    wrap.appendChild(a);
-    pagina.appendChild(wrap);
-  });
-})();
-</script>
-
-</body>
-</html>
