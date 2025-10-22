@@ -64,11 +64,11 @@
     .btn-email:focus { outline: 2px solid rgba(30,91,217,0.35); outline-offset: 2px; }
 
     /* ===== CLIQUE-TO-AMARELO (todas as tabelas) ===== */
-    table tbody tr {               /* só linhas de dados */
+    table tbody tr {
       cursor: pointer;
       transition: background-color .2s ease;
     }
-    table tbody tr.no-click {      /* use .no-click p/ desativar em alguma linha */
+    table tbody tr.no-click {
       cursor: default;
     }
     table tbody tr.selecionada {
@@ -91,26 +91,23 @@
 
     /* Aumenta a altura das células de todas as tabelas */
     table td, table th {
-      padding: 3px 0px;      /* primeiro valor = cima/baixo; segundo = lados */
-      vertical-align: middle; /* centraliza o texto na vertical */
+      padding: 3px 0px;
+      vertical-align: middle;
     }
 
-    /* ===== EMPILHAR DUAS IMAGENS (SEM ESPAÇO ENTRE ELAS) =====
-       - Ajuste a largura aqui (por padrão, ocupa até 660px ou 100% do contêiner)
-       - Coloque as duas partes cortadas com a MESMA largura em pixels
-    */
+    /* ===== EMPILHAR DUAS IMAGENS (SEM ESPAÇO ENTRE ELAS) ===== */
     .img-stack {
       width: min(660px, 100%);
       margin: 20px auto;
-      line-height: 0;         /* remove espaços "fantasmas" entre as imagens */
-      break-inside: avoid;    /* evita quebra entre as partes na impressão */
+      line-height: 0;         /* remove espaços entre imagens */
+      break-inside: avoid;    /* evita quebra na impressão */
     }
     .img-stack .stack-part {
-      display: block;         /* elimina lacunas por inline */
-      width: 100%;            /* força mesmas larguras */
-      height: auto;           /* mantém a proporção */
+      display: block;
+      width: 100%;
+      height: auto;
       margin: 0; padding: 0; border: 0;
-      image-rendering: auto;  /* melhor suavização */
+      image-rendering: auto;
     }
   </style>
 </head>
@@ -236,7 +233,7 @@
       &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pap9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.33 - PAP</a><br>
     </div>
 
-    <!-- *** Item 4 (já era link no seu código) *** -->
+    <!-- *** Item 4 (link) *** -->
     <a id="tga-index" href="#ensiotga" class="link-azul">
       4 – Lista de ensaios dos anunciadores TGA
     </a><br>
@@ -274,14 +271,13 @@
 </div>
 
 <!-- ==============================
-     PÁGINA 22 (IMAGEM) – AGORA EM 2 PARTES EMPILHADAS
+     PÁGINA 22 (IMAGEM) – EM 2 PARTES EMPILHADAS
      ============================== -->
 <div class="pagina" id="pagina5">
 
-  <!-- Troque os dois src abaixo pelas suas URLs diretas do imgbb (terminando em .png/.jpg) -->
   <div class="img-stack">
-    <img class="https://i.ibb.co/5XZHVWR2/metade-da-tabela.png" alt="Tabela (parte 1)">
-    <img class="https://i.ibb.co/SS302Dv/metade-da-tabela-2.png" alt="Tabela (parte 2)">
+    <img class="stack-part" src="https://i.ibb.co/5XZHVWR2/metade-da-tabela.png" alt="Tabela (parte 1)">
+    <img class="stack-part" src="https://i.ibb.co/SS302Dv/metade-da-tabela-2.png" alt="Tabela (parte 2)">
   </div>
 
   <div class="numero-pagina">Página 43</div>
@@ -308,9 +304,7 @@ function toggleSubitensU9AU18A() {
   bloco.style.display = (atual === "none") ? "block" : "none";
 }
 
-/* ===== Botão de e-mail =====
-   Windows: usa mailto (Novo Outlook não suporta ms-outlook:// compose).
-   Apple: tenta Outlook app e cai para mailto. Se nada abrir, Outlook Web. */
+/* ===== Botão de e-mail ===== */
 function openEmail() {
   const toEmail = "renatoq@itaipu.gov.br";
   const ccEmail = "copia@exemplo.com";
@@ -360,18 +354,16 @@ function openEmail() {
   window.location.href = mailtoUrl;
 }
 
-/* ===== Clique-para-amarelar (global, todas as tabelas) =====
-   Usa delegação de evento só nas linhas de <tbody>.
-   IMPORTANTE: se uma <tr> já tiver onclick inline, este handler ignora. */
+/* ===== Clique-para-amarelar (global, todas as tabelas) ===== */
 document.addEventListener("click", function(e) {
   const tr = e.target.closest("tbody tr");
   if (!tr) return;
   if (tr.classList.contains("no-click")) return;
-  if (tr.hasAttribute("onclick")) return;  // evita duplo toggle
+  if (tr.hasAttribute("onclick")) return;
   tr.classList.toggle("selecionada");
 });
 
-/* ===== Alternância dos links do item 4 (índice ↔ voltar) — mantido igual ===== */
+/* ===== Alternância dos links do item 4 (índice ↔ voltar) (opcional) ===== */
 (function () {
   const linkIndice = document.getElementById('tga-index');
   const linkVoltar = document.getElementById('tga-voltar');
