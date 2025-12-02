@@ -324,10 +324,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <title>Tabela NC - Somente Primeira Linha e Primeira Coluna Clicáveis</title>
+  <title>Tabela NC - Só 1ª linha e 1ª coluna clicáveis</title>
 
   <style>
-    /* Estilo do título amarelo NC */
     .titulo-nc {
       background-color: yellow;
       padding: 10px;
@@ -336,7 +335,6 @@
       font-size: 16px;
     }
 
-    /* Estilos gerais da tabela */
     table.tabela-nc {
       width: 100%;
       border-collapse: collapse;
@@ -351,70 +349,65 @@
       padding: 2px 4px;
     }
 
-    /* Destaque de linha inteira */
     .linha-selecionada {
       background-color: yellow !important;
     }
 
-    /* Destaque de coluna inteira */
     .coluna-selecionada {
       background-color: yellow !important;
     }
 
-    /* Célula da interseção (linha + coluna) */
     .intersecao {
       background-color: red !important;
       color: white;
       font-weight: bold;
     }
 
-    /* Apenas primeira linha e primeira coluna são clicáveis */
-    th.clicavel,
-    td.clicavel {
+    /* Visualmente clicáveis apenas 1ª linha (TH) e 1ª coluna (EVENTO) */
+    thead th {
+      cursor: pointer;
+    }
+
+    tbody td.primeira-coluna {
       cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <!-- Caixa amarela com NC -->
   <div class="titulo-nc">
     NC
   </div>
 
-  <!-- Tabela -->
   <table id="tabela-nc" class="tabela-nc">
     <thead>
       <tr>
-        <th class="clicavel">EVENTO</th>
-        <th class="clicavel">D.PRIM.</th>
-        <th class="clicavel">CONTATO</th>
-        <th class="clicavel">REGUA</th>
-        <th class="clicavel">BORNE</th>
-        <th class="clicavel">SDSC</th>
-        <th class="clicavel">BLOQ.</th>
-        <th class="clicavel">SCADA</th>
+        <th>EVENTO</th>
+        <th>D.PRIM.</th>
+        <th>CONTATO</th>
+        <th>REGUA</th>
+        <th>BORNE</th>
+        <th>SDSC</th>
+        <th>BLOQ.</th>
+        <th>SCADA</th>
       </tr>
     </thead>
 
     <tbody>
-
-      <!-- LINHA 1 -->
       <tr>
-        <td class="clicavel" style="text-align:left;">Chave posta a terra neutro</td>
+        <td class="primeira-coluna" style="text-align:left;">Chave posta a terra neutro</td>
         <td style="text-align:center;">Q89</td>
         <td style="text-align:center;">23-24</td>
         <td style="text-align:center;">X1</td>
         <td style="text-align:center;color:blue;"><span>13-15</span></td>
-        <td style="text-align:center;">XXA1EB001NC</td>
+        <td style="text-align:center;">XXA1EB0<strong>01</strong>NC</td>
         <td style="text-align:center;"></td>
         <td style="text-align:left;">GENERADOR NC SECCIONADORA NEUTRO</td>
       </tr>
 
-      <!-- LINHA 2 -->
       <tr>
-        <td class="clicavel" style="text-align:left;">Temperatura alta trafo posta terra</td>
-        <td style="text-align:center;">F49</td>
+        <td class="primeira-coluna" style="text-align:left;">Temperatura alta trafo posta terra</td>
+        <td style="text-align:center;">F49**</td>
         <td style="text-align:center;">11-12</td>
         <td style="text-align:center;">X1</td>
         <td style="text-align:center;color:blue;"><span>34-38</span></td>
@@ -422,79 +415,105 @@
         <td style="text-align:center;"></td>
         <td style="text-align:left;">GENERADOR NC TRAFO ATERRAMIENTO TEMPERATURA ALTA</td>
       </tr>
-
     </tbody>
   </table>
 
   <script>
     const tabela = document.getElementById("tabela-nc");
-
-    let linhaAtual = null;
-    let colunaAtual = null;
-
     const linhas = tabela.querySelectorAll("tbody tr");
     const cabecalhos = tabela.querySelectorAll("thead th");
 
-    // ---------------------------------
-    // CLIQUE NA PRIMEIRA COLUNA (td.clicavel)
-    // ---------------------------------
-    linhas.forEach((linha, indexLinha) => {
-      const primeiraCelula = linha.children[0]; // apenas a primeira coluna
+    let linhaAtual = null;   // índice da linha selecionada (tbody)
+    let colunaAtual = null;  // índice da coluna selecionada
 
-      primeiraCelula.addEventListener("click", function () {
-
-        // limpar linhas anteriores
-        linhas.forEach(l => l.classList.remove("linha-selecionada"));
-
-        // marcar nova linha
-        linhaAtual = indexLinha;
-        linha.classList.add("linha-selecionada");
-
-        atualizarIntersecao();
-      });
+    // Remove qualquer resto de onclick antigo em <tr> ou <td>
+    linhas.forEach(tr => {
+      tr.removeAttribute("onclick");
+      Array.prototype.forEach.call(tr.children, td => td.removeAttribute("onclick"));
     });
 
-    // ---------------------------------
-    // CLIQUE NO CABEÇALHO (th.clicavel)
-    // ---------------------------------
-    cabecalhos.forEach((th, indexColuna) => {
-      th.addEventListener("click", function () {
+    // Listener ÚNICO na tabela – delega comportamento
+    tabela.addEventListener("click", function (e) {
+      const th = e.target.closest("th");
+      const td = e.target.closest("td");
 
-        // Remove seleção anterior
-        cabecalhos.forEach(h => h.classList.remove("coluna-selecionada"));
-        tabela.querySelectorAll("tbody td").forEach(td => {
-          td.classList.remove("coluna-selecionada");
-        });
+      // --- Clique no cabeçalho (primeira linha) -> coluna ---
+      if (th && tabela.tHead.contains(th)) {
+        const indexColuna = th.cellIndex;
+        selecionarColuna(indexColuna);
+        return;
+      }
 
-        // Marca nova coluna selecionada
-        colunaAtual = indexColuna;
+      // --- Clique em célula do corpo (tbody) ---
+      if (td && tabela.tBodies[0].contains(td)) {
+        const linha = td.parentElement;
+        const indexColuna = td.cellIndex;
 
-        // destaca o cabeçalho clicado
-        th.classList.add("coluna-selecionada");
+        // Só reage se for a PRIMEIRA COLUNA (indexColuna === 0)
+        if (indexColuna !== 0) {
+          // Qualquer clique fora da primeira coluna não faz nada
+          return;
+        }
 
-        // destaca a coluna no corpo
-        linhas.forEach(tr => {
-          if (tr.children[indexColuna]) {
-            tr.children[indexColuna].classList.add("coluna-selecionada");
-          }
-        });
+        const indexLinha = Array.prototype.indexOf.call(linhas, linha);
+        selecionarLinha(indexLinha);
+        return;
+      }
 
-        atualizarIntersecao();
-      });
+      // Clique em qualquer outra coisa dentro da tabela: ignora
     });
 
-    // ---------------------------------
-    // Função de interseção linha + coluna
-    // ---------------------------------
+    function selecionarLinha(indexLinha) {
+      // Limpa seleção de linhas antigas
+      linhas.forEach(l => l.classList.remove("linha-selecionada"));
+
+      linhaAtual = indexLinha;
+      if (linhas[linhaAtual]) {
+        linhas[linhaAtual].classList.add("linha-selecionada");
+      }
+
+      atualizarIntersecao();
+    }
+
+    function selecionarColuna(indexColuna) {
+      // Limpa seleção anterior de colunas
+      cabecalhos.forEach(h => h.classList.remove("coluna-selecionada"));
+      tabela.querySelectorAll("tbody td").forEach(td => {
+        td.classList.remove("coluna-selecionada");
+      });
+
+      colunaAtual = indexColuna;
+
+      // Marca cabeçalho
+      if (cabecalhos[colunaAtual]) {
+        cabecalhos[colunaAtual].classList.add("coluna-selecionada");
+      }
+
+      // Marca células da coluna
+      linhas.forEach(tr => {
+        const celulas = tr.children;
+        if (celulas[colunaAtual]) {
+          celulas[colunaAtual].classList.add("coluna-selecionada");
+        }
+      });
+
+      atualizarIntersecao();
+    }
+
     function atualizarIntersecao() {
+      // Limpa interseções anteriores
       tabela.querySelectorAll("tbody td").forEach(td => {
         td.classList.remove("intersecao");
       });
 
       if (linhaAtual !== null && colunaAtual !== null) {
-        const celula = linhas[linhaAtual].children[colunaAtual];
-        if (celula) {
-          celula.classList.add("intersecao");
+        const linha = linhas[linhaAtual];
+        if (!linha) return;
+
+        const celulas = linha.children;
+        const celulaIntersecao = celulas[colunaAtual];
+        if (celulaIntersecao) {
+          celulaIntersecao.classList.add("intersecao");
         }
       }
     }
