@@ -309,7 +309,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <title>Tabela NC - Linha e Coluna com Destaque</title>
+  <title>Tabela NC - Somente Primeira Linha e Primeira Coluna Clicáveis</title>
 
   <style>
     /* Estilo do título amarelo NC */
@@ -353,9 +353,9 @@
       font-weight: bold;
     }
 
-    /* Mostrar que primeira coluna e cabeçalho são clicáveis */
-    th.cabecalho-clicavel,
-    td.primeira-coluna-clicavel {
+    /* Apenas primeira linha e primeira coluna são clicáveis */
+    th.clicavel,
+    td.clicavel {
       cursor: pointer;
     }
   </style>
@@ -371,14 +371,14 @@
   <table id="tabela-nc" class="tabela-nc">
     <thead>
       <tr>
-        <th class="cabecalho-clicavel" style="border: 2px solid black;">EVENTO</th>
-        <th class="cabecalho-clicavel" style="border: 2px solid black;">D.PRIM.</th>
-        <th class="cabecalho-clicavel" style="border: 2px solid black;">CONTATO</th>
-        <th class="cabecalho-clicavel" style="border: 2px solid black;">REGUA</th>
-        <th class="cabecalho-clicavel" style="border: 2px solid black;">BORNE</th>
-        <th class="cabecalho-clicavel" style="border: 2px solid black;">SDSC</th>
-        <th class="cabecalho-clicavel" style="border: 2px solid black;">BLOQ.</th>
-        <th class="cabecalho-clicavel" style="border: 2px solid black;">SCADA</th>
+        <th class="clicavel">EVENTO</th>
+        <th class="clicavel">D.PRIM.</th>
+        <th class="clicavel">CONTATO</th>
+        <th class="clicavel">REGUA</th>
+        <th class="clicavel">BORNE</th>
+        <th class="clicavel">SDSC</th>
+        <th class="clicavel">BLOQ.</th>
+        <th class="clicavel">SCADA</th>
       </tr>
     </thead>
 
@@ -386,58 +386,26 @@
 
       <!-- LINHA 1 -->
       <tr>
-        <td class="primeira-coluna-clicavel" style="text-align: left;">
-          Chave posta a terra neutro
-        </td>
-        <td style="text-align: center;">
-          Q89
-        </td>
-        <td style="text-align: center;">
-          23-24
-        </td>
-        <td style="text-align: center;">
-          X1
-        </td>
-        <td style="text-align: center; color: blue;">
-          <span style="color: blue;">13-15</span>
-        </td>
-        <td style="text-align: center;">
-          XXA1EB0<strong>01</strong><span style="color: blue;"></span>NC
-        </td>
-        <td style="text-align: center;">
-          <!-- BLOQ. vazio -->
-        </td>
-        <td style="text-align: left;">
-          GENERADOR NC SECCIONADORA NEUTRO
-        </td>
+        <td class="clicavel" style="text-align:left;">Chave posta a terra neutro</td>
+        <td style="text-align:center;">Q89</td>
+        <td style="text-align:center;">23-24</td>
+        <td style="text-align:center;">X1</td>
+        <td style="text-align:center;color:blue;"><span>13-15</span></td>
+        <td style="text-align:center;">XXA1EB001NC</td>
+        <td style="text-align:center;"></td>
+        <td style="text-align:left;">GENERADOR NC SECCIONADORA NEUTRO</td>
       </tr>
 
       <!-- LINHA 2 -->
       <tr>
-        <td class="primeira-coluna-clicavel" style="text-align: left;">
-          Temperatura alta trafo posta terra
-        </td>
-        <td style="text-align: center;">
-          F49
-        </td>
-        <td style="text-align: center;">
-          11-12
-        </td>
-        <td style="text-align: center;">
-          X1
-        </td>
-        <td style="text-align: center; color: blue;">
-          <span style="color: blue;">34-38</span>
-        </td>
-        <td style="text-align: center;">
-          <strong>02</strong><span style="color: blue;"></span>
-        </td>
-        <td style="text-align: center;">
-          <!-- BLOQ. vazio -->
-        </td>
-        <td style="text-align: left;">
-          GENERADOR NC TRAFO ATERRAMIENTO TEMPERATURA ALTA
-        </td>
+        <td class="clicavel" style="text-align:left;">Temperatura alta trafo posta terra</td>
+        <td style="text-align:center;">F49</td>
+        <td style="text-align:center;">11-12</td>
+        <td style="text-align:center;">X1</td>
+        <td style="text-align:center;color:blue;"><span>34-38</span></td>
+        <td style="text-align:center;"><strong>02</strong></td>
+        <td style="text-align:center;"></td>
+        <td style="text-align:left;">GENERADOR NC TRAFO ATERRAMIENTO TEMPERATURA ALTA</td>
       </tr>
 
     </tbody>
@@ -446,83 +414,72 @@
   <script>
     const tabela = document.getElementById("tabela-nc");
 
-    let colunaAtual = null; // índice da coluna selecionada
-    let linhaAtual = null;  // índice da linha selecionada (tbody)
+    let linhaAtual = null;
+    let colunaAtual = null;
 
     const linhas = tabela.querySelectorAll("tbody tr");
     const cabecalhos = tabela.querySelectorAll("thead th");
 
     // ---------------------------------
-    // CLIQUE NA PRIMEIRA COLUNA (EVENTO)
+    // CLIQUE NA PRIMEIRA COLUNA (td.clicavel)
     // ---------------------------------
     linhas.forEach((linha, indexLinha) => {
-      const primeiraCelula = linha.children[0]; // primeira coluna
+      const primeiraCelula = linha.children[0]; // apenas a primeira coluna
 
-      if (primeiraCelula) {
-        primeiraCelula.addEventListener("click", function () {
-          // Remove seleção anterior de linha
-          linhas.forEach(l => l.classList.remove("linha-selecionada"));
+      primeiraCelula.addEventListener("click", function () {
 
-          // Marca nova linha
-          linhaAtual = indexLinha;
-          linha.classList.add("linha-selecionada");
+        // limpar linhas anteriores
+        linhas.forEach(l => l.classList.remove("linha-selecionada"));
 
-          // Atualiza interseção (linha + coluna)
-          atualizarIntersecao();
-        });
-      }
-    });
+        // marcar nova linha
+        linhaAtual = indexLinha;
+        linha.classList.add("linha-selecionada");
 
-    // ---------------------------------
-    // CLIQUE NO CABEÇALHO (PRIMEIRA LINHA)
-    // ---------------------------------
-    cabecalhos.forEach((th, indexColuna) => {
-      th.addEventListener("click", function () {
-
-        // Remove seleção anterior de colunas (th e td)
-        cabecalhos.forEach(h => h.classList.remove("coluna-selecionada"));
-        tabela.querySelectorAll("tbody td").forEach(td => {
-          td.classList.remove("coluna-selecionada");
-        });
-
-        // Marca nova coluna atual
-        colunaAtual = indexColuna;
-
-        // Destaca o cabeçalho clicado
-        th.classList.add("coluna-selecionada");
-
-        // Destaca todas as células da coluna no tbody
-        linhas.forEach(tr => {
-          const celulas = tr.children;
-          if (celulas[indexColuna]) {
-            celulas[indexColuna].classList.add("coluna-selecionada");
-          }
-        });
-
-        // Atualiza interseção (linha + coluna)
         atualizarIntersecao();
       });
     });
 
     // ---------------------------------
-    // FUNÇÃO: ATUALIZAR INTERSEÇÃO
+    // CLIQUE NO CABEÇALHO (th.clicavel)
+    // ---------------------------------
+    cabecalhos.forEach((th, indexColuna) => {
+      th.addEventListener("click", function () {
+
+        // Remove seleção anterior
+        cabecalhos.forEach(h => h.classList.remove("coluna-selecionada"));
+        tabela.querySelectorAll("tbody td").forEach(td => {
+          td.classList.remove("coluna-selecionada");
+        });
+
+        // Marca nova coluna selecionada
+        colunaAtual = indexColuna;
+
+        // destaca o cabeçalho clicado
+        th.classList.add("coluna-selecionada");
+
+        // destaca a coluna no corpo
+        linhas.forEach(tr => {
+          if (tr.children[indexColuna]) {
+            tr.children[indexColuna].classList.add("coluna-selecionada");
+          }
+        });
+
+        atualizarIntersecao();
+      });
+    });
+
+    // ---------------------------------
+    // Função de interseção linha + coluna
     // ---------------------------------
     function atualizarIntersecao() {
-      // Remove marcações antigas de interseção
       tabela.querySelectorAll("tbody td").forEach(td => {
         td.classList.remove("intersecao");
       });
 
-      // Só marca se linha e coluna estiverem selecionadas
       if (linhaAtual !== null && colunaAtual !== null) {
-        const linha = linhas[linhaAtual];
-        if (!linha) return;
-
-        const celulas = linha.children;
-        const celulaIntersecao = celulas[colunaAtual];
-
-        if (celulaIntersecao) {
-          celulaIntersecao.classList.add("intersecao");
+        const celula = linhas[linhaAtual].children[colunaAtual];
+        if (celula) {
+          celula.classList.add("intersecao");
         }
       }
     }
@@ -530,6 +487,7 @@
 
 </body>
 </html>
+
 
  
   
