@@ -1,341 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8"/>
-  <title>Caderno de Ensaios - 120 Páginas</title>
-  <style>
-    /* ===== CONFIGURAÇÃO GERAL DA PÁGINA ===== */
-    body {
-      margin: 0;
-      padding: 0;
-      background: #ddd;
-      font-family: Arial, sans-serif;
-    }
-
-    /* ===== CADA PÁGINA A4 NA TELA ===== */
-    .pagina {
-      width: 794px;   /* A4 ~96dpi */
-      height: 1123px;
-      background: #fff;
-      margin: 40px auto;
-      padding: 50px 60px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      position: relative;
-      page-break-after: always;
-    }
-
-    /* ===== RODAPÉ ===== */
-    .numero-pagina {
-      position: absolute;
-      bottom: 20px;
-      right: 30px;
-      font-size: 12px;
-      color: gray;
-    }
-
-    /* ===== ÁREA DO ÍNDICE ===== */
-    .indice {
-      text-align: left;
-      margin-top: 60px;
-      font-size: 14px;
-      line-height: 1.8;
-      max-height: calc(100% - 300px);
-      overflow: hidden;
-      box-sizing: border-box;
-    }
-
-    /* ===== BOTÃO DE E-MAIL ===== */
-    .btn-email {
-      appearance: none;
-      border: 1px solid #1e5bd9;
-      background: #2b6fff;
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 14px;
-      cursor: pointer;
-      text-decoration: underline;
-      line-height: 1.2;
-      white-space: normal;
-      max-width: 280px;
-      text-align: center;
-    }
-    .btn-email:active { transform: translateY(1px); }
-    .btn-email:focus { outline: 2px solid rgba(30,91,217,0.35); outline-offset: 2px; }
-
-    /* ===== CLIQUE-TO-AMARELO (todas as tabelas) ===== */
-    table tbody tr {
-      cursor: pointer;
-      transition: background-color .2s ease;
-    }
-    table tbody tr.no-click {
-      cursor: default;
-    }
-    table tbody tr.selecionada {
-      background-color: yellow !important;
-    }
-
-    /* ===== LINKS UTILITÁRIOS ===== */
-    .hidden { display: none !important; }
-    .link-azul { color: blue; text-decoration: underline; cursor: pointer; }
-
-    /* ===== MODO IMPRESSÃO ===== */
-    @media print {
-      .indice {
-        max-height: none !important;
-        height: auto !important;
-        overflow: visible !important;
-      }
-      .btn-email { display: none !important; }
-    }
-
-    /* Aumenta a altura das células de todas as tabelas */
-    table td, table th {
-      padding: 3px 0px;
-      vertical-align: middle;
-    }
-
-    /* ===== EMPILHAR DUAS IMAGENS (SEM ESPAÇO ENTRE ELAS) ===== */
-    .img-stack {
-      width: min(660px, 100%);
-      margin: 20px auto;
-      line-height: 0;         /* remove espaços entre imagens */
-      break-inside: avoid;    /* evita quebra na impressão */
-    }
-    .img-stack .stack-part {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 0; padding: 0; border: 0;
-      image-rendering: auto;
-    }
-  </style>
-</head>
-<body>
-
-<!-- ==============================
-     PÁGINA 1 - CAPA + ÍNDICE
-     ============================== -->
-<div class="pagina" id="pagina1">
-
-  <h1 style="text-align: center; font-size: 24px; margin-top: 50px;">
-    CADERNO DE ENSAIOS E PARAMETRIZAÇÕES<br> Versão editável 1.5
-  </h1>
-
-  <h2 style="text-align: center; font-size: 18px; margin-top: 40px; color: black;">
-    Manter na sala da MEG1 – EL.139
-  </h2>
-
-  <div style="text-align:right; margin-top: 10px;">
-    <button type="button" class="btn-email" onclick="openEmail()">
-      Clique Aqui para reportar<br>erro/atualização deste caderno
-    </button>
-  </div>
-
-  <div class="indice">
-    <div onclick="toggleSubitensULP()" 
-         style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
-      1 – Lista de ensaios com ULP
-    </div>
-
-    <div id="subitens-ulp" style="display:none; margin-left:20px;">
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#umcc" style="color:blue; text-decoration:underline; cursor:pointer;">1.10 - UMCC</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kk" style="color:blue; text-decoration:underline; cursor:pointer;">1.11 - KK</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp" style="color:blue; text-decoration:underline; cursor:pointer;">1.12 - PP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctau(tau)" style="color:blue; text-decoration:underline; cursor:pointer;">1.13 - CTAU (TAU)</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm" style="color:blue; text-decoration:underline; cursor:pointer;">1.14 - QTM (Alimentação UMCC:52-2)</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm52.3" style="color:blue; text-decoration:underline; cursor:pointer;">1.15 - QTM (Alimentação UMCC:52-3)</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pwb" style="color:blue; text-decoration:underline; cursor:pointer;">1.16 - PWB</a><br>      
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tga" style="color:blue; text-decoration:underline; cursor:pointer;">1.17 - TGA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qcp" style="color:blue; text-decoration:underline; cursor:pointer;">1.18 - QCP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#lip" style="color:blue; text-decoration:underline; cursor:pointer;">1.19 - LIP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cld" style="color:blue; text-decoration:underline; cursor:pointer;">1.20 - CLD</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#caixaespiral" style="color:blue; text-decoration:underline; cursor:pointer;">1.21 - Caixa espiral</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ccar" style="color:blue; text-decoration:underline; cursor:pointer;">1.22 - CCAR</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pa" style="color:blue; text-decoration:underline; cursor:pointer;">1.23 - PA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb1" style="color:blue; text-decoration:underline; cursor:pointer;">1.24 - GTB-1</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb3" style="color:blue; text-decoration:underline; cursor:pointer;">1.25 - GTB-3</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ggb" style="color:blue; text-decoration:underline; cursor:pointer;">1.26 - GGB</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cte-tep" style="color:blue; text-decoration:underline; cursor:pointer;">1.27 - CTE - TEP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cte-tendesativado" style="color:blue; text-decoration:underline; cursor:pointer;">1.28 - CTE - TEN - DESATIVADO</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctm" style="color:blue; text-decoration:underline; cursor:pointer;">1.29 - CTM</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pap" style="color:blue; text-decoration:underline; cursor:pointer;">1.30 - PAP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ste/stau" style="color:blue; text-decoration:underline; cursor:pointer;">1.31 - STE / STAU</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pva" style="color:blue; text-decoration:underline; cursor:pointer;">1.32 - PVA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kvb" style="color:blue; text-decoration:underline; cursor:pointer;">1.33 - KVB</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm" style="color:blue; text-decoration:underline; cursor:pointer;">1.34 - CFM</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctg" style="color:blue; text-decoration:underline; cursor:pointer;">1.31 - CTG</a><br>
-    </div>
-
-    <div onclick="toggleSubitensSCADA()"
-         style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
-      2 – Lista de ensaios com SCADA
-    </div>
-
-    <div id="subitens-scada" style="display:none; margin-left:20px;">
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapwbepwx" style="color:blue; text-decoration:underline; cursor:pointer;">2.10 - PWB e PWX</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaumcc" style="color:blue; text-decoration:underline; cursor:pointer;">2.11 - UMCC</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadalip" style="color:blue; text-decoration:underline; cursor:pointer;">2.12 - LIP </a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadactm" style="color:blue; text-decoration:underline; cursor:pointer;">2.13 - CTM </a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqcp" style="color:blue; text-decoration:underline; cursor:pointer;">2.14 - QCP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapa" style="color:blue; text-decoration:underline; cursor:pointer;">2.15 - PA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadatau" style="color:blue; text-decoration:underline; cursor:pointer;">2.16 - TAU</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb1" style="color:blue; text-decoration:underline; cursor:pointer;">2.17 - GTB1</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb2" style="color:blue; text-decoration:underline; cursor:pointer;">2.18 - GTB2</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadagtb3" style="color:blue; text-decoration:underline; cursor:pointer;">2.19 - GTB3</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqv" style="color:blue; text-decoration:underline; cursor:pointer;">2.20 - QV</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqtmtm" style="color:blue; text-decoration:underline; cursor:pointer;">2.21 - QTM - TM</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadakkpvrtga" style="color:blue; text-decoration:underline; cursor:pointer;">2.22 - KK - PVR - TGA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadacld" style="color:blue; text-decoration:underline; cursor:pointer;">2.23 - CLD</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaqci" style="color:blue; text-decoration:underline; cursor:pointer;">2.24 - QCI</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadastau" style="color:blue; text-decoration:underline; cursor:pointer;">2.25 - STAU</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaste" style="color:blue; text-decoration:underline; cursor:pointer;">2.26 - STE</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadatep" style="color:blue; text-decoration:underline; cursor:pointer;">2.27 - TEP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadapva" style="color:blue; text-decoration:underline; cursor:pointer;">2.28 - PVA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaccar" style="color:blue; text-decoration:underline; cursor:pointer;">2.29 - CCAR</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaggb" style="color:blue; text-decoration:underline; cursor:pointer;">2.30 - GGB</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadacfm" style="color:blue; text-decoration:underline; cursor:pointer;">2.31 - CFM</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scadaga" style="color:blue; text-decoration:underline; cursor:pointer;">2.32 - GA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scapap" style="color:blue; text-decoration:underline; cursor:pointer;">2.33 - PAP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scapp" style="color:blue; text-decoration:underline; cursor:pointer;">2.34 - PP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#scagg" style="color:blue; text-decoration:underline; cursor:pointer;">2.35 - GG</a><br>
-    </div>
-
-    <div onclick="toggleSubitensU9AU18A()"
-         style="cursor:pointer; font-weight:bold; color:blue; text-decoration:underline;">
-      3 – Dispositivos Primários SCADA/SDSC U9A-U18A
-    </div>
-
-    <div id="subitens-u9au18a" style="display:none; margin-left:20px;">
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#9a18aumcc" style="color:blue; text-decoration:underline; cursor:pointer;">3.10 - UMCC</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kk9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.11 - KK - PVR</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ste/stau9a18" style="color:blue; text-decoration:underline; cursor:pointer;">3.12 - STE / STAU</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pp9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.13 - PP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#tga9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.14 - CTG </a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctau(tau)9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.15 - CTAU (TAU) </a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qtm9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.16 - QTM (P/ UMCC:52-2) </a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qcp9a8a" style="color:blue; text-decoration:underline; cursor:pointer;">3.17 - QV 05</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pwb9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.18 - PWB</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.19 - GTB-1</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#gtb2e39a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.20 - GTB-2 e GTB-3</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#lip19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.21 - LIP </a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ccar19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.22 - CCAR</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pva9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.23 - PVA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#qci9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.24 - QCI</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pa19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.25 - PA</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctetep9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.26 - CTE - TEP</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cld19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.27 - CLD</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#kvb19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.28 - KVB</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ctm9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.29 - CTM</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#ggb19a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.30 - GGB</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#nc9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.31 - NC</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#cfm9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.32 - CFM</a><br>
-      &nbsp;&nbsp;&nbsp;&nbsp;<a href="#pap9a18a" style="color:blue; text-decoration:underline; cursor:pointer;">3.33 - PAP</a><br>
-    </div>
-
-    <!-- *** Item 4 (link) *** -->
-    <a id="tga-index" href="#ensiotga" class="link-azul">
-      4 – Lista de ensaios dos anunciadores TGA
-    </a><br>
-
-    <!-- *** Itens 5 a 28 (links) *** -->
-    <a href="#sec-05" class="link-azul">5 – Lista de ensaios contatores CCAR</a><br>
-
-
-
-    
-    <a href="#sec-09" class="link-azul">6 – Tabela de conversão de RTD</a><br>
-    <a href="#sec-28" class="link-azul">7 – Tabela de parametrização Yokogawas UM331</a><br>
-    <a href="#sec-10" class="link-azul">8 – Tabela de parametrização Yokogawas UM33A</a><br>   
-    <a href="#sec-12" class="link-azul">9 – Tabela de parametrização PRESSYS 2030 LIGHT 1520-01</a><br>
-    <a href="#sec-11" class="link-azul">10 – Tabela de parametrização PRESSYS 2036 LIGHT 1620-01</a><br>
-    <a href="#sec-13" class="link-azul">11 – Configuração Sonda Endress+Hauser Multicap T PWB e GGB 9A/18A</a><br>
-    <a href="#sec-15" class="link-azul">12 – Configuração sonda Sytrans LC 500 - PWB e GGB</a><br>
-    <a href="#sec-19" class="link-azul">13 – Verificação Sonda Minisonic 600</a><br>
-    <a href="#sec-17" class="link-azul">14 – Procedimento sonda Liquicap FEI50H (LIP)</a><br>
-    <a href="#sec-22" class="link-azul">15 – Parametrização Magnetrol M300 – LIP</a><br>
-    <a href="#sec-101" class="link-azul">16 – Parametrização Condutivímetros PWB 9A – 18A</a><br>
-    <a href="#sec-102" class="link-azul">17 – Tabela de parametrização PRESSYS 2012 Energy – GTB3</a><br>
-    <a href="#sec-103" class="link-azul">18 - Tabela de parametrização PRESSYS 2030 LIGHT EE-0457 16 - PCR 12/34</a><br>
-    <a href="#sec-104" class="link-azul">19 – Localizacion RTD’s</a><br>
-    <a href="#sec-105" class="link-azul">20 – Creep Detector</a><br>
-    <a href="#sec-106" class="link-azul">21 – Localizações dos RTD’s Gerador</a><br>
-    <a href="#sec-107" class="link-azul">22 – Procedimento para manutenção e ensaio QCI</a><br>
-    <a href="#sec-108" class="link-azul">23 – Parametrização Sentron 4200 (multimedidor)</a><br>
-    <a href="#sec-109" class="link-azul">24 – Configuração Relé T119din (TAU 18A)</a><br>
-    <a href="#sec-110" class="link-azul">25 – Procedimento Sonda Nivel Agua Pura 09A/18A</a><br>
-    <a href="#sec-111" class="link-azul">26 – Relé de frequência URPF4000</a><br>
-    <a href="#sec-112" class="link-azul">27 – Parametrização do Relé 39LW - LIP</a><br>
-    <a href="#sec-113" class="link-azul">28 – Lista telefônica</a><br>
-
-   
-  </div>
-
-
-<div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
-  por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
-</div>
-
-
-
-
-  <div class="numero-pagina">Página 1</div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="pagina" id="pagina3">
 
 
 
-
+<a id="sec-09"></a>
+    <div style="text-align:right; margin-bottom:6px;">
+      <a href="#pagina1" class="link-azul">⬅ Voltar ao índice (6 – Tabela de conversão de RTD)</a>
+    </div>
 
 
 
@@ -1938,7 +1608,9 @@
 
 
 
-
+<div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
+  por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
+</div>
 
 
 
@@ -1948,146 +1620,471 @@
 
  
   
-  <div class="numero-pagina">Página 38</div>
+  <div class="numero-pagina">Página 44</div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ==============================
-     SCRIPTS
+     PÁGINA 22 (IMAGEM) – EM 2 PARTES EMPILHADAS
      ============================== -->
-<script>
-/* ===== Mostra/oculta subitens no índice ===== */
-function toggleSubitensULP() {
-  const bloco = document.getElementById("subitens-ulp");
-  const atual = bloco.style.display || "none";
-  bloco.style.display = (atual === "none") ? "block" : "none";
-}
-function toggleSubitensSCADA() {
-  const bloco = document.getElementById("subitens-scada");
-  const atual = bloco.style.display || "none";
-  bloco.style.display = (atual === "none") ? "block" : "none";
-}
-function toggleSubitensU9AU18A() {
-  const bloco = document.getElementById("subitens-u9au18a");
-  const atual = bloco.style.display || "none";
-  bloco.style.display = (atual === "none") ? "block" : "none";
-}
+<div class="pagina" id="pagina5">
 
-/* ===== Botão de e-mail ===== */
-function openEmail() {
-  const toEmail = "renatoq@itaipu.gov.br";
-  const ccEmail = "copia@exemplo.com";
-  const subjectText = "Alteração caderno de parametrizações";
-  const bodyText = "Mensagem inicial...";
 
-  const to = encodeURIComponent(toEmail);
-  const cc = encodeURIComponent(ccEmail);
-  const subject = encodeURIComponent(subjectText);
-  const body = encodeURIComponent(bodyText.replace(/\n/g, "\r\n"));
 
-  const mailtoUrl  = `mailto:${to}?cc=${cc}&subject=${subject}&body=${body}`;
-  const outlookUrl = `ms-outlook://compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
-  const owaUrl     = `https://outlook.office.com/mail/deeplink/compose?to=${to}&cc=${cc}&subject=${subject}&body=${body}`;
+ 
 
-  const ua = navigator.userAgent.toLowerCase();
-  const isWindows = ua.includes("win");
-  const isIOS = /iphone|ipad|ipod/.test(ua);
-  const isMac = ua.includes("mac");
-  const isAndroid = ua.includes("android");
 
-  if (isWindows) {
-    window.location.href = mailtoUrl;
-    setTimeout(() => {
-      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
-    }, 1200);
-    return;
-  }
 
-  if (isIOS || isMac) {
-    window.location.href = outlookUrl;
-    setTimeout(() => { window.location.href = mailtoUrl; }, 900);
-    setTimeout(() => {
-      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
-    }, 2000);
-    return;
-  }
 
-  if (isAndroid) {
-    window.location.href = mailtoUrl;
-    setTimeout(() => {
-      if (document.visibilityState === "visible") window.open(owaUrl, "_blank");
-    }, 1200);
-    return;
-  }
 
-  window.location.href = mailtoUrl;
-}
 
-/* ===== Clique-para-amarelar (global, todas as tabelas) ===== */
-document.addEventListener("click", function(e) {
-  const tr = e.target.closest("tbody tr");
-  if (!tr) return;
-  if (tr.classList.contains("no-click")) return;
-  if (tr.hasAttribute("onclick")) return;
-  tr.classList.toggle("selecionada");
-});
 
-/* ===== Alternância dos links do item 4 (índice ↔ voltar) (opcional) ===== */
-(function () {
-  const linkIndice = document.getElementById('tga-index');
-  const linkVoltar = document.getElementById('tga-voltar');
-  const alvoTGA    = document.getElementById('ensiotga');
-  const pagina1    = document.getElementById('pagina1');
 
-  if (!linkIndice || !linkVoltar || !alvoTGA || !pagina1) return;
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Tabela NC - Primeira Linha e Primeira Coluna Clicáveis</title>
 
-  linkIndice.addEventListener('click', function (e) {
-    e.preventDefault();
-    linkVoltar.classList.remove('hidden');
-    alvoTGA.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    history.replaceState(null, '', '#ensiotga');
-  });
+  <style>
+    /* Faixa amarela "NC" */
+    .titulo-nc {
+      background-color: yellow;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+    }
 
-  linkVoltar.addEventListener('click', function (e) {
-    e.preventDefault();
-    linkVoltar.classList.add('hidden');
-    pagina1.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    history.replaceState(null, '', '#pagina1');
-    linkIndice.style.outline = '2px solid rgba(30,91,217,.35)';
-    setTimeout(() => linkIndice.style.outline = '', 1200);
-  });
+    /* Estilo geral da tabela */
+    table.tabela-nc {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+      margin-top: 2px;
+      border: 1px solid black;
+    }
 
-  if (location.hash === '#ensiotga') {
-    linkVoltar.classList.remove('hidden');
-  }
-})();
-</script>
+    table.tabela-nc th,
+    table.tabela-nc td {
+      border: 1px solid black;
+      padding: 2px 4px;
+    }
+
+    /* Destaque de linha inteira */
+    .linha-selecionada {
+      background-color: yellow !important;
+    }
+
+    /* Destaque de coluna inteira */
+    .coluna-selecionada {
+      background-color: yellow !important;
+    }
+
+    /* Célula na interseção linha + coluna */
+    .intersecao {
+      background-color: red !important;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Somente primeira linha (TH) e primeira coluna (TD) são clicáveis */
+    th.clicavel,
+    td.clicavel {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Caixa amarela com NC -->
+  <div class="titulo-nc">
+   TABELA DE CONVERSÃO DE RESITÊNCIA DE RTD`s PARA TEMPERATURA EM ºC (clique na linha e na coluna correspondente)
+  </div>
+
+  <!-- Tabela -->
+  <table id="tabela-nc" class="tabela-nc">
+    <thead>
+      <tr>
+
+        <th class="clicavel"style="background-color:#ADD8E6;">OHM´s</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,0</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,1</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,2</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,3</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,4</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,5</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,6</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,7</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,8</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,9</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+     
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>155</strong>
+        </td>
+        <td style="text-align:center;">143,8</td>
+        <td style="text-align:center;">144,1</td>
+        <td style="text-align:center;">144,3</td>
+        <td style="text-align:center;">144,6</td>
+        <td style="text-align:center;">144,9</td>
+        <td style="text-align:center;">145,1</td>
+        <td style="text-align:center;">145,4</td>
+        <td style="text-align:center;">145,7</td>
+        <td style="text-align:center;">145,9</td>
+        <td style="text-align:center;">146,2</td>
+      </tr>
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>156</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">146,5</td>
+        <td style="text-align:center;">146,7</td>
+        <td style="text-align:center;">147,0</td>
+        <td style="text-align:center;">147,3</td>
+        <td style="text-align:center;">147,5</td>
+        <td style="text-align:center;">147,8</td>
+        <td style="text-align:center;">148,1</td>
+        <td style="text-align:center;">148,3</td>
+        <td style="text-align:center;">148,6</td>
+        <td style="text-align:center;">148,9</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>157</strong>
+        </td>
+        <td style="text-align:center;">149,1</td>
+        <td style="text-align:center;">149,4</td>
+        <td style="text-align:center;">149,7</td>
+        <td style="text-align:center;">149,9</td>
+        <td style="text-align:center;">150,2</td>
+        <td style="text-align:center;">150,5</td>
+        <td style="text-align:center;">150,8</td>
+        <td style="text-align:center;">151,1</td>
+        <td style="text-align:center;">151,3</td>
+        <td style="text-align:center;">151,6</td>
+      </tr>
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>158</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">151,9</td>
+        <td style="text-align:center;">152,1</td>
+        <td style="text-align:center;">152,4</td>
+        <td style="text-align:center;">152,7</td>
+        <td style="text-align:center;">152,9</td>
+        <td style="text-align:center;">153,2</td>
+        <td style="text-align:center;">153,5</td>
+        <td style="text-align:center;">153,7</td>
+        <td style="text-align:center;">154,0</td>
+        <td style="text-align:center;">154,3</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>159</strong>
+        </td>
+        <td style="text-align:center;">154,6</td>
+        <td style="text-align:center;">154,8</td>
+        <td style="text-align:center;">155,1</td>
+        <td style="text-align:center;">155,4</td>
+        <td style="text-align:center;">155,6</td>
+        <td style="text-align:center;">155,9</td>
+        <td style="text-align:center;">156,2</td>
+        <td style="text-align:center;">156,4</td>
+        <td style="text-align:center;">156,7</td>
+        <td style="text-align:center;">157,0</td>
+      </tr>
+
+
+    <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>160</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">157,2</td>
+        <td style="text-align:center;">157,5</td>
+        <td style="text-align:center;">157,8</td>
+        <td style="text-align:center;">158,0</td>
+        <td style="text-align:center;">158,3</td>
+        <td style="text-align:center;">158,6</td>
+        <td style="text-align:center;">158,8</td>
+        <td style="text-align:center;">159,1</td>
+        <td style="text-align:center;">159,4</td>
+        <td style="text-align:center;">159,6</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>161</strong>
+        </td>
+        <td style="text-align:center;">159,9</td>
+        <td style="text-align:center;">160,1</td>
+        <td style="text-align:center;">160,4</td>
+        <td style="text-align:center;">160,7</td>
+        <td style="text-align:center;">160,9</td>
+        <td style="text-align:center;">161,2</td>
+        <td style="text-align:center;">161,5</td>
+        <td style="text-align:center;">161,8</td>
+        <td style="text-align:center;">162,0</td>
+        <td style="text-align:center;">162,3</td>
+      </tr>
+
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>162</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">162,6</td>
+        <td style="text-align:center;">162,8</td>
+        <td style="text-align:center;">163,1</td>
+        <td style="text-align:center;">163,4</td>
+        <td style="text-align:center;">163,6</td>
+        <td style="text-align:center;">163,9</td>
+        <td style="text-align:center;">164,2</td>
+        <td style="text-align:center;">164,4</td>
+        <td style="text-align:center;">164,7</td>
+        <td style="text-align:center;">165,0</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>163</strong>
+        </td>
+        <td style="text-align:center;">165,3</td>
+        <td style="text-align:center;">165,5</td>
+        <td style="text-align:center;">165,8</td>
+        <td style="text-align:center;">166,1</td>
+        <td style="text-align:center;">166,3</td>
+        <td style="text-align:center;">166,6</td>
+        <td style="text-align:center;">166,9</td>
+        <td style="text-align:center;">167,1</td>
+        <td style="text-align:center;">167,4</td>
+        <td style="text-align:center;">167,7</td>
+      </tr>
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>164</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">167,9</td>
+        <td style="text-align:center;">168,2</td>
+        <td style="text-align:center;">168,5</td>
+        <td style="text-align:center;">168,8</td>
+        <td style="text-align:center;">169,0</td>
+        <td style="text-align:center;">169,3</td>
+        <td style="text-align:center;">169,6</td>
+        <td style="text-align:center;">169,8</td>
+        <td style="text-align:center;">170,1</td>
+        <td style="text-align:center;">170,4</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>165</strong>
+        </td>
+        <td style="text-align:center;">170,6</td>
+        <td style="text-align:center;">170,9</td>
+        <td style="text-align:center;">171,2</td>
+        <td style="text-align:center;">171,5</td>
+        <td style="text-align:center;">171,7</td>
+        <td style="text-align:center;">172,0</td>
+        <td style="text-align:center;">172,3</td>
+        <td style="text-align:center;">172,5</td>
+        <td style="text-align:center;">172,8</td>
+        <td style="text-align:center;">173,1</td>
+      </tr>
+     
+
+
+
+    </tbody>
+  </table>
+
+  <script>
+    const tabela = document.getElementById("tabela-nc");
+
+    let linhaAtual = null;   // índice da linha selecionada (tbody)
+    let colunaAtual = null;  // índice da coluna selecionada (thead/th)
+
+    const linhas = tabela.querySelectorAll("tbody tr");
+    const cabecalhos = tabela.querySelectorAll("thead th");
+
+    // ---------------------------------
+    // CLIQUE NA PRIMEIRA COLUNA (TD.clicavel)
+    // ---------------------------------
+    linhas.forEach((linha, indexLinha) => {
+      const primeiraCelula = linha.querySelector("td.clicavel"); // só a 1ª coluna
+
+      if (primeiraCelula) {
+        primeiraCelula.addEventListener("click", function (e) {
+          // Garante que cliques em spans internos também funcionem
+          e.stopPropagation();
+
+          // Limpa marcações de linha anteriores
+          linhas.forEach(l => l.classList.remove("linha-selecionada"));
+
+          // Marca a linha atual
+          linhaAtual = indexLinha;
+          linha.classList.add("linha-selecionada");
+
+          // Atualiza célula de interseção
+          atualizarIntersecao();
+        });
+      }
+    });
+
+    // ---------------------------------
+    // CLIQUE NA PRIMEIRA LINHA (TH.clicavel)
+    // ---------------------------------
+    cabecalhos.forEach((th, indexColuna) => {
+      th.addEventListener("click", function (e) {
+        e.stopPropagation();
+
+        // Remove seleção anterior de colunas
+        cabecalhos.forEach(h => h.classList.remove("coluna-selecionada"));
+        tabela.querySelectorAll("tbody td").forEach(td => {
+          td.classList.remove("coluna-selecionada");
+        });
+
+        // Marca nova coluna selecionada
+        colunaAtual = indexColuna;
+
+        // Destaca o cabeçalho clicado
+        th.classList.add("coluna-selecionada");
+
+        // Destaca a coluna correspondente no corpo da tabela
+        linhas.forEach(tr => {
+          const celulas = tr.children;
+          if (celulas[indexColuna]) {
+            celulas[indexColuna].classList.add("coluna-selecionada");
+          }
+        });
+
+        // Atualiza célula de interseção
+        atualizarIntersecao();
+      });
+    });
+
+    // ---------------------------------
+    // GARANTIR QUE CLIQUES EM OUTRAS CÉLULAS NÃO FAÇAM NADA
+    // (captura no nível da tabela e bloqueia)
+    // ---------------------------------
+    tabela.addEventListener("click", function (e) {
+      const alvo = e.target;
+
+      // Se NÃO for TH clicável nem TD clicável, não faz nada
+      if (
+        !(alvo.closest("th.clicavel")) &&
+        !(alvo.closest("td.clicavel"))
+      ) {
+        // Apenas evita qualquer outro handler acidental
+        e.stopPropagation();
+        // Não chamamos nenhuma função de seleção aqui
+      }
+    }, true); // true = captura antes de outros listeners
+
+    // ---------------------------------
+    // ATUALIZA A CÉLULA DE INTERSEÇÃO
+    // ---------------------------------
+    function atualizarIntersecao() {
+      // Remove marcações antigas de interseção
+      tabela.querySelectorAll("tbody td").forEach(td => {
+        td.classList.remove("intersecao");
+      });
+
+      // Só marca se linha e coluna estiverem selecionadas
+      if (linhaAtual !== null && colunaAtual !== null) {
+        const linha = linhas[linhaAtual];
+        if (!linha) return;
+
+        const celulas = linha.children;
+        const celulaIntersecao = celulas[colunaAtual];
+
+        if (celulaIntersecao) {
+          celulaIntersecao.classList.add("intersecao");
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
+  por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
+</div>
+  <div class="numero-pagina">Página 45</div>
+</div>
+
