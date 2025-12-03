@@ -291,6 +291,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- ==============================
      PÁGINA 2
      ============================== -->
@@ -3734,6 +3751,11 @@ Com unidade acima de 600MW é normal que o compressor fique pouco tempo em carga
   
   <div class="numero-pagina">Página 4</div>
 </div>
+
+
+
+
+
 
 
 
@@ -7811,6 +7833,8 @@ de variação de temperatura <br>
   
   <div class="numero-pagina">Página 7</div>
 </div>
+
+
 
 
 <!-- ==============================
@@ -14015,6 +14039,8 @@ KT(51-52); Q1(23-24) OU, F0(21-22) OU, F1X(43-44); X02(1-5-6);
 
 
 
+
+
 <!-- ==============================
      PÁGINA 14
      ============================== -->
@@ -16725,6 +16751,7 @@ F50X20 (84-85)
   
   <div class="numero-pagina">Página 16</div>
 </div>
+
 
 <!-- ==============================
      PÁGINA 17
@@ -19684,6 +19711,8 @@ PVA
   
   <div class="numero-pagina">Página 20</div>
 </div>
+
+
 
 
 
@@ -25167,6 +25196,7 @@ O grifo em averde representa que a indicação vai para o Sistema SCADA via pain
 </div>
 
 
+
 <!-- ==============================
      PÁGINA 3
      ============================== -->
@@ -29335,6 +29365,7 @@ O grifo em averde representa que a indicação vai para o Sistema SCADA via pain
   <div class="numero-pagina">Página 31</div>
 </div>
 
+
 <!-- ==============================
      PÁGINA 3
      ============================== -->
@@ -30435,7 +30466,6 @@ O grifo em averde representa que a indicação vai para o Sistema SCADA via pain
   
   <div class="numero-pagina">Página 32</div>
 </div>
-
 
 <!-- ==============================
      PÁGINA 3
@@ -37809,9 +37839,6 @@ MGI Vibração anormal 2 canal 1
 </div>
 
 
-
-
-
 <!-- ==============================
      PÁGINA 21
      ============================== -->
@@ -40005,7 +40032,1402 @@ MGI Vibração anormal 2 canal 1
   
   <div class="numero-pagina">Página 43</div>
 </div>
+<div class="pagina" id="pagina3">
 
+
+
+<a id="sec-09"></a>
+    <div style="text-align:right; margin-bottom:6px;">
+      <a href="#pagina1" class="link-azul">⬅ Voltar ao índice (6 – Tabela de conversão de RTD)</a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Tabela NC - Primeira Linha e Primeira Coluna Clicáveis</title>
+
+  <style>
+    /* Faixa amarela "NC" */
+    .titulo-nc {
+      background-color: yellow;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* Estilo geral da tabela */
+    table.tabela-nc {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+      margin-top: 2px;
+      border: 1px solid black;
+    }
+
+    table.tabela-nc th,
+    table.tabela-nc td {
+      border: 1px solid black;
+      padding: 2px 4px;
+    }
+
+    /* Destaque de linha inteira */
+    .linha-selecionada {
+      background-color: yellow !important;
+    }
+
+    /* Destaque de coluna inteira */
+    .coluna-selecionada {
+      background-color: yellow !important;
+    }
+
+    /* Célula na interseção linha + coluna */
+    .intersecao {
+      background-color: red !important;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Somente primeira linha (TH) e primeira coluna (TD) são clicáveis */
+    th.clicavel,
+    td.clicavel {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Caixa amarela com NC -->
+  <div class="titulo-nc">
+   TABELA DE CONVERSÃO DE RESITÊNCIA DE RTD`s PARA TEMPERATURA EM ºC (clique na linha e na coluna correspondente)
+  </div>
+
+  <!-- Tabela -->
+  <table id="tabela-nc" class="tabela-nc">
+    <thead>
+      <tr>
+
+        <th class="clicavel"style="background-color:#ADD8E6;">OHM´s</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,0</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,1</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,2</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,3</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,4</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,5</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,6</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,7</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,8</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,9</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>100</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">0,0</td>
+        <td style="text-align:center;">0,3</td>
+        <td style="text-align:center;">0,5</td>
+        <td style="text-align:center;">0,8</td>
+        <td style="text-align:center;">1,0</td>
+        <td style="text-align:center;">1,3</td>
+        <td style="text-align:center;">1,5</td>
+        <td style="text-align:center;">1,8</td>
+        <td style="text-align:center;">2,1</td>
+        <td style="text-align:center;">2,3</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>101</strong>
+        </td>
+        <td style="text-align:center;">2,6*</td>
+        <td style="text-align:center;">2,8</td>
+        <td style="text-align:center;">3,1</td>
+        <td style="text-align:center;">3,3</td>
+        <td style="text-align:center;">3,6</td>
+        <td style="text-align:center;">3,8</td>
+        <td style="text-align:center;">4,1</td>
+        <td style="text-align:center;">4,4</td>
+        <td style="text-align:center;">4,6</td>
+        <td style="text-align:center;">4,9</td>
+      </tr>
+
+
+     <!-- LINHA 3 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>102</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">5,1</td>
+        <td style="text-align:center;">5,4</td>
+        <td style="text-align:center;">5,6</td>
+        <td style="text-align:center;">5,9</td>
+        <td style="text-align:center;">6,2</td>
+        <td style="text-align:center;">6,4</td>
+        <td style="text-align:center;">6,6</td>
+        <td style="text-align:center;">6,9</td>
+        <td style="text-align:center;">7,2</td>
+        <td style="text-align:center;">7,4</td>
+      </tr>
+
+      <!-- LINHA 4 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>103</strong>
+        </td>
+        <td style="text-align:center;">7,7</td>
+        <td style="text-align:center;">7,9</td>
+        <td style="text-align:center;">8,2</td>
+        <td style="text-align:center;">8,5</td>
+        <td style="text-align:center;">8,7</td>
+        <td style="text-align:center;">9,0</td>
+        <td style="text-align:center;">9,2</td>
+        <td style="text-align:center;">9,5</td>
+        <td style="text-align:center;">9,7</td>
+        <td style="text-align:center;">10,0</td>
+      </tr>
+     <!-- LINHA 5 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>104</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">10,3</td>
+        <td style="text-align:center;">10,5</td>
+        <td style="text-align:center;">10,8</td>
+        <td style="text-align:center;">11,0</td>
+        <td style="text-align:center;">11,3</td>
+        <td style="text-align:center;">11,5</td>
+        <td style="text-align:center;">11,8</td>
+        <td style="text-align:center;">12,1</td>
+        <td style="text-align:center;">12,3</td>
+        <td style="text-align:center;">12,6</td>
+      </tr>
+
+      <!-- LINHA 6 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>105</strong>
+        </td>
+        <td style="text-align:center;">12,8</td>
+        <td style="text-align:center;">13,1</td>
+        <td style="text-align:center;">13,3</td>
+        <td style="text-align:center;">13,6</td>
+        <td style="text-align:center;">13,8</td>
+        <td style="text-align:center;">14,1</td>
+        <td style="text-align:center;">14,4</td>
+        <td style="text-align:center;">14,6</td>
+        <td style="text-align:center;">14,9</td>
+        <td style="text-align:center;">15,1</td>
+      </tr>
+     <!-- LINHA 7 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>106</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">15,4</td>
+        <td style="text-align:center;">15,6</td>
+        <td style="text-align:center;">15,9</td>
+        <td style="text-align:center;">16,2</td>
+        <td style="text-align:center;">16,4</td>
+        <td style="text-align:center;">16,7</td>
+        <td style="text-align:center;">16,9</td>
+        <td style="text-align:center;">17,2</td>
+        <td style="text-align:center;">17,4</td>
+        <td style="text-align:center;">17,7</td>
+      </tr>
+
+      <!-- LINHA 8 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>107</strong>
+        </td>
+        <td style="text-align:center;">18,0</td>
+        <td style="text-align:center;">18,2</td>
+        <td style="text-align:center;">18,5</td>
+        <td style="text-align:center;">18,7</td>
+        <td style="text-align:center;">19,0</td>
+        <td style="text-align:center;">19,3</td>
+        <td style="text-align:center;">19,5</td>
+        <td style="text-align:center;">19,8</td>
+        <td style="text-align:center;">20,0</td>
+        <td style="text-align:center;">20,3</td>
+      </tr>
+
+     <!-- LINHA 9 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>108</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">20,6</td>
+        <td style="text-align:center;">20,8</td>
+        <td style="text-align:center;">21,1</td>
+        <td style="text-align:center;">21,3</td>
+        <td style="text-align:center;">21,6</td>
+        <td style="text-align:center;">21,8</td>
+        <td style="text-align:center;">22,1</td>
+        <td style="text-align:center;">22,4</td>
+        <td style="text-align:center;">22,6</td>
+        <td style="text-align:center;">22,9</td>
+      </tr>
+
+      <!-- LINHA 10 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>109</strong>
+        </td>
+        <td style="text-align:center;">23,1</td>
+        <td style="text-align:center;">23,4</td>
+        <td style="text-align:center;">23,6</td>
+        <td style="text-align:center;">23,9</td>
+        <td style="text-align:center;">24,1</td>
+        <td style="text-align:center;">24,4</td>
+        <td style="text-align:center;">24,7</td>
+        <td style="text-align:center;">24,9</td>
+        <td style="text-align:center;">25,2</td>
+        <td style="text-align:center;">25,5</td>
+      </tr>
+
+     <!-- LINHA 11 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>110</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">25,7</td>
+        <td style="text-align:center;">25,9</td>
+        <td style="text-align:center;">26,2</td>
+        <td style="text-align:center;">26,5</td>
+        <td style="text-align:center;">26,7</td>
+        <td style="text-align:center;">27,0</td>
+        <td style="text-align:center;">27,2</td>
+        <td style="text-align:center;">27,5</td>
+        <td style="text-align:center;">27,7</td>
+        <td style="text-align:center;">28,0</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>111</strong>
+        </td>
+        <td style="text-align:center;">28,3</td>
+        <td style="text-align:center;">28,5</td>
+        <td style="text-align:center;">28,8</td>
+        <td style="text-align:center;">29,0</td>
+        <td style="text-align:center;">29,3</td>
+        <td style="text-align:center;">29,6</td>
+        <td style="text-align:center;">29,8</td>
+        <td style="text-align:center;">30,0</td>
+        <td style="text-align:center;">30,3</td>
+        <td style="text-align:center;">30,6</td>
+      </tr>
+
+    <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>112</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">30,8</td>
+        <td style="text-align:center;">31,1</td>
+        <td style="text-align:center;">31,4</td>
+        <td style="text-align:center;">31,</td>
+        <td style="text-align:center;">31,9</td>
+        <td style="text-align:center;">32,1</td>
+        <td style="text-align:center;">32,4</td>
+        <td style="text-align:center;">32,7</td>
+        <td style="text-align:center;">32,9</td>
+        <td style="text-align:center;">33,2</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>113</strong>
+        </td>
+        <td style="text-align:center;">33,4</td>
+        <td style="text-align:center;">33,7</td>
+        <td style="text-align:center;">33,9</td>
+        <td style="text-align:center;">34,2</td>
+        <td style="text-align:center;">34,5</td>
+        <td style="text-align:center;">34,7</td>
+        <td style="text-align:center;">35,0</td>
+        <td style="text-align:center;">35,2</td>
+        <td style="text-align:center;">35,5</td>
+        <td style="text-align:center;">35,8</td>
+      </tr>
+
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>114</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">36,0</td>
+        <td style="text-align:center;">36,3</td>
+        <td style="text-align:center;">36,5</td>
+        <td style="text-align:center;">36,8</td>
+        <td style="text-align:center;">37,0</td>
+        <td style="text-align:center;">37,3</td>
+        <td style="text-align:center;">37,6</td>
+        <td style="text-align:center;">37,8</td>
+        <td style="text-align:center;">38,1</td>
+        <td style="text-align:center;">38,3</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>115</strong>
+        </td>
+        <td style="text-align:center;">38,6</td>
+        <td style="text-align:center;">38,9</td>
+        <td style="text-align:center;">39,1</td>
+        <td style="text-align:center;">39,4</td>
+        <td style="text-align:center;">39,6</td>
+        <td style="text-align:center;">40,0</td>
+        <td style="text-align:center;">40,2</td>
+        <td style="text-align:center;">40,4</td>
+        <td style="text-align:center;">40,7</td>
+        <td style="text-align:center;">40,9</td>
+      </tr>
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>116</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">41,2</td>
+        <td style="text-align:center;">41,4</td>
+        <td style="text-align:center;">41,7</td>
+        <td style="text-align:center;">42,0</td>
+        <td style="text-align:center;">42,2</td>
+        <td style="text-align:center;">42,5</td>
+        <td style="text-align:center;">42,7</td>
+        <td style="text-align:center;">43,0</td>
+        <td style="text-align:center;">43,3</td>
+        <td style="text-align:center;">43,5</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>117</strong>
+        </td>
+        <td style="text-align:center;">43,8</td>
+        <td style="text-align:center;">44,0</td>
+        <td style="text-align:center;">44,3</td>
+        <td style="text-align:center;">44,5</td>
+        <td style="text-align:center;">44,8</td>
+        <td style="text-align:center;">45,1</td>
+        <td style="text-align:center;">45,3</td>
+        <td style="text-align:center;">45,6</td>
+        <td style="text-align:center;">45,8</td>
+        <td style="text-align:center;">46,1</td>
+      </tr>
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>118</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">46,4</td>
+        <td style="text-align:center;">46,6</td>
+        <td style="text-align:center;">46,9</td>
+        <td style="text-align:center;">47,1</td>
+        <td style="text-align:center;">47,4</td>
+        <td style="text-align:center;">47,7</td>
+        <td style="text-align:center;">47,9</td>
+        <td style="text-align:center;">48,2</td>
+        <td style="text-align:center;">48,4</td>
+        <td style="text-align:center;">48,7</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>119</strong>
+        </td>
+        <td style="text-align:center;">49,0</td>
+        <td style="text-align:center;">49,2</td>
+        <td style="text-align:center;">49,5</td>
+        <td style="text-align:center;">49,7</td>
+        <td style="text-align:center;">50,0</td>
+        <td style="text-align:center;">50,3</td>
+        <td style="text-align:center;">50,5</td>
+        <td style="text-align:center;">50,8</td>
+        <td style="text-align:center;">51,0</td>
+        <td style="text-align:center;">51,3</td>
+      </tr>
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>120</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">51,6</td>
+        <td style="text-align:center;">51,8</td>
+        <td style="text-align:center;">52,1</td>
+        <td style="text-align:center;">52,3</td>
+        <td style="text-align:center;">52,6</td>
+        <td style="text-align:center;">52,9</td>
+        <td style="text-align:center;">53,1</td>
+        <td style="text-align:center;">53,4</td>
+        <td style="text-align:center;">53,6</td>
+        <td style="text-align:center;">53,9</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>121</strong>
+        </td>
+        <td style="text-align:center;">54,2</td>
+        <td style="text-align:center;">54,4</td>
+        <td style="text-align:center;">54,7</td>
+        <td style="text-align:center;">54,9</td>
+        <td style="text-align:center;">55,2</td>
+        <td style="text-align:center;">55,5</td>
+        <td style="text-align:center;">55,7</td>
+        <td style="text-align:center;">56,0</td>
+        <td style="text-align:center;">56,3</td>
+        <td style="text-align:center;">56,5</td>
+      </tr>
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>122</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">56,8</td>
+        <td style="text-align:center;">57,0</td>
+        <td style="text-align:center;">57,3</td>
+        <td style="text-align:center;">57,5</td>
+        <td style="text-align:center;">57,8</td>
+        <td style="text-align:center;">58,1</td>
+        <td style="text-align:center;">58,3</td>
+        <td style="text-align:center;">58,6</td>
+        <td style="text-align:center;">58,8</td>
+        <td style="text-align:center;">59,1</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>123</strong>
+        </td>
+        <td style="text-align:center;">59,4</td>
+        <td style="text-align:center;">59,6</td>
+        <td style="text-align:center;">60,0</td>
+        <td style="text-align:center;">60,2</td>
+        <td style="text-align:center;">60,4</td>
+        <td style="text-align:center;">60,7</td>
+        <td style="text-align:center;">60,9</td>
+        <td style="text-align:center;">61,2</td>
+        <td style="text-align:center;">61,5</td>
+        <td style="text-align:center;">61,7</td>
+      </tr>
+
+    <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>124</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">62,0</td>
+        <td style="text-align:center;">62,2</td>
+        <td style="text-align:center;">62,5</td>
+        <td style="text-align:center;">62,8</td>
+        <td style="text-align:center;">63,0</td>
+        <td style="text-align:center;">63,3</td>
+        <td style="text-align:center;">63,5</td>
+        <td style="text-align:center;">63,8</td>
+        <td style="text-align:center;">64,1</td>
+        <td style="text-align:center;">64,3</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>125</strong>
+        </td>
+        <td style="text-align:center;">64,6</td>
+        <td style="text-align:center;">64,9</td>
+        <td style="text-align:center;">65,1</td>
+        <td style="text-align:center;">65,4</td>
+        <td style="text-align:center;">65,6</td>
+        <td style="text-align:center;">65,9</td>
+        <td style="text-align:center;">66,2</td>
+        <td style="text-align:center;">66,4</td>
+        <td style="text-align:center;">66,7</td>
+        <td style="text-align:center;">66,9</td>
+      </tr>
+
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>126</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">67,2</td>
+        <td style="text-align:center;">67,5</td>
+        <td style="text-align:center;">67,7</td>
+        <td style="text-align:center;">68,0</td>
+        <td style="text-align:center;">68,2</td>
+        <td style="text-align:center;">68,5</td>
+        <td style="text-align:center;">68,8</td>
+        <td style="text-align:center;">69,0</td>
+        <td style="text-align:center;">69,3</td>
+        <td style="text-align:center;">69,5</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>127</strong>
+        </td>
+        <td style="text-align:center;">69,8</td>
+        <td style="text-align:center;">70,0</td>
+        <td style="text-align:center;">70,3</td>
+        <td style="text-align:center;">70,6</td>
+        <td style="text-align:center;">70,9</td>
+        <td style="text-align:center;">71,1</td>
+        <td style="text-align:center;">71,4</td>
+        <td style="text-align:center;">71,6</td>
+        <td style="text-align:center;">71,9</td>
+        <td style="text-align:center;">72,2</td>
+      </tr>
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>128</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">72,4</td>
+        <td style="text-align:center;">72,6</td>
+        <td style="text-align:center;">73,0</td>
+        <td style="text-align:center;">73,2</td>
+        <td style="text-align:center;">73,5</td>
+        <td style="text-align:center;">73,7</td>
+        <td style="text-align:center;">74,0</td>
+        <td style="text-align:center;">74,3</td>
+        <td style="text-align:center;">74,5</td>
+        <td style="text-align:center;">74,8</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>129</strong>
+        </td>
+        <td style="text-align:center;">75,0</td>
+        <td style="text-align:center;">75,3</td>
+        <td style="text-align:center;">75,6</td>
+        <td style="text-align:center;">75,8</td>
+        <td style="text-align:center;">76,1</td>
+        <td style="text-align:center;">76,4</td>
+        <td style="text-align:center;">76,6</td>
+        <td style="text-align:center;">76,9</td>
+        <td style="text-align:center;">77,1</td>
+        <td style="text-align:center;">77,4</td>
+      </tr>
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>130</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">77,7</td>
+        <td style="text-align:center;">77,9</td>
+        <td style="text-align:center;">78,2</td>
+        <td style="text-align:center;">78,4</td>
+        <td style="text-align:center;">78,7</td>
+        <td style="text-align:center;">79,0</td>
+        <td style="text-align:center;">79,2</td>
+        <td style="text-align:center;">79,5</td>
+        <td style="text-align:center;">79,8</td>
+        <td style="text-align:center;">80,0</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>131</strong>
+        </td>
+        <td style="text-align:center;">80,3</td>
+        <td style="text-align:center;">80,5</td>
+        <td style="text-align:center;">80,8</td>
+        <td style="text-align:center;">81,1</td>
+        <td style="text-align:center;">81,3</td>
+        <td style="text-align:center;">81,6</td>
+        <td style="text-align:center;">81,9</td>
+        <td style="text-align:center;">82,1</td>
+        <td style="text-align:center;">82,4</td>
+        <td style="text-align:center;">82,6</td>
+      </tr>
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>132</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">82,9</td>
+        <td style="text-align:center;">83,2</td>
+        <td style="text-align:center;">83,4</td>
+        <td style="text-align:center;">83,7</td>
+        <td style="text-align:center;">84,0</td>
+        <td style="text-align:center;">84,2</td>
+        <td style="text-align:center;">84,5</td>
+        <td style="text-align:center;">84,7</td>
+        <td style="text-align:center;">85,0</td>
+        <td style="text-align:center;">85,3</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>133</strong>
+        </td>
+        <td style="text-align:center;">85,5</td>
+        <td style="text-align:center;">85,8</td>
+        <td style="text-align:center;">86,1</td>
+        <td style="text-align:center;">86,3</td>
+        <td style="text-align:center;">86,6</td>
+        <td style="text-align:center;">86,8</td>
+        <td style="text-align:center;">87,1</td>
+        <td style="text-align:center;">87,4</td>
+        <td style="text-align:center;">87,6</td>
+        <td style="text-align:center;">87,9</td>
+      </tr>
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>134</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">88,2</td>
+        <td style="text-align:center;">88,4</td>
+        <td style="text-align:center;">88,7</td>
+        <td style="text-align:center;">88,9</td>
+        <td style="text-align:center;">89,2</td>
+        <td style="text-align:center;">89,5</td>
+        <td style="text-align:center;">89,7</td>
+        <td style="text-align:center;">90,0</td>
+        <td style="text-align:center;">90,3</td>
+        <td style="text-align:center;">90,5</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>135</strong>
+        </td>
+        <td style="text-align:center;">90,8</td>
+        <td style="text-align:center;">91,0</td>
+        <td style="text-align:center;">91,3</td>
+        <td style="text-align:center;">91,6</td>
+        <td style="text-align:center;">91,8</td>
+        <td style="text-align:center;">92,1</td>
+        <td style="text-align:center;">92,4</td>
+        <td style="text-align:center;">92,6</td>
+        <td style="text-align:center;">92,9</td>
+        <td style="text-align:center;">93,2</td>
+      </tr>
+
+
+    <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>136</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">93,4</td>
+        <td style="text-align:center;">93,7</td>
+        <td style="text-align:center;">93,9</td>
+        <td style="text-align:center;">94,2</td>
+        <td style="text-align:center;">94,5</td>
+        <td style="text-align:center;">94,7</td>
+        <td style="text-align:center;">95,0</td>
+        <td style="text-align:center;">95,3</td>
+        <td style="text-align:center;">95,5</td>
+        <td style="text-align:center;">95,8</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>137</strong>
+        </td>
+        <td style="text-align:center;">96,0</td>
+        <td style="text-align:center;">96,3</td>
+        <td style="text-align:center;">96,6</td>
+        <td style="text-align:center;">96,8</td>
+        <td style="text-align:center;">97,1</td>
+        <td style="text-align:center;">97,4</td>
+        <td style="text-align:center;">97,6</td>
+        <td style="text-align:center;">97,9</td>
+        <td style="text-align:center;">98,2</td>
+        <td style="text-align:center;">98,4</td>
+      </tr>
+
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>138</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">98,7</td>
+        <td style="text-align:center;">98,9</td>
+        <td style="text-align:center;">99,2</td>
+        <td style="text-align:center;">99,5</td>
+        <td style="text-align:center;">99,7</td>
+        <td style="text-align:center;">100,0</td>
+        <td style="text-align:center;">100,3</td>
+        <td style="text-align:center;">100,5</td>
+        <td style="text-align:center;">100,8</td>
+        <td style="text-align:center;">101,1</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>139</strong>
+        </td>
+        <td style="text-align:center;">101,3</td>
+        <td style="text-align:center;">101,6</td>
+        <td style="text-align:center;">101,8</td>
+        <td style="text-align:center;">102,1</td>
+        <td style="text-align:center;">102,4</td>
+        <td style="text-align:center;">102,6</td>
+        <td style="text-align:center;">102,9</td>
+        <td style="text-align:center;">103,2</td>
+        <td style="text-align:center;">103,4</td>
+        <td style="text-align:center;">103,7</td>
+      </tr>
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>140</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">104,0</td>
+        <td style="text-align:center;">104,2</td>
+        <td style="text-align:center;">104,5</td>
+        <td style="text-align:center;">104,8</td>
+        <td style="text-align:center;">105,0</td>
+        <td style="text-align:center;">105,3</td>
+        <td style="text-align:center;">105,6</td>
+        <td style="text-align:center;">105,8</td>
+        <td style="text-align:center;">106,1</td>
+        <td style="text-align:center;">106,3</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>141</strong>
+        </td>
+        <td style="text-align:center;">106,6</td>
+        <td style="text-align:center;">106,9</td>
+        <td style="text-align:center;">107,1</td>
+        <td style="text-align:center;">107,4</td>
+        <td style="text-align:center;">107,7</td>
+        <td style="text-align:center;">107,9</td>
+        <td style="text-align:center;">108,2</td>
+        <td style="text-align:center;">108,5</td>
+        <td style="text-align:center;">108,7</td>
+        <td style="text-align:center;">109,0</td>
+      </tr>
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>142</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">109,3</td>
+        <td style="text-align:center;">109,5</td>
+        <td style="text-align:center;">109,8</td>
+        <td style="text-align:center;">110,0</td>
+        <td style="text-align:center;">110,3</td>
+        <td style="text-align:center;">110,6</td>
+        <td style="text-align:center;">110,8</td>
+        <td style="text-align:center;">111,1</td>
+        <td style="text-align:center;">111,4</td>
+        <td style="text-align:center;">111,6</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>143</strong>
+        </td>
+        <td style="text-align:center;">111,9</td>
+        <td style="text-align:center;">112,2</td>
+        <td style="text-align:center;">112,4</td>
+        <td style="text-align:center;">112,7</td>
+        <td style="text-align:center;">113,</td>
+        <td style="text-align:center;">113,2</td>
+        <td style="text-align:center;">113,5</td>
+        <td style="text-align:center;">113,8</td>
+        <td style="text-align:center;">114,0</td>
+        <td style="text-align:center;">114,3</td>
+      </tr>
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>144</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">114,5</td>
+        <td style="text-align:center;">114,8</td>
+        <td style="text-align:center;">115,1</td>
+        <td style="text-align:center;">115,3</td>
+        <td style="text-align:center;">115,6</td>
+        <td style="text-align:center;">115,9</td>
+        <td style="text-align:center;">116,1</td>
+        <td style="text-align:center;">116,4</td>
+        <td style="text-align:center;">116,7</td>
+        <td style="text-align:center;">116,9</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>145</strong>
+        </td>
+        <td style="text-align:center;">117,2</td>
+        <td style="text-align:center;">117,5</td>
+        <td style="text-align:center;">117,7</td>
+        <td style="text-align:center;">118,0</td>
+        <td style="text-align:center;">118,2</td>
+        <td style="text-align:center;">118,5</td>
+        <td style="text-align:center;">118,8</td>
+        <td style="text-align:center;">119,0</td>
+        <td style="text-align:center;">119,3</td>
+        <td style="text-align:center;">119,6</td>
+      </tr>
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>146</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">119,8</td>
+        <td style="text-align:center;">120,1</td>
+        <td style="text-align:center;">120,4</td>
+        <td style="text-align:center;">120,6</td>
+        <td style="text-align:center;">120,9</td>
+        <td style="text-align:center;">121,2</td>
+        <td style="text-align:center;">121,4</td>
+        <td style="text-align:center;">121,7</td>
+        <td style="text-align:center;">122,0</td>
+        <td style="text-align:center;">122,2</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>147</strong>
+        </td>
+        <td style="text-align:center;">122,5</td>
+        <td style="text-align:center;">122,8</td>
+        <td style="text-align:center;">123,0</td>
+        <td style="text-align:center;">123,3</td>
+        <td style="text-align:center;">123,6</td>
+        <td style="text-align:center;">123,8</td>
+        <td style="text-align:center;">124,1</td>
+        <td style="text-align:center;">124,4</td>
+        <td style="text-align:center;">124,6</td>
+        <td style="text-align:center;">124,9</td>
+      </tr>
+
+    <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>148</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">125,2</td>
+        <td style="text-align:center;">125,4</td>
+        <td style="text-align:center;">125,7</td>
+        <td style="text-align:center;">126,0</td>
+        <td style="text-align:center;">126,2</td>
+        <td style="text-align:center;">126,5</td>
+        <td style="text-align:center;">126,7</td>
+        <td style="text-align:center;">127,0</td>
+        <td style="text-align:center;">127,3</td>
+        <td style="text-align:center;">127,5</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>149</strong>
+        </td>
+        <td style="text-align:center;">127,8</td>
+        <td style="text-align:center;">128,1</td>
+        <td style="text-align:center;">128,3</td>
+        <td style="text-align:center;">128,6</td>
+        <td style="text-align:center;">128,9</td>
+        <td style="text-align:center;">129,1</td>
+        <td style="text-align:center;">129,4</td>
+        <td style="text-align:center;">129,7</td>
+        <td style="text-align:center;">130,</td>
+        <td style="text-align:center;">130,2</td>
+      </tr>
+
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>150</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">130,5</td>
+        <td style="text-align:center;">130,7</td>
+        <td style="text-align:center;">131,0</td>
+        <td style="text-align:center;">131,</td>
+        <td style="text-align:center;">131,5</td>
+        <td style="text-align:center;">131,8</td>
+        <td style="text-align:center;">132,1</td>
+        <td style="text-align:center;">132,3</td>
+        <td style="text-align:center;">132,6</td>
+        <td style="text-align:center;">132,9</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>151</strong>
+        </td>
+        <td style="text-align:center;">133,1</td>
+        <td style="text-align:center;">133,4</td>
+        <td style="text-align:center;">133,7</td>
+        <td style="text-align:center;">133,9</td>
+        <td style="text-align:center;">134,2</td>
+        <td style="text-align:center;">134,5</td>
+        <td style="text-align:center;">134,7</td>
+        <td style="text-align:center;">135,0</td>
+        <td style="text-align:center;">135,3</td>
+        <td style="text-align:center;">135,5</td>
+      </tr>
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>152</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">135,8</td>
+        <td style="text-align:center;">136,1</td>
+        <td style="text-align:center;">136,3</td>
+        <td style="text-align:center;">136,6</td>
+        <td style="text-align:center;">136,9</td>
+        <td style="text-align:center;">137,1</td>
+        <td style="text-align:center;">137,4</td>
+        <td style="text-align:center;">137,7</td>
+        <td style="text-align:center;">137,9</td>
+        <td style="text-align:center;">138,2</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>153</strong>
+        </td>
+        <td style="text-align:center;">138,5</td>
+        <td style="text-align:center;">138,7</td>
+        <td style="text-align:center;">139,0</td>
+        <td style="text-align:center;">139,3</td>
+        <td style="text-align:center;">139,5</td>
+        <td style="text-align:center;">139,8</td>
+        <td style="text-align:center;">140,1</td>
+        <td style="text-align:center;">140,3</td>
+        <td style="text-align:center;">140,6</td>
+        <td style="text-align:center;">140,9</td>
+      </tr>
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>154</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">141,1</td>
+        <td style="text-align:center;">141,4</td>
+        <td style="text-align:center;">141,7</td>
+        <td style="text-align:center;">141,9</td>
+        <td style="text-align:center;">142,2</td>
+        <td style="text-align:center;">142,5</td>
+        <td style="text-align:center;">142,7</td>
+        <td style="text-align:center;">143,</td>
+        <td style="text-align:center;">143,3</td>
+        <td style="text-align:center;">143,5</td>
+      </tr>
+
+  
+
+
+
+    </tbody>
+  </table>
+
+  <script>
+    const tabela = document.getElementById("tabela-nc");
+
+    let linhaAtual = null;   // índice da linha selecionada (tbody)
+    let colunaAtual = null;  // índice da coluna selecionada (thead/th)
+
+    const linhas = tabela.querySelectorAll("tbody tr");
+    const cabecalhos = tabela.querySelectorAll("thead th");
+
+    // ---------------------------------
+    // CLIQUE NA PRIMEIRA COLUNA (TD.clicavel)
+    // ---------------------------------
+    linhas.forEach((linha, indexLinha) => {
+      const primeiraCelula = linha.querySelector("td.clicavel"); // só a 1ª coluna
+
+      if (primeiraCelula) {
+        primeiraCelula.addEventListener("click", function (e) {
+          // Garante que cliques em spans internos também funcionem
+          e.stopPropagation();
+
+          // Limpa marcações de linha anteriores
+          linhas.forEach(l => l.classList.remove("linha-selecionada"));
+
+          // Marca a linha atual
+          linhaAtual = indexLinha;
+          linha.classList.add("linha-selecionada");
+
+          // Atualiza célula de interseção
+          atualizarIntersecao();
+        });
+      }
+    });
+
+    // ---------------------------------
+    // CLIQUE NA PRIMEIRA LINHA (TH.clicavel)
+    // ---------------------------------
+    cabecalhos.forEach((th, indexColuna) => {
+      th.addEventListener("click", function (e) {
+        e.stopPropagation();
+
+        // Remove seleção anterior de colunas
+        cabecalhos.forEach(h => h.classList.remove("coluna-selecionada"));
+        tabela.querySelectorAll("tbody td").forEach(td => {
+          td.classList.remove("coluna-selecionada");
+        });
+
+        // Marca nova coluna selecionada
+        colunaAtual = indexColuna;
+
+        // Destaca o cabeçalho clicado
+        th.classList.add("coluna-selecionada");
+
+        // Destaca a coluna correspondente no corpo da tabela
+        linhas.forEach(tr => {
+          const celulas = tr.children;
+          if (celulas[indexColuna]) {
+            celulas[indexColuna].classList.add("coluna-selecionada");
+          }
+        });
+
+        // Atualiza célula de interseção
+        atualizarIntersecao();
+      });
+    });
+
+    // ---------------------------------
+    // GARANTIR QUE CLIQUES EM OUTRAS CÉLULAS NÃO FAÇAM NADA
+    // (captura no nível da tabela e bloqueia)
+    // ---------------------------------
+    tabela.addEventListener("click", function (e) {
+      const alvo = e.target;
+
+      // Se NÃO for TH clicável nem TD clicável, não faz nada
+      if (
+        !(alvo.closest("th.clicavel")) &&
+        !(alvo.closest("td.clicavel"))
+      ) {
+        // Apenas evita qualquer outro handler acidental
+        e.stopPropagation();
+        // Não chamamos nenhuma função de seleção aqui
+      }
+    }, true); // true = captura antes de outros listeners
+
+    // ---------------------------------
+    // ATUALIZA A CÉLULA DE INTERSEÇÃO
+    // ---------------------------------
+    function atualizarIntersecao() {
+      // Remove marcações antigas de interseção
+      tabela.querySelectorAll("tbody td").forEach(td => {
+        td.classList.remove("intersecao");
+      });
+
+      // Só marca se linha e coluna estiverem selecionadas
+      if (linhaAtual !== null && colunaAtual !== null) {
+        const linha = linhas[linhaAtual];
+        if (!linha) return;
+
+        const celulas = linha.children;
+        const celulaIntersecao = celulas[colunaAtual];
+
+        if (celulaIntersecao) {
+          celulaIntersecao.classList.add("intersecao");
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
+  por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
+</div>
+
+
+
+
+
+
+
+ 
+  
+  <div class="numero-pagina">Página 44</div>
+</div>
 
 <!-- ==============================
      PÁGINA 22 (IMAGEM) – EM 2 PARTES EMPILHADAS
@@ -40014,22 +41436,465 @@ MGI Vibração anormal 2 canal 1
 
 
 
- <a id="sec-09"></a>
-    <div style="text-align:right; margin-bottom:6px;">
-      <a href="#pagina1" class="link-azul">⬅ Voltar ao índice (6 – Tabela de conversão de RTD)</a>
-    </div>
+ 
 
 
-  <div class="img-stack">
-    <img class="stack-part" src="https://i.ibb.co/RwpM0T7/Tabela-de-conversao-de-resistencia-RTD-1-parte.png" alt="Tabela (parte 1)">
-    <img class="stack-part" src="https://i.ibb.co/DHbXfzjq/Tabela-de-conversao-de-resistencia-RTD-2-parte.png" alt="Tabela (parte 2)">
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Tabela NC - Primeira Linha e Primeira Coluna Clicáveis</title>
+
+  <style>
+    /* Faixa amarela "NC" */
+    .titulo-nc {
+      background-color: yellow;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* Estilo geral da tabela */
+    table.tabela-nc {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+      margin-top: 2px;
+      border: 1px solid black;
+    }
+
+    table.tabela-nc th,
+    table.tabela-nc td {
+      border: 1px solid black;
+      padding: 2px 4px;
+    }
+
+    /* Destaque de linha inteira */
+    .linha-selecionada {
+      background-color: yellow !important;
+    }
+
+    /* Destaque de coluna inteira */
+    .coluna-selecionada {
+      background-color: yellow !important;
+    }
+
+    /* Célula na interseção linha + coluna */
+    .intersecao {
+      background-color: red !important;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Somente primeira linha (TH) e primeira coluna (TD) são clicáveis */
+    th.clicavel,
+    td.clicavel {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Caixa amarela com NC -->
+  <div class="titulo-nc">
+   TABELA DE CONVERSÃO DE RESITÊNCIA DE RTD`s PARA TEMPERATURA EM ºC (clique na linha e na coluna correspondente)
   </div>
+
+  <!-- Tabela -->
+<table id="tabela-nc-2" class="tabela-nc">
+
+
+    <thead>
+      <tr>
+
+        <th class="clicavel"style="background-color:#ADD8E6;">OHM´s</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,0</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,1</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,2</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,3</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,4</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,5</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,6</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,7</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,8</th>
+        <th class="clicavel"style="background-color:#ADD8E6;">,9</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+     
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>155</strong>
+        </td>
+        <td style="text-align:center;">143,8</td>
+        <td style="text-align:center;">144,1</td>
+        <td style="text-align:center;">144,3</td>
+        <td style="text-align:center;">144,6</td>
+        <td style="text-align:center;">144,9</td>
+        <td style="text-align:center;">145,1</td>
+        <td style="text-align:center;">145,4</td>
+        <td style="text-align:center;">145,7</td>
+        <td style="text-align:center;">145,9</td>
+        <td style="text-align:center;">146,2</td>
+      </tr>
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>156</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">146,5</td>
+        <td style="text-align:center;">146,7</td>
+        <td style="text-align:center;">147,0</td>
+        <td style="text-align:center;">147,3</td>
+        <td style="text-align:center;">147,5</td>
+        <td style="text-align:center;">147,8</td>
+        <td style="text-align:center;">148,1</td>
+        <td style="text-align:center;">148,3</td>
+        <td style="text-align:center;">148,6</td>
+        <td style="text-align:center;">148,9</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>157</strong>
+        </td>
+        <td style="text-align:center;">149,1</td>
+        <td style="text-align:center;">149,4</td>
+        <td style="text-align:center;">149,7</td>
+        <td style="text-align:center;">149,9</td>
+        <td style="text-align:center;">150,2</td>
+        <td style="text-align:center;">150,5</td>
+        <td style="text-align:center;">150,8</td>
+        <td style="text-align:center;">151,1</td>
+        <td style="text-align:center;">151,3</td>
+        <td style="text-align:center;">151,6</td>
+      </tr>
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>158</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">151,9</td>
+        <td style="text-align:center;">152,1</td>
+        <td style="text-align:center;">152,4</td>
+        <td style="text-align:center;">152,7</td>
+        <td style="text-align:center;">152,9</td>
+        <td style="text-align:center;">153,2</td>
+        <td style="text-align:center;">153,5</td>
+        <td style="text-align:center;">153,7</td>
+        <td style="text-align:center;">154,0</td>
+        <td style="text-align:center;">154,3</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>159</strong>
+        </td>
+        <td style="text-align:center;">154,6</td>
+        <td style="text-align:center;">154,8</td>
+        <td style="text-align:center;">155,1</td>
+        <td style="text-align:center;">155,4</td>
+        <td style="text-align:center;">155,6</td>
+        <td style="text-align:center;">155,9</td>
+        <td style="text-align:center;">156,2</td>
+        <td style="text-align:center;">156,4</td>
+        <td style="text-align:center;">156,7</td>
+        <td style="text-align:center;">157,0</td>
+      </tr>
+
+
+    <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>160</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">157,2</td>
+        <td style="text-align:center;">157,5</td>
+        <td style="text-align:center;">157,8</td>
+        <td style="text-align:center;">158,0</td>
+        <td style="text-align:center;">158,3</td>
+        <td style="text-align:center;">158,6</td>
+        <td style="text-align:center;">158,8</td>
+        <td style="text-align:center;">159,1</td>
+        <td style="text-align:center;">159,4</td>
+        <td style="text-align:center;">159,6</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>161</strong>
+        </td>
+        <td style="text-align:center;">159,9</td>
+        <td style="text-align:center;">160,1</td>
+        <td style="text-align:center;">160,4</td>
+        <td style="text-align:center;">160,7</td>
+        <td style="text-align:center;">160,9</td>
+        <td style="text-align:center;">161,2</td>
+        <td style="text-align:center;">161,5</td>
+        <td style="text-align:center;">161,8</td>
+        <td style="text-align:center;">162,0</td>
+        <td style="text-align:center;">162,3</td>
+      </tr>
+
+
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>162</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">162,6</td>
+        <td style="text-align:center;">162,8</td>
+        <td style="text-align:center;">163,1</td>
+        <td style="text-align:center;">163,4</td>
+        <td style="text-align:center;">163,6</td>
+        <td style="text-align:center;">163,9</td>
+        <td style="text-align:center;">164,2</td>
+        <td style="text-align:center;">164,4</td>
+        <td style="text-align:center;">164,7</td>
+        <td style="text-align:center;">165,0</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>163</strong>
+        </td>
+        <td style="text-align:center;">165,3</td>
+        <td style="text-align:center;">165,5</td>
+        <td style="text-align:center;">165,8</td>
+        <td style="text-align:center;">166,1</td>
+        <td style="text-align:center;">166,3</td>
+        <td style="text-align:center;">166,6</td>
+        <td style="text-align:center;">166,9</td>
+        <td style="text-align:center;">167,1</td>
+        <td style="text-align:center;">167,4</td>
+        <td style="text-align:center;">167,7</td>
+      </tr>
+     <!-- LINHA 1 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>164</strong>
+        </td>
+        
+
+ 
+
+
+
+        <td style="text-align:center;">167,9</td>
+        <td style="text-align:center;">168,2</td>
+        <td style="text-align:center;">168,5</td>
+        <td style="text-align:center;">168,8</td>
+        <td style="text-align:center;">169,0</td>
+        <td style="text-align:center;">169,3</td>
+        <td style="text-align:center;">169,6</td>
+        <td style="text-align:center;">169,8</td>
+        <td style="text-align:center;">170,1</td>
+        <td style="text-align:center;">170,4</td>
+      </tr>
+
+      <!-- LINHA 2 -->
+      <tr>
+        <!-- SOMENTE ESTA É CLICÁVEL NA LINHA -->
+        <td class="clicavel" style="text-align:center;background-color: #ADD8E6;">
+          <strong>165</strong>
+        </td>
+        <td style="text-align:center;">170,6</td>
+        <td style="text-align:center;">170,9</td>
+        <td style="text-align:center;">171,2</td>
+        <td style="text-align:center;">171,5</td>
+        <td style="text-align:center;">171,7</td>
+        <td style="text-align:center;">172,0</td>
+        <td style="text-align:center;">172,3</td>
+        <td style="text-align:center;">172,5</td>
+        <td style="text-align:center;">172,8</td>
+        <td style="text-align:center;">173,1</td>
+      </tr>
+     
+
+
+
+    </tbody>
+  </table>
+
+  <script>
+  // Tudo da SEGUNDA tabela usa nomes com sufixo "2"
+
+  const tabela2 = document.getElementById("tabela-nc-2");
+
+  let linhaAtual2 = null;   // índice da linha selecionada (tbody)
+  let colunaAtual2 = null;  // índice da coluna selecionada (thead/th)
+
+  const linhas2 = tabela2.querySelectorAll("tbody tr");
+  const cabecalhos2 = tabela2.querySelectorAll("thead th");
+
+  // ---------------------------------
+  // CLIQUE NA PRIMEIRA COLUNA (TD.clicavel)
+  // ---------------------------------
+  linhas2.forEach((linha, indexLinha) => {
+    const primeiraCelula2 = linha.querySelector("td.clicavel"); // só a 1ª coluna
+
+    if (primeiraCelula2) {
+      primeiraCelula2.addEventListener("click", function (e) {
+        // Garante que cliques em spans internos também funcionem
+        e.stopPropagation();
+
+        // Limpa marcações de linha anteriores
+        linhas2.forEach(l => l.classList.remove("linha-selecionada"));
+
+        // Marca a linha atual
+        linhaAtual2 = indexLinha;
+        linha.classList.add("linha-selecionada");
+
+        // Atualiza célula de interseção
+        atualizarIntersecao2();
+      });
+    }
+  });
+
+  // ---------------------------------
+  // CLIQUE NA PRIMEIRA LINHA (TH.clicavel)
+  // ---------------------------------
+  cabecalhos2.forEach((th, indexColuna) => {
+    th.addEventListener("click", function (e) {
+      e.stopPropagation();
+
+      // Remove seleção anterior de colunas
+      cabecalhos2.forEach(h => h.classList.remove("coluna-selecionada"));
+      tabela2.querySelectorAll("tbody td").forEach(td => {
+        td.classList.remove("coluna-selecionada");
+      });
+
+      // Marca nova coluna selecionada
+      colunaAtual2 = indexColuna;
+
+      // Destaca o cabeçalho clicado
+      th.classList.add("coluna-selecionada");
+
+      // Destaca a coluna correspondente no corpo da tabela
+      linhas2.forEach(tr => {
+        const celulas = tr.children;
+        if (celulas[indexColuna]) {
+          celulas[indexColuna].classList.add("coluna-selecionada");
+        }
+      });
+
+      // Atualiza célula de interseção
+      atualizarIntersecao2();
+    });
+  });
+
+  // ---------------------------------
+  // GARANTIR QUE CLIQUES EM OUTRAS CÉLULAS NÃO FAÇAM NADA
+  // ---------------------------------
+  tabela2.addEventListener("click", function (e) {
+    const alvo = e.target;
+
+    // Se NÃO for TH clicável nem TD clicável, não faz nada
+    if (
+      !(alvo.closest("th.clicavel")) &&
+      !(alvo.closest("td.clicavel"))
+    ) {
+      e.stopPropagation();
+    }
+  }, true); // captura
+
+  // ---------------------------------
+  // ATUALIZA A CÉLULA DE INTERSEÇÃO (SEGUNDA TABELA)
+  // ---------------------------------
+  function atualizarIntersecao2() {
+    // Remove marcações antigas de interseção
+    tabela2.querySelectorAll("tbody td").forEach(td => {
+      td.classList.remove("intersecao");
+    });
+
+    // Só marca se linha e coluna estiverem selecionadas
+    if (linhaAtual2 !== null && colunaAtual2 !== null) {
+      const linha = linhas2[linhaAtual2];
+      if (!linha) return;
+
+      const celulas = linha.children;
+      const celulaIntersecao = celulas[colunaAtual2];
+
+      if (celulaIntersecao) {
+        celulaIntersecao.classList.add("intersecao");
+      }
+    }
+  }
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 44</div>
+  <div class="numero-pagina">Página 45</div>
 </div>
-
 
 
 
@@ -40053,7 +41918,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 45</div>
+  <div class="numero-pagina">Página 46</div>
 </div>
 
 
@@ -40077,7 +41942,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 46</div>
+  <div class="numero-pagina">Página 47</div>
 </div>
 
 
@@ -40105,7 +41970,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 47</div>
+  <div class="numero-pagina">Página 48</div>
 </div>
 
 <!-- ==============================
@@ -40125,7 +41990,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 48</div>
+  <div class="numero-pagina">Página 49</div>
 </div>
 
 
@@ -40146,7 +42011,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 49</div>
+  <div class="numero-pagina">Página 50</div>
 </div>
 
 <!-- ==============================
@@ -40166,7 +42031,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 50</div>
+  <div class="numero-pagina">Página 51</div>
 </div>
 
 
@@ -40188,7 +42053,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 51</div>
+  <div class="numero-pagina">Página 52</div>
 </div>
 
 
@@ -40209,7 +42074,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 52</div>
+  <div class="numero-pagina">Página 53</div>
 </div>
 
 
@@ -40230,7 +42095,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 53</div>
+  <div class="numero-pagina">Página 54</div>
 </div>
 
 <!-- ==============================
@@ -40250,7 +42115,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 54</div>
+  <div class="numero-pagina">Página 55</div>
 </div>
 
 
@@ -40272,7 +42137,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 55</div>
+  <div class="numero-pagina">Página 56</div>
 </div>
 
 
@@ -40300,7 +42165,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 56</div>
+  <div class="numero-pagina">Página 57</div>
 </div>
 
 
@@ -40322,7 +42187,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 57</div>
+  <div class="numero-pagina">Página 58</div>
 </div>
 
 
@@ -40342,7 +42207,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 58</div>
+  <div class="numero-pagina">Página 59</div>
 </div>
 
 
@@ -40362,7 +42227,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 59</div>
+  <div class="numero-pagina">Página 60</div>
 </div>
 
 
@@ -40383,7 +42248,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 60</div>
+  <div class="numero-pagina">Página 61</div>
 </div>
 
 
@@ -40403,7 +42268,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 61</div>
+  <div class="numero-pagina">Página 62</div>
 </div>
 
 <!-- ==============================
@@ -40425,7 +42290,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 62</div>
+  <div class="numero-pagina">Página 63</div>
 </div>
 
 <!-- ==============================
@@ -40451,7 +42316,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 63</div>
+  <div class="numero-pagina">Página 64</div>
 </div>
 <!-- ==============================
      PÁGINA 22 (IMAGEM) – EM 2 PARTES EMPILHADAS
@@ -40470,7 +42335,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 64</div>
+  <div class="numero-pagina">Página 65</div>
 </div>
 
 
@@ -40492,7 +42357,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 65</div>
+  <div class="numero-pagina">Página 66</div>
 </div>
 
 
@@ -40519,7 +42384,7 @@ MGI Vibração anormal 2 canal 1
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
 
-  <div class="numero-pagina">Página 66</div>
+  <div class="numero-pagina">Página 67</div>
 </div>
 
 
@@ -40546,7 +42411,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 67</div>
+  <div class="numero-pagina">Página 68</div>
 </div>
 
 
@@ -40574,7 +42439,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 68</div>
+  <div class="numero-pagina">Página 69</div>
 </div>
 
 
@@ -40596,7 +42461,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 69</div>
+  <div class="numero-pagina">Página 70</div>
 </div>
 
 
@@ -40624,7 +42489,7 @@ MGI Vibração anormal 2 canal 1
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
 
-  <div class="numero-pagina">Página 70</div>
+  <div class="numero-pagina">Página 71</div>
 </div>
 
 
@@ -40651,7 +42516,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 71</div>
+  <div class="numero-pagina">Página 72</div>
 </div>
 
 
@@ -40677,7 +42542,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 72</div>
+  <div class="numero-pagina">Página 73</div>
 </div>
 
 <!-- ==============================
@@ -40698,7 +42563,7 @@ MGI Vibração anormal 2 canal 1
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
 
-  <div class="numero-pagina">Página 73</div>
+  <div class="numero-pagina">Página 74</div>
 </div>
 
 <!-- ==============================
@@ -40721,7 +42586,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 74</div>
+  <div class="numero-pagina">Página 75</div>
 </div>
 
 
@@ -40747,7 +42612,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 75</div>
+  <div class="numero-pagina">Página 76</div>
 </div>
 
 
@@ -40768,7 +42633,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 76</div>
+  <div class="numero-pagina">Página 77</div>
 </div>
 
 
@@ -40790,7 +42655,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 77</div>
+  <div class="numero-pagina">Página 78</div>
 </div>
 
 
@@ -40811,7 +42676,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 78</div>
+  <div class="numero-pagina">Página 79</div>
 </div>
 
 <!-- ==============================
@@ -40831,7 +42696,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 79</div>
+  <div class="numero-pagina">Página 80</div>
 </div>
 
 <!-- ==============================
@@ -40851,7 +42716,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 80</div>
+  <div class="numero-pagina">Página 81</div>
 </div>
 
 
@@ -40875,7 +42740,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 81</div>
+  <div class="numero-pagina">Página 82</div>
 </div>
 
 
@@ -40897,7 +42762,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 82</div>
+  <div class="numero-pagina">Página 83</div>
 </div>
 
 
@@ -40919,7 +42784,7 @@ MGI Vibração anormal 2 canal 1
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
 
-  <div class="numero-pagina">Página 83</div>
+  <div class="numero-pagina">Página 84</div>
 </div>
 
 <!-- ==============================
@@ -40940,7 +42805,7 @@ MGI Vibração anormal 2 canal 1
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
 
-  <div class="numero-pagina">Página 84</div>
+  <div class="numero-pagina">Página 85</div>
 </div>
 
 <!-- ==============================
@@ -40961,7 +42826,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 85</div>
+  <div class="numero-pagina">Página 86</div>
 </div>
 
 
@@ -40986,7 +42851,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 86</div>
+  <div class="numero-pagina">Página 87</div>
 </div>
 
 
@@ -41008,7 +42873,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 87</div>
+  <div class="numero-pagina">Página 88</div>
 </div>
 
 
@@ -41030,7 +42895,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 88</div>
+  <div class="numero-pagina">Página 89</div>
 </div>
 
 
@@ -41051,7 +42916,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 89</div>
+  <div class="numero-pagina">Página 90</div>
 </div>
 
 
@@ -41072,7 +42937,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 90</div>
+  <div class="numero-pagina">Página 91</div>
 </div>
 
 
@@ -41093,7 +42958,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 91</div>
+  <div class="numero-pagina">Página 92</div>
 </div>
 
 
@@ -41114,7 +42979,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 92</div>
+  <div class="numero-pagina">Página 93</div>
 </div>
 
 
@@ -41135,7 +43000,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 93</div>
+  <div class="numero-pagina">Página 94</div>
 </div>
 
 <!-- ==============================
@@ -41155,7 +43020,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 94</div>
+  <div class="numero-pagina">Página 95</div>
 </div>
 
 <!-- ==============================
@@ -41175,7 +43040,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 95</div>
+  <div class="numero-pagina">Página 96</div>
 </div>
 
 
@@ -41196,7 +43061,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 96</div>
+  <div class="numero-pagina">Página 97</div>
 </div>
 
 
@@ -41217,7 +43082,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 97</div>
+  <div class="numero-pagina">Página 98</div>
 </div>
 
 <!-- ==============================
@@ -41237,7 +43102,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 98</div>
+  <div class="numero-pagina">Página 99</div>
 </div>
 
 <!-- ==============================
@@ -41257,7 +43122,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 99</div>
+  <div class="numero-pagina">Página 100</div>
 </div>
 <!-- ==============================
      PÁGINA 22 (IMAGEM) – EM 2 PARTES EMPILHADAS
@@ -41276,7 +43141,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 100</div>
+  <div class="numero-pagina">Página 101</div>
 </div>
 
 <!-- ==============================
@@ -41296,7 +43161,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 101</div>
+  <div class="numero-pagina">Página 102</div>
 </div>
 <!-- ==============================
      PÁGINA 22 (IMAGEM) – EM 2 PARTES EMPILHADAS
@@ -41315,7 +43180,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 102</div>
+  <div class="numero-pagina">Página 103</div>
 </div>
 <!-- ==============================
      PÁGINA 22 (IMAGEM) – EM 2 PARTES EMPILHADAS
@@ -41334,7 +43199,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 103</div>
+  <div class="numero-pagina">Página 104</div>
 </div>
 
 <!-- ==============================
@@ -41354,7 +43219,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 104</div>
+  <div class="numero-pagina">Página 105</div>
 </div>
 
 <!-- ==============================
@@ -41374,7 +43239,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 105</div>
+  <div class="numero-pagina">Página 106</div>
 </div>
 
 
@@ -41398,7 +43263,7 @@ MGI Vibração anormal 2 canal 1
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
 
-  <div class="numero-pagina">Página 106</div>
+  <div class="numero-pagina">Página 107</div>
 </div>
 
 
@@ -41434,7 +43299,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 107</div>
+  <div class="numero-pagina">Página 108</div>
 </div>
 
 <!-- ==============================
@@ -41454,7 +43319,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 108</div>
+  <div class="numero-pagina">Página 109</div>
 </div>
 
 <!-- ==============================
@@ -41474,7 +43339,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 109</div>
+  <div class="numero-pagina">Página 110</div>
 </div>
 
 <!-- ==============================
@@ -41494,7 +43359,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 110</div>
+  <div class="numero-pagina">Página 111</div>
 </div>
 
 <!-- ==============================
@@ -41517,7 +43382,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 111</div>
+  <div class="numero-pagina">Página 112</div>
 </div>
 
 
@@ -41541,7 +43406,7 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 112</div>
+  <div class="numero-pagina">Página 113</div>
 </div>
 
 <!-- ==============================
@@ -41562,7 +43427,7 @@ MGI Vibração anormal 2 canal 1
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
 
-  <div class="numero-pagina">Página 113</div>
+  <div class="numero-pagina">Página 114</div>
 </div>
 
 
@@ -41585,8 +43450,19 @@ MGI Vibração anormal 2 canal 1
 <div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (2025)
 </div>
-  <div class="numero-pagina">Página 114</div>
+  <div class="numero-pagina">Página 115</div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
