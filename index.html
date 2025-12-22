@@ -328,11 +328,13 @@
   left:60px;
   right:60px;
   font-size:13px;
-  display:flex;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  align-items:start;
 ">
-  
+
   <!-- LADO ESQUERDO -->
-  <div style="flex:1; text-align:left;">
+  <div style="text-align:left; justify-self:start;">
     <a href="https://osprd.itaipu/SAMAdjustmentOrderManagement/AdjustmentOrderView.aspx?AdjustmentOrderId=1304"
        target="_blank"
        class="link-azul"
@@ -348,13 +350,13 @@
     </a>
   </div>
 
-  <!-- LADO DIREITO (AGORA ALINHADO DE VERDADE) -->
-  <div style="flex:1; text-align:right;">
+  <!-- LADO DIREITO (GRUDA NA BORDA DIREITA) -->
+  <div style="text-align:right; justify-self:end;">
     <a href="https://osprd.itaipu/SAMAdjustmentOrderManagement/AdjustmentOrderView.aspx?AdjustmentOrderId=296"
        target="_blank"
        class="link-azul"
        style="display:block;">
-      ORDEM DE AJUSTE PA (máquinas convencionais1) ➡
+      ORDEM DE AJUSTE PA (máquinas convencionais) ➡
     </a>
 
     <a href="https://osprd.itaipu/SAMAdjustmentOrderManagement/AdjustmentOrderView.aspx?AdjustmentOrderId=248"
@@ -366,6 +368,7 @@
   </div>
 
 </div>
+
 
 
   <!-- ==============================
