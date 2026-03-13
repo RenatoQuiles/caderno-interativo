@@ -13,25 +13,26 @@
     }
 
     /* ===== CADA PÁGINA A4 NA TELA ===== */
-    .pagina {
-      width: 794px;   /* A4 ~96dpi */
-      height: 1123px;
-      background: #fff;
-      margin: 40px auto;
-      padding: 50px 60px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      position: relative;
-      page-break-after: always;
-    }
+   .pagina {
+  width: 794px;   /* A4 ~96dpi */
+  height: 1123px;
+  background: #fff;
+  margin: 40px auto;
+  padding: 50px 60px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  position: relative;
+  page-break-after: always;
+  box-sizing: border-box;
+}
 
     /* ===== RODAPÉ ===== */
     .numero-pagina {
-      position: absolute;
-      bottom: 20px;
-      right: 30px;
-      font-size: 12px;
-      color: gray;
-    }
+  position: absolute;
+  bottom: 20px;
+  right: 60px;
+  font-size: 12px;
+  color: gray;
+}
 
     /* ===== ÁREA DO ÍNDICE ===== */
     .indice {
@@ -81,8 +82,6 @@
 
     /* ===== MODO IMPRESSÃO ===== */
     @media print {
-@media print {
-
   @page {
     size: A4;
     margin: 0;
@@ -90,24 +89,31 @@
 
   body {
     background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .indice {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .btn-email {
+    display: none !important;
   }
 
   .pagina {
     width: 210mm;
     height: 297mm;
     margin: 0;
+    padding: 50px 60px;
+    box-sizing: border-box;
     box-shadow: none;
     page-break-after: always;
+    position: relative;
   }
-
 }
-      .indice {
-        max-height: none !important;
-        height: auto !important;
-        overflow: visible !important;
-      }
-      .btn-email { display: none !important; }
-    }
 
     /* Aumenta a altura das células de todas as tabelas */
     table td, table th {
@@ -294,8 +300,7 @@
    
   </div>
 
-
-<div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
+<div style="position:absolute; bottom:20px; left:60px; right:60px; text-align:center; font-size:12px; color:#555;">
   por Renato Almeida – reg. 47232 – ramal 4918 – (Atualizado em janeiro 2026)
 </div>
 
@@ -432,8 +437,8 @@
 
 
 
-<div style="position:absolute; bottom:20px; width:100%; text-align:center; font-size:12px; color:#555;">
-  por Renato Almeida – reg. 47232 – ramal 4918 – (Atualizado em janeiro 2026-----)
+<div style="position:absolute; bottom:20px; left:60px; right:60px; text-align:center; font-size:12px; color:#555;">
+  por Renato Almeida – reg. 47232 – ramal 4918 – (Atualizado em janeiro 2026)
 </div>
   <!-- PONTO SEGURO PARA ALTERAR (título/conteúdo da Página 4) -->
  
