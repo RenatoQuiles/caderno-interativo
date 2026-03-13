@@ -305,7 +305,7 @@
 </div>
 
 
- <div class="numero-pagina">Página 1</div>
+ <div class="numero-pagina"></div>
 </div>
 
 
@@ -443,7 +443,7 @@
   <!-- PONTO SEGURO PARA ALTERAR (título/conteúdo da Página 4) -->
  
   
-  <div class="numero-pagina">Página 2</div>
+<div class="numero-pagina"></div>
 </div>
 
 
@@ -569,6 +569,23 @@ document.addEventListener("click", function(e) {
     linkVoltar.classList.remove('hidden');
   }
 })();
+
+/* ===== Numeração automática das páginas ===== */
+document.addEventListener("DOMContentLoaded", function () {
+
+  const paginas = document.querySelectorAll(".pagina");
+
+  paginas.forEach((pagina, index) => {
+
+    const numero = pagina.querySelector(".numero-pagina");
+
+    if (numero) {
+      numero.textContent = "Página " + (index + 1);
+    }
+
+  });
+
+});
 </script>
 
 </body>
