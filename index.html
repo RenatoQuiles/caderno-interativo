@@ -81,6 +81,26 @@
 
     /* ===== MODO IMPRESSÃO ===== */
     @media print {
+@media print {
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: white;
+  }
+
+  .pagina {
+    width: 210mm;
+    height: 297mm;
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+
+}
       .indice {
         max-height: none !important;
         height: auto !important;
@@ -418,7 +438,7 @@
   <!-- PONTO SEGURO PARA ALTERAR (título/conteúdo da Página 4) -->
  
   
-  <div class="numero-pagina">Página 1</div>
+  <div class="numero-pagina">Página 2</div>
 </div>
 
 
