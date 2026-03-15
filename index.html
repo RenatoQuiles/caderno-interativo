@@ -154,21 +154,21 @@
     /* ===== EMPILHAR DUAS IMAGENS (SEM ESPAÇO ENTRE ELAS) ===== */
 .img-stack {
   width: 100%;
-  height: calc(100% - 170px); /* reserva espaço para rodapé */
   margin: 10px 0 0 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  line-height: 0;
+  font-size: 0;
   box-sizing: border-box;
+  transform-origin: top center;
 }
 
 .img-stack .stack-part {
+  display: block;
   width: 100%;
-  max-height: 50%;
-  object-fit: contain;
+  height: auto;
   margin: 0;
   padding: 0;
+  border: 0;
+  image-rendering: auto;
 }
   </style>
 </head>
@@ -418,7 +418,7 @@
 <!-- ==============================
        LINKS EXTERNOS (ANTES DO RODAPÉ)
        ============================== -->
-<div style="
+<div class="links-externos-img" style="
   position:absolute;
   bottom:70px;
   left:30px;
@@ -493,7 +493,7 @@
 <!-- ==============================
        LINKS EXTERNOS (ANTES DO RODAPÉ)
        ============================== -->
-<div style="
+<div class="links-externos-img" style="
   position:absolute;
   bottom:70px;
   left:30px;
@@ -503,7 +503,6 @@
   grid-template-columns: 1fr 1fr;
   align-items:start;
 ">
-
   <!-- LADO ESQUERDO -->
   <div style="text-align:left; justify-self:start;">
     <a href=" https://osprd.itaipu/SAMAdjustmentOrderManagement/AdjustmentOrderView.aspx?AdjustmentOrderId=1304"
@@ -740,6 +739,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+/* ===== Ajusta automaticamente blocos de imagens empilhadas ===== */
+document.addEventListener("DOMContentLoaded", function () {
+  const paginas = document.querySelectorAll(".pagina");
+
+  paginas.forEach((pagina) => {
+    const stack = pagina.querySelector(".img-stack");
+    const links = pagina.querySelector(".links-externos-img");
+    const rodape = pagina.querySelector(".rodape-info");
+    const numero = pagina.querySelector(".numero-pagina");
+
+    if (!stack || !links || !rodape || !numero) return;
+
+    stack.style.transform = "scale(1)";
+
+    const topoStack = stack.offsetTop;
+    const topoLinks = links.offsetTop;
+
+    const alturaDisponivel = topoLinks - topoStack - 10;
+    const alturaReal = stack.scrollHeight;
+
+    if (alturaReal > alturaDisponivel) {
+      const escala = alturaDisponivel / alturaReal;
+      stack.style.transform = `scale(${escala})`;
+    }
+  });
+});
+
+
 </script>
 
 </body>
