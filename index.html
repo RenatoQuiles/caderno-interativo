@@ -154,22 +154,21 @@
     /* ===== EMPILHAR DUAS IMAGENS (SEM ESPAÇO ENTRE ELAS) ===== */
 .img-stack {
   width: 100%;
-  max-height: calc(100% - 170px); /* reserva espaço para rodapé e links */
+  height: calc(100% - 170px); /* reserva espaço para rodapé */
   margin: 10px 0 0 0;
-  line-height: 0;
-  break-inside: avoid;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   box-sizing: border-box;
 }
 
 .img-stack .stack-part {
-  display: block;
   width: 100%;
-  height: auto;
+  max-height: 50%;
+  object-fit: contain;
   margin: 0;
   padding: 0;
-  border: 0;
-  image-rendering: auto;
 }
   </style>
 </head>
