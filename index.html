@@ -152,19 +152,24 @@
     }
 
     /* ===== EMPILHAR DUAS IMAGENS (SEM ESPAÇO ENTRE ELAS) ===== */
-    .img-stack {
-      width: min(660px, 100%);
-      margin: 20px auto;
-      line-height: 0;         /* remove espaços entre imagens */
-      break-inside: avoid;    /* evita quebra na impressão */
-    }
-    .img-stack .stack-part {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 0; padding: 0; border: 0;
-      image-rendering: auto;
-    }
+.img-stack {
+  width: 100%;
+  margin: 10px 0 0 0;
+  line-height: 0;
+  break-inside: avoid;
+  padding-bottom: 120px;
+  box-sizing: border-box;
+}
+
+.img-stack .stack-part {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  image-rendering: auto;
+}
   </style>
 </head>
 <body>
@@ -396,10 +401,16 @@
 
 
 
-  <div class="img-stack">
-    <img class="stack-part" src="https://i.ibb.co/KxByMvGv/GGB-LIP1.png" alt="Tabela (parte 1)">
-    <img class="stack-part" src="https://i.ibb.co/Mykwjz2Q/GGB-LIP2.png" alt="Tabela (parte 2)">
-  </div>
+
+<div class="img-stack">
+  <img class="stack-part" src="https://i.ibb.co/KxByMvGv/GGB-LIP1.png" alt="Tabela (parte 1)">
+  <img class="stack-part" src="https://i.ibb.co/Mykwjz2Q/GGB-LIP2.png" alt="Tabela (parte 2)">
+</div>
+
+
+
+
+ 
 
 
 
@@ -407,11 +418,11 @@
 <!-- ==============================
        LINKS EXTERNOS (ANTES DO RODAPÉ)
        ============================== -->
- <div style="
+<div style="
   position:absolute;
   bottom:70px;
-  left:60px;
-  right:60px;
+  left:30px;
+  right:30px;
   font-size:13px;
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -467,6 +478,12 @@
       <a href="#pagina1" class="link-azul">⬅ Voltar ao índice (7 – Tabela de parametrização Yokogawas UM331)</a>
     </div>
 
+
+
+
+
+
+
   <div class="img-stack">
     <img class="stack-part" src="https://i.ibb.co/V41QN5z/pwb1.png" alt="Tabela (parte 1)">
     <img class="stack-part" src="https://i.ibb.co/mr2RXLZV/pwb2.png" alt="Tabela (parte 2)">
@@ -476,11 +493,11 @@
 <!-- ==============================
        LINKS EXTERNOS (ANTES DO RODAPÉ)
        ============================== -->
- <div style="
+<div style="
   position:absolute;
   bottom:70px;
-  left:60px;
-  right:60px;
+  left:30px;
+  right:30px;
   font-size:13px;
   display:grid;
   grid-template-columns: 1fr 1fr;
