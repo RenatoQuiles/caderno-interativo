@@ -34,6 +34,11 @@
   position: relative;
   page-break-after: always;
   box-sizing: border-box;
+  overflow: hidden;
+}
+
+.pagina:last-child {
+  page-break-after: auto;
 }
 
     /* ===== RODAPÉ ===== */
@@ -98,10 +103,17 @@
     margin: 0;
   }
 
-  body {
-    background: white;
+  html, body {
+    width: 210mm;
+    height: auto;
     margin: 0;
     padding: 0;
+    background: white;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .indice {
@@ -118,11 +130,18 @@
     width: 210mm;
     height: 297mm;
     margin: 0;
-    padding: 50px 60px;
+    padding: 30px 30px;
     box-sizing: border-box;
     box-shadow: none;
     page-break-after: always;
     position: relative;
+    overflow: hidden;
+    break-after: page;
+  }
+
+  .pagina:last-child {
+    page-break-after: auto;
+    break-after: auto;
   }
 }
 
@@ -279,9 +298,6 @@
     <!-- *** Itens 5 a 28 (links) *** -->
     <a href="#sec-05" class="link-azul">5 – Lista de ensaios contatores CCAR</a><br>
 
-
-
-    
     <a href="#sec-09" class="link-azul">6 – Tabela de conversão de RTD</a><br>
     <a href="#sec-28" class="link-azul">7 – Tabela de parametrização Yokogawas UM331</a><br>
     <a href="#sec-10" class="link-azul">8 – Tabela de parametrização Yokogawas UM33A</a><br>   
@@ -307,54 +323,20 @@
     <a href="#sec-112" class="link-azul">28 – Parametrização do Relé 39LW - LIP</a><br>
     <a href="#sec-113" class="link-azul">29 – Lista telefônica</a><br>
     <a href="#sec-114" class="link-azul">30 – Links material de apoio </a><br>
-
-   
   </div>
 
 <div class="rodape-info"></div>
 <div class="numero-pagina"></div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ==============================
      PÁGINA 3
      ============================== -->
 <div class="pagina" id="pagina3">
 
-
-
-
-
-
  <h2 style="color: black; text-align: center; font-size: 14px;">
     Dispositivos Primários- U09A/U18A - SMMG.DT - MEG-1 <span style="color:blue;">(AS AÇÕES A SEREM REALIZADAS ESTÃO EM AZUL)</span>
   </h2>
-
-
 
 <a name="gtb19a18a"></a>
   <div style="text-align:right; margin-bottom: 10px;"><a href="#pagina1" style="color:blue; text-decoration:underline; font-size:14px;">⬅ Voltar ao índice (3.19 - GTB-1)</a></div>
@@ -414,7 +396,6 @@
        </span>
 </td>
 
-
 <td style="border: 1px solid black; text-align: center;">
       XXA1EB0<strong>46</strong><span style="color: blue;"></span>GTB1
       </td>
@@ -446,7 +427,6 @@
        </span>
 </td>
 
-
 <td style="border: 1px solid black; text-align: center;">
        <strong>47</strong><span style="color: blue;"></span>
       </td>
@@ -454,7 +434,7 @@
       
       </td>
 <td style="border: 1px solid black; text-align: left; padding-left: 4px;">
-       GENERADOR MOV INDEBIDO UN APLICACION PERM FRENOS------
+       GENERADOR MOV INDEBIDO UN APLICACION PERM FRENOS
       </td>
 
 </tr>
@@ -462,56 +442,9 @@
 </tbody>
 </table>
 
-
-
-
-
 <div class="rodape-info"></div>
 <div class="numero-pagina"></div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- ==============================
      SCRIPTS
