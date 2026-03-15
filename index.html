@@ -154,10 +154,11 @@
     /* ===== EMPILHAR DUAS IMAGENS (SEM ESPAÇO ENTRE ELAS) ===== */
 .img-stack {
   width: 100%;
+  max-height: calc(100% - 170px); /* reserva espaço para rodapé e links */
   margin: 10px 0 0 0;
   line-height: 0;
   break-inside: avoid;
-  padding-bottom: 120px;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
