@@ -351,7 +351,7 @@
     Dispositivos Primários- ULP - SMMG.DT - MEG-1 <span style="color:blue;">(AS AÇÕES A SEREM REALIZADAS ESTÃO EM AZUL)</span>
   </h2>
 
-<a name="umcc"></a>
+<div id="umcc"></div>
   <div style="text-align:right; margin-bottom: 10px;"><a href="#pagina1" style="color:blue; text-decoration:underline; font-size:12px;">⬅ Voltar ao índice (1.10 - UMCC)</a></div>
   
   <div style="background-color: yellow; padding: 10px; text-align: center; font-weight: bold; font-size: 12px;">
@@ -470,7 +470,7 @@
 <!-- ==============================
      PÁGINA 3 (IMAGEM) – EM 2 PARTES EMPILHADAS
      ============================== -->
-<div class="pagina" id="pagina5">
+<div class="pagina" id="pagina3">
 
    <a id="sec-28"></a>
     <div style="text-align:right; margin-bottom:6px;">
@@ -491,7 +491,7 @@
 <!-- ==============================
        LINKS EXTERNOS (ANTES DO RODAPÉ)
        ============================== -->
- <div style="
+<div class="links-externos-img" style="
   position:absolute;
   bottom:70px;
   left:60px;
@@ -800,21 +800,7 @@ document.addEventListener("click", function(e) {
 })();
 
 /* ===== Numeração automática das páginas ===== */
-document.addEventListener("DOMContentLoaded", function () {
 
-  const paginas = document.querySelectorAll(".pagina");
-
-  paginas.forEach((pagina, index) => {
-
-    const numero = pagina.querySelector(".numero-pagina");
-
-    if (numero) {
-      numero.textContent = "Página " + (index + 1);
-    }
-
-  });
-
-});
 document.addEventListener("DOMContentLoaded", function () {
   const textoRodape = "por Renato Almeida – reg. 47232 – ramal 4918 – (Atualizado em Março 2026)";
   const paginas = document.querySelectorAll(".pagina");
@@ -832,30 +818,36 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 /* ===== Ajusta automaticamente blocos de imagens empilhadas ===== */
-document.addEventListener("DOMContentLoaded", function () {
+/* ===== Ajusta automaticamente blocos de imagens empilhadas ===== */
+window.addEventListener("load", function () {
+
   const paginas = document.querySelectorAll(".pagina");
 
   paginas.forEach((pagina) => {
+
     const stack = pagina.querySelector(".img-stack");
     const links = pagina.querySelector(".links-externos-img");
-    const rodape = pagina.querySelector(".rodape-info");
-    const numero = pagina.querySelector(".numero-pagina");
 
-    if (!stack || !links || !rodape || !numero) return;
+    if (!stack || !links) return;
 
     stack.style.transform = "scale(1)";
 
     const topoStack = stack.offsetTop;
     const topoLinks = links.offsetTop;
 
-    const alturaDisponivel = topoLinks - topoStack - 10;
+    const alturaDisponivel = topoLinks - topoStack - 15;
     const alturaReal = stack.scrollHeight;
 
     if (alturaReal > alturaDisponivel) {
+
       const escala = alturaDisponivel / alturaReal;
-      stack.style.transform = `scale(${escala})`;
+
+      stack.style.transform = "scale(" + escala + ")";
+
     }
+
   });
+
 });
 
 
