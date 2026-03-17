@@ -361,97 +361,85 @@
 
 
 <!-- ==============================
-     PÁGINA - LISTA TELEFÔNICA
+     PÁGINA - LISTA TELEFÔNICA (A4)
      ============================== -->
 <div class="pagina" id="pagina-lista">
 
   <a id="sec-113"></a>
+
   <div style="text-align:right; margin-bottom:6px;">
     <a href="#pagina1" class="link-azul">
       ⬅ Voltar ao índice (29 – Lista telefônica)
     </a>
   </div>
 
-  <h2 style="text-align:center; font-size:16px; margin-bottom:10px;">
+  <h2 style="text-align:center; font-size:14px; margin-bottom:8px;">
     LISTA TELEFÔNICA
   </h2>
 
-  <table style="width:100%; border-collapse: collapse; font-size: 10px;">
+  <!-- GRID COM 5 COLUNAS (igual ao estilo da imagem) -->
+  <div style="
+    display:grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap:8px;
+    font-size:9px;
+  ">
 
-    <!-- CABEÇALHO -->
-    <thead>
-      <tr style="background:#ccc; font-weight:bold;">
-        <th style="border:1px solid black;">SETOR</th>
-        <th style="border:1px solid black;">NOME</th>
-        <th style="border:1px solid black;">RAMAL</th>
+    <!-- BLOCO -->
+    <table style="border-collapse:collapse; width:100%;">
+      <tr style="background:#bfbfbf; font-weight:bold;">
+        <td colspan="2" style="border:1px solid black; text-align:center;">SMMG_DT</td>
       </tr>
-    </thead>
+      <tr><td style="border:1px solid black;">Adilson</td><td style="border:1px solid black; text-align:right;">3432</td></tr>
+      <tr><td style="border:1px solid black;">André</td><td style="border:1px solid black; text-align:right;">3510</td></tr>
+      <tr><td style="border:1px solid black;">Carlos</td><td style="border:1px solid black; text-align:right;">3421</td></tr>
+      <tr><td style="border:1px solid black;">Eduardo</td><td style="border:1px solid black; text-align:right;">3478</td></tr>
+      <tr><td style="border:1px solid black;">Fábio</td><td style="border:1px solid black; text-align:right;">3490</td></tr>
+    </table>
 
-    <tbody>
-
-      <!-- EXEMPLOS (substitua/complete com seus dados) -->
-      <tr onclick="this.classList.toggle('selecionada');">
-        <td style="border:1px solid black;">SMMG_DT</td>
-        <td style="border:1px solid black;">Adilson</td>
-        <td style="border:1px solid black;">3432</td>
+    <!-- BLOCO -->
+    <table style="border-collapse:collapse; width:100%;">
+      <tr style="background:#bfbfbf; font-weight:bold;">
+        <td colspan="2" style="border:1px solid black; text-align:center;">SMUT_DT</td>
       </tr>
+      <tr><td style="border:1px solid black;">Fernando</td><td style="border:1px solid black; text-align:right;">3601</td></tr>
+      <tr><td style="border:1px solid black;">Gabriel</td><td style="border:1px solid black; text-align:right;">3622</td></tr>
+      <tr><td style="border:1px solid black;">Henrique</td><td style="border:1px solid black; text-align:right;">3650</td></tr>
+      <tr><td style="border:1px solid black;">Igor</td><td style="border:1px solid black; text-align:right;">3618</td></tr>
+      <tr><td style="border:1px solid black;">João</td><td style="border:1px solid black; text-align:right;">3633</td></tr>
+    </table>
 
-      <tr onclick="this.classList.toggle('selecionada');">
-        <td style="border:1px solid black;">SMMG_DT</td>
-        <td style="border:1px solid black;">André</td>
-        <td style="border:1px solid black;">3510</td>
+    <!-- BLOCO -->
+    <table style="border-collapse:collapse; width:100%;">
+      <tr style="background:#bfbfbf; font-weight:bold;">
+        <td colspan="2" style="border:1px solid black; text-align:center;">SODT</td>
       </tr>
+      <tr><td style="border:1px solid black;">Lucas</td><td style="border:1px solid black; text-align:right;">3812</td></tr>
+      <tr><td style="border:1px solid black;">Marcos</td><td style="border:1px solid black; text-align:right;">3825</td></tr>
+      <tr><td style="border:1px solid black;">Paulo</td><td style="border:1px solid black; text-align:right;">3801</td></tr>
+      <tr><td style="border:1px solid black;">Rafael</td><td style="border:1px solid black; text-align:right;">3840</td></tr>
+      <tr><td style="border:1px solid black;">Tiago</td><td style="border:1px solid black; text-align:right;">3832</td></tr>
+    </table>
 
-      <tr onclick="this.classList.toggle('selecionada');">
-        <td style="border:1px solid black;">SMMG_DT</td>
-        <td style="border:1px solid black;">Carlos</td>
-        <td style="border:1px solid black;">3421</td>
+    <!-- BLOCO -->
+    <table style="border-collapse:collapse; width:100%;">
+      <tr style="background:#ff9999; font-weight:bold;">
+        <td colspan="2" style="border:1px solid black; text-align:center;">BOMBEIROS</td>
       </tr>
+      <tr><td style="border:1px solid black;">Posto</td><td style="border:1px solid black; text-align:right;">3003</td></tr>
+      <tr><td style="border:1px solid black;">Emergência</td><td style="border:1px solid black; text-align:right;">193</td></tr>
+    </table>
 
-      <tr onclick="this.classList.toggle('selecionada');">
-        <td style="border:1px solid black;">SMMG_DT</td>
-        <td style="border:1px solid black;">Eduardo</td>
-        <td style="border:1px solid black;">3478</td>
+    <!-- BLOCO -->
+    <table style="border-collapse:collapse; width:100%;">
+      <tr style="background:#99ccff; font-weight:bold;">
+        <td colspan="2" style="border:1px solid black; text-align:center;">MÉDICO</td>
       </tr>
+      <tr><td style="border:1px solid black;">Ambulatório</td><td style="border:1px solid black; text-align:right;">3100</td></tr>
+      <tr><td style="border:1px solid black;">Emergência</td><td style="border:1px solid black; text-align:right;">3120</td></tr>
+    </table>
 
-      <tr onclick="this.classList.toggle('selecionada');">
-        <td style="border:1px solid black;">SMUT_DT</td>
-        <td style="border:1px solid black;">Fernando</td>
-        <td style="border:1px solid black;">3601</td>
-      </tr>
-
-      <tr onclick="this.classList.toggle('selecionada');">
-        <td style="border:1px solid black;">SMUT_DT</td>
-        <td style="border:1px solid black;">Gabriel</td>
-        <td style="border:1px solid black;">3622</td>
-      </tr>
-
-      <tr onclick="this.classList.toggle('selecionada');">
-        <td style="border:1px solid black;">SMUT_DT</td>
-        <td style="border:1px solid black;">Henrique</td>
-        <td style="border:1px solid black;">3650</td>
-      </tr>
-
-      <tr onclick="this.classList.toggle('selecionada');">
-        <td style="border:1px solid black;">SODT</td>
-        <td style="border:1px solid black;">João</td>
-        <td style="border:1px solid black;">3801</td>
-      </tr>
-
-      <tr onclick="this.classList.toggle('selecionada');">
-        <td style="border:1px solid black;">SODT</td>
-        <td style="border:1px solid black;">Lucas</td>
-        <td style="border:1px solid black;">3812</td>
-      </tr>
-
-      <tr onclick="this.classList.toggle('selecionada');">
-        <td style="border:1px solid black;">SODT</td>
-        <td style="border:1px solid black;">Marcos</td>
-        <td style="border:1px solid black;">3825</td>
-      </tr>
-
-    </tbody>
-  </table>
+  </div>
 
   <div class="rodape-info"></div>
   <div class="numero-pagina"></div>
