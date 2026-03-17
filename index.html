@@ -11,9 +11,6 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  -webkit-text-size-adjust: 100%;
-}
 .rodape-info {
   position: absolute;
   bottom: 15px;
@@ -26,12 +23,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-    body {
-      margin: 0;
-      padding: 0;
-      background: #ddd;
-      font-family: Arial, sans-serif;
-    }
+    
 
     /* ===== CADA PÁGINA A4 NA TELA ===== */
    .pagina {
@@ -112,12 +104,12 @@ body {
 }
 
 /* ===== AJUSTE AUTOMÁTICO DE ZOOM NA TELA ===== */
-
 :root {
-  --escala: 0.7;
+  --escala: 0.88;
 }
 
 body {
+  -webkit-text-size-adjust: 100%;
   margin: 0;
   padding: 0;
   background: #ddd;
@@ -128,21 +120,21 @@ body {
   align-items: center;
 }
 
-
+#zoom-wrapper {
+  transform: scale(var(--escala));
+  transform-origin: top center;
+}
 
 @media screen and (max-width: 768px) {
   :root {
-    --escala: 0.6;
+    --escala: 0.80;
   }
 }
 
 @media print {
-  body {
-    display: block;
-  }
-
   #zoom-wrapper {
     transform: none;
+    width: auto;
   }
 }
     /* ===== MODO IMPRESSÃO ===== */
@@ -585,7 +577,7 @@ body {
 
 
 
-<script>
+
 <!-- ==============================
      SCRIPTS
      ============================== -->
@@ -749,6 +741,6 @@ window.addEventListener("load", function () {
 
 
 </script>
-
+</div>
 </body>
 </html>
