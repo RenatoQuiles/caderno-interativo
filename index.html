@@ -189,9 +189,32 @@ body {
   border: 0;
   image-rendering: auto;
 }
+/* ===== CONTROLE DE ZOOM ===== */
+#controle-zoom {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+}
+
+#controle-zoom button {
+  font-size: 18px;
+  padding: 5px 10px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+/* ===== ÁREA QUE VAI DAR ZOOM ===== */
+#zoom-wrapper {
+  transform-origin: top center;
+}
   </style>
 </head>
 <body>
+<div id="controle-zoom">
+  <button onclick="zoomMais()">+</button>
+  <button onclick="zoomMenos()">−</button>
+</div>
 <div id="zoom-wrapper">
 <!-- ==============================
      PÁGINA 1 - CAPA + ÍNDICE
@@ -4168,7 +4191,31 @@ document.addEventListener("wheel", function(e) {
     aplicarZoom();
   }
 }, { passive: false });
+let nivelZoom = 1;
+const zoomMin = 0.5;
+const zoomMax = 2;
+const passoZoom = 0.1;
+
+function aplicarZoom() {
+  const wrapper = document.getElementById("zoom-wrapper");
+  if (wrapper) {
+    wrapper.style.transform = "scale(" + nivelZoom + ")";
+  }
+}
+
+function zoomMais() {
+  nivelZoom += passoZoom;
+  if (nivelZoom > zoomMax) nivelZoom = zoomMax;
+  aplicarZoom();
+}
+
+function zoomMenos() {
+  nivelZoom -= passoZoom;
+  if (nivelZoom < zoomMin) nivelZoom = zoomMin;
+  aplicarZoom();
+}
 </script>
+</div>
 </div>
 </body>
 </html>
