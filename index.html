@@ -112,22 +112,28 @@ body {
 }
 
 /* ===== AJUSTE AUTOMÁTICO DE ZOOM NA TELA ===== */
+:root {
+  --escala: 0.88;
+}
+
 #zoom-wrapper {
+  transform: scale(var(--escala));
   transform-origin: top center;
+  width: calc(100% / var(--escala));
 }
 
-@media screen and (min-width: 900px) {
-  #zoom-wrapper {
-    transform: scale(0.85);
+@media screen and (max-width: 768px) {
+  :root {
+    --escala: 0.80;
   }
 }
 
-@media screen and (max-width: 899px) {
+@media print {
   #zoom-wrapper {
-    transform: scale(1);
+    transform: none;
+    width: 100%;
   }
 }
-
     /* ===== MODO IMPRESSÃO ===== */
     @media print {
   @page {
@@ -205,6 +211,7 @@ body {
   </style>
 </head>
 <body>
+<div id="zoom-wrapper">
 
 <!-- ==============================
      PÁGINA 1 - CAPA + ÍNDICE
@@ -567,7 +574,7 @@ body {
 
 
 
-
+<script>
 <!-- ==============================
      SCRIPTS
      ============================== -->
