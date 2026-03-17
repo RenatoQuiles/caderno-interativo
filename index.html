@@ -2,11 +2,18 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caderno de Ensaios - 120 Páginas</title>
   <style>
 
     /* ===== CONFIGURAÇÃO GERAL DA PÁGINA ===== */
+html {
+  -webkit-text-size-adjust: 100%;
+}
 
+body {
+  -webkit-text-size-adjust: 100%;
+}
 .rodape-info {
   position: absolute;
   bottom: 15px;
@@ -15,6 +22,9 @@
   text-align: center;
   font-size: 12px;
   color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
     body {
       margin: 0;
@@ -94,7 +104,12 @@
 
     /* ===== LINKS UTILITÁRIOS ===== */
     .hidden { display: none !important; }
-    .link-azul { color: blue; text-decoration: underline; cursor: pointer; }
+    .link-azul {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  -webkit-text-size-adjust: 100%;
+}
 
     /* ===== MODO IMPRESSÃO ===== */
     @media print {
