@@ -112,29 +112,40 @@ body {
 }
 
 /* ===== AJUSTE AUTOMÁTICO DE ZOOM NA TELA ===== */
+
 :root {
-  --escala: 0.60;
+  --escala: 0.88;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ddd;
+  font-family: Arial, sans-serif;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #zoom-wrapper {
   transform: scale(var(--escala));
   transform-origin: top center;
-  width: calc(100% / var(--escala));
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
+
 @media screen and (max-width: 768px) {
   :root {
-    --escala: 0.50;
+    --escala: 0.80;
   }
 }
 
 @media print {
+  body {
+    display: block;
+  }
+
   #zoom-wrapper {
     transform: none;
-    width: 100%;
   }
 }
     /* ===== MODO IMPRESSÃO ===== */
@@ -369,7 +380,7 @@ body {
     <a href="#sec-111" class="link-azul">27 – Relé de frequência URPF4000</a><br>
     <a href="#sec-112" class="link-azul">28 – Parametrização do Relé 39LW - LIP</a><br>
     <a href="#sec-113" class="link-azul">29 – Lista telefônica</a><br>
-    <a href="#sec-114" class="link-azul">30 – Links material de apoio </a><br>
+    <a href="#sec-114" class="link-azul">30 – Links material de apoio**********-------- </a><br>
   </div>
 
 <div class="rodape-info"></div>
