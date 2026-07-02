@@ -405,9 +405,6 @@
 
 
 
-
-
-
 <!-- ==============================
      PÁGINA 14
      ============================== -->
@@ -1485,13 +1482,13 @@
        Descritivo SCADA 60 Hz
       </th>
 <th style="border: 2px solid black;">
+      Jumpear na Borneira
+      </th>
+<th style="border: 2px solid black;">
        Temporização
       </th>
 <th style="border: 2px solid black;">
        Ação
-      </th>
-<th style="border: 2px solid black;">
-       Borne
       </th>
 <th style="border: 2px solid black;">
        Disp. Primario
@@ -1503,6 +1500,7 @@
 
 
 </tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
       TOMA_AGUA CTM ALIM_1
@@ -1511,6 +1509,9 @@
 <td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
        TOMA_AGUA CTM ALIM_1
 (125VCC) / BARRA (24VCC)
+      </td>
+<td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
+      X22:11 / X22:12
       </td>
 <td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
        Instantáneo
@@ -1525,9 +1526,7 @@ relé VAX
        RQ0.2 (13-14) 
       </td>
 
-<td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
-      X22:11 / X22:12
-      </td>
+
 </tr>
 
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
@@ -1550,28 +1549,64 @@ relé VBX
 
 
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
-<td style="border: 1px solid black; text-align: left; padding-left: 4px;">
+<td rowspan="3" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
      TOMA_AGUA CONDIC
       </td>
-<td style="border: 1px solid black; text-align: center;">
+<td rowspan="3" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
        TOMA_AGUA CONDIC
       </td>
-<td style="border: 1px solid black; text-align: center;">
+<td rowspan="3" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
+      X22:3 / X22:6
+      </td>
+<td rowspan="3" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
       Instantáneo
       </td>
 
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
-        Abrir 72P (21-22) ou 72Q (21-22) ou 72G
+        Abrir 72G 
        </span>
 </td>
+
 <td style="border: 1px solid black; text-align: center;">
-      X22:3 / X22:6
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       RQ0.1 (13-14) ou 72P (21-22) ou 72Q (21-22)
+       RQ0.1 (13-14) 
       </td>
 </tr>
+
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+
+
+
+
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Abrir 72Q (21-22)
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+       72Q
+      </td>
+</tr>
+
+<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
+
+
+
+
+
+<td style="border: 1px solid black; text-align: center; color: blue;">
+<span style="color: blue;">
+        Abrir 72P (21-22)
+       </span>
+</td>
+
+<td style="border: 1px solid black; text-align: center;">
+       72P
+      </td>
+</tr>
+
 
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: left; padding-left: 4px;">
@@ -1583,6 +1618,9 @@ relé VBX
 (125VCC) / FONTE
       </td>
 <td style="border: 1px solid black; text-align: center;">
+       X22:19 / X22:20
+      </td>
+<td style="border: 1px solid black; text-align: center;">
       Instantáneo
       </td>
 <td style="border: 1px solid black; text-align: center; color: blue;">
@@ -1590,9 +1628,7 @@ relé VBX
          Abrir disjuntor 72-2
        </span>
 </td>
-<td style="border: 1px solid black; text-align: center;">
-       X22:19 / X22:20
-      </td>
+
 <td style="border: 1px solid black; text-align: center;">
        RQ0.3 (13-14)
       </td>
@@ -1609,6 +1645,9 @@ BAJO
 BAIXO
       </td>
 <td style="border: 1px solid black; text-align: center;">
+      X22:47 / X22:48
+      </td>
+<td style="border: 1px solid black; text-align: center;">
        Instantáneo
       </td>
 <td style="border: 1px solid black; text-align: center; color: blue;">
@@ -1619,14 +1658,14 @@ pulso na chave CHNX
 BR) 
        </span>
 </td>
-<td style="border: 1px solid black; text-align: center;">
-      X22:47 / X22:48
-      </td>
+
 
 <td style="border: 1px solid black; text-align: center;">
       RQ2.6 (13-14)
       </td>
 </tr>
+
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: left; padding-left: 4px;">
      TOMA_AGUA SIST_HIDR PRESION
@@ -1635,6 +1674,9 @@ ALTA
 <td style="border: 1px solid black; text-align: center;">
       TOMA_AGUA SIST_HIDR PRESSAO
 ALTA
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      X22:35 / X22:36
       </td>
 <td style="border: 1px solid black; text-align: center;">
        Instantáneo
@@ -1648,13 +1690,12 @@ BR)
        </span>
 </td>
 
-<td style="border: 1px solid black; text-align: center;">
-      X22:35 / X22:36
-      </td>
+
 <td style="border: 1px solid black; text-align: center;">
       RQ2.0 (13-14)
       </td>
 </tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: left; padding-left: 4px;">
      TOMA_AGUA SERVOMOTOR
@@ -1663,6 +1704,9 @@ PRESION/NIVEL BAJO
 <td style="border: 1px solid black; text-align: center;">
        TOMA_AGUA SERVOMOTOR
 PRESSAO/NIVEL BAIXO
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      X22:33 / X22:34
       </td>
 <td style="border: 1px solid black; text-align: center;">
        20 s
@@ -1677,9 +1721,7 @@ BR)
        </span>
 </td>
 
-<td style="border: 1px solid black; text-align: center;">
-      X22:33 / X22:34
-      </td>
+
 <td style="border: 1px solid black; text-align: center;">
       RQ1.7 (13-14)
       </td>
@@ -1693,6 +1735,9 @@ BR)
      TOMA_AGUA CIRC MOTOR_1/2
       </td>
 <td style="border: 1px solid black; text-align: center;">
+       X22:27 / X22:28
+      </td>
+<td style="border: 1px solid black; text-align: center;">
        Instantáneo
       </td>
 
@@ -1702,9 +1747,7 @@ BR)
 52-2 
        </span>
 </td>
-<td style="border: 1px solid black; text-align: center;">
-       X22:27 / X22:28
-      </td>
+
 
 <td style="border: 1px solid black; text-align: center;">
        RQ1.4 (13-14)
@@ -1744,14 +1787,15 @@ BR)
        Descritivo SCADA 60 Hz
       </th>
 <th style="border: 2px solid black;">
+       Jumpear na Borneira
+      </th>
+<th style="border: 2px solid black;">
        Temporização
       </th>
 <th style="border: 2px solid black;">
        Ação
       </th>
-<th style="border: 2px solid black;">
-       Borne
-      </th>
+
 <th style="border: 2px solid black;">
        Disp. Primario
       </th>
@@ -1766,15 +1810,19 @@ BR)
 
 
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
-<td style="border: 1px solid black; text-align: left; padding-left: 4px;">
+<td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
       TOMA_AGUA COMP SERV
 CIERRE_BLOQ_UNID
       </td>
-<td style="border: 1px solid black; text-align: center;">
+<td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
        TOMA_AGUA COMP SERV
 FECHAMENT_BLOQ_UNID
       </td>
-<td style="border: 1px solid black; text-align: center;">
+<td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
+       X22:13 / X22:14
+      </td>
+
+<td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
        Instantáneo
       </td>
 <td style="border: 1px solid black; text-align: center; color: blue;">
@@ -1785,30 +1833,19 @@ pulso na chave 86MX
 BR)
        </span>
 </td>
-<td style="border: 1px solid black; text-align: center;">
-       X22:13 / X22:14
-      </td>
+
 
 <td style="border: 1px solid black; text-align: center;">
-       RQ0.6 (13-14) ou CN (41-44)
+       RQ0.6 (13-14)
       </td>
 </tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
-<td style="border: 1px solid black; text-align: left; padding-left: 4px;">
-     TOMA_AGUA COMP SERV
-CIERRE_BLOQ_UNID
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-     TOMA_AGUA COMP SERV
-FECHAMENT_BLOQ_UNID
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       Instantáneo
-      </td>
+
 
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
-       1- Abrir disjuntor 72P e
+              1- Abrir disjuntor 72P e
 posteriormente dar
 pulso na chave CNX da
 bancada de teste.
@@ -1816,16 +1853,16 @@ bancada de teste.
 botoeira BR e
 posteriormente
 normalizar disjuntor
-72P 
+72P
        </span>
 </td>
 
 
 <td style="border: 1px solid black; text-align: center;">
-      CN
+       CN (41-44)
       </td>
-
 </tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: left; padding-left: 4px;">
      TOMA_AGUA COMP_SERV
@@ -1834,6 +1871,9 @@ ABIERT_TOTAL
 <td style="border: 1px solid black; text-align: center;">
       TOMA_AGUA COMP_SERV
 ABERT_TOTAL
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       X22:21 / X22:22
       </td>
 <td style="border: 1px solid black; text-align: center;">
       2 s (para
@@ -1853,6 +1893,7 @@ aberta)
        RQ1.1
       </td>
 </tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: left; padding-left: 4px;">
       TOMA_AGUA SOLEN_SD1
@@ -1863,21 +1904,21 @@ FALLA_MEC
 FALHA_MEC
       </td>
 <td style="border: 1px solid black; text-align: center;">
+       X22:37 / X22:38
+      </td>
+<td style="border: 1px solid black; text-align: center;">
        2 s
       </td>
 
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
-       Bancada de teste:
-fechar a chave PR5X
-ou retirar relé SX1 caso
-ja estaja atuado 
+Retirar relé SX1 
        </span>
 </td>
 
 
 <td style="border: 1px solid black; text-align: center;">
-       RQ2.1
+       RQ2.1 (13-14)
       </td>
 </tr>
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
@@ -1890,19 +1931,19 @@ FALLA_MEC
 FALHA_MEC
       </td>
 <td style="border: 1px solid black; text-align: center;">
+      X22:39 / X22:40
+      </td>
+<td style="border: 1px solid black; text-align: center;">
        2 s
       </td>
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
-         Bancada de teste:
-fechar a chave PR6X
-ou retirar relé SX2 caso
-ja estaja atuado
+        Retirar relé SX2 
        </span>
 </td>
 
 <td style="border: 1px solid black; text-align: center;">
-       RQ2.2
+       RQ2.2 (13-14)
       </td>
 </tr>
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
@@ -1915,55 +1956,34 @@ FALLA_MEC
 FALHA_MEC
       </td>
 <td style="border: 1px solid black; text-align: center;">
+       X22:41 / X22:42
+      </td>
+<td style="border: 1px solid black; text-align: center;">
        2 s
       </td>
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
-       Bancada de teste:
-fechar a chave PR7X
-ou retirar relé SX3 caso
-ja estaja atuado 
+ Retirar relé SX3
        </span>
 </td>
 
 
 <td style="border: 1px solid black; text-align: center;">
-       RQ2.3
+       RQ2.3 (13-14)
       </td>
 </tr>
-<tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
-<td style="border: 1px solid black; text-align: left; padding-left: 4px;">
-     TOMA_AGUA SOLEN_SD3/SD4
-FALLA_MEC
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       TOMA_AGUA SOLEN_SD3/SD4
-FALHA_MEC
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       2 s
-      </td>
-
-<td style="border: 1px solid black; text-align: center; color: blue;">
-<span style="color: blue;">
-       Bancada de teste:
-fechar a chave PR7X
-ou retirar relé SX3 caso
-ja estaja atuado 
-       </span>
-</td>
 
 
-<td style="border: 1px solid black; text-align: center;">
-       RQ2.3
-      </td>
-</tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: left; padding-left: 4px;">
       TOMA_AGUA BOMB_1/2
       </td>
 <td style="border: 1px solid black; text-align: center;">
        TOMA_AGUA BOMB_1/2
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       X22:43 / X22:44
       </td>
 <td style="border: 1px solid black; text-align: center;">
        Instantáneo
@@ -1980,9 +2000,10 @@ vazio)
 
 
 <td style="border: 1px solid black; text-align: center;">
-       RQ2.4
+RQ2.4 (13-14)
       </td>
 </tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: left; padding-left: 4px;">
      TOMA_AGUA COMP_SERV
@@ -1991,6 +2012,9 @@ CERRAD_TOTAL
 <td style="border: 1px solid black; text-align: center;">
        TOMA_AGUA COMP_SERV
 FECHAD_TOTAL
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+      X22:23 / X22:24
       </td>
 <td style="border: 1px solid black; text-align: center;">
        Instantáneo
@@ -2004,7 +2028,7 @@ FECHAD_TOTAL
 
 
 <td style="border: 1px solid black; text-align: center;">
-       RQ1.2
+      RQ1.2 (13-14)
       </td>
 </tr>
 
@@ -2033,6 +2057,9 @@ FECHAD_TOTAL
       TOMA_AGUA AGUAS_EQUILIBR
       </td>
 <td style="border: 1px solid black; text-align: center;">
+       X22:1 / X22:2
+      </td>
+<td style="border: 1px solid black; text-align: center;">
       Instantáneo
       </td>
 
@@ -2044,9 +2071,10 @@ FECHAD_TOTAL
 
 
 <td style="border: 1px solid black; text-align: center;">
-       RQ0.0
+       RQ0.0 (13-14)
       </td>
 </tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: left; padding-left: 4px;">
       TOMA_AGUA
@@ -2057,26 +2085,33 @@ SOLEN_SD1/SD2/SD3/SD4
 SOLEN_SD1/SD2/SD3/SD4
       </td>
 <td style="border: 1px solid black; text-align: center;">
+      X22:49 / X22:50
+      </td>
+<td style="border: 1px solid black; text-align: center;">
        3 s
       </td>
 
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
-     Abrir disjuntor 72A 
+     Abrir disjuntor 72A e retirar SX1 
        </span>
 </td>
 
 
 <td style="border: 1px solid black; text-align: center;">
-      RQ2.7
+      RQ2.7 (13-14)
       </td>
 </tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: left; padding-left: 4px;">
     TOMA_AGUA CABLE FLOJO
       </td>
 <td style="border: 1px solid black; text-align: center;">
        TOMA_AGUA CABO FROUXO
+      </td>
+<td style="border: 1px solid black; text-align: center;">
+       X22:9 / X22:10
       </td>
 <td style="border: 1px solid black; text-align: center;">
        2 s
@@ -2091,7 +2126,7 @@ fechar a chave FCFX
 
 
 <td style="border: 1px solid black; text-align: center;">
-       RQ0.4
+       RQ0.4 (13-14)
       </td>
 </tr>
 
@@ -2108,29 +2143,36 @@ fechar a chave FCFX
       TOMA_AGUA HASTE EMPERRADA
       </td>
 <td style="border: 1px solid black; text-align: center;">
+      X22:25 / X22:26
+      </td>
+<td style="border: 1px solid black; text-align: center;">
       Instantáneo
       </td>
 
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
        Bancada de teste:
-fechar FC1X e FCHX 
+fechar FC1X
        </span>
 </td>
 
 
 <td style="border: 1px solid black; text-align: center;">
-       RQ1.3
+       RQ1.3 (13-14) 
       </td>
 </tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
-<td style="border: 1px solid black; text-align: left; padding-left: 4px;">
+<td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
       TOMA_AGUA CONDIC (URG)
       </td>
-<td style="border: 1px solid black; text-align: center;">
+<td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
        TOMA_AGUA CONDIC (URG)
       </td>
-<td style="border: 1px solid black; text-align: center;">
+<td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
+       X22:51 / X22:53
+      </td>
+<td rowspan="2" style="border: 1px solid black; text-align: left ;padding-left: 4px;">
        Instantáneo
       </td>
 
@@ -2143,19 +2185,12 @@ fechar FC1X e FCHX
 
 
 <td style="border: 1px solid black; text-align: center;">
-      RQ3.0
+     RQ3.0 (13-14)
       </td>
 </tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
-<td style="border: 1px solid black; text-align: left; padding-left: 4px;">
-    TOMA_AGUA CONDIC (URG)
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       TOMA_AGUA CONDIC (URG)
-      </td>
-<td style="border: 1px solid black; text-align: center;">
-       Instantáneo
-      </td>
+
 
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
@@ -2165,7 +2200,7 @@ fechar FC1X e FCHX
 
 
 <td style="border: 1px solid black; text-align: center;">
-       RQ6.2 e RQ6.3
+       RQ6.2 (41-42) e RQ6.3 (41-42)
       </td>
 </tr>
 
@@ -2182,9 +2217,11 @@ LIM_DERIVA
 LIM_DERIVA
       </td>
 <td style="border: 1px solid black; text-align: center;">
+      X22:17 / X22:18
+      </td>
+<td style="border: 1px solid black; text-align: center;">
       Instantáneo
       </td>
-
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
        Jumper X20: 37-38 
@@ -2193,9 +2230,10 @@ LIM_DERIVA
 
 
 <td style="border: 1px solid black; text-align: center;">
-       FC2
+       FC2 (X20:37-38); (X26:13-14); FC2 (23-24)
       </td>
 </tr>
+
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
 <td style="border: 1px solid black; text-align: left; padding-left: 4px;">
      TOMA_AGUA REPOS_1
@@ -2206,7 +2244,9 @@ LIM_DERIVA
 <td style="border: 1px solid black; text-align: center;">
        Instantáneo
       </td>
-
+<td style="border: 1px solid black; text-align: center;">
+       X22:29 / X22:30
+      </td>
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
    Forçar saida Q1.5
@@ -2215,7 +2255,7 @@ LIM_DERIVA
 
 
 <td style="border: 1px solid black; text-align: center;">
-      RQ1.5
+      RQ1.5 (13-14)
       </td>
 </tr>
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
@@ -2228,7 +2268,9 @@ LIM_DERIVA
 <td style="border: 1px solid black; text-align: center;">
        Instantáneo
       </td>
-
+<td style="border: 1px solid black; text-align: center;">
+      X22:31 / X22:32
+      </td>
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
    Forçar saida Q1.6
@@ -2237,7 +2279,7 @@ LIM_DERIVA
 
 
 <td style="border: 1px solid black; text-align: center;">
-       RQ1.6
+      RQ1.6 (13-14)
       </td>
 </tr>
 
@@ -2252,7 +2294,9 @@ DERIVA
 <td style="border: 1px solid black; text-align: center;">
        Instantáneo
       </td>
-
+<td style="border: 1px solid black; text-align: center;">
+       X22:15 / X22:16
+      </td>
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
    Forçar saida Q0.7
@@ -2261,7 +2305,7 @@ DERIVA
 
 
 <td style="border: 1px solid black; text-align: center;">
-      RQ0.7
+      RQ0.7 (13-14) 
       </td>
 </tr>
 <tr class="linha-interativa" onclick="this.classList.toggle('selecionada');">
@@ -2278,6 +2322,9 @@ NO_ATUAD
 <td style="border: 1px solid black; text-align: center;">
        Instantáneo
       </td>
+<td style="border: 1px solid black; text-align: center;">
+       X22:45 / X22:46
+      </td>
 
 <td style="border: 1px solid black; text-align: center; color: blue;">
 <span style="color: blue;">
@@ -2287,7 +2334,7 @@ NO_ATUAD
 
 
 <td style="border: 1px solid black; text-align: center;">
-      RQ2.5
+      RQ2.5 (13-14)
       </td>
 </tr>
 
