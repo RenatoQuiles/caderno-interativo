@@ -66,9 +66,14 @@
     .indice-linha {
       display: flex;
       align-items: baseline;
-      width: 100%;
+      width: calc(100% - 70px);
       gap: 5px;
       box-sizing: border-box;
+    }
+
+    /* Evita que os <br> entre os itens principais criem linhas vazias. */
+    .indice > br {
+      display: none;
     }
 
     .indice-titulo {
@@ -47498,7 +47503,9 @@ MGI Vibração anormal 2 canal 1
 
         if (!idAlvo) return;
 
-        const alvo = document.getElementById(idAlvo);
+        /* Alguns destinos antigos do caderno usam name= em vez de id=.
+           Procuramos das duas formas para a numeração automática funcionar. */
+        const alvo = document.getElementById(idAlvo) || document.getElementsByName(idAlvo)[0];
         if (!alvo) return;
 
         const paginaDoAssunto = alvo.closest(".pagina");
