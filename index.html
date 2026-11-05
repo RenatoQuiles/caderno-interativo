@@ -43708,6 +43708,22 @@ MGI Vibração anormal 2 canal 1
   <img class="stack-part" src="https://i.ibb.co/TBvnXzT1/sonda-LC300.png" alt="Tabela (parte 1)">
  </div>
 
+ <div style="margin-bottom:12px;">
+Posição 	Função
+  0 		Visualização da capacitância medida (pF)
+  1 		LRV: nível mínimo, referência de 4 mA
+  2	 	URV: nível máximo, referência de 20 mA
+  3 		Definição da corrente de sinalização de falhas
+  4 		Diagnóstico e reinicialização de falha
+  5 		Amortecimento da medição
+
+
+  </div>
+
+
+
+
+
 <h2 style="color: black; text-align: center; font-size: 20px;">
     Passos para configuração da sonda <span style="color:blue;"></span>
   </h2>
@@ -43739,27 +43755,47 @@ MGI Vibração anormal 2 canal 1
 
   <div style="margin-bottom:12px;">
    1º - Girar o seletor de menu até a posição 3;
+A posição 3 configura o comportamento da saída analógica de 4–20 mA quando a sonda Siemens LC300 identifica uma falha.
+Ela permite definir qual corrente será enviada ao CLP para indicar uma condição de erro.
+
+Configuração	 Corrente de saída 			Significado
+  C:Hi 		              22 mA 				 Sinaliza falha com corrente alta
+  C:Lo 		     3,6 mA 				 Sinaliza falha com corrente baixa
+  C:An 	 	Mantém o valor medido no momento da falha 	  Desativa a sinalização de falha pela corrente
+  </div>
+<h2 style="color: black; text-align: center; font-size: 16px;">
+    Como configurar <span style="color:blue;"></span>
+  </h2>
+
+<div style="margin-bottom:12px;">
+2. Pressione o botão superior por mais de 1 segundo para selecionar C:Hi (22 mA).
+3. Pressione o botão inferior por mais de 1 segundo para selecionar C:Lo (3,6 mA).
+4. Pressione os dois botões simultaneamente por mais de 1 segundo para selecionar
+C:An.
+  </div>
+<h2 style="color: black; text-align: center; font-size: 16px;">
+    Por padrão deixar em Hi (22mA) <span style="color:blue;"></span>
+  </h2>
+
+
+  <div style="margin-bottom:12px;">
+2º - Girar o seletor de menu até a posição 5;
+A posição 5 permite configurar o amortecimento (Damping) da medição, ou seja, a velocidade com que a sonda responde às variações de nível.
+• 	Coloque o seletor na posição 5.
+• 	O display mostrará o valor atual do amortecimento.
+• 	Pressione brevemente o botão superior para aumentar o valor.
+•	Pressione brevemente o botão inferior para diminuir o valor.
+• 	Como padrão deixar o valor em 1,0.
+  </div>
+
+
+
+  <div style="margin-bottom:12px;">
+3º - Ajustar em conjunto com a MMU nível real mínimo do tanque;
   </div>
 
   <div style="margin-bottom:12px;">
-    2º - Pulsar botão (+) por menos de 1 segundo isso faz com que apareça no display o valor máximo da proteção contra falha, que deverá estar em 22mA, caso necessário ajustar este valor mantenha pressionado (+) por mais de 1 segundo isso irá habilitar o acesso ao ajuste;
-  </div>
-
-
-  <div style="margin-bottom:12px;">
-3º - Girar o seletor de menu até a posição 5;
-  </div>
-
-  <div style="margin-bottom:12px;">
-  4º - Manter ambos os botões (-) e (+) pressionados por mais de 1 segundo (fazendo isso o valor de amortização fica determinado em 1,0, isso indica que está sem fitro);
-  </div>
-
-  <div style="margin-bottom:12px;">
-5º - Ajustar em conjunto com a MMU nível real mínimo do tanque;
-  </div>
-
-  <div style="margin-bottom:12px;">
-6º - Girar o seletor de menu até a posição 1;
+4º - Girar o seletor de menu até a posição 1;
   </div>
 
 
@@ -43821,42 +43857,58 @@ MGI Vibração anormal 2 canal 1
 
  
 <div style="margin-bottom:12px;">
-7º - Manter ambos os botões (-) e (+) pressionados por mais de 1 segundo;
+5º - Manter ambos os botões (-) e (+) pressionados por mais de 1 segundo;
   </div>
 
   <div style="margin-bottom:12px;">
-8º - Girar o seletor de menu até a posição 3 (esta posição da acesso ao Amperímetro portanto neste momento deverá aparecer 4 mA no display);
+6º - Girar o seletor de menu até a posição 3 (esta posição da acesso ao Amperímetro portanto neste momento deverá aparecer 4 mA no display);
   </div>
 
   <div style="margin-bottom:12px;">
- 9º - Ajustar em conjunto com a MMU nível real máximo do tanque;
+ 7º - Ajustar em conjunto com a MMU nível real máximo do tanque;
   </div>
 
   <div style="margin-bottom:12px;">
-   10º - Girar o seletor de menu até a posição 2;
+   8º - Girar o seletor de menu até a posição 2;
   </div>
 
   <div style="margin-bottom:12px;">
-11º - Manter ambos os botões (-) e (+) pressionados por mais de 1 segundo;
+9º - Manter ambos os botões (-) e (+) pressionados por mais de 1 segundo;
   </div>
 
   <div style="margin-bottom:12px;">
-12º - Girar o seletor de menu até a posição 3 (esta posição da acesso ao Amperímetro portanto neste momento deverá aparecer 20 mA no display)
+10º - Girar o seletor de menu até a posição 3 (esta posição da acesso ao Amperímetro portanto neste momento deverá aparecer 20 mA no display)
   </div>
 
   <div style="margin-bottom:12px;">
-   *Caso necessário justar o valor máximo, como acontece no mancal guia superior que o valor máximo está em 80% (16,8mA) siga os passos 13 e 14;
+   *Caso necessário justar o valor máximo, como acontece no mancal guia superior que o valor máximo está em 80% (16,8mA) siga os passos 11 e 12;
+  </div>
+
+<h2 style="color: black; text-align: center; font-size: 16px;">
+    Com o nível do tanque no máximo <span style="color:blue;"></span>
+  </h2>
+
+
+  <div style="margin-bottom:12px;">
+11º -  Girar o seletor de menu até a posição 2;
+
+Aparecerá no display o valor em pF será necessário ajustar este valor até mostrar 80%
+no indicador. *A capacitância não tem relação direta com a corrente então pra cada
+máquina este valor será diferente.
   </div>
 
   <div style="margin-bottom:12px;">
-13º -  Girar o seletor de menu até a posição 2;
+12º - Com os botões (-) e (+) modifique o valor que aparece no display, os valores que
+aparecerão no display estão em pF portanto aumentando esses valores você está
+diminuindo o nível máximo toda vez que fizer a alteração dentro deste menu volte o
+seletor de menu para a posição 3 para verificar a corrente, ajuste até encontrar a
+corrente necessária por exemplo para o mancal guia superior que fica em 80%
+(16,8mA).
   </div>
 
-  <div style="margin-bottom:12px;">
-14º - Com os botões (-) e (+) modifique o valor que aparece no display, os valores que aparecerão no display estão em pF portanto aumentando esses valores você está diminuindo o nível máximo toda vez que fizer a alteração dentro deste menu volte o seletor de menu para a posição 3 para verificar a corrente, ajuste até encontrar a corrente necessária por exemplo para o mancal guia superior que fica em 80% (16,8mA) o valor que fica nesta tela é 50,25.
-  </div>
-
-  
+  <h2 style="color: black; text-align: center; font-size: 16px;">
+    Na posição de trabalho a chave seletora deverá ficar na posição zero (0) <span style="color:blue;"></span>
+  </h2>
 
 </div>
  
