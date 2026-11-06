@@ -43711,13 +43711,13 @@ MGI Vibração anormal 2 canal 1
 
 <div style="font-size:16px; line-height:1.4;">
   <div style="margin-bottom:12px;">
-   Posição &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Função<br>
-  &nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      Visualização da capacitância medida (pF)<br>
-  &nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      LRV: nível mínimo, referência de 4 mA<br>
-  &nbsp;&nbsp;2  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     URV: nível máximo, referência de 20 mA<br>
-  &nbsp;&nbsp;3  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Definição da corrente de sinalização de falhas<br>
-  &nbsp;&nbsp;4  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     Diagnóstico e reinicialização de falha<br>
-  &nbsp;&nbsp;5   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Amortecimento da medição<br>
+   Posição do seletor de funções &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Função<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;0 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;    Visualização da capacitância medida (pF)<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;     LRV: nível mínimo, referência de 4 mA<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;2  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;    URV: nível máximo, referência de 20 mA<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;3  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;    Definição da corrente de sinalização de falhas<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;4  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;    Diagnóstico e reinicialização de falha<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;5   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Amortecimento da medição<br>
   </div>
 </div>
 
@@ -43729,7 +43729,7 @@ MGI Vibração anormal 2 canal 1
   </h2>
 
  <h2 style="color: black; text-align: center; font-size: 18px;">
-    Reset de fábrica <span style="color:blue;"></span>
+    Reset de falhas <span style="color:blue;"></span>
   </h2>
 
 <div style="font-size:16px; line-height:1.4;">
@@ -43747,42 +43747,6 @@ MGI Vibração anormal 2 canal 1
 
 </div>
 
-
- <h2 style="color: black; text-align: center; font-size: 18px;">
-    Parametrização <span style="color:blue;"></span>
-  </h2>
-
-
-<div style="font-size:16px; line-height:1.4;">
-
-  <div style="margin-bottom:12px;">
-  
-1º - Girar o seletor de menu até a posição 3;
-A posição 3 configura o comportamento da saída analógica de 4–20 mA quando a sonda Siemens LC300 identifica uma falha.
-Ela permite definir qual corrente será enviada ao CLP para indicar uma condição de erro.<br>
-
-Configuração	 Corrente de saída 			 Significado<br>
-  C:Hi &nbsp;&nbsp;&nbsp;		              22 mA 	&nbsp;&nbsp;&nbsp;			 Sinaliza falha com corrente alta<br>
-  C:Lo 	&nbsp;&nbsp;&nbsp;	              3,6 mA &nbsp;&nbsp;&nbsp;				  Sinaliza falha com corrente baixa<br>
-  C:An 	&nbsp;&nbsp;&nbsp; 	Mantém o valor medido no momento da falha 	&nbsp;&nbsp;&nbsp;  Desativa a sinalização de falha pela corrente<br>
-  </div>
-
-  <div style="margin-bottom:12px;">
-    2º - Pulsar botão (+) por menos de 1 segundo isso faz com que apareça no display o valor máximo da proteção contra falha, que deverá estar em 22mA, caso necessário ajustar este valor mantenha pressionado (+) por mais de 1 segundo isso irá habilitar o acesso ao ajuste;
-  </div>
-
-
-  
-
-
-
-  
-
-
-
-  
-
-</div>
 
 
 <!-- ==============================
@@ -43828,6 +43792,49 @@ Configuração	 Corrente de saída 			 Significado<br>
      PÁGINA 76 (IMAGEM) – EM 2 PARTES EMPILHADAS
      ============================== -->
 <div class="pagina" id="pagina75" data-folha="76">
+
+
+
+
+ <h2 style="color: black; text-align: center; font-size: 18px;">
+    Parametrização <span style="color:blue;"></span>
+  </h2>
+
+
+<div style="font-size:16px; line-height:1.4;">
+
+  <div style="margin-bottom:12px;">
+  
+1º - Girar o seletor de menu até a posição 3;
+A posição 3 configura o comportamento da saída analógica de 4–20 mA quando a sonda Siemens LC300 identifica uma falha.
+Ela permite definir qual corrente será enviada ao CLP para indicar uma condição de erro.<br>
+
+Configuração	 Corrente de saída 			 Significado<br>
+  C:Hi &nbsp;&nbsp;&nbsp;		              22 mA 	&nbsp;&nbsp;&nbsp;			 Sinaliza falha com corrente alta<br>
+  C:Lo 	&nbsp;&nbsp;&nbsp;	              3,6 mA &nbsp;&nbsp;&nbsp;				  Sinaliza falha com corrente baixa<br>
+  C:An 	&nbsp;&nbsp;&nbsp; 	Mantém o valor medido no momento da falha 	&nbsp;&nbsp;&nbsp;  Desativa a sinalização de falha pela corrente<br>
+  </div>
+
+  <div style="margin-bottom:12px;">
+    2º - Pulsar botão (+) por menos de 1 segundo isso faz com que apareça no display o valor máximo da proteção contra falha, que deverá estar em 22mA, caso necessário ajustar este valor mantenha pressionado (+) por mais de 1 segundo isso irá habilitar o acesso ao ajuste;
+  </div>
+
+
+  
+
+
+
+  
+
+
+
+  
+
+</div>
+
+
+
+
 
    <div style="font-size:16px; line-height:1.4;">
 
